@@ -1,11 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Événements à Poitiers</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Événements à Poitiers et alentours – Prototype</title>
+  <style>
+    :root {
+      --bg: #f7f7f7;
+      --panel: #ffffff;
+      --muted: #555;
+      --text: #111;
+      --brand: #097d4c;
+      --brand-2: #13b46d;
+      --ok: #097d4c;
+      --danger: #ef4444;
+      --card: #fff;
+      --chip: #f2f2f2;
+      --border: #ddd;
+    }
+    * { box-sizing: border-box; }
+    html, body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial; margin:0; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .hero {
+      background-image: url('https://www.hifrance.org/wp-content/uploads/2025/10/Poitiers-Site-HI-Banniere.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .hero h1 {
+      background: rgba(0,0,0,0.3);
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: clamp(26px, 3vw, 36px);
+    }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+    header.top { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 16px; margin-bottom: 16px; }
+    .brand { display:flex; align-items:center; gap:12px }
+    .brand .dot { width:12px; height:12px; border-radius:50%; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: 0 0 10px rgba(9,125,76,.4) }
+    .subtitle { color: var(--muted); font-size: 14px; }
+
+    .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 12px; }
+    .filters { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 720px) {
+      header.top { grid-template-columns: 2fr 3fr; align-items: center; }
+      .filters { grid-template-columns: 1.2fr 2fr 1fr 1fr; }
+    }
+
+    input, select { width: 100%; background: #fff; color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; outline: none; }
+    input::placeholder { color: #888; }
+    label { font-size: 12px; color: var(--muted); display:block; margin-bottom: 6px; }
+
+    .chips { display:flex; flex-wrap: wrap; gap:8px }
+    .chip { background: var(--chip); padding: 6px 10px; border:1px solid var(--border); border-radius: 999px; font-size: 12px; color: var(--muted); }
+    .chip.ok { color: var(--brand); border-color: var(--brand-2); background: #eafaf2; }
+
+    .grid { display:grid; grid-template-columns: 1fr; gap: 14px; margin-top: 16px; }
+    @media (min-width: 680px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+    .card { background: var(--card); border:1px solid var(--border); border-radius: 16px; overflow: clip; display:flex; flex-direction: column; box-shadow: 0 2px 6px rgba(0,0,0,.05); transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,.1); }
+    .card .cover { aspect-ratio: 16/9; background: linear-gradient(135deg,#eafaf2,#d9f6e6); position: relative; }
+    .card .cover .date-badge { position:absolute; left:10px; top:10px; background: #fff; border:1px solid var(--border); padding:6px 10px; border-radius: 10px; font-size: 12px; color: var(--brand); }
+    .card .content { padding:14px; display:flex; flex-direction:column; gap:8px }
+    .card h3 { margin:0; font-size: 16.5px; }
+    .meta { font-size: 12px; color: var(--muted); display:flex; gap:10px; flex-wrap:wrap }
+    .actions { margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:12px; padding: 0 14px 14px 14px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); border:none; color:#fff; font-weight:700; padding:10px 12px; border-radius: 12px; cursor:pointer; }
+    .ghost { background: transparent; color: var(--brand); border:1px solid var(--brand); padding:10px 12px; border-radius:12px; cursor:pointer; }
+    .empty { text-align:center; color: var(--muted); padding: 28px 0; }
+
+    footer { color: var(--muted); font-size: 12px; text-align: center; margin: 24px 0; }
+  </style>
 </head>
 <body>
-  <h1>Bienvenue sur Poitiers Events 🎉</h1>
-  <p>Page en construction – bientôt tous les événements locaux ici !</p>
+  <div class="hero">
+    <h1>Événements à Poitiers et alentours</h1>
+  </div>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <div class="subtitle">Prototype clair – données démo + prêt pour branchement Google Alerts / JSON</div>
+        </div>
+      </div>
+      <div class="chips" id="liveInfo">
+        <span class="chip">Dernière màj : <span id="lastUpdate">—</span></span>
+        <span class="chip ok" id="countChip">0 événement(s)</span>
+        <span class="chip">Poitiers · Grand Poitiers · 25 km</span>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="filters" role="region" aria-label="Filtres">
+        <div>
+          <label for="q">Rechercher</label>
+          <input id="q" type="search" placeholder="concert, expo, sport,…" />
+        </div>
+        <div>
+          <label for="cat">Catégorie</label>
+          <select id="cat">
+            <option value="">Toutes</option>
+            <option>Musique</option>
+            <option>Exposition</option>
+            <option>Théâtre</option>
+            <option>Conférence</option>
+            <option>Sport</option>
+            <option>Familial</option>
+            <option>Marché</option>
+            <option>Festival</option>
+          </select>
+        </div>
+        <div>
+          <label for="from">À partir du</label>
+          <input id="from" type="date" />
+        </div>
+        <div>
+          <label for="freeOnly"><input id="freeOnly" type="checkbox" /> Gratuit uniquement</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="grid" aria-live="polite"></section>
+
+    <footer>
+      <p>✦ Données de démonstration. Cette page lira ensuite un <strong>events.json</strong> auto-généré (Google Alerts ➡ GitHub Actions) ou une API publique.</p>
+    </footer>
+  </div>
+  <!-- Données de démo embarquées + script d'affichage des cartes -->
+  <script id="seed" type="application/json">{
+    "events": [
+      {"title":"Concert indie – Le Confort Moderne","date":"2025-11-07T20:30:00+01:00","location":"Le Confort Moderne, Poitiers","price":0,"category":["Musique","Festival"],"tags":["poitiers","concert","live"],"image":"","link":"https://example.com/confort-indie","source":"agenda-ville"},
+      {"title":"Exposition photo – Regards sur le Clain","date":"2025-11-09T10:00:00+01:00","location":"EMF, Poitiers","price":5,"category":["Exposition"],"tags":["expo","photo"],"image":"","link":"https://example.com/expo-clain","source":"openagenda"},
+      {"title":"Match PB86 – Basket Pro B","date":"2025-11-10T19:00:00+01:00","location":"Arena Futuroscope","price":12,"category":["Sport"],"tags":["basket","pb86"],"image":"","link":"https://example.com/pb86","source":"club"},
+      {"title":"Marché de créateurs – Centre-ville","date":"2025-11-08T09:00:00+01:00","location":"Place Charles de Gaulle, Poitiers","price":0,"category":["Marché","Familial"],"tags":["artisanat","famille"],"image":"","link":"https://example.com/marche-createurs","source":"asso"},
+      {"title":"Conférence – Histoire médiévale du Poitou","date":"2025-11-12T18:30:00+01:00","location":"Université de Poitiers","price":0,"category":["Conférence"],"tags":["université","culture"],"image":"","link":"https://example.com/conference-poitou","source":"univ"},
+      {"title":"Théâtre – Molière revisité","date":"2025-11-13T20:00:00+01:00","location":"Théâtre Auditorium de Poitiers (TAP)","price":18,"category":["Théâtre"],"tags":["tap","pièce"],"image":"","link":"https://example.com/tap-moliere","source":"tap"}
+    ]
+  }</script>
+
+  <script>
+    function fmtDate(iso){
+      var d=new Date(iso);
+      return new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(d).replaceAll('.','');
+    }
+    function isSameOrAfter(dateISO,minISO){ if(!minISO) return true; return new Date(dateISO)>=new Date(minISO); }
+    function relDays(iso){
+      var d=new Date(iso), t=new Date();
+      t.setHours(0,0,0,0); d.setHours(0,0,0,0);
+      var diff=Math.round((d-t)/86400000);
+      if(diff===0) return "Aujourd'hui";
+      if(diff===1) return "Demain";
+      if(diff<0) return String(Math.abs(diff))+" j passés";
+      return "Dans "+diff+" j";
+    }
+    function slug(x){ if(!x) return ''; var s=x.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); return s.replace(/[^a-z0-9]+/g,' ').trim(); }
+
+    async function loadEvents(){
+      try{ var r=await fetch('./events.json',{cache:'no-store'}); if(r.ok) return await r.json(); }catch(e){}
+      return JSON.parse(document.getElementById('seed').textContent);
+    }
+
+    function render(items){
+      var grid=document.getElementById('grid');
+      grid.innerHTML='';
+      if(!items.length){ grid.innerHTML='<div class="panel empty">Aucun événement ne correspond aux filtres.</div>'; return; }
+      items.forEach(function(ev){
+        var free=Number(ev.price)===0;
+        var cover='<div class="cover"><div class="date-badge">'+relDays(ev.date)+'</div></div>';
+        var cats=(ev.category||[]).map(function(c){return '<span class="chip">'+c+'</span>';}).join(' ');
+        var tags=(ev.tags||[]).slice(0,3).map(function(t){return '<span class="chip">#'+t+'</span>';}).join(' ');
+        var price= free? '<span class="chip ok">Gratuit</span>' : '<span class="chip">≈ '+ev.price+' €</span>';
+        var html= cover+
+          '<div class="content">'+
+            '<h3>'+ev.title+'</h3>'+
+            '<div class="meta">'+fmtDate(ev.date)+' · '+(ev.location||'Poitiers')+'</div>'+
+            '<div class="chips">'+cats+' '+price+' '+tags+'</div>'+
+          '</div>'+
+          '<div class="actions">'+
+            '<a class="ghost" href="'+ev.link+'" target="_blank" rel="noopener">Source : '+(ev.source||'lien')+'</a>'+
+            '<a class="btn" href="'+ev.link+'" target="_blank" rel="noopener">Voir l\'événement →</a>'+
+          '</div>';
+        var el=document.createElement('article'); el.className='card'; el.innerHTML=html; grid.appendChild(el);
+      });
+    }
+
+    function applyFilters(data){
+      var q=slug(document.getElementById('q').value);
+      var cat=document.getElementById('cat').value;
+      var from=document.getElementById('from').value;
+      var freeOnly=document.getElementById('freeOnly').checked;
+      var items=(data.events||[])
+        .filter(function(e){return isSameOrAfter(e.date,from);})
+        .filter(function(e){return !freeOnly || Number(e.price)===0;})
+        .filter(function(e){return !cat || (e.category||[]).indexOf(cat)>-1;})
+        .filter(function(e){ if(!q) return true; var hay=slug((e.title||'')+' '+(e.location||'')+' '+(e.category||[]).join(' ')+' '+(e.tags||[]).join(' ')); return hay.indexOf(q)>-1; })
+        .sort(function(a,b){ return new Date(a.date)-new Date(b.date); });
+      document.getElementById('countChip').textContent=String(items.length)+' événement(s)';
+      render(items);
+    }
+
+    (async function(){
+      var data=await loadEvents();
+      document.getElementById('lastUpdate').textContent=new Date().toLocaleString('fr-FR');
+      var from=document.getElementById('from'); if(from) from.valueAsDate=new Date();
+      ['q','cat','from','freeOnly'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('input', function(){ applyFilters(data); }); });
+      applyFilters(data);
+    })();
+  </script>
 </body>
 </html>
