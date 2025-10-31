@@ -31,7 +31,9 @@ TODAY_UTC = datetime.now(timezone.utc)
 
 # Meetup: liste de flux ICS (ajoute/retire ce que tu veux)
 MEETUP_ICS_URLS = [
-    # Exemple: "https://www.meetup.com/<groupe>/events/ical"
+    "https://www.meetup.com/human-talks-poitiers/events/ical",
+    "https://www.meetup.com/fr-FR/afup-poitiers-php/events/ical",
+    "https://www.meetup.com/poitiers-aws-user-group/events/ical"
 ]
 
 # Secrets (via GitHub Actions > Settings > Secrets & variables > Actions)
