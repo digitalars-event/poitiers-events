@@ -131,17 +131,13 @@ def make_event(
 # --- Source 1: OpenAgenda via OpenData (Opendatasoft) ---
 def fetch_openagenda() -> List[Dict[str,Any]]:
     items = []
-    # Filtrage par rayon: l'API ODS ne fait pas un vrai filtre géo par rayon facilement.
-    # On récupère par mot-clé Poitiers + une fenêtre de dates futures,
-    # puis on filtre côté code par distance si on a des coords.
     params = {
         "dataset": OPENAGENDA_DATASET,
-        "q": CITY,
-        "rows": 200,          # augmenter si besoin
-        "sort": "start",      # croissant
+        "rows": 500,  # augmente si besoin
+        "geofilter.distance": f"{CENTER_LAT},{CENTER_LON},{RADIUS_KM*1000}",  # en mètres
     }
     try:
-        r = requests.get(OPENAGENDA_BASE, params=params, timeout=20)
+        r = requests.get(OPENAGENDA_BASE, params=params, timeout=25)
         r.raise_for_status()
         data = r.json()
         for rec in data.get("records", []):
@@ -150,42 +146,26 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
             start = f.get("start") or f.get("date_start") or f.get("date_debut")
             end = f.get("end") or f.get("date_end") or f.get("date_fin")
             url = f.get("link") or f.get("url") or ""
-            loc = f.get("location_name") or f.get("location") or f.get("lieu") or f.get("city") or "Poitiers"
-            lat = None
-            lon = None
-            # Plusieurs formats possibles pour coords selon agendas:
-            if "latlon" in f and isinstance(f["latlon"], list) and len(f["latlon"])==2:
-                lat, lon = f["latlon"][0], f["latlon"][1]
-            elif "geo_point_2d" in f and isinstance(f["geo_point_2d"], dict):
-                lat, lon = f["geo_point_2d"].get("lat"), f["geo_point_2d"].get("lon")
+            loc = f.get("location_name") or f.get("location") or f.get("lieu") \
+                  or f.get("city") or "Poitiers"
+            lat = lon = None
+            if isinstance(f.get("geo_point_2d"), dict):
+                lat = f["geo_point_2d"].get("lat"); lon = f["geo_point_2d"].get("lon")
+            elif isinstance(f.get("latlon"), list) and len(f["latlon"]) == 2:
+                lat, lon = f["latlon"]
 
             cats = []
-            for key in ("tags","keywords","mot_cle"):
+            for key in ("tags","keywords","mot_cle","themes"):
                 v = f.get(key)
-                if isinstance(v, list): cats.extend(v)
-                elif isinstance(v, str): cats.extend([v])
+                if isinstance(v, list): cats += v
+                elif isinstance(v, str): cats.append(v)
 
             ev = make_event(
-                title=title,
-                date_start=start,
-                date_end=end,
-                url=url,
-                source="openagenda",
-                location=loc,
-                categories=cats,
-                lat=lat, lon=lon
+                title=title, date_start=start, date_end=end, url=url,
+                source="openagenda", location=loc, categories=cats, lat=lat, lon=lon
             )
-            if not ev:
-                continue
-            # filtre rayon si on a coords; sinon garder si location contient Poitiers / Grand Poitiers
-            if ev["lat"] is not None and ev["lon"] is not None:
-                if not is_within_radius(ev["lat"], ev["lon"]):
-                    continue
-            else:
-                if CITY.lower() not in norm_text(ev["location"]).lower():
-                    # essaie mot-clef "Poitiers" pour limiter
-                    continue
-            items.append(ev)
+            if ev:
+                items.append(ev)
     except Exception as e:
         print("[OpenAgenda] ERREUR:", e, file=sys.stderr)
     return items
@@ -199,8 +179,7 @@ def fetch_eventbrite() -> List[Dict[str,Any]]:
     url = "https://www.eventbriteapi.com/v3/events/search/"
     # Stratégie : centre sur Poitiers (lat/lon) + rayon 50km ; date >= now ; seulement événements publics
     params = {
-        "location.latitude": CENTER_LAT,
-        "location.longitude": CENTER_LON,
+        "location.address": CITY,          # au lieu de latitude/longitude
         "location.within": "50km",
         "expand": "venue",
         "start_date.range_start": TODAY_UTC.isoformat(),
