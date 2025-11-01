@@ -136,7 +136,8 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
             "dataset": OPENAGENDA_DATASET,
             "rows": rows,
             "start": start,
-            "q": CITY,  # filtrage textuel plus large
+            "refine.location_city": CITY,
+            "sort": "firstdate_begin",
         }
         try:
             r = requests.get(OPENAGENDA_BASE, params=params, timeout=25)
@@ -212,6 +213,7 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
         except Exception as e:
             print("[OpenAgenda] ERREUR:", e, file=sys.stderr)
             break
+            print(f"[OpenAgenda] {len(items)} événements trouvés pour {CITY}")
     return items
 
 # --- Source 2: Ticketmaster ---
