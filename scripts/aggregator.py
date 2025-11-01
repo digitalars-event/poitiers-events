@@ -10,7 +10,7 @@ Sortie: events.json normalisé, trié par date croissante
 """
 
 import os, sys, json, math, re, traceback
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Any, Optional
 
 import requests
