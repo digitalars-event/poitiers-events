@@ -2,8 +2,8 @@ name: Build events JSON
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # toutes les 6 heures
-  workflow_dispatch:        # déclenchement manuel
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,7 +24,6 @@ jobs:
 
       - name: Run aggregator
         env:
-          EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: |
           python scripts/aggregator.py
