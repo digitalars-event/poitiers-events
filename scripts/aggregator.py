@@ -109,7 +109,7 @@ def make_event(
     if not title:
         return None
     ds = parse_date(date_start) if date_start else None
-    if not ds or (ds < TODAY_UTC - timedelta(days=1)):
+    if not ds or ds < TODAY_UTC:
         return None
     ev = {
         "title": title,
@@ -131,7 +131,7 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
     rows = 200
     start = 0
     # On boucle jusqu'à ce que la page soit vide ou qu'on atteigne ~2000 éléments
-    while start < 2000:
+    while start < 10000:
         params = {
             "dataset": OPENAGENDA_DATASET,
             "rows": rows,
@@ -169,14 +169,15 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
                 
                 # Si toujours vide, on essaie de parser timings
                 if not start_dt and "timings" in f:
-                    import json
-                    try:
-                        t = json.loads(f["timings"])
-                        if isinstance(t, list) and t:
-                            start_dt = t[0].get("begin")
-                            end_dt = t[0].get("end")
-                    except Exception:
-                        pass
+                    t = f["timings"]
+                    if isinstance(t, str):
+                        try:
+                            t = json.loads(t)
+                        except Exception:
+                            t = []
+                    if isinstance(t, list) and t:
+                        start_dt = t[0].get("begin")
+                        end_dt = t[0].get("end")
                 url = f.get("link") or f.get("url") or ""
                 loc = (
                     f.get("location_name")
