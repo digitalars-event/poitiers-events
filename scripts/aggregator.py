@@ -147,12 +147,32 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
                 break
             for rec in recs:
                 f = rec.get("fields", {}) or {}
-                title = f.get("title") or f.get("name") or f.get("titre") or ""
-                start_dt = f.get("start") or f.get("date_start") or f.get("date_debut")
-                end_dt = f.get("end") or f.get("date_end") or f.get("date_fin")
+                title = (
+                    f.get("title_fr")
+                    or f.get("title")
+                    or f.get("titre")
+                    or f.get("name")
+                    or ""
+                )
+                start_dt = (
+                    f.get("firstdate_begin")
+                    or f.get("start")
+                    or f.get("date_start")
+                )
+                end_dt = (
+                    f.get("firstdate_end")
+                    or f.get("end")
+                    or f.get("date_end")
+                )
                 url = f.get("link") or f.get("url") or ""
-                loc = f.get("location_name") or f.get("location") or f.get("lieu") \
-                      or f.get("city") or CITY
+                loc = (
+                    f.get("location_name")
+                    or f.get("location_city")
+                    or f.get("location")
+                    or f.get("lieu")
+                    or f.get("city")
+                    or CITY
+                )
                 lat = lon = None
                 if isinstance(f.get("geo_point_2d"), dict):
                     lat = f["geo_point_2d"].get("lat")
