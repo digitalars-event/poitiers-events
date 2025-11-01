@@ -25,6 +25,7 @@ CENTER_LON = 0.3404
 RADIUS_KM = 30  # rayon autour de Poitiers
 
 TODAY_UTC = datetime.now(timezone.utc)
+START_ISO = TODAY_UTC.strftime("%Y-%m-%dT%H:%M:%SZ")  # format sans millisecondes
 
 # Meetup: liste de flux ICS (ajoute/retire librement)
 MEETUP_ICS_URLS = [
@@ -191,20 +192,18 @@ def fetch_ticketmaster() -> List[Dict[str,Any]]:
         "apikey": TICKETMASTER_API_KEY,
         "countryCode": "FR",
         "city": CITY,
-        "startDateTime": TODAY_UTC.isoformat().replace("+00:00","Z"),
+        "startDateTime": START_ISO,
         "size": "100"
     }
-
-    # Essai 2: géolocalisé (si la ville renvoie peu/rien)
+    
     params_geo = {
         "apikey": TICKETMASTER_API_KEY,
         "latlong": f"{CENTER_LAT},{CENTER_LON}",
         "radius": str(RADIUS_KM),
         "unit": "km",
-        "startDateTime": TODAY_UTC.isoformat().replace("+00:00","Z"),
+        "startDateTime": START_ISO,
         "size": "100"
     }
-
     def harvest(params):
         try:
             r = requests.get(base, params=params, timeout=25)
