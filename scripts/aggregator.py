@@ -109,8 +109,8 @@ def make_event(
     if not title:
         return None
     ds = parse_date(date_start) if date_start else None
-    if not ds or not is_future(ds):
-        return None  # à venir uniquement
+    if not ds or (ds < TODAY_UTC - timedelta(days=1)):
+        return None
     ev = {
         "title": title,
         "date_start": ds.isoformat(),
@@ -136,7 +136,7 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
             "dataset": OPENAGENDA_DATASET,
             "rows": rows,
             "start": start,
-            "geofilter.distance": f"{CENTER_LAT},{CENTER_LON},{RADIUS_KM*1000}",  # mètres
+            "q": CITY,  # filtrage textuel plus large
         }
         try:
             r = requests.get(OPENAGENDA_BASE, params=params, timeout=25)
@@ -156,14 +156,27 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
                 )
                 start_dt = (
                     f.get("firstdate_begin")
+                    or f.get("lastdate_begin")
                     or f.get("start")
                     or f.get("date_start")
                 )
                 end_dt = (
                     f.get("firstdate_end")
+                    or f.get("lastdate_end")
                     or f.get("end")
                     or f.get("date_end")
                 )
+                
+                # Si toujours vide, on essaie de parser timings
+                if not start_dt and "timings" in f:
+                    import json
+                    try:
+                        t = json.loads(f["timings"])
+                        if isinstance(t, list) and t:
+                            start_dt = t[0].get("begin")
+                            end_dt = t[0].get("end")
+                    except Exception:
+                        pass
                 url = f.get("link") or f.get("url") or ""
                 loc = (
                     f.get("location_name")
@@ -179,6 +192,8 @@ def fetch_openagenda() -> List[Dict[str,Any]]:
                     lon = f["geo_point_2d"].get("lon")
                 elif isinstance(f.get("latlon"), list) and len(f["latlon"]) == 2:
                     lat, lon = f["latlon"]
+                if not lat or not lon:
+                    lat, lon = CENTER_LAT, CENTER_LON  # fallbac
 
                 cats = []
                 for key in ("tags","keywords","mot_cle","themes"):
