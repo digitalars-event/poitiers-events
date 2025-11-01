@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-01T01:26:16.133330+00:00",
+  "generated_at": "2025-11-01T02:07:52.412036+00:00",
   "events": [
     {
       "title": "FORUM de l'ENSI Poitiers",
@@ -10,8 +10,22 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Les mains chaudes",
+      "date_start": "2025-11-07T18:45:00+00:00",
+      "date_end": "2025-11-07T20:00:00+00:00",
+      "location": "La Quintaine",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "Days of Nothing",
@@ -22,8 +36,35 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Visite de la centrale de Civaux",
+      "date_start": "2025-11-17T08:00:00+00:00",
+      "date_end": "2025-11-17T15:00:00+00:00",
+      "location": "Centrale nucléaire de Civaux- Route de la Centrale Nucléaire",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "La semaine de l'industrie du Châtelleraudais",
+      "date_start": "2025-11-17T13:00:00+00:00",
+      "date_end": "2025-11-17T15:00:00+00:00",
+      "location": "Entreprise Johnson Screens",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "Découverte des métiers et formations financées dans le secteur de l'industrie",
@@ -34,8 +75,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "CAFÉ IA - 8h-9h",
@@ -46,8 +88,61 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Professeurs en entreprise",
+      "date_start": "2025-11-19T08:00:00+00:00",
+      "date_end": "2025-11-19T11:00:00+00:00",
+      "location": "30 avenue des Temps Modernes 86360 Chasseneuil-du-Poitou",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Visite du site de SAFRAN",
+      "date_start": "2025-11-20T08:00:00+00:00",
+      "date_end": "2025-11-20T11:00:00+00:00",
+      "location": "26 av des Hauts de la Chaume 86280 Saint-Benoit",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Professeurs en entreprise",
+      "date_start": "2025-11-20T08:00:00+00:00",
+      "date_end": "2025-11-20T11:00:00+00:00",
+      "location": "Forêt de Vernon 27208 Vernon",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Forum des métiers de l'industrie",
+      "date_start": "2025-11-20T09:00:00+00:00",
+      "date_end": "2025-11-20T17:00:00+00:00",
+      "location": "Salle du Chillou à Châtellerault",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "Apéro PHP - Faire un synthé avec l'api web audio standard",
@@ -59,7 +154,34 @@
       "link": "https://www.meetup.com/afup-poitiers-php/events/311052960/",
       "source": "meetup",
       "lat": null,
-      "lon": null
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "\"Le phoque de Weddell\", écriture et mise en scène Hélène Arnaud",
+      "date_start": "2025-11-21T13:30:00+00:00",
+      "date_end": "2025-11-21T14:45:00+00:00",
+      "location": "La Quintaine",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Information collective Agent de Montage et de câblage en électronique",
+      "date_start": "2025-11-25T08:00:00+00:00",
+      "date_end": "2025-11-25T10:30:00+00:00",
+      "location": "France Travail",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "GenAI pour les développeurs: partagez vos expériences !",
@@ -71,7 +193,8 @@
       "link": "https://www.meetup.com/poitiers-aws-user-group/events/310827883/",
       "source": "meetup",
       "lat": null,
-      "lon": null
+      "lon": null,
+      "description": null
     },
     {
       "title": "LE BAL VARIABLE",
@@ -82,8 +205,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "SPILL THE CAT",
@@ -94,8 +218,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "NO REST FOR THE FRENCHIES",
@@ -106,8 +231,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "L&S",
@@ -118,8 +244,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "STARMONGER",
@@ -130,8 +257,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "LA PETITE MUSIQUE",
@@ -142,8 +270,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "MALVÄ",
@@ -154,8 +283,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "DJ VERSO",
@@ -166,8 +296,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "Nouvelles du cosmos",
@@ -178,8 +309,9 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
     },
     {
       "title": "Palais de Verre",
@@ -190,8 +322,61 @@
       "category": [],
       "link": "",
       "source": "openagenda",
-      "lat": 46.5802,
-      "lon": 0.3404
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Joseph Java l'Interview",
+      "date_start": "2026-03-14T19:30:00+00:00",
+      "date_end": "2026-03-14T20:30:00+00:00",
+      "location": "LE CLOU",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "HÔTEL DU PARC - PIRATES",
+      "date_start": "2032-01-01T01:00:00+00:00",
+      "date_end": "2032-01-01T03:00:00+00:00",
+      "location": "Hôtel du Parc - Pirates*",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Kyriad Poitiers - Jules Verne",
+      "date_start": "2032-01-01T01:00:00+00:00",
+      "date_end": "2032-01-01T03:00:00+00:00",
+      "location": "Kyriad Poitiers - Jules Verne***",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
+    },
+    {
+      "title": "Ethic étapes Archipel Saint-Cyr",
+      "date_start": "2032-01-01T01:00:00+00:00",
+      "date_end": "2032-01-01T03:00:00+00:00",
+      "location": "Ethic étapes Archipel Saint-Cyr",
+      "price": null,
+      "category": [],
+      "link": "",
+      "source": "openagenda",
+      "lat": null,
+      "lon": null,
+      "description": null
     }
   ]
 }
