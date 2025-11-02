@@ -387,7 +387,7 @@
           .format(d)
           .replaceAll('.', '');
       }
-
+    
       function relDays(iso) {
         if (!iso) return '';
         const d = new Date(iso),
@@ -400,7 +400,7 @@
         if (diff < 0) return `${Math.abs(diff)} j passés`;
         return `Dans ${diff} j`;
       }
-
+    
       function slug(x) {
         if (!x) return '';
         return x
@@ -410,7 +410,7 @@
           .replace(/[^a-z0-9]+/g, ' ')
           .trim();
       }
-
+    
       async function loadEvents() {
         try {
           const r = await fetch('./events.json?v=' + Date.now(), {
@@ -422,41 +422,55 @@
         }
         return { events: [] };
       }
-
+    
       function render(items) {
         const grid = document.getElementById('grid');
         grid.innerHTML = '';
-
+    
         if (!items.length) {
           grid.innerHTML =
             '<div class="panel empty">Aucun élément ne correspond aux filtres.</div>';
           return;
         }
-
+    
         items.forEach((ev) => {
           const free = Number(ev.price) === 0;
           const isEvent = !!ev.date_start || !!ev.date;
-
+    
           const badge = isEvent
             ? `<div class="date-badge">${relDays(ev.date_start || ev.date)}</div>`
             : `<div class="est-badge">Établissement</div>`;
-
+    
           const coverStyle = ev.image
             ? `background-image: url('${ev.image}');
                background-size: cover;
                background-position: center;`
             : `background: linear-gradient(135deg, #eafaf2, #d9f6e6);`;
-
+    
           const cover = `
             <div class="cover" style="${coverStyle}">
               ${badge}
             </div>`;
-
+    
           const cats = (ev.category || [])
             .map((c) => `<span class="chip">${c}</span>`)
             .join(' ');
           const price = free ? '<span class="chip ok">Gratuit</span>' : '';
-
+    
+          // ✅ Nouveau bloc d'informations : adresse + horaires
+          let extraInfo = '';
+          if (!isEvent) {
+            if (ev.address) {
+              extraInfo += `<div class="meta"><strong>Adresse :</strong> ${ev.address}</div>`;
+            }
+            if (ev.opening_hours && ev.opening_hours.length > 0) {
+              const horaires = ev.opening_hours
+                .map((h) => `<div>${h}</div>`)
+                .join('');
+              extraInfo += `<div class="meta"><strong>Horaires :</strong> ${horaires}</div>`;
+            }
+          }
+    
           const html = `
             ${cover}
             <div class="content">
@@ -465,6 +479,7 @@
                 ${isEvent ? fmtDate(ev.date_start || ev.date) + ' · ' : ''}
                 ${(ev.location || 'Poitiers')}
               </div>
+              ${extraInfo}
               <div class="chips">${cats} ${price}</div>
             </div>
             <div class="actions">
@@ -475,20 +490,20 @@
                 Voir ${isEvent ? "l'événement" : "la fiche"} →
               </a>
             </div>`;
-
+    
           const el = document.createElement('article');
           el.className = 'card';
           el.innerHTML = html;
           grid.appendChild(el);
         });
       }
-
+    
       function applyFilters(data) {
         const q = slug(document.getElementById('q').value);
         const cat = document.getElementById('cat').value;
         const type = document.getElementById('type').value;
         const freeOnly = document.getElementById('freeOnly').checked;
-
+    
         let items = (data.events || [])
           .map((e) => ({
             ...e,
@@ -503,31 +518,31 @@
             );
             return hay.includes(q);
           })
-          // ✅ Nouveau filtre type
+          // ✅ Filtre type (inchangé)
           .filter((e) => {
             const isEvent = !!e.date_start || !!e.date;
             if (type === 'evenement') return isEvent;
             if (type === 'etablissement') return !isEvent;
             return true;
           });
-
+    
         document.getElementById('countChip').textContent =
           items.length + ' élément(s)';
         render(items);
       }
-
+    
       (async function () {
         const data = await loadEvents();
         document.getElementById('lastUpdate').textContent =
           new Date().toLocaleString('fr-FR');
         const from = document.getElementById('from');
         if (from) from.valueAsDate = new Date();
-
+    
         ['q', 'cat', 'type', 'from', 'freeOnly'].forEach((id) => {
           const el = document.getElementById(id);
           if (el) el.addEventListener('input', () => applyFilters(data));
         });
-
+    
         applyFilters(data);
       })();
     </script>
