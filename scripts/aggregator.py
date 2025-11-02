@@ -5,13 +5,14 @@ Agrégateur d'événements Poitiers (avec scraping VisitPoitiers.fr approfondi)
 - Récupère les vraies dates des événements ("du ... au ...")
 - Extrait correctement les images (Open Graph, images principales ou CSS)
 - Filtre les événements passés
-- Scrape aussi les liens externes d'événements (Facebook, Billetweb, etc.) présents sur les pages d'établissements
+- Scrape aussi les liens externes d'événements (Facebook, Billetweb, etc.)
+  et récupère automatiquement leurs métadonnées
 """
 
 import os, sys, json, re, traceback, time
 from datetime import datetime, timezone
 from typing import Optional
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 import requests
 from dateutil import parser as dp
 from bs4 import BeautifulSoup
@@ -20,7 +21,7 @@ CITY = "Poitiers"
 TODAY_UTC = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
 VISITPOITIERS_BASE = "https://visitpoitiers.fr"
 
-# Liste des domaines considérés comme sources d'événements externes
+# Domaines considérés comme plateformes d'événements
 EVENT_DOMAINS = [
     "facebook.com",
     "weezevent.com",
@@ -30,9 +31,12 @@ EVENT_DOMAINS = [
     "yurplan.com"
 ]
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; PoitiersScraper/1.0; +https://visitpoitiers.fr)"
+}
+
 # --- UTILS ---
 def parse_date(text) -> Optional[datetime]:
-    """Convertit un texte en datetime UTC, ou None."""
     if not text:
         return None
     try:
@@ -49,7 +53,7 @@ def norm_text(s: str) -> str:
 
 
 def dedup_key(ev):
-    return f"{norm_text(ev.get('title','')).lower()}::{norm_text(ev.get('location','')).lower()}"
+    return f"{norm_text(ev.get('title','')).lower()}::{norm_text(ev.get('link','')).lower()}"
 
 
 def clamp_len(s: str, n: int):
@@ -57,9 +61,60 @@ def clamp_len(s: str, n: int):
     return (s[:n-1] + "…") if len(s) > n else s
 
 
-# --- MAIN SCRAPER ---
+# --- EXTRACT META FROM EXTERNAL LINK ---
+def extract_external_metadata(url: str) -> dict:
+    """Récupère les métadonnées (title, desc, image, date) d'un lien externe."""
+    meta = {
+        "title": None,
+        "description": None,
+        "image": None,
+        "date_start": None
+    }
+
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10)
+        if "text/html" not in r.headers.get("Content-Type", ""):
+            return meta
+
+        soup = BeautifulSoup(r.text, "html.parser")
+
+        # --- Titre ---
+        og_title = soup.find("meta", property="og:title")
+        if og_title and og_title.get("content"):
+            meta["title"] = norm_text(og_title["content"])
+        elif soup.title:
+            meta["title"] = norm_text(soup.title.text)
+
+        # --- Description ---
+        og_desc = soup.find("meta", property="og:description")
+        if og_desc and og_desc.get("content"):
+            meta["description"] = norm_text(og_desc["content"])
+        else:
+            desc_tag = soup.find("meta", attrs={"name": "description"})
+            if desc_tag and desc_tag.get("content"):
+                meta["description"] = norm_text(desc_tag["content"])
+
+        # --- Image ---
+        og_image = soup.find("meta", property="og:image")
+        if og_image and og_image.get("content"):
+            meta["image"] = og_image["content"]
+
+        # --- Date ---
+        # Recherche simple d'une date dans le texte (format jour/mois/année)
+        text = soup.get_text(" ", strip=True)
+        m = re.search(r"\b(\d{1,2}/\d{1,2}/\d{4})\b", text)
+        if m:
+            meta["date_start"] = parse_date(m.group(1))
+
+    except Exception as e:
+        print(f"[META] Erreur sur {url}: {e}")
+
+    return meta
+
+
+# --- SCRAPER PRINCIPAL ---
 def fetch_visitpoitiers():
-    print("[VisitPoitiers] Scraping depuis le plan du site (avec événements externes)…")
+    print("[VisitPoitiers] Scraping depuis le plan du site (avec liens externes enrichis)…")
     sitemap_url = f"{VISITPOITIERS_BASE}/plan-du-site/"
     visited, events = set(), []
 
@@ -80,7 +135,7 @@ def fetch_visitpoitiers():
             time.sleep(0.4)
 
             try:
-                r2 = requests.get(link, timeout=15)
+                r2 = requests.get(link, headers=HEADERS, timeout=15)
                 if "text/html" not in r2.headers.get("Content-Type", ""):
                     continue
                 soup2 = BeautifulSoup(r2.text, "html.parser")
@@ -105,14 +160,8 @@ def fetch_visitpoitiers():
                 og_tag = soup2.find("meta", property="og:image")
                 if og_tag and og_tag.get("content"):
                     image_url = urljoin(link, og_tag["content"])
-                else:
-                    img_tag = soup2.select_one(".wp-post-image, .elementor-image img, article img, main img")
-                    if img_tag and img_tag.get("src"):
-                        src = img_tag["src"]
-                        if not any(bad in src for bad in ["facebook.com/tr", "analytics", "1x1", "pixel"]):
-                            image_url = urljoin(link, src)
 
-                # --- DATES ---
+                # --- DATES ("du ... au ...") ---
                 date_start, date_end = None, None
                 date_section = soup2.select_one(".lesdates h2")
                 if date_section:
@@ -130,13 +179,13 @@ def fetch_visitpoitiers():
                 is_event = "/evenement/" in link
                 source_type = "visitpoitiers-evenement" if is_event else "visitpoitiers-activite"
 
-                # --- FILTRE DES ÉVÉNEMENTS PASSÉS ---
+                # --- FILTRAGE DES ÉVÉNEMENTS PASSÉS ---
                 if date_end and date_end < TODAY_UTC:
                     continue
                 if date_start and not date_end and date_start < TODAY_UTC:
                     continue
 
-                # --- ÉVÉNEMENT PRINCIPAL ---
+                # --- ENREGISTREMENT DE L'ÉVÉNEMENT PRINCIPAL ---
                 ev = {
                     "title": clamp_len(title, 220),
                     "location": address or "Grand Poitiers",
@@ -153,22 +202,35 @@ def fetch_visitpoitiers():
 
                 events.append(ev)
 
-                # --- EXTRACTION DES ÉVÉNEMENTS EXTERNES (Facebook, Billetweb...) ---
-                external_links = [
-                    a["href"] for a in soup2.select("a[href]")
-                    if any(domain in a["href"] for domain in EVENT_DOMAINS)
-                ]
+                # --- EXTRACTION DES LIENS EXTERNES ---
+                for a in soup2.select("a[href]"):
+                    href = a["href"]
+                    if not any(domain in href for domain in EVENT_DOMAINS):
+                        continue
 
-                for ext in external_links:
+                    domain = urlparse(href).netloc.replace("www.", "")
+                    meta = extract_external_metadata(href)
+                    time.sleep(0.6)
+
                     ev_ext = {
-                        "title": f"Événement externe lié à {title}",
-                        "location": address or "Grand Poitiers",
-                        "link": ext,
-                        "source": "visitpoitiers-lien-externe",
+                        "title": meta["title"] or f"Événement sur {domain}",
+                        "location": address or CITY,
+                        "link": href,
+                        "source": domain,
                         "parent": title,
-                        "description": f"Événement référencé via la page de {title}",
-                        "image": image_url or ""
+                        "description": meta["description"] or f"Événement référencé via {title}",
+                        "image": meta["image"] or image_url or ""
                     }
+
+                    if meta["date_start"]:
+                        ev_ext["date_start"] = meta["date_start"].isoformat()
+
+                    # Filtrage des passés
+                    if "date_start" in ev_ext:
+                        d = parse_date(ev_ext["date_start"])
+                        if d and d < TODAY_UTC:
+                            continue
+
                     events.append(ev_ext)
 
             except Exception as e:
@@ -177,14 +239,14 @@ def fetch_visitpoitiers():
     except Exception as e:
         print("[VisitPoitiers] ERREUR sur le plan du site:", e)
 
-    print(f"[VisitPoitiers] ✅ {len(events)} éléments collectés (y compris événements externes à venir)")
+    print(f"[VisitPoitiers] ✅ {len(events)} éléments collectés (y compris événements externes enrichis)")
     return events
 
 
 def main():
     all_items = fetch_visitpoitiers()
-
     dedup, seen = [], set()
+
     for e in all_items:
         k = dedup_key(e)
         if k not in seen:
@@ -194,7 +256,9 @@ def main():
     with open("events.json", "w", encoding="utf-8") as f:
         json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "events": dedup},
                   f, ensure_ascii=False, indent=2)
-    print(f"\n💾 {len(dedup)} éléments écrits dans events.json (y compris événements externes)")
+
+    print(f"\n💾 {len(dedup)} éléments écrits dans events.json (internes + externes enrichis)")
+
 
 if __name__ == "__main__":
     try:
