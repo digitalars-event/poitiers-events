@@ -205,8 +205,23 @@ def fetch_visitpoitiers():
                 # --- EXTRACTION DES LIENS EXTERNES ---
                 for a in soup2.select("a[href]"):
                     href = a["href"]
-                    if not any(domain in href for domain in EVENT_DOMAINS):
+                    # --- DÉTECTION DYNAMIQUE DES LIENS EXTERNES ---
+                    if not href.startswith("http") or "visitpoitiers.fr" in href:
                         continue
+                    
+                    # Domaines à ignorer explicitement
+                    IGNORE_DOMAINS = [
+                        "google.com", "instagram.com", "youtube.com", "tiktok.com",
+                        "tripadvisor.", "twitter.com", "linkedin.com", "pinterest.", "maps."
+                    ]
+                    
+                    if any(bad in href for bad in IGNORE_DOMAINS):
+                        continue
+                    
+                    # Vérifie qu'il ne s'agit pas d'un lien de tracking
+                    if any(bad in href for bad in ["utm_", "analytics", "facebook.com/tr", "pixel"]):
+                        continue
+
 
                     domain = urlparse(href).netloc.replace("www.", "")
                     meta = extract_external_metadata(href)
