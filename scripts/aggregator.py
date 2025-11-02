@@ -91,7 +91,7 @@ def make_event(title, date_start, url, source, location=None, date_end=None, des
 
 
 def fetch_visitpoitiers():
-    print("[VisitPoitiers] Scraping depuis le plan du site (avec images)…")
+    print("[VisitPoitiers] Scraping depuis le plan du site (avec images corrigées)…")
     base = VISITPOITIERS_BASE
     sitemap_url = f"{base}/plan-du-site/"
     visited, events = set(), []
@@ -111,7 +111,7 @@ def fetch_visitpoitiers():
             if link in visited:
                 continue
             visited.add(link)
-            time.sleep(0.3)
+            time.sleep(0.4)
 
             try:
                 r2 = requests.get(link, timeout=15)
@@ -119,30 +119,52 @@ def fetch_visitpoitiers():
                     continue
                 soup2 = BeautifulSoup(r2.text, "html.parser")
 
+                # --- TITRE ---
                 title_tag = soup2.find("h1")
                 title = title_tag.get_text(strip=True) if title_tag else link.split("/")[-2].replace("-", " ").title()
+
+                # --- DESCRIPTION ---
                 desc_tag = soup2.find("p")
                 desc = desc_tag.get_text(strip=True) if desc_tag else ""
 
+                # --- ADRESSE ---
                 address = ""
                 for p in soup2.find_all("p"):
                     if any(v in p.text for v in ["Poitiers", "Saint-Benoît", "Chauvigny", "Ligugé", "Chasseneuil"]):
                         address = norm_text(p.text)
                         break
 
+                # --- IMAGE PRINCIPALE (3 stratégies) ---
                 image_url = None
-                img_tag = soup2.find("img")
-                if img_tag and img_tag.get("src"):
-                    image_url = urljoin(link, img_tag["src"])
-                else:
+
+                # 1️⃣ Balise Open Graph
+                og_tag = soup2.find("meta", property="og:image")
+                if og_tag and og_tag.get("content"):
+                    image_url = urljoin(link, og_tag["content"])
+
+                # 2️⃣ Image principale du contenu
+                if not image_url:
+                    img_tag = soup2.select_one(".wp-post-image, .elementor-image img, article img, main img")
+                    if img_tag and img_tag.get("src"):
+                        src = img_tag["src"]
+                        # Ignorer les pixels ou scripts
+                        if not any(bad in src for bad in ["facebook.com/tr", "analytics", "1x1", "pixel"]):
+                            image_url = urljoin(link, src)
+
+                # 3️⃣ Image de fond CSS
+                if not image_url:
                     bg_div = soup2.find("div", style=re.compile("background-image", re.I))
                     if bg_div:
                         match = re.search(r'url\(["\']?(.*?)["\']?\)', bg_div["style"])
                         if match:
-                            image_url = urljoin(link, match.group(1))
+                            src = match.group(1)
+                            if not any(bad in src for bad in ["facebook.com/tr", "analytics", "1x1", "pixel"]):
+                                image_url = urljoin(link, src)
 
+                # --- TYPE (activité / événement) ---
                 source_type = "visitpoitiers-activite" if "/activite/" in link else "visitpoitiers-evenement"
 
+                # --- CRÉATION DE L'ÉLÉMENT ---
                 ev = make_event(
                     title=title,
                     date_start=None if "activite" in link else START_ISO,
@@ -152,6 +174,7 @@ def fetch_visitpoitiers():
                     description=desc,
                     image=image_url
                 )
+
                 if ev:
                     events.append(ev)
 
