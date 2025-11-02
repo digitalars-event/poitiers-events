@@ -172,88 +172,95 @@ def fetch_meetup_ics():
     print(f"[Meetup] {len(items)} événements collectés (à venir)")
     return items
 
-# --- SOURCE 4 : VisitPoitiers (scraping profond amélioré) ---
+# --- SOURCE 4 : VisitPoitiers (à partir du plan du site complet) ---
 def fetch_visitpoitiers():
-    print("[VisitPoitiers] Scraping complet des établissements et agendas…")
+    print("[VisitPoitiers] Scraping depuis le plan du site…")
     base = VISITPOITIERS_BASE
+    sitemap_url = f"{base}/plan-du-site/"
     visited, events = set(), []
-    start_url = f"{base}/activites/"
 
     try:
-        r = requests.get(start_url, timeout=20)
+        r = requests.get(sitemap_url, timeout=20)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
 
-        # 1️⃣ Trouver tous les liens vers /activite/xxxx/
-        activity_links = set()
-        for a in soup.find_all("a", href=True):
-            href = a["href"]
-            if re.search(r"/activite/[^/]+/?$", href):
-                activity_links.add(urljoin(base, href))
+        # 1️⃣ Extraire toutes les URLs des activités
+        activity_links = [a["href"] for a in soup.select(".elementor-sitemap-activite-list a[href]")]
+        event_links = [a["href"] for a in soup.select(".elementor-sitemap-evenement-list a[href]")]
+        all_links = list(set(activity_links + event_links))
 
-        print(f" - {len(activity_links)} pages d’établissements détectées.")
+        print(f" - {len(activity_links)} activités et {len(event_links)} événements détectés.")
 
-        # 2️⃣ Explorer chaque page /activite/
-        for link in activity_links:
+        # 2️⃣ Explorer chaque page trouvée
+        for link in all_links:
             if link in visited:
                 continue
             visited.add(link)
-            time.sleep(0.5)
+            time.sleep(0.3)
             try:
-                r2 = requests.get(link, timeout=20)
+                r2 = requests.get(link, timeout=15)
                 if "text/html" not in r2.headers.get("Content-Type", ""):
                     continue
                 soup2 = BeautifulSoup(r2.text, "html.parser")
 
-                # Nom de l'établissement
-                title_tag = soup2.find(["h1", "h2"])
+                # Titre
+                title_tag = soup2.find("h1")
                 title = title_tag.get_text(strip=True) if title_tag else link.split("/")[-2].replace("-", " ").title()
 
-                # Description principale
+                # Description courte
                 desc_tag = soup2.find("p")
                 desc = desc_tag.get_text(strip=True) if desc_tag else ""
 
-                # Adresse ou texte contenant "Rue", "Poitiers", "Chasseneuil", etc.
+                # Adresse
                 address = ""
                 for p in soup2.find_all("p"):
-                    if any(ville in p.text for ville in ["Poitiers", "Saint-Benoît", "Chauvigny", "Chasseneuil", "Ligugé"]):
+                    if any(v in p.text for v in ["Poitiers", "Saint-Benoît", "Chauvigny", "Ligugé", "Chasseneuil"]):
                         address = norm_text(p.text)
                         break
 
-                # Enregistrer l’établissement
+                # Déterminer le type
+                source_type = "visitpoitiers-activite" if "/activite/" in link else "visitpoitiers-evenement"
+
+                # Créer l'objet principal
                 ev = {
                     "title": title,
                     "date_start": START_ISO,
-                    "location": address or "Poitiers",
+                    "location": address or "Grand Poitiers",
                     "link": link,
-                    "source": "visitpoitiers",
+                    "source": source_type,
                     "description": desc
                 }
                 events.append(ev)
 
-                # 3️⃣ Chercher des liens externes liés à des événements
+                # 3️⃣ Chercher des liens d'agenda externes
                 for a2 in soup2.find_all("a", href=True):
-                    href2 = a2["href"].strip()
+                    href2 = a2["href"]
                     if any(k in href2.lower() for k in [
-                        "agenda", "event", "evenement", "billet", "calendrier", "openagenda",
+                        "agenda", "event", "evenement", "billet", "openagenda",
                         "facebook.com/events", "eventbrite", "weezevent", "billetweb"
                     ]):
                         full_link = urljoin(link, href2)
                         if full_link not in visited:
                             visited.add(full_link)
-                            print(f"   ↳ Agenda externe trouvé : {full_link}")
-                            # Tentative de scrapping de la page externe
-                            external_events = scrape_external_agenda(full_link, title)
-                            events.extend(external_events)
+                            print(f"   ↳ Lien externe détecté : {full_link}")
+                            events.append({
+                                "title": f"{title} – Agenda externe",
+                                "date_start": START_ISO,
+                                "location": "Grand Poitiers",
+                                "link": full_link,
+                                "source": "visitpoitiers-agenda",
+                                "description": "Lien externe détecté sur la page de l'établissement ou de l'événement."
+                            })
 
             except Exception as e:
                 print(f"[VisitPoitiers] Erreur sur {link}: {e}")
 
     except Exception as e:
-        print("[VisitPoitiers] ERREUR racine:", e)
+        print("[VisitPoitiers] ERREUR sur le plan du site:", e)
 
-    print(f"[VisitPoitiers] {len(events)} éléments collectés (établissements + événements)")
+    print(f"[VisitPoitiers] {len(events)} pages collectées (activités + événements + liens externes)")
     return events
+
 
 
 # --- Scraper des pages externes (agenda, billeterie, etc.) ---
