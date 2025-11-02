@@ -1,6 +1,14 @@
+#!/usr/bin/env python3
+# coding: utf-8
+"""
+Agrégateur d'établissements et événements VisitPoitiers
+- Récupère adresses + horaires d'ouverture + images + liens externes
+- Stocke les métadonnées externes en cache
+- Détecte les séances de cinéma CGR
+"""
+
 import os, sys, json, re, traceback, time
 from datetime import datetime, timezone
-from typing import Optional
 from urllib.parse import urljoin, urlparse
 import requests
 from dateutil import parser as dp
@@ -11,9 +19,9 @@ TODAY_UTC = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, micro
 VISITPOITIERS_BASE = "https://visitpoitiers.fr"
 
 CACHE_FILE = "meta_cache.json"
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; PoitiersScraper/1.0; +https://visitpoitiers.fr)"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; PoitiersScraper/2.0; +https://visitpoitiers.fr)"}
 
-# Charger le cache
+# Charger le cache existant
 if os.path.exists(CACHE_FILE):
     with open(CACHE_FILE, "r", encoding="utf-8") as f:
         META_CACHE = json.load(f)
@@ -37,17 +45,16 @@ def norm_text(s):
 def dedup_key(ev):
     return f"{norm_text(ev.get('title','')).lower()}::{norm_text(ev.get('link','')).lower()}"
 
-# Liste des domaines sociaux/inutiles à ignorer
 IGNORE_DOMAINS = [
     "facebook.com", "instagram.com", "linkedin.com", "youtube.com",
     "twitter.com", "tiktok.com", "tripadvisor", "google", "maps", "pinterest"
 ]
 
-# Liste de domaines "intéressants"
 EVENT_DOMAINS = [
     "billetweb.fr", "eventbrite.fr", "helloasso.com", "weezevent.com", "yurplan.com", "cgrcinemas.fr"
 ]
 
+# --- Extraction de métadonnées externes ---
 def extract_external_metadata(url):
     """Récupère les métadonnées d'un lien externe avec cache"""
     if url in META_CACHE:
@@ -68,7 +75,7 @@ def extract_external_metadata(url):
         meta["description"] = norm_text(og_desc["content"]) if og_desc else ""
         meta["image"] = og_image["content"] if og_image else ""
 
-        # Si c’est un site CGR, on extrait les séances
+        # Détection spéciale pour CGR
         if "cgrcinemas.fr" in url:
             meta["events"] = extract_cgr_showtimes(url, soup)
 
@@ -79,7 +86,7 @@ def extract_external_metadata(url):
     save_cache()
     return meta
 
-
+# --- Extraction des horaires CGR ---
 def extract_cgr_showtimes(url, soup):
     """Détecte et extrait les séances de films sur le site CGR."""
     showtimes = []
@@ -96,9 +103,10 @@ def extract_cgr_showtimes(url, soup):
     return showtimes
 
 
+# --- Extraction principale VisitPoitiers ---
 def fetch_visitpoitiers():
     sitemap_url = f"{VISITPOITIERS_BASE}/plan-du-site/"
-    visited, events = set(), []
+    visited, results = set(), []
 
     try:
         r = requests.get(sitemap_url, timeout=20)
@@ -112,44 +120,79 @@ def fetch_visitpoitiers():
                 continue
             visited.add(link)
             time.sleep(0.3)
+
             try:
                 r2 = requests.get(link, headers=HEADERS, timeout=10)
                 soup2 = BeautifulSoup(r2.text, "html.parser")
 
+                # --- TITRE & DESCRIPTION ---
                 title = (soup2.find("h1") or {}).get_text(strip=True)
                 desc = (soup2.find("p") or {}).get_text(strip=True)
                 og_img = soup2.find("meta", property="og:image")
                 image = og_img["content"] if og_img else ""
 
-                ev = {"title": norm_text(title), "description": norm_text(desc), "link": link, "image": image, "source": "visitpoitiers"}
-                events.append(ev)
+                # --- ADRESSE ---
+                address = ""
+                for p in soup2.find_all("p"):
+                    if any(v in p.text for v in ["Poitiers", "Saint-Benoît", "Chauvigny", "Ligugé", "Chasseneuil"]):
+                        address = norm_text(p.text)
+                        break
 
-                # Liens externes utiles
+                # --- HORAIRES D’OUVERTURE ---
+                opening_hours = []
+                for ul in soup2.find_all("ul"):
+                    text = norm_text(ul.get_text(" ", strip=True))
+                    if any(word in text.lower() for word in ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]):
+                        opening_hours.append(text)
+                if not opening_hours:
+                    for p in soup2.find_all("p"):
+                        text = p.get_text(" ", strip=True)
+                        if re.search(r"\d{1,2}h", text):
+                            opening_hours.append(norm_text(text))
+
+                ev = {
+                    "title": norm_text(title),
+                    "description": norm_text(desc),
+                    "link": link,
+                    "image": image,
+                    "source": "visitpoitiers",
+                    "address": address or "",
+                    "opening_hours": opening_hours or []
+                }
+                results.append(ev)
+
+                # --- LIENS EXTERNES UTILES ---
                 for a in soup2.select("a[href]"):
                     href = a["href"]
-                    if not href.startswith("http"): continue
+                    if not href.startswith("http"):
+                        continue
                     domain = urlparse(href).netloc.replace("www.", "")
-                    if any(bad in domain for bad in IGNORE_DOMAINS): continue
+                    if any(bad in domain for bad in IGNORE_DOMAINS):
+                        continue
 
                     if any(dom in domain for dom in EVENT_DOMAINS):
                         meta = extract_external_metadata(href)
-                        if meta["events"]:  # si c'est CGR avec séances
+                        if meta["events"]:  # si c’est CGR avec séances
                             for s in meta["events"]:
-                                events.append({
+                                results.append({
                                     "title": f"{s['film']} – Cinéma CGR Buxerolles",
                                     "description": ", ".join(s["horaires"]),
                                     "link": href,
                                     "source": "cgrcinemas.fr",
                                     "image": meta["image"],
-                                    "location": "CGR Buxerolles"
+                                    "location": "CGR Buxerolles",
+                                    "address": address,
+                                    "opening_hours": opening_hours
                                 })
                         else:
-                            events.append({
+                            results.append({
                                 "title": meta["title"] or domain,
                                 "description": meta["description"],
                                 "link": href,
                                 "source": domain,
-                                "image": meta["image"]
+                                "image": meta["image"],
+                                "address": address,
+                                "opening_hours": opening_hours
                             })
 
             except Exception as e:
@@ -158,8 +201,8 @@ def fetch_visitpoitiers():
     except Exception as e:
         print("[VisitPoitiers] ERREUR:", e)
 
-    print(f"[VisitPoitiers] ✅ {len(events)} événements collectés (avec cache)")
-    return events
+    print(f"[VisitPoitiers] ✅ {len(results)} établissements/événements collectés (avec adresses et horaires)")
+    return results
 
 
 def main():
@@ -171,8 +214,9 @@ def main():
             seen.add(k)
             dedup.append(e)
     with open("events.json", "w", encoding="utf-8") as f:
-        json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "events": dedup}, f, ensure_ascii=False, indent=2)
-    print(f"💾 {len(dedup)} événements uniques sauvegardés dans events.json")
+        json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "events": dedup},
+                  f, ensure_ascii=False, indent=2)
+    print(f"💾 {len(dedup)} établissements/événements sauvegardés dans events.json")
 
 
 if __name__ == "__main__":
