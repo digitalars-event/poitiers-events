@@ -172,9 +172,9 @@ def fetch_meetup_ics():
     print(f"[Meetup] {len(items)} événements collectés (à venir)")
     return items
 
-# --- SOURCE 4 : VisitPoitiers (à partir du plan du site complet) ---
+# --- SOURCE 4 : VisitPoitiers (à partir du plan du site complet + IMAGES) ---
 def fetch_visitpoitiers():
-    print("[VisitPoitiers] Scraping depuis le plan du site…")
+    print("[VisitPoitiers] Scraping depuis le plan du site (avec images)…")
     base = VISITPOITIERS_BASE
     sitemap_url = f"{base}/plan-du-site/"
     visited, events = set(), []
@@ -184,7 +184,7 @@ def fetch_visitpoitiers():
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
 
-        # 1️⃣ Extraire toutes les URLs des activités
+        # 1️⃣ Extraire toutes les URLs des activités et événements
         activity_links = [a["href"] for a in soup.select(".elementor-sitemap-activite-list a[href]")]
         event_links = [a["href"] for a in soup.select(".elementor-sitemap-evenement-list a[href]")]
         all_links = list(set(activity_links + event_links))
@@ -197,42 +197,57 @@ def fetch_visitpoitiers():
                 continue
             visited.add(link)
             time.sleep(0.3)
+
             try:
                 r2 = requests.get(link, timeout=15)
                 if "text/html" not in r2.headers.get("Content-Type", ""):
                     continue
                 soup2 = BeautifulSoup(r2.text, "html.parser")
 
-                # Titre
+                # --- Titre ---
                 title_tag = soup2.find("h1")
                 title = title_tag.get_text(strip=True) if title_tag else link.split("/")[-2].replace("-", " ").title()
 
-                # Description courte
+                # --- Description ---
                 desc_tag = soup2.find("p")
                 desc = desc_tag.get_text(strip=True) if desc_tag else ""
 
-                # Adresse
+                # --- Adresse ---
                 address = ""
                 for p in soup2.find_all("p"):
                     if any(v in p.text for v in ["Poitiers", "Saint-Benoît", "Chauvigny", "Ligugé", "Chasseneuil"]):
                         address = norm_text(p.text)
                         break
 
-                # Déterminer le type
+                # --- Image principale ---
+                image_url = None
+                img_tag = soup2.find("img")
+                if img_tag and img_tag.get("src"):
+                    image_url = urljoin(link, img_tag["src"])
+                else:
+                    # Chercher un style de fond CSS
+                    bg_div = soup2.find("div", style=re.compile("background-image", re.I))
+                    if bg_div:
+                        match = re.search(r'url\(["\']?(.*?)["\']?\)', bg_div["style"])
+                        if match:
+                            image_url = urljoin(link, match.group(1))
+
+                # --- Type ---
                 source_type = "visitpoitiers-activite" if "/activite/" in link else "visitpoitiers-evenement"
 
-                # Créer l'objet principal
+                # --- Enregistrement ---
                 ev = {
                     "title": title,
                     "date_start": START_ISO,
                     "location": address or "Grand Poitiers",
                     "link": link,
                     "source": source_type,
-                    "description": desc
+                    "description": desc,
+                    "image": image_url or ""
                 }
                 events.append(ev)
 
-                # 3️⃣ Chercher des liens d'agenda externes
+                # --- Liens d’agendas externes ---
                 for a2 in soup2.find_all("a", href=True):
                     href2 = a2["href"]
                     if any(k in href2.lower() for k in [
@@ -249,7 +264,8 @@ def fetch_visitpoitiers():
                                 "location": "Grand Poitiers",
                                 "link": full_link,
                                 "source": "visitpoitiers-agenda",
-                                "description": "Lien externe détecté sur la page de l'établissement ou de l'événement."
+                                "description": "Lien externe détecté sur la page de l'établissement ou de l'événement.",
+                                "image": image_url or ""
                             })
 
             except Exception as e:
@@ -260,8 +276,6 @@ def fetch_visitpoitiers():
 
     print(f"[VisitPoitiers] {len(events)} pages collectées (activités + événements + liens externes)")
     return events
-
-
 
 # --- Scraper des pages externes (agenda, billeterie, etc.) ---
 def scrape_external_agenda(url, parent_name):
