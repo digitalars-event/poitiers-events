@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-# coding: utf-8
-"""
-Agrégateur d'événements Poitiers (avec scraping VisitPoitiers.fr approfondi)
-- Récupère les vraies dates des événements ("du ... au ...")
-- Extrait correctement les images (Open Graph, images principales ou CSS)
-- Filtre les événements passés
-- Scrape aussi les liens externes d'événements (Facebook, Billetweb, etc.)
-  et récupère automatiquement leurs métadonnées
-"""
-
 import os, sys, json, re, traceback, time
 from datetime import datetime, timezone
 from typing import Optional
@@ -21,100 +10,93 @@ CITY = "Poitiers"
 TODAY_UTC = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
 VISITPOITIERS_BASE = "https://visitpoitiers.fr"
 
-# Domaines considérés comme plateformes d'événements
-EVENT_DOMAINS = [
-    "facebook.com",
-    "weezevent.com",
-    "billetweb.fr",
-    "eventbrite.fr",
-    "helloasso.com",
-    "yurplan.com"
-]
+CACHE_FILE = "meta_cache.json"
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; PoitiersScraper/1.0; +https://visitpoitiers.fr)"}
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; PoitiersScraper/1.0; +https://visitpoitiers.fr)"
-}
+# Charger le cache
+if os.path.exists(CACHE_FILE):
+    with open(CACHE_FILE, "r", encoding="utf-8") as f:
+        META_CACHE = json.load(f)
+else:
+    META_CACHE = {}
 
-# --- UTILS ---
-def parse_date(text) -> Optional[datetime]:
-    if not text:
-        return None
+def save_cache():
+    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(META_CACHE, f, ensure_ascii=False, indent=2)
+
+def parse_date(text):
     try:
         dt = dp.parse(str(text), dayfirst=True, fuzzy=True)
-        if not dt.tzinfo:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(timezone.utc)
+        return dt.replace(tzinfo=timezone.utc)
     except Exception:
         return None
 
-
-def norm_text(s: str) -> str:
+def norm_text(s):
     return re.sub(r"\s+", " ", (s or "").strip())
-
 
 def dedup_key(ev):
     return f"{norm_text(ev.get('title','')).lower()}::{norm_text(ev.get('link','')).lower()}"
 
+# Liste des domaines sociaux/inutiles à ignorer
+IGNORE_DOMAINS = [
+    "facebook.com", "instagram.com", "linkedin.com", "youtube.com",
+    "twitter.com", "tiktok.com", "tripadvisor", "google", "maps", "pinterest"
+]
 
-def clamp_len(s: str, n: int):
-    s = s or ""
-    return (s[:n-1] + "…") if len(s) > n else s
+# Liste de domaines "intéressants"
+EVENT_DOMAINS = [
+    "billetweb.fr", "eventbrite.fr", "helloasso.com", "weezevent.com", "yurplan.com", "cgrcinemas.fr"
+]
 
+def extract_external_metadata(url):
+    """Récupère les métadonnées d'un lien externe avec cache"""
+    if url in META_CACHE:
+        return META_CACHE[url]
 
-# --- EXTRACT META FROM EXTERNAL LINK ---
-def extract_external_metadata(url: str) -> dict:
-    """Récupère les métadonnées (title, desc, image, date) d'un lien externe."""
-    meta = {
-        "title": None,
-        "description": None,
-        "image": None,
-        "date_start": None
-    }
-
+    meta = {"title": None, "description": None, "image": None, "date_start": None, "events": []}
     try:
-        r = requests.get(url, headers=HEADERS, timeout=10)
+        r = requests.get(url, headers=HEADERS, timeout=8)
         if "text/html" not in r.headers.get("Content-Type", ""):
             return meta
-
         soup = BeautifulSoup(r.text, "html.parser")
 
-        # --- Titre ---
         og_title = soup.find("meta", property="og:title")
-        if og_title and og_title.get("content"):
-            meta["title"] = norm_text(og_title["content"])
-        elif soup.title:
-            meta["title"] = norm_text(soup.title.text)
-
-        # --- Description ---
         og_desc = soup.find("meta", property="og:description")
-        if og_desc and og_desc.get("content"):
-            meta["description"] = norm_text(og_desc["content"])
-        else:
-            desc_tag = soup.find("meta", attrs={"name": "description"})
-            if desc_tag and desc_tag.get("content"):
-                meta["description"] = norm_text(desc_tag["content"])
-
-        # --- Image ---
         og_image = soup.find("meta", property="og:image")
-        if og_image and og_image.get("content"):
-            meta["image"] = og_image["content"]
 
-        # --- Date ---
-        # Recherche simple d'une date dans le texte (format jour/mois/année)
-        text = soup.get_text(" ", strip=True)
-        m = re.search(r"\b(\d{1,2}/\d{1,2}/\d{4})\b", text)
-        if m:
-            meta["date_start"] = parse_date(m.group(1))
+        meta["title"] = norm_text(og_title["content"]) if og_title else (soup.title.string if soup.title else None)
+        meta["description"] = norm_text(og_desc["content"]) if og_desc else ""
+        meta["image"] = og_image["content"] if og_image else ""
+
+        # Si c’est un site CGR, on extrait les séances
+        if "cgrcinemas.fr" in url:
+            meta["events"] = extract_cgr_showtimes(url, soup)
 
     except Exception as e:
         print(f"[META] Erreur sur {url}: {e}")
 
+    META_CACHE[url] = meta
+    save_cache()
     return meta
 
 
-# --- SCRAPER PRINCIPAL ---
+def extract_cgr_showtimes(url, soup):
+    """Détecte et extrait les séances de films sur le site CGR."""
+    showtimes = []
+    try:
+        blocks = soup.find_all("div", class_=re.compile("showtimes|movie|film", re.I))
+        for b in blocks[:10]:
+            title = b.find("h3") or b.find("h2")
+            movie_title = title.get_text(strip=True) if title else "Séance"
+            times = re.findall(r"\b\d{1,2}h\d{0,2}\b", b.get_text(" ", strip=True))
+            if times:
+                showtimes.append({"film": movie_title, "horaires": times})
+    except Exception as e:
+        print(f"[CGR] Erreur extraction séances: {e}")
+    return showtimes
+
+
 def fetch_visitpoitiers():
-    print("[VisitPoitiers] Scraping depuis le plan du site (avec liens externes enrichis)…")
     sitemap_url = f"{VISITPOITIERS_BASE}/plan-du-site/"
     visited, events = set(), []
 
@@ -122,157 +104,75 @@ def fetch_visitpoitiers():
         r = requests.get(sitemap_url, timeout=20)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
+        all_links = [a["href"] for a in soup.select(".elementor-sitemap-activite-list a[href], .elementor-sitemap-evenement-list a[href]")]
+        print(f"[VisitPoitiers] {len(all_links)} liens détectés")
 
-        activity_links = [a["href"] for a in soup.select(".elementor-sitemap-activite-list a[href]")]
-        event_links = [a["href"] for a in soup.select(".elementor-sitemap-evenement-list a[href]")]
-        all_links = list(set(activity_links + event_links))
-        print(f" - {len(activity_links)} activités et {len(event_links)} événements détectés.")
-
-        for link in all_links:
+        for link in all_links[:150]:
             if link in visited:
                 continue
             visited.add(link)
-            time.sleep(0.4)
-
+            time.sleep(0.3)
             try:
-                r2 = requests.get(link, headers=HEADERS, timeout=15)
-                if "text/html" not in r2.headers.get("Content-Type", ""):
-                    continue
+                r2 = requests.get(link, headers=HEADERS, timeout=10)
                 soup2 = BeautifulSoup(r2.text, "html.parser")
 
-                # --- TITRE ---
-                title_tag = soup2.find("h1")
-                title = title_tag.get_text(strip=True) if title_tag else link.split("/")[-2].replace("-", " ").title()
+                title = (soup2.find("h1") or {}).get_text(strip=True)
+                desc = (soup2.find("p") or {}).get_text(strip=True)
+                og_img = soup2.find("meta", property="og:image")
+                image = og_img["content"] if og_img else ""
 
-                # --- DESCRIPTION ---
-                desc_tag = soup2.find("p")
-                desc = desc_tag.get_text(strip=True) if desc_tag else ""
-
-                # --- ADRESSE ---
-                address = ""
-                for p in soup2.find_all("p"):
-                    if any(v in p.text for v in ["Poitiers", "Saint-Benoît", "Chauvigny", "Ligugé", "Chasseneuil"]):
-                        address = norm_text(p.text)
-                        break
-
-                # --- IMAGE ---
-                image_url = None
-                og_tag = soup2.find("meta", property="og:image")
-                if og_tag and og_tag.get("content"):
-                    image_url = urljoin(link, og_tag["content"])
-
-                # --- DATES ("du ... au ...") ---
-                date_start, date_end = None, None
-                date_section = soup2.select_one(".lesdates h2")
-                if date_section:
-                    text = norm_text(date_section.get_text(" ", strip=True))
-                    match = re.search(r"du\s+([\d/]+).*?au\s+([\d/]+)", text, re.I)
-                    if match:
-                        date_start = parse_date(match.group(1))
-                        date_end = parse_date(match.group(2))
-                    else:
-                        m2 = re.search(r"(\d{1,2}/\d{1,2}/\d{4})", text)
-                        if m2:
-                            date_start = parse_date(m2.group(1))
-
-                # --- TYPE ---
-                is_event = "/evenement/" in link
-                source_type = "visitpoitiers-evenement" if is_event else "visitpoitiers-activite"
-
-                # --- FILTRAGE DES ÉVÉNEMENTS PASSÉS ---
-                if date_end and date_end < TODAY_UTC:
-                    continue
-                if date_start and not date_end and date_start < TODAY_UTC:
-                    continue
-
-                # --- ENREGISTREMENT DE L'ÉVÉNEMENT PRINCIPAL ---
-                ev = {
-                    "title": clamp_len(title, 220),
-                    "location": address or "Grand Poitiers",
-                    "link": link,
-                    "source": source_type,
-                    "description": norm_text(desc),
-                    "image": image_url or ""
-                }
-
-                if date_start:
-                    ev["date_start"] = date_start.isoformat()
-                if date_end:
-                    ev["date_end"] = date_end.isoformat()
-
+                ev = {"title": norm_text(title), "description": norm_text(desc), "link": link, "image": image, "source": "visitpoitiers"}
                 events.append(ev)
 
-                # --- EXTRACTION DES LIENS EXTERNES ---
+                # Liens externes utiles
                 for a in soup2.select("a[href]"):
                     href = a["href"]
-                    # --- DÉTECTION DYNAMIQUE DES LIENS EXTERNES ---
-                    if not href.startswith("http") or "visitpoitiers.fr" in href:
-                        continue
-                    
-                    # Domaines à ignorer explicitement
-                    IGNORE_DOMAINS = [
-                        "google.com", "instagram.com", "youtube.com", "tiktok.com",
-                        "tripadvisor.", "twitter.com", "linkedin.com", "pinterest.", "maps."
-                    ]
-                    
-                    if any(bad in href for bad in IGNORE_DOMAINS):
-                        continue
-                    
-                    # Vérifie qu'il ne s'agit pas d'un lien de tracking
-                    if any(bad in href for bad in ["utm_", "analytics", "facebook.com/tr", "pixel"]):
-                        continue
-
-
+                    if not href.startswith("http"): continue
                     domain = urlparse(href).netloc.replace("www.", "")
-                    meta = extract_external_metadata(href)
-                    time.sleep(0.6)
+                    if any(bad in domain for bad in IGNORE_DOMAINS): continue
 
-                    ev_ext = {
-                        "title": meta["title"] or f"Événement sur {domain}",
-                        "location": address or CITY,
-                        "link": href,
-                        "source": domain,
-                        "parent": title,
-                        "description": meta["description"] or f"Événement référencé via {title}",
-                        "image": meta["image"] or image_url or ""
-                    }
-
-                    if meta["date_start"]:
-                        ev_ext["date_start"] = meta["date_start"].isoformat()
-
-                    # Filtrage des passés
-                    if "date_start" in ev_ext:
-                        d = parse_date(ev_ext["date_start"])
-                        if d and d < TODAY_UTC:
-                            continue
-
-                    events.append(ev_ext)
+                    if any(dom in domain for dom in EVENT_DOMAINS):
+                        meta = extract_external_metadata(href)
+                        if meta["events"]:  # si c'est CGR avec séances
+                            for s in meta["events"]:
+                                events.append({
+                                    "title": f"{s['film']} – Cinéma CGR Buxerolles",
+                                    "description": ", ".join(s["horaires"]),
+                                    "link": href,
+                                    "source": "cgrcinemas.fr",
+                                    "image": meta["image"],
+                                    "location": "CGR Buxerolles"
+                                })
+                        else:
+                            events.append({
+                                "title": meta["title"] or domain,
+                                "description": meta["description"],
+                                "link": href,
+                                "source": domain,
+                                "image": meta["image"]
+                            })
 
             except Exception as e:
                 print(f"[VisitPoitiers] Erreur sur {link}: {e}")
 
     except Exception as e:
-        print("[VisitPoitiers] ERREUR sur le plan du site:", e)
+        print("[VisitPoitiers] ERREUR:", e)
 
-    print(f"[VisitPoitiers] ✅ {len(events)} éléments collectés (y compris événements externes enrichis)")
+    print(f"[VisitPoitiers] ✅ {len(events)} événements collectés (avec cache)")
     return events
 
 
 def main():
     all_items = fetch_visitpoitiers()
     dedup, seen = [], set()
-
     for e in all_items:
         k = dedup_key(e)
         if k not in seen:
             seen.add(k)
             dedup.append(e)
-
     with open("events.json", "w", encoding="utf-8") as f:
-        json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "events": dedup},
-                  f, ensure_ascii=False, indent=2)
-
-    print(f"\n💾 {len(dedup)} éléments écrits dans events.json (internes + externes enrichis)")
+        json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "events": dedup}, f, ensure_ascii=False, indent=2)
+    print(f"💾 {len(dedup)} événements uniques sauvegardés dans events.json")
 
 
 if __name__ == "__main__":
