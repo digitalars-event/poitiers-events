@@ -172,15 +172,15 @@ def fetch_meetup_ics():
     print(f"[Meetup] {len(items)} événements collectés (à venir)")
     return items
 
-# --- SOURCE 4 : VisitPoitiers ---
+# --- SOURCE 4 : VisitPoitiers (scraping profond amélioré) ---
 def fetch_visitpoitiers():
-    print("[VisitPoitiers] Scraping pages d’activités…")
+    print("[VisitPoitiers] Scraping complet des établissements et agendas…")
     base = VISITPOITIERS_BASE
     visited, events = set(), []
     start_url = f"{base}/activites/"
-    
+
     try:
-        r = requests.get(start_url, timeout=15)
+        r = requests.get(start_url, timeout=20)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
 
@@ -191,59 +191,60 @@ def fetch_visitpoitiers():
             if re.search(r"/activite/[^/]+/?$", href):
                 activity_links.add(urljoin(base, href))
 
-        print(f" - {len(activity_links)} pages d’activités détectées.")
+        print(f" - {len(activity_links)} pages d’établissements détectées.")
 
-        # 2️⃣ Parcourir chaque page /activite/
+        # 2️⃣ Explorer chaque page /activite/
         for link in activity_links:
             if link in visited:
                 continue
             visited.add(link)
-            time.sleep(0.4)
+            time.sleep(0.5)
             try:
-                r2 = requests.get(link, timeout=15)
+                r2 = requests.get(link, timeout=20)
                 if "text/html" not in r2.headers.get("Content-Type", ""):
                     continue
                 soup2 = BeautifulSoup(r2.text, "html.parser")
 
-                # Nom principal de la page (souvent h1)
+                # Nom de l'établissement
                 title_tag = soup2.find(["h1", "h2"])
                 title = title_tag.get_text(strip=True) if title_tag else link.split("/")[-2].replace("-", " ").title()
 
-                # Extraire description courte
+                # Description principale
                 desc_tag = soup2.find("p")
                 desc = desc_tag.get_text(strip=True) if desc_tag else ""
 
-                # Créer un "événement" de type "établissement"
+                # Adresse ou texte contenant "Rue", "Poitiers", "Chasseneuil", etc.
+                address = ""
+                for p in soup2.find_all("p"):
+                    if any(ville in p.text for ville in ["Poitiers", "Saint-Benoît", "Chauvigny", "Chasseneuil", "Ligugé"]):
+                        address = norm_text(p.text)
+                        break
+
+                # Enregistrer l’établissement
                 ev = {
                     "title": title,
-                    "date_start": START_ISO,  # non daté, mais on met la date du jour
-                    "location": "Poitiers",
+                    "date_start": START_ISO,
+                    "location": address or "Poitiers",
                     "link": link,
                     "source": "visitpoitiers",
                     "description": desc
                 }
                 events.append(ev)
 
-                # 3️⃣ Chercher des liens vers agendas externes
+                # 3️⃣ Chercher des liens externes liés à des événements
                 for a2 in soup2.find_all("a", href=True):
-                    href2 = a2["href"]
+                    href2 = a2["href"].strip()
                     if any(k in href2.lower() for k in [
-                        "agenda", "event", "evenement", "calendrier", "openagenda",
-                        "facebook.com/events", "google.com/calendar"
+                        "agenda", "event", "evenement", "billet", "calendrier", "openagenda",
+                        "facebook.com/events", "eventbrite", "weezevent", "billetweb"
                     ]):
                         full_link = urljoin(link, href2)
                         if full_link not in visited:
                             visited.add(full_link)
-                            print(f"   ↳ Agenda trouvé : {full_link}")
-                            # Ajouter comme “source découverte”
-                            events.append({
-                                "title": f"Agenda lié à {title}",
-                                "date_start": START_ISO,
-                                "location": "Poitiers",
-                                "link": full_link,
-                                "source": "visitpoitiers-agenda",
-                                "description": "Lien externe vers un calendrier ou agenda."
-                            })
+                            print(f"   ↳ Agenda externe trouvé : {full_link}")
+                            # Tentative de scrapping de la page externe
+                            external_events = scrape_external_agenda(full_link, title)
+                            events.extend(external_events)
 
             except Exception as e:
                 print(f"[VisitPoitiers] Erreur sur {link}: {e}")
@@ -251,10 +252,52 @@ def fetch_visitpoitiers():
     except Exception as e:
         print("[VisitPoitiers] ERREUR racine:", e)
 
-    print(f"[VisitPoitiers] {len(events)} pages collectées (activités + agendas externes)")
+    print(f"[VisitPoitiers] {len(events)} éléments collectés (établissements + événements)")
     return events
 
 
+# --- Scraper des pages externes (agenda, billeterie, etc.) ---
+def scrape_external_agenda(url, parent_name):
+    """Explore une page externe (OpenAgenda, Facebook Events, BilletWeb, etc.)
+    pour extraire les événements présents."""
+    items = []
+    try:
+        r = requests.get(url, timeout=15)
+        if "text/html" not in r.headers.get("Content-Type", ""):
+            return items
+        soup = BeautifulSoup(r.text, "html.parser")
+
+        # Cas général : détecter des blocs d’événements
+        for block in soup.find_all(["article", "div"], class_=re.compile("(event|evenement|show|billett)", re.I)):
+            title = block.get_text(" ", strip=True)[:180]
+            if not title:
+                continue
+            ev = {
+                "title": f"{parent_name} → {title}",
+                "date_start": START_ISO,
+                "location": "Poitiers",
+                "link": url,
+                "source": "visitpoitiers-external",
+                "description": "Événement détecté sur une page externe liée à l'établissement."
+            }
+            items.append(ev)
+
+        # Si aucun bloc, récupérer au moins le titre principal
+        if not items:
+            title_tag = soup.find(["h1", "h2"])
+            if title_tag:
+                items.append({
+                    "title": f"{parent_name} → {title_tag.get_text(strip=True)}",
+                    "date_start": START_ISO,
+                    "location": "Poitiers",
+                    "link": url,
+                    "source": "visitpoitiers-external",
+                    "description": "Page externe associée à un établissement."
+                })
+
+    except Exception as e:
+        print(f"[Externe] Erreur scraping {url}: {e}")
+    return items
 
 # --- MAIN ---
 def main():
