@@ -11,7 +11,7 @@ Sources actives :
 
 import os, sys, json, re, traceback, time
 from datetime import datetime, timezone
-from typing import List, Dict, Any, Optional
+from typing import Optional
 from urllib.parse import urljoin
 import requests
 from dateutil import parser as dp
@@ -23,7 +23,7 @@ CITY = "Poitiers"
 CENTER_LAT = 46.5802
 CENTER_LON = 0.3404
 RADIUS_KM = 30
-TODAY_UTC = datetime.now(timezone.utc)
+TODAY_UTC = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
 START_ISO = TODAY_UTC.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 MEETUP_ICS_URLS = [
@@ -40,13 +40,14 @@ VISITPOITIERS_BASE = "https://visitpoitiers.fr"
 
 # --- UTILS ---
 def parse_date(text) -> Optional[datetime]:
+    """Convertit un texte en datetime UTC, ou None."""
     if not text:
         return None
     try:
         dt = dp.parse(str(text), fuzzy=True)
         if not dt.tzinfo:
             dt = dt.replace(tzinfo=timezone.utc)
-        return dt
+        return dt.astimezone(timezone.utc)
     except Exception:
         return None
 
@@ -66,10 +67,19 @@ def clamp_len(s: str, n: int):
 
 def make_event(title, date_start, url, source,
                location=None, date_end=None, description=None):
+    """Crée un événement normalisé, et filtre ceux déjà passés."""
     title = clamp_len(norm_text(title), 220)
     if not title:
         return None
-    ds = parse_date(date_start) or TODAY_UTC
+
+    ds = parse_date(date_start)
+    if not ds:
+        return None
+
+    # 🔥 Filtrage des événements passés
+    if ds < TODAY_UTC:
+        return None
+
     return {
         "title": title,
         "date_start": ds.isoformat(),
@@ -111,7 +121,7 @@ def fetch_openagenda():
         except Exception as e:
             print("[OpenAgenda] ERREUR:", e)
             break
-    print(f"[OpenAgenda] {len(items)} événements collectés")
+    print(f"[OpenAgenda] {len(items)} événements collectés (à venir)")
     return items
 
 
@@ -137,7 +147,7 @@ def fetch_ticketmaster():
                 items.append(e)
     except Exception as e:
         print("[Ticketmaster] ERREUR:", e)
-    print(f"[Ticketmaster] {len(items)} événements collectés")
+    print(f"[Ticketmaster] {len(items)} événements collectés (à venir)")
     return items
 
 
@@ -159,7 +169,7 @@ def fetch_meetup_ics():
                     items.append(e)
         except Exception as e:
             print(f"[Meetup ICS] ERREUR sur {url} :", e)
-    print(f"[Meetup] {len(items)} événements collectés")
+    print(f"[Meetup] {len(items)} événements collectés (à venir)")
     return items
 
 
@@ -209,7 +219,7 @@ def fetch_visitpoitiers():
 
     for u in start_urls:
         crawl(u)
-    print(f"[VisitPoitiers] {len(events)} événements collectés")
+    print(f"[VisitPoitiers] {len(events)} événements collectés (à venir)")
     return events
 
 
@@ -232,7 +242,7 @@ def main():
     with open("events.json", "w", encoding="utf-8") as f:
         json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "events": dedup},
                   f, ensure_ascii=False, indent=2)
-    print(f"\n✅ {len(dedup)} événements écrits dans events.json")
+    print(f"\n✅ {len(dedup)} événements écrits dans events.json (futurs uniquement)")
 
 
 if __name__ == "__main__":
