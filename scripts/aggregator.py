@@ -4,7 +4,7 @@
 Agrégateur d'événements Poitiers (avec scraping VisitPoitiers.fr approfondi)
 - Récupère les vraies dates des événements ("du ... au ...")
 - Extrait correctement les images (Open Graph, images principales ou CSS)
-- Ne met pas de date par défaut pour les établissements
+- Filtre automatiquement les événements passés
 """
 
 import os, sys, json, re, traceback, time
@@ -117,13 +117,11 @@ def fetch_visitpoitiers():
                 date_section = soup2.select_one(".lesdates h2")
                 if date_section:
                     text = norm_text(date_section.get_text(" ", strip=True))
-                    # Exemple : "du 01/10/2025 au 30/11/2025"
                     match = re.search(r"du\s+([\d/]+).*?au\s+([\d/]+)", text, re.I)
                     if match:
                         date_start = parse_date(match.group(1))
                         date_end = parse_date(match.group(2))
                     else:
-                        # Cas d'une seule date
                         m2 = re.search(r"(\d{1,2}/\d{1,2}/\d{4})", text)
                         if m2:
                             date_start = parse_date(m2.group(1))
@@ -131,6 +129,13 @@ def fetch_visitpoitiers():
                 # --- TYPE ---
                 is_event = "/evenement/" in link
                 source_type = "visitpoitiers-evenement" if is_event else "visitpoitiers-activite"
+
+                # --- FILTRE DES ÉVÉNEMENTS PASSÉS ---
+                # Si l'événement est terminé avant aujourd'hui → on le saute
+                if date_end and date_end < TODAY_UTC:
+                    continue
+                if date_start and not date_end and date_start < TODAY_UTC:
+                    continue
 
                 # --- CONSTRUCTION DE L'ÉVÉNEMENT ---
                 ev = {
@@ -142,7 +147,6 @@ def fetch_visitpoitiers():
                     "image": image_url or ""
                 }
 
-                # Ajouter les dates uniquement si elles sont présentes
                 if date_start:
                     ev["date_start"] = date_start.isoformat()
                 if date_end:
@@ -156,7 +160,7 @@ def fetch_visitpoitiers():
     except Exception as e:
         print("[VisitPoitiers] ERREUR sur le plan du site:", e)
 
-    print(f"[VisitPoitiers] ✅ {len(events)} éléments collectés (activités + événements)")
+    print(f"[VisitPoitiers] ✅ {len(events)} événements/activités collectés (non expirés uniquement)")
     return events
 
 
@@ -173,7 +177,7 @@ def main():
     with open("events.json", "w", encoding="utf-8") as f:
         json.dump({"generated_at": datetime.now(timezone.utc).isoformat(), "events": dedup},
                   f, ensure_ascii=False, indent=2)
-    print(f"\n💾 {len(dedup)} éléments écrits dans events.json")
+    print(f"\n💾 {len(dedup)} éléments écrits dans events.json (uniquement à venir ou en cours)")
 
 
 if __name__ == "__main__":
