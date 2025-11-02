@@ -92,7 +92,7 @@
       <div class="brand">
         <span class="dot" aria-hidden="true"></span>
         <div>
-          <div class="subtitle">Prototype clair – données démo + prêt pour branchement Google Alerts / JSON</div>
+          <div class="subtitle">Prototype clair – données JSON dynamiques (GitHub Actions)</div>
         </div>
       </div>
       <div class="chips" id="liveInfo">
@@ -135,27 +135,15 @@
     <section class="grid" id="grid" aria-live="polite"></section>
 
     <footer>
-      <p>✦ Données de démonstration. Cette page lira ensuite un <strong>events.json</strong> auto-généré (Google Alerts ➡ GitHub Actions) ou une API publique.</p>
+      <p>✦ Les données proviennent d’un <strong>events.json</strong> généré automatiquement via GitHub Actions.</p>
     </footer>
   </div>
-  <!-- Données de démo embarquées + script d'affichage des cartes -->
-  <script id="seed" type="application/json">{
-    "events": [
-      {"title":"Concert indie – Le Confort Moderne","date":"2025-11-07T20:30:00+01:00","location":"Le Confort Moderne, Poitiers","price":0,"category":["Musique","Festival"],"tags":["poitiers","concert","live"],"image":"","link":"https://example.com/confort-indie","source":"agenda-ville"},
-      {"title":"Exposition photo – Regards sur le Clain","date":"2025-11-09T10:00:00+01:00","location":"EMF, Poitiers","price":5,"category":["Exposition"],"tags":["expo","photo"],"image":"","link":"https://example.com/expo-clain","source":"openagenda"},
-      {"title":"Match PB86 – Basket Pro B","date":"2025-11-10T19:00:00+01:00","location":"Arena Futuroscope","price":12,"category":["Sport"],"tags":["basket","pb86"],"image":"","link":"https://example.com/pb86","source":"club"},
-      {"title":"Marché de créateurs – Centre-ville","date":"2025-11-08T09:00:00+01:00","location":"Place Charles de Gaulle, Poitiers","price":0,"category":["Marché","Familial"],"tags":["artisanat","famille"],"image":"","link":"https://example.com/marche-createurs","source":"asso"},
-      {"title":"Conférence – Histoire médiévale du Poitou","date":"2025-11-12T18:30:00+01:00","location":"Université de Poitiers","price":0,"category":["Conférence"],"tags":["université","culture"],"image":"","link":"https://example.com/conference-poitou","source":"univ"},
-      {"title":"Théâtre – Molière revisité","date":"2025-11-13T20:00:00+01:00","location":"Théâtre Auditorium de Poitiers (TAP)","price":18,"category":["Théâtre"],"tags":["tap","pièce"],"image":"","link":"https://example.com/tap-moliere","source":"tap"}
-    ]
-  }</script>
 
   <script>
     function fmtDate(iso){
       var d=new Date(iso);
       return new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(d).replaceAll('.','');
     }
-    function isSameOrAfter(dateISO,minISO){ if(!minISO) return true; return new Date(dateISO)>=new Date(minISO); }
     function relDays(iso){
       var d=new Date(iso), t=new Date();
       t.setHours(0,0,0,0); d.setHours(0,0,0,0);
@@ -168,54 +156,71 @@
     function slug(x){ if(!x) return ''; var s=x.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); return s.replace(/[^a-z0-9]+/g,' ').trim(); }
 
     async function loadEvents(){
-      try{ var r=await fetch('./events.json',{cache:'no-store'}); if(r.ok) return await r.json(); }catch(e){}
-      return JSON.parse(document.getElementById('seed').textContent);
+      try {
+        const r = await fetch('./events.json?v=' + Date.now(), {cache:'no-store'});
+        if (r.ok) return await r.json();
+      } catch(e) { console.error("Erreur de chargement JSON", e); }
+      return { events: [] };
     }
 
     function render(items){
-      var grid=document.getElementById('grid');
+      const grid=document.getElementById('grid');
       grid.innerHTML='';
-      if(!items.length){ grid.innerHTML='<div class="panel empty">Aucun événement ne correspond aux filtres.</div>'; return; }
-      items.forEach(function(ev){
-        var free=Number(ev.price)===0;
-        var cover='<div class="cover"><div class="date-badge">'+relDays(ev.date)+'</div></div>';
-        var cats=(ev.category||[]).map(function(c){return '<span class="chip">'+c+'</span>';}).join(' ');
-        var tags=(ev.tags||[]).slice(0,3).map(function(t){return '<span class="chip">#'+t+'</span>';}).join(' ');
-        var price= free? '<span class="chip ok">Gratuit</span>' : '<span class="chip">≈ '+ev.price+' €</span>';
-        var html= cover+
-          '<div class="content">'+
-            '<h3>'+ev.title+'</h3>'+
-            '<div class="meta">'+fmtDate(ev.date)+' · '+(ev.location||'Poitiers')+'</div>'+
-            '<div class="chips">'+cats+' '+price+' '+tags+'</div>'+
-          '</div>'+
-          '<div class="actions">'+
-            '<a class="ghost" href="'+ev.link+'" target="_blank" rel="noopener">Source : '+(ev.source||'lien')+'</a>'+
-            '<a class="btn" href="'+ev.link+'" target="_blank" rel="noopener">Voir l\'événement →</a>'+
-          '</div>';
-        var el=document.createElement('article'); el.className='card'; el.innerHTML=html; grid.appendChild(el);
+      if(!items.length){
+        grid.innerHTML='<div class="panel empty">Aucun événement ne correspond aux filtres.</div>';
+        return;
+      }
+      items.forEach(ev=>{
+        const free=Number(ev.price)===0;
+        const cover='<div class="cover"><div class="date-badge">'+relDays(ev.date)+'</div></div>';
+        const cats=(ev.category||[]).map(c=>`<span class="chip">${c}</span>`).join(' ');
+        const price= free? '<span class="chip ok">Gratuit</span>' : '';
+        const html=`
+          ${cover}
+          <div class="content">
+            <h3>${ev.title}</h3>
+            <div class="meta">${fmtDate(ev.date)} · ${(ev.location||'Poitiers')}</div>
+            <div class="chips">${cats} ${price}</div>
+          </div>
+          <div class="actions">
+            <a class="ghost" href="${ev.link||'#'}" target="_blank" rel="noopener">Source : ${(ev.source||'inconnue')}</a>
+            <a class="btn" href="${ev.link||'#'}" target="_blank" rel="noopener">Voir l'événement →</a>
+          </div>`;
+        const el=document.createElement('article');
+        el.className='card';
+        el.innerHTML=html;
+        grid.appendChild(el);
       });
     }
 
     function applyFilters(data){
-      var q=slug(document.getElementById('q').value);
-      var cat=document.getElementById('cat').value;
-      var from=document.getElementById('from').value;
-      var freeOnly=document.getElementById('freeOnly').checked;
-      var items=(data.events||[])
-        .filter(function(e){return isSameOrAfter(e.date,from);})
-        .filter(function(e){return !freeOnly || Number(e.price)===0;})
-        .filter(function(e){return !cat || (e.category||[]).indexOf(cat)>-1;})
-        .filter(function(e){ if(!q) return true; var hay=slug((e.title||'')+' '+(e.location||'')+' '+(e.category||[]).join(' ')+' '+(e.tags||[]).join(' ')); return hay.indexOf(q)>-1; })
-        .sort(function(a,b){ return new Date(a.date)-new Date(b.date); });
+      const q=slug(document.getElementById('q').value);
+      const cat=document.getElementById('cat').value;
+      const from=document.getElementById('from').value;
+      const freeOnly=document.getElementById('freeOnly').checked;
+      let items=(data.events||[])
+        .map(e=>({...e, date: e.date_start || e.date || e.date_end})) // compatibilité
+        // .filter(e=>isSameOrAfter(e.date,from)) // désactivé pour tests
+        .filter(e=>!freeOnly || Number(e.price)===0)
+        .filter(e=>!cat || (e.category||[]).includes(cat))
+        .filter(e=>{
+          if(!q) return true;
+          const hay=slug((e.title||'')+' '+(e.location||'')+' '+(e.category||[]).join(' '));
+          return hay.includes(q);
+        })
+        .sort((a,b)=>new Date(a.date)-new Date(b.date));
       document.getElementById('countChip').textContent=String(items.length)+' événement(s)';
       render(items);
     }
 
     (async function(){
-      var data=await loadEvents();
+      const data=await loadEvents();
       document.getElementById('lastUpdate').textContent=new Date().toLocaleString('fr-FR');
-      var from=document.getElementById('from'); if(from) from.valueAsDate=new Date();
-      ['q','cat','from','freeOnly'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('input', function(){ applyFilters(data); }); });
+      const from=document.getElementById('from'); if(from) from.valueAsDate=new Date();
+      ['q','cat','from','freeOnly'].forEach(id=>{
+        const el=document.getElementById(id);
+        if(el) el.addEventListener('input',()=>applyFilters(data));
+      });
       applyFilters(data);
     })();
   </script>
