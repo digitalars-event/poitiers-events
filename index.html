@@ -417,30 +417,39 @@
       function render(items) {
         const grid = document.getElementById('grid');
         grid.innerHTML = '';
-
+      
         if (!items.length) {
           grid.innerHTML =
             '<div class="panel empty">Aucun élément ne correspond aux filtres.</div>';
           return;
         }
-
+      
         items.forEach((ev) => {
           const free = Number(ev.price) === 0;
           const isEvent = !!ev.date_start || !!ev.date;
+      
+          // ✅ Affiche le badge événement ou établissement
           const badge = isEvent
             ? `<div class="date-badge">${relDays(ev.date_start || ev.date)}</div>`
             : `<div class="est-badge">Établissement</div>`;
-
+      
+          // ✅ Si image dispo → background-image, sinon fond vert
+          const coverStyle = ev.image
+            ? `background-image: url('${ev.image}');
+               background-size: cover;
+               background-position: center;`
+            : `background: linear-gradient(135deg, #eafaf2, #d9f6e6);`;
+      
           const cover = `
-            <div class="cover">
+            <div class="cover" style="${coverStyle}">
               ${badge}
             </div>`;
-
+      
           const cats = (ev.category || [])
             .map((c) => `<span class="chip">${c}</span>`)
             .join(' ');
           const price = free ? '<span class="chip ok">Gratuit</span>' : '';
-
+      
           const html = `
             ${cover}
             <div class="content">
@@ -459,13 +468,14 @@
                 Voir ${isEvent ? "l'événement" : "la fiche"} →
               </a>
             </div>`;
-
+      
           const el = document.createElement('article');
           el.className = 'card';
           el.innerHTML = html;
           grid.appendChild(el);
         });
       }
+
 
       function applyFilters(data) {
         const q = slug(document.getElementById('q').value);
