@@ -18,6 +18,8 @@
         --card: #fff;
         --chip: #f2f2f2;
         --border: #ddd;
+        --blue: #007bff;
+        --blue-light: #e8f0ff;
       }
 
       * {
@@ -215,6 +217,20 @@
         color: var(--brand);
       }
 
+      /* Nouveau style pour le badge "Etablissement" */
+      .card .cover .est-badge {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background: var(--blue-light);
+        border: 1px solid var(--blue);
+        padding: 6px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        color: var(--blue);
+        font-weight: 600;
+      }
+
       .card .content {
         padding: 14px;
         display: flex;
@@ -299,7 +315,7 @@
 
         <div class="chips" id="liveInfo">
           <span class="chip">Dernière màj : <span id="lastUpdate">—</span></span>
-          <span class="chip ok" id="countChip">0 événement(s)</span>
+          <span class="chip ok" id="countChip">0 élément(s)</span>
           <span class="chip">Poitiers · Grand Poitiers · 25 km</span>
         </div>
       </header>
@@ -308,7 +324,7 @@
         <div class="filters" role="region" aria-label="Filtres">
           <div>
             <label for="q">Rechercher</label>
-            <input id="q" type="search" placeholder="concert, expo, sport,…" />
+            <input id="q" type="search" placeholder="concert, expo, musée…" />
           </div>
 
           <div>
@@ -351,6 +367,7 @@
 
     <script>
       function fmtDate(iso) {
+        if (!iso) return '';
         const d = new Date(iso);
         return new Intl.DateTimeFormat('fr-FR', {
           weekday: 'short',
@@ -364,6 +381,7 @@
       }
 
       function relDays(iso) {
+        if (!iso) return '';
         const d = new Date(iso),
           t = new Date();
         t.setHours(0, 0, 0, 0);
@@ -403,16 +421,22 @@
 
         if (!items.length) {
           grid.innerHTML =
-            '<div class="panel empty">Aucun événement ne correspond aux filtres.</div>';
+            '<div class="panel empty">Aucun élément ne correspond aux filtres.</div>';
           return;
         }
 
         items.forEach((ev) => {
           const free = Number(ev.price) === 0;
+          const isEvent = !!ev.date_start || !!ev.date;
+          const badge = isEvent
+            ? `<div class="date-badge">${relDays(ev.date_start || ev.date)}</div>`
+            : `<div class="est-badge">Établissement</div>`;
+
           const cover = `
             <div class="cover">
-              <div class="date-badge">${relDays(ev.date)}</div>
+              ${badge}
             </div>`;
+
           const cats = (ev.category || [])
             .map((c) => `<span class="chip">${c}</span>`)
             .join(' ');
@@ -422,7 +446,10 @@
             ${cover}
             <div class="content">
               <h3>${ev.title}</h3>
-              <div class="meta">${fmtDate(ev.date)} · ${(ev.location || 'Poitiers')}</div>
+              <div class="meta">
+                ${isEvent ? fmtDate(ev.date_start || ev.date) + ' · ' : ''}
+                ${(ev.location || 'Poitiers')}
+              </div>
               <div class="chips">${cats} ${price}</div>
             </div>
             <div class="actions">
@@ -430,7 +457,7 @@
                 Source : ${(ev.source || 'inconnue')}
               </a>
               <a class="btn" href="${ev.link || '#'}" target="_blank" rel="noopener">
-                Voir l'événement →
+                Voir ${isEvent ? "l'événement" : "la fiche"} →
               </a>
             </div>`;
 
@@ -444,7 +471,6 @@
       function applyFilters(data) {
         const q = slug(document.getElementById('q').value);
         const cat = document.getElementById('cat').value;
-        const from = document.getElementById('from').value;
         const freeOnly = document.getElementById('freeOnly').checked;
 
         let items = (data.events || [])
@@ -460,11 +486,10 @@
               (e.title || '') + ' ' + (e.location || '') + ' ' + (e.category || []).join(' ')
             );
             return hay.includes(q);
-          })
-          .sort((a, b) => new Date(a.date) - new Date(b.date));
+          });
 
         document.getElementById('countChip').textContent =
-          items.length + ' événement(s)';
+          items.length + ' élément(s)';
         render(items);
       }
 
