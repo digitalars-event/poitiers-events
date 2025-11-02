@@ -1,62 +1,6 @@
 {
-  "generated_at": "2025-11-02T21:19:05.055964+00:00",
+  "generated_at": "2025-11-02T21:45:16.377481+00:00",
   "events": [
-    {
-      "title": "DonnÃ©es utilisÃ©es pour vous suivre",
-      "description": "Les donnÃ©es suivantes peuvent Ãªtre utilisÃ©es pour vous suivre dans plusieurs apps et sites web appartenant Ã dâautres sociÃ©tÃ©sÂ :",
-      "link": "https://apps.apple.com/fr/app/visitpoitiers/id1511519512?platform=iphone",
-      "image": "",
-      "source": "apps.apple.com",
-      "date_start": null
-    },
-    {
-      "title": "DonnÃ©es Ã©tablissant un lien avec vous",
-      "description": "Les donnÃ©es suivantes peuvent Ãªtre collectÃ©es et liÃ©es Ã votre identitÃ©Â :",
-      "link": "https://apps.apple.com/fr/app/visitpoitiers/id1511519512?platform=iphone",
-      "image": "",
-      "source": "apps.apple.com",
-      "date_start": null
-    },
-    {
-      "title": "DonnÃ©es nâÃ©tablissant aucun lien avec vous",
-      "description": "Les donnÃ©es suivantes peuvent Ãªtre collectÃ©es, mais elles ne sont pas liÃ©es Ã votre identitÃ©Â :",
-      "link": "https://apps.apple.com/fr/app/visitpoitiers/id1511519512?platform=iphone",
-      "image": "",
-      "source": "apps.apple.com",
-      "date_start": null
-    },
-    {
-      "title": "DonnÃ©es utilisÃ©es pour vous suivre",
-      "description": "Les donnÃ©es suivantes peuvent Ãªtre utilisÃ©es pour vous suivre dans plusieurs apps et sites web appartenant Ã dâautres sociÃ©tÃ©sÂ :",
-      "link": "https://apps.apple.com/fr/app/visitpoitiers/id1511519512?platform=ipad",
-      "image": "",
-      "source": "apps.apple.com",
-      "date_start": null
-    },
-    {
-      "title": "DonnÃ©es Ã©tablissant un lien avec vous",
-      "description": "Les donnÃ©es suivantes peuvent Ãªtre collectÃ©es et liÃ©es Ã votre identitÃ©Â :",
-      "link": "https://apps.apple.com/fr/app/visitpoitiers/id1511519512?platform=ipad",
-      "image": "",
-      "source": "apps.apple.com",
-      "date_start": null
-    },
-    {
-      "title": "DonnÃ©es nâÃ©tablissant aucun lien avec vous",
-      "description": "Les donnÃ©es suivantes peuvent Ãªtre collectÃ©es, mais elles ne sont pas liÃ©es Ã votre identitÃ©Â :",
-      "link": "https://apps.apple.com/fr/app/visitpoitiers/id1511519512?platform=ipad",
-      "image": "",
-      "source": "apps.apple.com",
-      "date_start": null
-    },
-    {
-      "title": "DANY BOON",
-      "description": "Humour Spectacle",
-      "link": "https://www.arena-futuroscope.com/la-programmation/",
-      "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/11/danny-boon-arena-futuroscope.png",
-      "source": "arena-futuroscope.com",
-      "date_start": null
-    },
     {
       "title": "AHMED SYLLA",
       "description": "Humour",
@@ -82,52 +26,12 @@
       "date_start": null
     },
     {
-      "title": "AMIR",
-      "description": "Concert",
-      "link": "https://www.arena-futuroscope.com/la-programmation/",
-      "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/08/arena-futuroscope-amir.png",
-      "source": "arena-futuroscope.com",
-      "date_start": null
-    },
-    {
-      "title": "CLARA LUCIANI",
-      "description": "Concert",
-      "link": "https://www.arena-futuroscope.com/la-programmation/",
-      "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/12/clara-luciani-arena-futuroscope.png",
-      "source": "arena-futuroscope.com",
-      "date_start": null
-    },
-    {
-      "title": "HELENA",
-      "description": "Concert",
-      "link": "https://www.arena-futuroscope.com/la-programmation/",
-      "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/11/image-slider-mobile-helena.png",
-      "source": "arena-futuroscope.com",
-      "date_start": null
-    },
-    {
-      "title": "HELLDEBERT",
-      "description": "Concert",
-      "link": "https://www.arena-futuroscope.com/la-programmation/",
-      "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/12/site-helldebert-arena-futuroscope.png",
-      "source": "arena-futuroscope.com",
-      "date_start": null
-    },
-    {
-      "title": "CARMINA BURANA",
-      "description": "Spectacle",
-      "link": "https://www.arena-futuroscope.com/la-programmation/",
-      "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/06/arena-futuroscope-carmina-burana-1.png",
-      "source": "arena-futuroscope.com",
-      "date_start": null
-    },
-    {
       "title": "ELODIE POUX",
       "description": "Humour Spectacle",
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/11/arena-futuroscope-elodie-poux.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-02T00:00:00+00:00"
     },
     {
       "title": "M POKORA",
@@ -135,7 +39,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/11/arena-petite-image-site-web-pokora.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2025-12-02T00:00:00+00:00"
     },
     {
       "title": "LAURENT GERRA",
@@ -207,7 +111,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/02/so-floyd-slider-mobile.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-08-02T00:00:00+00:00"
     },
     {
       "title": "GOLDMEN",
@@ -239,7 +143,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/01/arena-petite-image-site-web-5.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-01-02T00:00:00+00:00"
     },
     {
       "title": "I GOTTA FEELING",
@@ -247,7 +151,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/09/arena-futuroscope-igf-1.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-05-02T00:00:00+00:00"
     },
     {
       "title": "Les années 80",
@@ -255,7 +159,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/06/site-web-arena-futuroscope.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-06-02T00:00:00+00:00"
     },
     {
       "title": "LAC DES CYGNES",
@@ -263,7 +167,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/06/lac-des-cygnes-az.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-07-02T00:00:00+00:00"
     },
     {
       "title": "DAVID HALLYDAY",
@@ -271,10 +175,10 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/03/david-hallyday-slider-mobile.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-08-02T00:00:00+00:00"
     },
     {
-      "title": "STAR ACADEMY: TOUR 2026 – LE MEILLEUR DE LA STAR ACADMY EN LIVE",
+      "title": "STAR ACADEMY: TOUR 2026 LE MEILLEUR DE LA STAR ACADMY EN LIVE",
       "description": "Concert",
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/10/arena-petite-image-site-web-star-ac-2.png",
@@ -282,7 +186,7 @@
       "date_start": null
     },
     {
-      "title": "STARS 80 – FOREVER",
+      "title": "STARS 80 FOREVER",
       "description": "Concert",
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/05/image-slider-mobile-star-80.png",
@@ -359,7 +263,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/06/electro-symphony-image-petite-1.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-07-02T00:00:00+00:00"
     },
     {
       "title": "BEN MAZUE",
@@ -367,7 +271,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/12/ben-mazue-arena-futuroscope.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-08-02T00:00:00+00:00"
     },
     {
       "title": "THE WORLD OF QUEEN",
@@ -383,7 +287,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/11/le-roi-soleil-arena-futuroscope.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-25T00:00:00+00:00"
     },
     {
       "title": "THE JEFF PANACLOC COMPANY",
@@ -391,7 +295,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2024/10/1jeff-panacloc-arena-futuroscope.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-11-02T00:00:00+00:00"
     },
     {
       "title": "URBAN CORNER 2",
@@ -399,10 +303,10 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/09/arena-petite-image-site-web.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-12-02T00:00:00+00:00"
     },
     {
-      "title": "REPUBLIC COMEDY CLUB – LES 3 ANS !",
+      "title": "REPUBLIC COMEDY CLUB LES 3 ANS !",
       "description": "Humour",
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/09/arena-petite-image-site-web-1.png",
@@ -423,7 +327,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/06/slider-mobile-djadja-dinaz.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-08-02T00:00:00+00:00"
     },
     {
       "title": "GENERATION CELINE",
@@ -431,10 +335,10 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/03/image-slider-mobile-generation-celine-1.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-09-02T00:00:00+00:00"
     },
     {
-      "title": "PLK – TOUR 2026",
+      "title": "PLK TOUR 2026",
       "description": "Concert",
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/10/arena-petite-image-site-web-plk.png",
@@ -455,7 +359,7 @@
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/10/arena-petite-image-site-web-8.png",
       "source": "arena-futuroscope.com",
-      "date_start": null
+      "date_start": "2026-07-02T00:00:00+00:00"
     },
     {
       "title": "L’HÉRITAGE GOLDMAN 2 LA TOURNÉE ÉVÈNEMENT",
@@ -490,7 +394,7 @@
       "date_start": null
     },
     {
-      "title": "ONE NIGHT OF QUEEN – WEMBLEY",
+      "title": "ONE NIGHT OF QUEEN WEMBLEY",
       "description": "Concert Spectacle",
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/10/arena-petite-image-site-web-2.png",
@@ -506,7 +410,7 @@
       "date_start": null
     },
     {
-      "title": "LES ETOILES DU CIRQUE DE PEKIN – ODYSSEE",
+      "title": "LES ETOILES DU CIRQUE DE PEKIN ODYSSEE",
       "description": "Spectacle",
       "link": "https://www.arena-futuroscope.com/la-programmation/",
       "image": "https://www.arena-futuroscope.com/wp-content/uploads/2025/10/arena-petite-image-site-web-4.png",
@@ -535,7 +439,7 @@
       "link": "https://www.trinitepoitiers.fr/events/concert-solidaire-par-la-fanfare-bagad-et-la-maitrise/",
       "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAHCAQAAAADXiA0PAAAAAnRSTlMAAHaTzTgAAABZSURBVHja7cExAQAAAMKg9U9tCj+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACArwEJfQABkhVlPQAAAABJRU5ErkJggg==",
       "source": "trinitepoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-07T00:00:00+00:00"
     },
     {
       "title": "Concert solidaire par la Fanfare-Bagad et la maîtrise",
@@ -543,7 +447,7 @@
       "link": "https://www.trinitepoitiers.fr/events/concert-solidaire-par-la-fanfare-bagad-et-la-maitrise/",
       "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAAEsAQAAAADRUNPiAAAAAnRSTlMAAHaTzTgAAAAgSURBVGje7cExAQAAAMKg9U9tB2+gAAAAAAAAAAAAeAwlgAABrh2jAwAAAABJRU5ErkJggg==",
       "source": "trinitepoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-07T00:00:00+00:00"
     },
     {
       "title": "Vendredi 7 novembre, 20h à Saint Jean de Montierneuf",
@@ -551,15 +455,31 @@
       "link": "https://www.trinitepoitiers.fr/events/concert-solidaire-par-la-fanfare-bagad-et-la-maitrise/",
       "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAAEsAQAAAADRUNPiAAAAAnRSTlMAAHaTzTgAAAAgSURBVGje7cExAQAAAMKg9U9tB2+gAAAAAAAAAAAAeAwlgAABrh2jAwAAAABJRU5ErkJggg==",
       "source": "trinitepoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-07T00:00:00+00:00"
     },
     {
-      "title": "Étape 1",
-      "description": "Sélectionnez ci-dessus votre formule Billets ou Hôtel + Billets, renseignez vos critères (dates de visite, durée, participants) puis valider vos choix en cliquant sur c'est parti !",
-      "link": "https://www.futuroscope.com/fr/reserver#reservation",
-      "image": "https://api.futuroscope.com/assets/607915c7-3b47-4542-9d96-ca28c55215b6.jpg?width=640&fit=cover&height=359&format=auto",
-      "source": "futuroscope.com",
-      "date_start": null
+      "title": "Lieu",
+      "description": "Le 11 novembre, la France commémore l’Armistice de 1918 et les victimes de toutes les guerres. C’est aussi la fête de Saint Martin, fondateur de l’abbaye de Ligugé avant sa nomination comme évêque de Tours.",
+      "link": "https://www.trinitepoitiers.fr/events/messe-du-11-novembre/",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAALQAQAAAABZb1A7AAAAAnRSTlMAAHaTzTgAAAC/SURBVHja7cExAQAAAMKg9U9tDQ+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvgyl7gABz9uKqgAAAABJRU5ErkJggg==",
+      "source": "trinitepoitiers.fr",
+      "date_start": "2025-11-11T00:00:00+00:00"
+    },
+    {
+      "title": "Messe du 11 novembre",
+      "description": "Le 11 novembre, la France commémore l’Armistice de 1918 et les victimes de toutes les guerres. C’est aussi la fête de Saint Martin, fondateur de l’abbaye de Ligugé avant sa nomination comme évêque de Tours.",
+      "link": "https://www.trinitepoitiers.fr/events/messe-du-11-novembre/",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAALQAQAAAABZb1A7AAAAAnRSTlMAAHaTzTgAAAC/SURBVHja7cExAQAAAMKg9U9tDQ+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvgyl7gABz9uKqgAAAABJRU5ErkJggg==",
+      "source": "trinitepoitiers.fr",
+      "date_start": "2025-11-11T00:00:00+00:00"
+    },
+    {
+      "title": "Lieu",
+      "description": "",
+      "link": "https://www.trinitepoitiers.fr/events/vendredi-de-leveque/",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABjkAAAJVAQAAAACkf6pjAAAAAnRSTlMAAHaTzTgAAACLSURBVHja7cGBAAAAAMOg+VOf4AZVAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwDdTMAAE1xR5CAAAAAElFTkSuQmCC",
+      "source": "trinitepoitiers.fr",
+      "date_start": "2047-11-02T00:00:00+00:00"
     },
     {
       "title": "Étape 2",
@@ -567,7 +487,7 @@
       "link": "https://www.futuroscope.com/fr/reserver#reservation",
       "image": "https://api.futuroscope.com/assets/baca13ca-8119-447e-a03e-ba8285340598.jpg?width=640&fit=cover&height=359&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-02T00:00:00+00:00"
     },
     {
       "title": "Étape 3",
@@ -575,7 +495,7 @@
       "link": "https://www.futuroscope.com/fr/reserver#reservation",
       "image": "https://api.futuroscope.com/assets/26d9353e-ec34-4635-97e6-8cf0d52bf86b.png?width=640&fit=cover&height=359&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-03T00:00:00+00:00"
     },
     {
       "title": "3ème jour gratuit",
@@ -583,7 +503,7 @@
       "link": "https://www.futuroscope.com/fr/reserver#reservation",
       "image": "https://api.futuroscope.com/assets/20ade646-9947-47fc-9cf5-5fc867e0ab57.jpg?width=840&fit=cover&height=388&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-03T00:00:00+00:00"
     },
     {
       "title": "Séjour Futuroscope",
@@ -591,15 +511,7 @@
       "link": "https://www.futuroscope.com/fr/reserver#reservation",
       "image": "https://api.futuroscope.com/assets/cb62a03a-87a7-4358-bf42-0993f91f5785.jpg?width=840&fit=cover&height=388&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
-    },
-    {
-      "title": "Étape 1",
-      "description": "Sélectionnez ci-dessus votre formule Billets ou Hôtel + Billets, renseignez vos critères (dates de visite, durée, participants) puis valider vos choix en cliquant sur c'est parti !",
-      "link": "https://www.futuroscope.com/fr/reserver",
-      "image": "https://api.futuroscope.com/assets/607915c7-3b47-4542-9d96-ca28c55215b6.jpg?width=640&fit=cover&height=359&format=auto",
-      "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-02T00:00:00+00:00"
     },
     {
       "title": "Étape 2",
@@ -607,7 +519,7 @@
       "link": "https://www.futuroscope.com/fr/reserver",
       "image": "https://api.futuroscope.com/assets/baca13ca-8119-447e-a03e-ba8285340598.jpg?width=640&fit=cover&height=359&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-02T00:00:00+00:00"
     },
     {
       "title": "Étape 3",
@@ -615,7 +527,7 @@
       "link": "https://www.futuroscope.com/fr/reserver",
       "image": "https://api.futuroscope.com/assets/26d9353e-ec34-4635-97e6-8cf0d52bf86b.png?width=640&fit=cover&height=359&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-03T00:00:00+00:00"
     },
     {
       "title": "3ème jour gratuit",
@@ -623,7 +535,7 @@
       "link": "https://www.futuroscope.com/fr/reserver",
       "image": "https://api.futuroscope.com/assets/20ade646-9947-47fc-9cf5-5fc867e0ab57.jpg?width=840&fit=cover&height=388&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-03T00:00:00+00:00"
     },
     {
       "title": "Séjour Futuroscope",
@@ -631,15 +543,7 @@
       "link": "https://www.futuroscope.com/fr/reserver",
       "image": "https://api.futuroscope.com/assets/cb62a03a-87a7-4358-bf42-0993f91f5785.jpg?width=840&fit=cover&height=388&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
-    },
-    {
-      "title": "Étape 1",
-      "description": "Sélectionnez ci-dessus votre formule Billets ou Hôtel + Billets, renseignez vos critères (dates de visite, durée, participants) puis valider vos choix en cliquant sur c'est parti !",
-      "link": "https://www.futuroscope.com/fr/reserver#auth",
-      "image": "https://api.futuroscope.com/assets/607915c7-3b47-4542-9d96-ca28c55215b6.jpg?width=640&fit=cover&height=359&format=auto",
-      "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-02T00:00:00+00:00"
     },
     {
       "title": "Étape 2",
@@ -647,7 +551,7 @@
       "link": "https://www.futuroscope.com/fr/reserver#auth",
       "image": "https://api.futuroscope.com/assets/baca13ca-8119-447e-a03e-ba8285340598.jpg?width=640&fit=cover&height=359&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-02T00:00:00+00:00"
     },
     {
       "title": "Étape 3",
@@ -655,7 +559,7 @@
       "link": "https://www.futuroscope.com/fr/reserver#auth",
       "image": "https://api.futuroscope.com/assets/26d9353e-ec34-4635-97e6-8cf0d52bf86b.png?width=640&fit=cover&height=359&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-03T00:00:00+00:00"
     },
     {
       "title": "3ème jour gratuit",
@@ -663,7 +567,7 @@
       "link": "https://www.futuroscope.com/fr/reserver#auth",
       "image": "https://api.futuroscope.com/assets/20ade646-9947-47fc-9cf5-5fc867e0ab57.jpg?width=840&fit=cover&height=388&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-03T00:00:00+00:00"
     },
     {
       "title": "Séjour Futuroscope",
@@ -671,7 +575,23 @@
       "link": "https://www.futuroscope.com/fr/reserver#auth",
       "image": "https://api.futuroscope.com/assets/cb62a03a-87a7-4358-bf42-0993f91f5785.jpg?width=840&fit=cover&height=388&format=auto",
       "source": "futuroscope.com",
-      "date_start": null
+      "date_start": "2025-11-02T00:00:00+00:00"
+    },
+    {
+      "title": "Cube Challenges",
+      "description": "",
+      "link": "https://www.gameparc86.fr/",
+      "image": "https://www.gameparc86.fr/wp-content/uploads/2025/03/Cube.jpg",
+      "source": "gameparc86.fr",
+      "date_start": "2025-11-02T00:00:00+00:00"
+    },
+    {
+      "title": "Padel",
+      "description": "",
+      "link": "https://www.gameparc86.fr/",
+      "image": "https://www.gameparc86.fr/wp-content/uploads/2025/03/Padel.jpg",
+      "source": "gameparc86.fr",
+      "date_start": "2025-11-04T00:00:00+00:00"
     },
     {
       "title": "LE PARCOURS 18 TROUS",
@@ -679,7 +599,7 @@
       "link": "http://www.golfduhautpoitou.fr/",
       "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E",
       "source": "golfduhautpoitou.fr",
-      "date_start": null
+      "date_start": "2025-11-18T00:00:00+00:00"
     },
     {
       "title": "LE PARCOURS 9 TROUS COMPACT",
@@ -687,7 +607,7 @@
       "link": "http://www.golfduhautpoitou.fr/",
       "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E",
       "source": "golfduhautpoitou.fr",
-      "date_start": null
+      "date_start": "2025-11-09T00:00:00+00:00"
     },
     {
       "title": "LE PARCOURS PITCH & PUTT",
@@ -695,7 +615,7 @@
       "link": "http://www.golfduhautpoitou.fr/",
       "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E",
       "source": "golfduhautpoitou.fr",
-      "date_start": null
+      "date_start": "2025-11-09T00:00:00+00:00"
     },
     {
       "title": "VOTRE ENTRAINEMENT AU GOLF",
@@ -703,7 +623,7 @@
       "link": "http://www.golfduhautpoitou.fr/",
       "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E",
       "source": "golfduhautpoitou.fr",
-      "date_start": null
+      "date_start": "2040-11-02T00:00:00+00:00"
     },
     {
       "title": "Que faire à Poitiers",
@@ -762,12 +682,20 @@
       "date_start": null
     },
     {
-      "title": "ALZHEIMER : DE LA PRESOMPTION D'INCOMPETENCE…",
+      "title": "Saison 25/26",
+      "description": "",
+      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
+      "image": "",
+      "source": "laquintaine.fr",
+      "date_start": "2025-11-26T00:00:00+00:00"
+    },
+    {
+      "title": "ALZHEIMER : DE LA PRESOMPTION D'INCOMPETENCE",
       "description": "Geneviève Demoures",
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/d0/35/d035db1f-2f43-4f23-8318-1aa4f1fbb429/genevieve_demoures.jpg__215x260_q85_crop_subject_location-565%2C525_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-07T00:00:00+00:00"
     },
     {
       "title": "LES MAINS CHAUDES",
@@ -775,7 +703,7 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/99/60/9960a4af-39b0-4c75-8602-4541a3d8a6ea/24899904_806989032816392_959728453037322617_n.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-07T00:00:00+00:00"
     },
     {
       "title": "LE PHOQUE DE WEDDELL",
@@ -783,7 +711,7 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/2f/0a/2f0af5c8-d192-4e81-a3e1-ae173ba813dc/phoque_weddell_3_esquif0149.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-21T00:00:00+00:00"
     },
     {
       "title": "OH OH",
@@ -791,15 +719,7 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/60/fb/60fb4852-9121-4379-ba71-e7c3d2da8307/baccala_oh_oh_djamila_agustoni_testa.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
-    },
-    {
-      "title": "LA MALADIE DE LA FAMILLE M",
-      "description": "Collectif Nuit Orange",
-      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/a5/c0/a5c0b47d-d74a-4201-8179-14a830f5e24e/p12_-_scenographie_bandeau.jpg__215x260_q85_crop_subsampling-2.jpg",
-      "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-13T00:00:00+00:00"
     },
     {
       "title": "LA MONTAGNE CACHEE",
@@ -807,23 +727,7 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/0d/cd/0dcdd1df-2f83-438e-aadd-1dea2e47717e/3_photo_lamontagnecachee_lesdramaticules_eugeniemartinez.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
-    },
-    {
-      "title": "TADAM !",
-      "description": "Cie La Cavale",
-      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/45/57/4557dfbc-39c6-45d6-8148-16999c7e1f4d/visuel_tadam_v1.jpeg__215x260_q85_crop_subject_location-1169%2C607_subsampling-2.jpg",
-      "source": "laquintaine.fr",
-      "date_start": null
-    },
-    {
-      "title": "PUISQUE C'EST COMME çA JE VAIS FAIRE UN OPER…",
-      "description": "Cie Je garde le Chien",
-      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/0f/4e/0f4e655e-9eab-4273-b69c-be76c803177e/puisque-cest-comme-caolivier_tousis_p1016817.jpg__215x260_q85_crop_subsampling-2.jpg",
-      "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-28T00:00:00+00:00"
     },
     {
       "title": "L'HOMME QUI PLANTAIT DES ARBRES",
@@ -831,7 +735,7 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/a0/16/a0169a34-87bd-4657-a6e5-d43920fa1126/recadrage2.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-24T00:00:00+00:00"
     },
     {
       "title": "NOM DE CODE : MARICHIWEU",
@@ -839,23 +743,7 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/db/72/db721911-b080-462b-9630-7c94263bb66c/eric_waltier_4.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
-    },
-    {
-      "title": "LE JEU AU COEUR",
-      "description": "JD Films",
-      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/12/1a/121aafc7-4c5c-4537-b803-a8eeca88a8d7/visuel_court_metrage.jpg__215x260_q85_crop_subsampling-2.jpg",
-      "source": "laquintaine.fr",
-      "date_start": null
-    },
-    {
-      "title": "Présentation de la saison",
-      "description": "et spectacle Perchés ! LES CHANTEURS D'OISEAUX",
-      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/cf/55/cf55592f-af45-45a8-a37a-77fdd5411bf6/complet_site.jpg__215x260_q85_crop_subsampling-2.jpg",
-      "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-30T00:00:00+00:00"
     },
     {
       "title": "DOMINIQUE A",
@@ -863,23 +751,23 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/37/bc/37bc42e8-d928-4429-abdc-41197d2a1b96/site_complet.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-10T00:00:00+00:00"
     },
     {
-      "title": "LE JEU AU COEUR",
-      "description": "JD Films",
+      "title": "Saison 25/26",
+      "description": "",
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/09/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/12/1a/121aafc7-4c5c-4537-b803-a8eeca88a8d7/visuel_court_metrage.jpg__215x260_q85_crop_subsampling-2.jpg",
+      "image": "",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-26T00:00:00+00:00"
     },
     {
-      "title": "Présentation de la saison",
-      "description": "et spectacle Perchés ! LES CHANTEURS D'OISEAUX",
-      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/09/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/cf/55/cf55592f-af45-45a8-a37a-77fdd5411bf6/complet_site.jpg__215x260_q85_crop_subsampling-2.jpg",
+      "title": "Saison 25/26",
+      "description": "",
+      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/10/",
+      "image": "",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-26T00:00:00+00:00"
     },
     {
       "title": "DOMINIQUE A",
@@ -887,15 +775,23 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/10/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/37/bc/37bc42e8-d928-4429-abdc-41197d2a1b96/site_complet.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-10T00:00:00+00:00"
     },
     {
-      "title": "ALZHEIMER : DE LA PRESOMPTION D'INCOMPETENCE…",
+      "title": "Saison 25/26",
+      "description": "",
+      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/11/",
+      "image": "",
+      "source": "laquintaine.fr",
+      "date_start": "2025-11-26T00:00:00+00:00"
+    },
+    {
+      "title": "ALZHEIMER : DE LA PRESOMPTION D'INCOMPETENCE",
       "description": "Geneviève Demoures",
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/11/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/d0/35/d035db1f-2f43-4f23-8318-1aa4f1fbb429/genevieve_demoures.jpg__215x260_q85_crop_subject_location-565%2C525_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-07T00:00:00+00:00"
     },
     {
       "title": "LES MAINS CHAUDES",
@@ -903,7 +799,7 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/11/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/99/60/9960a4af-39b0-4c75-8602-4541a3d8a6ea/24899904_806989032816392_959728453037322617_n.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-07T00:00:00+00:00"
     },
     {
       "title": "LE PHOQUE DE WEDDELL",
@@ -911,7 +807,15 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/11/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/2f/0a/2f0af5c8-d192-4e81-a3e1-ae173ba813dc/phoque_weddell_3_esquif0149.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-21T00:00:00+00:00"
+    },
+    {
+      "title": "Saison 25/26",
+      "description": "",
+      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/12/",
+      "image": "",
+      "source": "laquintaine.fr",
+      "date_start": "2025-11-26T00:00:00+00:00"
     },
     {
       "title": "OH OH",
@@ -919,15 +823,23 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2025/12/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/60/fb/60fb4852-9121-4379-ba71-e7c3d2da8307/baccala_oh_oh_djamila_agustoni_testa.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-13T00:00:00+00:00"
     },
     {
-      "title": "LA MALADIE DE LA FAMILLE M",
-      "description": "Collectif Nuit Orange",
+      "title": "Saison 25/26",
+      "description": "",
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2026/01/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/a5/c0/a5c0b47d-d74a-4201-8179-14a830f5e24e/p12_-_scenographie_bandeau.jpg__215x260_q85_crop_subsampling-2.jpg",
+      "image": "",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-26T00:00:00+00:00"
+    },
+    {
+      "title": "Saison 25/26",
+      "description": "",
+      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2026/02/",
+      "image": "",
+      "source": "laquintaine.fr",
+      "date_start": "2025-11-26T00:00:00+00:00"
     },
     {
       "title": "LA MONTAGNE CACHEE",
@@ -935,23 +847,23 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2026/02/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/0d/cd/0dcdd1df-2f83-438e-aadd-1dea2e47717e/3_photo_lamontagnecachee_lesdramaticules_eugeniemartinez.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-28T00:00:00+00:00"
     },
     {
-      "title": "TADAM !",
-      "description": "Cie La Cavale",
+      "title": "Saison 25/26",
+      "description": "",
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2026/03/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/45/57/4557dfbc-39c6-45d6-8148-16999c7e1f4d/visuel_tadam_v1.jpeg__215x260_q85_crop_subject_location-1169%2C607_subsampling-2.jpg",
+      "image": "",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-26T00:00:00+00:00"
     },
     {
-      "title": "PUISQUE C'EST COMME çA JE VAIS FAIRE UN OPER…",
-      "description": "Cie Je garde le Chien",
-      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2026/03/",
-      "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/0f/4e/0f4e655e-9eab-4273-b69c-be76c803177e/puisque-cest-comme-caolivier_tousis_p1016817.jpg__215x260_q85_crop_subsampling-2.jpg",
+      "title": "Saison 25/26",
+      "description": "",
+      "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2026/04/",
+      "image": "",
       "source": "laquintaine.fr",
-      "date_start": null
+      "date_start": "2025-11-26T00:00:00+00:00"
     },
     {
       "title": "L'HOMME QUI PLANTAIT DES ARBRES",
@@ -959,47 +871,55 @@
       "link": "https://laquintaine.fr/fr/saison-culturelle/en-cours/2026/04/",
       "image": "https://laquintaine.fr/media/filer_public_thumbnails/filer_public/a0/16/a0169a34-87bd-4657-a6e5-d43920fa1126/recadrage2.jpg__215x260_q85_crop_subsampling-2.jpg",
       "source": "laquintaine.fr",
-      "date_start": null
-    },
-    {
-      "title": "Vous voulez organiser un évènement au Rooftop ?",
-      "description": "Faire un after work ? Un repas d'anniversaire ? Faire un pot de départ ?",
-      "link": "https://www.rooftop-poitiers.com/fr/quotation/sas",
-      "image": "",
-      "source": "rooftop-poitiers.com",
-      "date_start": null
+      "date_start": "2025-11-24T00:00:00+00:00"
     },
     {
       "title": "Description",
-      "description": "DÃ©couvrez un site naturel comprenant de surprenantes concrÃ©tions mise en valeur par des jeux de lumiÃ¨re.",
+      "description": "Découvrez un site naturel comprenant de surprenantes concrétions mise en valeur par des jeux de lumière.",
       "link": "https://my.weezevent.com/2025-grottes-de-la-noree",
       "image": "",
       "source": "my.weezevent.com",
-      "date_start": null
-    },
-    {
-      "title": "Calendrier",
-      "description": "Ã partir du 1 juillet 2025 Ã 13:30",
-      "link": "https://my.weezevent.com/2025-grottes-de-la-noree",
-      "image": "",
-      "source": "my.weezevent.com",
-      "date_start": null
+      "date_start": "2025-11-10T00:00:00+00:00"
     },
     {
       "title": "Localisation",
-      "description": "Grottes de la NorÃ©e, 2, rue de l'Ermitage, 86580, BIARD France",
+      "description": "Grottes de la Norée, 2, rue de l'Ermitage, 86580, BIARD France",
       "link": "https://my.weezevent.com/2025-grottes-de-la-noree",
       "image": "",
       "source": "my.weezevent.com",
       "date_start": null
     },
     {
-      "title": "Salon « Univers du chiot » – Poitiers",
+      "title": "Les Journées du Patrimoine 2025",
+      "description": "",
+      "link": "https://www.musee-chasseneuildupoitou-lamaisondautrefois.com/blog",
+      "image": "",
+      "source": "musee-chasseneuildupoitou-lamaisondautrefois.com",
+      "date_start": "2025-11-20T00:00:00+00:00"
+    },
+    {
+      "title": "[2021] Du nouveau au musée: la couronne de Louis le Pieux !",
+      "description": "",
+      "link": "https://www.musee-chasseneuildupoitou-lamaisondautrefois.com/blog",
+      "image": "",
+      "source": "musee-chasseneuildupoitou-lamaisondautrefois.com",
+      "date_start": "2025-11-05T00:00:00+00:00"
+    },
+    {
+      "title": "Poitiers à 10 km de Chasseneuil-du-Poitou : ville d 'art et d'histoire",
+      "description": "",
+      "link": "https://www.musee-chasseneuildupoitou-lamaisondautrefois.com/blog",
+      "image": "",
+      "source": "musee-chasseneuildupoitou-lamaisondautrefois.com",
+      "date_start": "2025-11-10T00:00:00+00:00"
+    },
+    {
+      "title": "Salon Univers du chiot Poitiers",
       "description": "# Foire",
       "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/",
       "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%202560'%3E%3C/svg%3E",
       "source": "parcexpo-grandpoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-02T00:00:00+00:00"
     },
     {
       "title": "La ferme s’invite 2025",
@@ -1007,7 +927,7 @@
       "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/",
       "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20904%201280'%3E%3C/svg%3E",
       "source": "parcexpo-grandpoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-09T00:00:00+00:00"
     },
     {
       "title": "Le Grand Salon de la Gastronomie",
@@ -1015,7 +935,7 @@
       "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/",
       "image": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/03/test-couleur-7-bis-768x1151.png",
       "source": "parcexpo-grandpoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-16T00:00:00+00:00"
     },
     {
       "title": "Studyrama",
@@ -1023,7 +943,15 @@
       "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/",
       "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201201%201200'%3E%3C/svg%3E",
       "source": "parcexpo-grandpoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-22T00:00:00+00:00"
+    },
+    {
+      "title": "Salon bien-être et Arts divinatoires",
+      "description": "",
+      "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/",
+      "image": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/06/salon-arts-divinatoires-poitiers2025-768x589.jpeg",
+      "source": "parcexpo-grandpoitiers.fr",
+      "date_start": "2025-11-30T00:00:00+00:00"
     },
     {
       "title": "Gamers Assembly",
@@ -1071,7 +999,7 @@
       "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/?event_cat%5B0%5D=14",
       "image": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2023/06/LA-FERME-SINVITE-AFFICHE-2025-768x1087.jpeg",
       "source": "parcexpo-grandpoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-09T00:00:00+00:00"
     },
     {
       "title": "Foire de Poitiers",
@@ -1111,7 +1039,7 @@
       "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/?event_cat%5B0%5D=11",
       "image": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2023/06/LA-FERME-SINVITE-AFFICHE-2025-768x1087.jpeg",
       "source": "parcexpo-grandpoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-09T00:00:00+00:00"
     },
     {
       "title": "Le Grand Salon de la Gastronomie",
@@ -1119,7 +1047,7 @@
       "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/?event_cat%5B0%5D=11",
       "image": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/03/test-couleur-7-bis-768x1151.png",
       "source": "parcexpo-grandpoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-16T00:00:00+00:00"
     },
     {
       "title": "Studyrama",
@@ -1127,7 +1055,7 @@
       "link": "https://www.parcexpo-grandpoitiers.fr/les-prochains-evenements/?event_cat%5B0%5D=11",
       "image": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/06/ES_Poitiers_1200x1200-768x767.png",
       "source": "parcexpo-grandpoitiers.fr",
-      "date_start": null
+      "date_start": "2025-11-22T00:00:00+00:00"
     },
     {
       "title": "Les espaces à disposition",
@@ -1186,200 +1114,112 @@
       "date_start": null
     },
     {
-      "title": "Prendre un rendez-vous",
-      "description": "Consultez nos services disponibles sur rendez-vous",
-      "link": "http://www.vienne.pref.gouv.fr/Demarches/Sortie-de-territoire-d-un-enfant-mineur",
-      "image": "",
-      "source": "vienne.pref.gouv.fr",
-      "date_start": null
-    },
-    {
-      "title": "Horaires et coordonnées",
-      "description": "Retrouvez les horaires et coordonnées de nos services",
-      "link": "http://www.vienne.pref.gouv.fr/Demarches/Sortie-de-territoire-d-un-enfant-mineur",
-      "image": "",
-      "source": "vienne.pref.gouv.fr",
-      "date_start": null
-    },
-    {
-      "title": "Les services de l'État",
-      "description": "Vous pouvez saisir l'administration par voie électronique en adressant en ligne vos demandes d'information ou envoyer un dossier lié à une démarche administrative.",
-      "link": "http://www.vienne.pref.gouv.fr/Demarches/Sortie-de-territoire-d-un-enfant-mineur",
-      "image": "",
-      "source": "vienne.pref.gouv.fr",
-      "date_start": null
-    },
-    {
-      "title": "Agenda",
-      "description": "Retrouvez toute la programmation culturelle du site gallo-romain de Sanxay.",
-      "link": "https://www.site-galloromain-de-sanxay.fr/agenda",
-      "image": "",
-      "source": "site-galloromain-de-sanxay.fr",
-      "date_start": null
-    },
-    {
-      "title": "En pierre et en plumes",
-      "description": "0 rendez-vous autour de l'exposition",
-      "link": "https://www.site-galloromain-de-sanxay.fr/agenda",
-      "image": "",
-      "source": "site-galloromain-de-sanxay.fr",
-      "date_start": null
-    },
-    {
-      "title": "dimanche 2 novembre 2025",
-      "description": "Exposition en cours",
-      "link": "https://www.site-galloromain-de-sanxay.fr/agenda",
-      "image": "",
-      "source": "site-galloromain-de-sanxay.fr",
-      "date_start": null
-    },
-    {
-      "title": "Agenda",
-      "description": "Retrouvez toute la programmation culturelle du site gallo-romain de Sanxay.",
-      "link": "https://www.site-galloromain-de-sanxay.fr/agenda#exposition",
-      "image": "",
-      "source": "site-galloromain-de-sanxay.fr",
-      "date_start": null
-    },
-    {
-      "title": "En pierre et en plumes",
-      "description": "0 rendez-vous autour de l'exposition",
-      "link": "https://www.site-galloromain-de-sanxay.fr/agenda#exposition",
-      "image": "",
-      "source": "site-galloromain-de-sanxay.fr",
-      "date_start": null
-    },
-    {
-      "title": "dimanche 2 novembre 2025",
-      "description": "Exposition en cours",
-      "link": "https://www.site-galloromain-de-sanxay.fr/agenda#exposition",
-      "image": "",
-      "source": "site-galloromain-de-sanxay.fr",
-      "date_start": null
-    },
-    {
-      "title": "Évènements passés",
-      "description": "Dans le cadre de la Carte Blanche aux Amateurs Le G.U.I.L.I., Groupe Utopique d’Improvisation Libre et Indépendant de Ligugé est une troupe de théâtre et de cabaret d’improvisation qui sort de l’ordinaire. Avec ses comédiens déjantés, chaque spectacle est une aventure pleine de rires et d’imprévus. A partir de thèmes du public, et en totale liberté, les comédiennes et comédiens créent des scènes inédites, absurdes et décalées. Que ce soit, sur scène, ou lors d’interventions surprises, le G.U.I.L.I. apporte de…",
+      "title": "le GUILI IMPRO",
+      "description": "Dans le cadre de la Carte Blanche aux Amateurs Le G.U.I.L.I., Groupe Utopique d’Improvisation Libre et Indépendant de Ligugé est une troupe de théâtre et de cabaret d’improvisation qui sort de l’ordinaire. Avec ses comédiens déjantés, chaque spectacle est une aventure pleine de rires et d’imprévus. A partir de thèmes du public, et en totale liberté, les comédiennes et comédiens créent des scènes inédites, absurdes et décalées. Que ce soit, sur scène, ou lors d’interventions surprises, le G.U.I.L.I. apporte de",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
-      "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/bandeau-25-261-300x100.jpg",
+      "image": "",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
-    },
-    {
-      "title": "le GUILI – IMPRO",
-      "description": "Dans le cadre de la Carte Blanche aux Amateurs Le G.U.I.L.I., Groupe Utopique d’Improvisation Libre et Indépendant de Ligugé est une troupe de théâtre et de cabaret d’improvisation qui sort de l’ordinaire. Avec ses comédiens déjantés, chaque spectacle est une aventure pleine de rires et d’imprévus. A partir de thèmes du public, et en totale liberté, les comédiennes et comédiens créent des scènes inédites, absurdes et décalées. Que ce soit, sur scène, ou lors d’interventions surprises, le G.U.I.L.I. apporte de…",
-      "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
-      "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/bandeau-25-261-300x100.jpg",
-      "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-28T00:00:00+00:00"
     },
     {
       "title": "Contes interdits et fables travesties",
-      "description": "Dans le cadre de la Carte Blanche aux Amateurs Réalisé par Jean-Pierre Duffourc Bazin, ce nouveau spectacle du TPC révèle de « façon intimiste » une partie des œuvres coquines de La Fontaine, souvent méconnues du public. 7 contes cocasses et irrévérencieux, qui valurent à son auteur le succès mais aussi la réprobation des milieux bien-pensants, ont été rassemblés pour être joués de manière vivante et théâtrale par 3 comédiennes. Pour parfaire le côté festif et décalé du spectacle, ces…",
+      "description": "Dans le cadre de la Carte Blanche aux Amateurs Réalisé par Jean-Pierre Duffourc Bazin, ce nouveau spectacle du TPC révèle de façon intimiste une partie des œuvres coquines de La Fontaine, souvent méconnues du public. 7 contes cocasses et irrévérencieux, qui valurent à son auteur le succès mais aussi la réprobation des milieux bien-pensants, ont été rassemblés pour être joués de manière vivante et théâtrale par 3 comédiennes. Pour parfaire le côté festif et décalé du spectacle, ces",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
       "image": "",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-29T00:00:00+00:00"
     },
     {
-      "title": "Ciné Conférence – Ethiopie",
-      "description": "Ethiopie - Au coeur de l'Abyssinie (d'Olivier BOURGUET et Frédéric FURNELLE) Dans la nuit du 6 au 7 janvier, l’Éthiopie chrétienne est en émoi pour «Genna», la Noël éthiopienne. Dans les semaines qui précèdent cette nuit, les pèlerins se mettent en marche des 4 coins du pays en direction de Lalibela : la Jérusalem éthiopienne, où cette fête de N0ël est la plus grandiose. Pour être les témoins privilégiés de cette foi, Frédéric et Olivier prennent la route depuis le…",
+      "title": "Ciné Conférence Ethiopie",
+      "description": "Ethiopie - Au coeur de l'Abyssinie (d'Olivier BOURGUET et Frédéric FURNELLE) Dans la nuit du 6 au 7 janvier, l’Éthiopie chrétienne est en émoi pour Genna , la Noël éthiopienne. Dans les semaines qui précèdent cette nuit, les pèlerins se mettent en marche des 4 coins du pays en direction de Lalibela : la Jérusalem éthiopienne, où cette fête de N0ël est la plus grandiose. Pour être les témoins privilégiés de cette foi, Frédéric et Olivier prennent la route depuis le",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
       "image": "",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-10T00:00:00+00:00"
     },
     {
       "title": "Qui arrosera les plantes quand je ne serai plus là ?",
-      "description": "Un seule en scène où l’on rit et ça fait du bien ! C’est par un véritable tour de magie qu’Anne de Peufeilhoux, alias Odette Lafleur, transforme sans tabou sa peur de mourir en une succession de gags, de situations décalées voire burlesques, de jeux de mots subtils avec un tonus et un humour décapant ! Desproges n’est pas loin... Anne de Peufeilhoux a été, dans une autre vie, un médecin, chercheur en biologie, et elle s'est initiée à l'art Clownesque,…",
+      "description": "Un seule en scène où l’on rit et ça fait du bien ! C’est par un véritable tour de magie qu’Anne de Peufeilhoux, alias Odette Lafleur, transforme sans tabou sa peur de mourir en une succession de gags, de situations décalées voire burlesques, de jeux de mots subtils avec un tonus et un humour décapant ! Desproges n’est pas loin... Anne de Peufeilhoux a été, dans une autre vie, un médecin, chercheur en biologie, et elle s'est initiée à l'art Clownesque,",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
       "image": "",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-13T00:00:00+00:00"
     },
     {
       "title": "Colours in the street",
-      "description": "En première partie: CASSIEN Colours in the Street s’inscrit dans le mouvement d’une pop massive, élégante, percutante, taillée pour les grandes scènes. Depuis plusieurs années, le groupe enchaîne les tournées avec des prestations scéniques remarquables en France et à l’international (Europe, Chine, Corée du Sud, Australie, Amérique du Sud…). Pour les fans de musique pop rock à l’énergie contagieuse et aux émotions intenses, les concerts de Colours in the Street sont incontournables. A travers ses performances envoûtantes, le groupe est…",
+      "description": "En première partie: CASSIEN Colours in the Street s’inscrit dans le mouvement d’une pop massive, élégante, percutante, taillée pour les grandes scènes. Depuis plusieurs années, le groupe enchaîne les tournées avec des prestations scéniques remarquables en France et à l’international (Europe, Chine, Corée du Sud, Australie, Amérique du Sud ). Pour les fans de musique pop rock à l’énergie contagieuse et aux émotions intenses, les concerts de Colours in the Street sont incontournables. A travers ses performances envoûtantes, le groupe est",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
       "image": "",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-17T00:00:00+00:00"
     },
     {
       "title": "Le banquet de la Sainte-Cécile",
-      "description": "De et par Jean-Pierre BODIN avec la complicité de François CHATTOT Jean-Pierre Bodin fait revivre l’harmonie municipale de Chauvigny dont les répétitions, défilés du 14 juillet et du 11 novembre sont devenus légendaires depuis la création du spectacle à Avignon en 1994. Une foule de figures villageoises rabelaisiennes défile au son des cuivres et de la grosse caisse. On a presque à la bouche le goût des fraises amenées à la répétition, qu’on déguste trempées dans un petit verre de…",
+      "description": "De et par Jean-Pierre BODIN avec la complicité de François CHATTOT Jean-Pierre Bodin fait revivre l’harmonie municipale de Chauvigny dont les répétitions, défilés du 14 juillet et du 11 novembre sont devenus légendaires depuis la création du spectacle à Avignon en 1994. Une foule de figures villageoises rabelaisiennes défile au son des cuivres et de la grosse caisse. On a presque à la bouche le goût des fraises amenées à la répétition, qu’on déguste trempées dans un petit verre de",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
       "image": "",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
-    },
-    {
-      "title": "Ouverture des réservations",
-      "description": "Les réservations pour tous les spectacles de la saison débuteront le mercredi 3 septembre 2025 à 14h Il vous sera alors possible de réserver par téléphone au 05 49 52 70 62, de venir directement prendre vos billets sur place au théâtre, ou bien de réserver sur internet en suivant le lien présent dans le détail de chaque spectacle. Pour rappel les horaires pour les réservations téléphoniques ou sur place sont les suivants: mercredi et vendredi de 14h à 18h…",
-      "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
-      "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/bandeau-25-261-300x100.jpg",
-      "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-17T00:00:00+00:00"
     },
     {
       "title": "Ciné conférence Altaïr: Japon",
-      "description": "Japon - Au pays des extrêmes Un film de Maximilien Dauber, présenté par Philippe Soreil Présentateur radio et télévision en Belgique, en France et au Luxembourg depuis 1980, Philippe a réalisé une quinzaine de films documentaires. Son esprit d'explorateur-aventurier l'a mené avec ses caméras aux 4 coins de la planète. Il a récemment coréalisé - déjà avec Maximilien Dauber - deux films-conférences sur la Wallonie puis sur Rome. Avec ce film sur le Japon, c’est un tout nouvel univers qui…",
+      "description": "Japon - Au pays des extrêmes Un film de Maximilien Dauber, présenté par Philippe Soreil Présentateur radio et télévision en Belgique, en France et au Luxembourg depuis 1980, Philippe a réalisé une quinzaine de films documentaires. Son esprit d'explorateur-aventurier l'a mené avec ses caméras aux 4 coins de la planète. Il a récemment coréalisé - déjà avec Maximilien Dauber - deux films-conférences sur la Wallonie puis sur Rome. Avec ce film sur le Japon, c’est un tout nouvel univers qui",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/01.affiche-japon-713x1003-213x300.jpg",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-25T00:00:00+00:00"
     },
     {
       "title": "Présentation de saison 2025/2026",
-      "description": "Ouh là là, quelle belle saison encore ! On a tellement hâte de vous la faire découvrir. Cette présentation de saison est faite pour ça, pleine de belles surprises, avec des artistes en chair et en os, de la musique, du live, de la vidéo. C’est divertissant, rafraîchissant, drôle, léger, sans prétention, et... gratuit. Vous faire rire, vous émouvoir, vous enchanter, vous faire découvrir, vous émerveiller... c’est ambitieux, certes, mais nous n’avons aucun doute sur la réussite de notre mission.…",
+      "description": "Ouh là là, quelle belle saison encore ! On a tellement hâte de vous la faire découvrir. Cette présentation de saison est faite pour ça, pleine de belles surprises, avec des artistes en chair et en os, de la musique, du live, de la vidéo. C’est divertissant, rafraîchissant, drôle, léger, sans prétention, et... gratuit. Vous faire rire, vous émouvoir, vous enchanter, vous faire découvrir, vous émerveiller... c’est ambitieux, certes, mais nous n’avons aucun doute sur la réussite de notre mission.",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/bandeau-25-261-300x100.jpg",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-11T00:00:00+00:00"
     },
     {
-      "title": "Giorda « Hypn’Ose »",
-      "description": "HYPN'OSE Sur scène comme dans le public, OSEZ vivre une expérience extraordinaire !Laissez-moi vous emmener dans mon univers où l’hypnose se mêle à la bienveillance et à l’émerveillement.HYPN’OSE n’est pas seulement un spectacle, c’est une véritable aventure collective, où chacun choisit librement de participer.Un moment unique, qui crée du lien, interroge et bouscule vos certitudes. Une parenthèse hors du temps, où le rire, l’émotion et l’extraordinaire se rencontrent.Ensemble, faisons de cette soirée un instant magique. Prêts à rêver ? Je…",
+      "title": "Giorda Hypn’Ose",
+      "description": "HYPN'OSE Sur scène comme dans le public, OSEZ vivre une expérience extraordinaire !Laissez-moi vous emmener dans mon univers où l’hypnose se mêle à la bienveillance et à l’émerveillement.HYPN’OSE n’est pas seulement un spectacle, c’est une véritable aventure collective, où chacun choisit librement de participer.Un moment unique, qui crée du lien, interroge et bouscule vos certitudes. Une parenthèse hors du temps, où le rire, l’émotion et l’extraordinaire se rencontrent.Ensemble, faisons de cette soirée un instant magique. Prêts à rêver ? Je",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=past&tribe_paged=1",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/affiche-Giorda1-200x300.jpg",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2025-11-11T00:00:00+00:00"
     },
     {
       "title": "Prochains Évènements",
-      "description": "One Man Chauv! festival 2026 5ème édition « Le One Man Chauv' ! Festival » ?? c’est quoi ça ?? C’est 7 dates de franche rigolade du 11 au 21 mars, y en a pour tous les goûts, tous les âges, si t’aimes pas te marrer, c’est pas pour toi, reste chez toi !!",
+      "description": "One Man Chauv! festival 2026 5ème édition Le One Man Chauv' ! Festival ?? c’est quoi ça ?? C’est 7 dates de franche rigolade du 11 au 21 mars, y en a pour tous les goûts, tous les âges, si t’aimes pas te marrer, c’est pas pour toi, reste chez toi !!",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2020/08/logo-one-man-300x216.jpg",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2026-11-02T00:00:00+00:00"
     },
     {
       "title": "One Man Chauv! Festival",
-      "description": "One Man Chauv! festival 2026 5ème édition « Le One Man Chauv' ! Festival » ?? c’est quoi ça ?? C’est 7 dates de franche rigolade du 11 au 21 mars, y en a pour tous les goûts, tous les âges, si t’aimes pas te marrer, c’est pas pour toi, reste chez toi !!",
+      "description": "One Man Chauv! festival 2026 5ème édition Le One Man Chauv' ! Festival ?? c’est quoi ça ?? C’est 7 dates de franche rigolade du 11 au 21 mars, y en a pour tous les goûts, tous les âges, si t’aimes pas te marrer, c’est pas pour toi, reste chez toi !!",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2020/08/logo-one-man-300x216.jpg",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2026-11-02T00:00:00+00:00"
     },
     {
       "title": "Bernard Mabille",
-      "description": "Bernard Mabille \"Loin des cons\" « Quarante ans déjà que nous nous amusons ensemble, baffant les grands inutiles de ce monde. Fidèle à la règle du jeu que m’ont enseignée mes amis Le Luron, Desproges, Coluche : « tout dire sans filtre, ni respect jamais », je m’apprête à vivre un nouveau plaisir : boucler ma valise, reprendre la route, et venir à vous avec ce spectacle plus drôle, plus vache, plus libre. Drôle, libre, vache mais plus intimiste encore,…",
+      "description": "Bernard Mabille \"Loin des cons\" Quarante ans déjà que nous nous amusons ensemble, baffant les grands inutiles de ce monde. Fidèle à la règle du jeu que m’ont enseignée mes amis Le Luron, Desproges, Coluche : tout dire sans filtre, ni respect jamais , je m’apprête à vivre un nouveau plaisir : boucler ma valise, reprendre la route, et venir à vous avec ce spectacle plus drôle, plus vache, plus libre. Drôle, libre, vache mais plus intimiste encore,",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/affiche-Mabille-200x300.jpg",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2026-11-02T00:00:00+00:00"
     },
     {
       "title": "Scènes ouvertes 2026",
-      "description": "Scènes ouvertes / Locomédy Le Théâtre Charles-Trenet a le plaisir d’accueillir le Concours d’Humour organisé cette saison en partenariat avec l’association Locomedy, un événement placé sous le signe du rire et de la découverte ! Locomedy, association dédiée à la création, la promotion et la diffusion du spectacle vivant, se spécialise dans le stand-up et met un point d’honneur à faire émerger les nouveaux talents de la scène humoristique. L'association a un plateau régulier à Poitiers et se produit dans…",
+      "description": "Scènes ouvertes / Locomédy Le Théâtre Charles-Trenet a le plaisir d’accueillir le Concours d’Humour organisé cette saison en partenariat avec l’association Locomedy, un événement placé sous le signe du rire et de la découverte ! Locomedy, association dédiée à la création, la promotion et la diffusion du spectacle vivant, se spécialise dans le stand-up et met un point d’honneur à faire émerger les nouveaux talents de la scène humoristique. L'association a un plateau régulier à Poitiers et se produit dans",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/logo-locomedy-300x150.png",
       "source": "theatre-charles-trenet.fr",
-      "date_start": null
+      "date_start": "2026-12-02T00:00:00+00:00"
     },
     {
       "title": "Sophia Aram",
-      "description": "Sophia Aram \" Le monde d'après\" « Pour mon 5e spectacle, j’ai choisi de m’amuser avec la dinguerie d’une époque réussissant l’exploit de ressusciter les timbrés que l’on croyait oubliés et d’en inventer de nouveaux qui n’ont rien à envier aux premiers. Je dédie ce spectacle aux antivax découvrant l’innocuité d’un faux pass-vaccinal face à un vrai virus, aux petites bourgeoises le cul bien moulé dans leurs leggings venant expier leurs vacances à Courchevel en faisant la promotion d’un islam rigoriste qu’elles n’auront…",
+      "description": "Sophia Aram \" Le monde d'après\" Pour mon 5e spectacle, j’ai choisi de m’amuser avec la dinguerie d’une époque réussissant l’exploit de ressusciter les timbrés que l’on croyait oubliés et d’en inventer de nouveaux qui n’ont rien à envier aux premiers. Je dédie ce spectacle aux antivax découvrant l’innocuité d’un faux pass-vaccinal face à un vrai virus, aux petites bourgeoises le cul bien moulé dans leurs leggings venant expier leurs vacances à Courchevel en faisant la promotion d’un islam rigoriste qu’elles n’auront",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/sophia-aram1-259x300.jpg",
       "source": "theatre-charles-trenet.fr",
@@ -1387,7 +1227,7 @@
     },
     {
       "title": "Nathan Steinbach",
-      "description": "Nathan Steinbach \"Stéréotype\" Nathan Steinbach, c’est le dernier gagnant des scènes ouvertes, et s’il a gagné c’est qu’il est drôle. Si vous l’avez loupé en 2025, vous pouvez encore vous rattraper. Issu de la communauté des gens du voyage, il aime nous faire découvrir sa culture avec beaucoup d’humour et d’autodérision. Il se plait à démonter quelques clichés mais n’hésite pas à en rajouter une couche de temps en temps et à brosser des portraits au vitriol, avec tendresse et…",
+      "description": "Nathan Steinbach \"Stéréotype\" Nathan Steinbach, c’est le dernier gagnant des scènes ouvertes, et s’il a gagné c’est qu’il est drôle. Si vous l’avez loupé en 2025, vous pouvez encore vous rattraper. Issu de la communauté des gens du voyage, il aime nous faire découvrir sa culture avec beaucoup d’humour et d’autodérision. Il se plait à démonter quelques clichés mais n’hésite pas à en rajouter une couche de temps en temps et à brosser des portraits au vitriol, avec tendresse et",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/image00003-300x200.jpg",
       "source": "theatre-charles-trenet.fr",
@@ -1395,7 +1235,7 @@
     },
     {
       "title": "Meryem Benoua",
-      "description": "Meryem Benoua \"Reflet\" Ne vous fiez surtout pas à ce joli sourire, elle vous surprendra ! C'est le genre de copine avec qui on prend des fous rires et qui s'en fout complètement des apparences. Vous voyez le genre ? Meryem Benoua impose un style scénique atypique, qui lui est propre. Elle est à la fois théâtrale et pétillante, elle n'en finira pas de vous étonner ! Tarif plein : 15 € - Tarif réduit : 12 € Abo TP…",
+      "description": "Meryem Benoua \"Reflet\" Ne vous fiez surtout pas à ce joli sourire, elle vous surprendra ! C'est le genre de copine avec qui on prend des fous rires et qui s'en fout complètement des apparences. Vous voyez le genre ? Meryem Benoua impose un style scénique atypique, qui lui est propre. Elle est à la fois théâtrale et pétillante, elle n'en finira pas de vous étonner ! Tarif plein : 15 € - Tarif réduit : 12 € Abo TP",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/affiche-M-Benoua1-200x300.jpg",
       "source": "theatre-charles-trenet.fr",
@@ -1403,7 +1243,7 @@
     },
     {
       "title": "Bérengère Krief",
-      "description": "Bérengère Krief \"Sexe\" Bérengère Krief questionne avec humour notre consommation de la sexualité. Dans une société en pleine \"sex-récession\", elle apporte un nouvel éclairage et un regard sensible sur la place du plaisir dans notre éducation qui prône souvent plus la prévention que l'extase. « On dit toujours que ce sont ceux qui en parlent le plus qui pratiquent le moins. La bonne nouvelle, c’est qu’il vous suffira simplement d’écouter. Je vous propose qu’on partage une heure de sexe. Une…",
+      "description": "Bérengère Krief \"Sexe\" Bérengère Krief questionne avec humour notre consommation de la sexualité. Dans une société en pleine \"sex-récession\", elle apporte un nouvel éclairage et un regard sensible sur la place du plaisir dans notre éducation qui prône souvent plus la prévention que l'extase. On dit toujours que ce sont ceux qui en parlent le plus qui pratiquent le moins. La bonne nouvelle, c’est qu’il vous suffira simplement d’écouter. Je vous propose qu’on partage une heure de sexe. Une",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/Photo-Affiche-Bérengère-Krief-crédit-Lou-Escobar1-200x300.jpg",
       "source": "theatre-charles-trenet.fr",
@@ -1419,7 +1259,7 @@
     },
     {
       "title": "Les Mystères du Vin",
-      "description": "Les Mystères du Vin - Pascal Faidy Mais peut-il transformer l’eau en vin ? Avec humour et mystère, il vous fait découvrir l’art du vigneron, la psychologie du sommelier, la persuasion du négociant, les cinq sens de l’œnologue, le rêve du consommateur... En prime, vous aurez peut-être la chance de repartir avec un cadeau ! Le magicien mentaliste guide ainsi son auditoire dans l’univers de la viticulture, tout en jouant avec son esprit. Tarif plein : 10 € - Tarif…",
+      "description": "Les Mystères du Vin - Pascal Faidy Mais peut-il transformer l’eau en vin ? Avec humour et mystère, il vous fait découvrir l’art du vigneron, la psychologie du sommelier, la persuasion du négociant, les cinq sens de l’œnologue, le rêve du consommateur... En prime, vous aurez peut-être la chance de repartir avec un cadeau ! Le magicien mentaliste guide ainsi son auditoire dans l’univers de la viticulture, tout en jouant avec son esprit. Tarif plein : 10 € - Tarif",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/Les-mysteres-du-vin-web-212x300.jpg",
       "source": "theatre-charles-trenet.fr",
@@ -1427,7 +1267,7 @@
     },
     {
       "title": "Amour sans frontière",
-      "description": "Amour sans frontière - Duo Fortecello & Alexandre Griffiths “Amour sans frontière” est une histoire, touchante et amusante à la fois, de deux musiciens venant de deux cultures différentes qui apprennent à jouer ensemble et à... s'aimer. Une histoire d'amour : l'amour pour la musique, pour la différence, pour le voyage et la découverte, et enfin l'amour l'un pour l'autre. Une violoncelliste polonaise et un pianiste franco-espagnol présentent l'histoire cosmopolite de leur duo. Une quinzaine de pièces du répertoire classique,…",
+      "description": "Amour sans frontière - Duo Fortecello & Alexandre Griffiths “Amour sans frontière” est une histoire, touchante et amusante à la fois, de deux musiciens venant de deux cultures différentes qui apprennent à jouer ensemble et à... s'aimer. Une histoire d'amour : l'amour pour la musique, pour la différence, pour le voyage et la découverte, et enfin l'amour l'un pour l'autre. Une violoncelliste polonaise et un pianiste franco-espagnol présentent l'histoire cosmopolite de leur duo. Une quinzaine de pièces du répertoire classique,",
       "link": "https://theatre-charles-trenet.fr/events/liste/?tribe_event_display=list&tribe_paged=2",
       "image": "https://theatre-charles-trenet.fr/wp-content/uploads/2025/08/amour-sf-200x300.jpg",
       "source": "theatre-charles-trenet.fr",
