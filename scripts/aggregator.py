@@ -172,55 +172,88 @@ def fetch_meetup_ics():
     print(f"[Meetup] {len(items)} événements collectés (à venir)")
     return items
 
-
 # --- SOURCE 4 : VisitPoitiers ---
 def fetch_visitpoitiers():
-    print("[VisitPoitiers] Scraping complet…")
+    print("[VisitPoitiers] Scraping pages d’activités…")
     base = VISITPOITIERS_BASE
     visited, events = set(), []
-    start_urls = [f"{base}/activites/", f"{base}/agenda/"]
+    start_url = f"{base}/activites/"
+    
+    try:
+        r = requests.get(start_url, timeout=15)
+        r.raise_for_status()
+        soup = BeautifulSoup(r.text, "html.parser")
 
-    def crawl(url, depth=0, max_depth=3):
-        if url in visited or depth > max_depth:
-            return
-        visited.add(url)
-        try:
-            r = requests.get(url, timeout=10)
-            if "text/html" not in r.headers.get("Content-Type", ""):
-                return
-            soup = BeautifulSoup(r.text, "html.parser")
+        # 1️⃣ Trouver tous les liens vers /activite/xxxx/
+        activity_links = set()
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if re.search(r"/activite/[^/]+/?$", href):
+                activity_links.add(urljoin(base, href))
 
-            # Bouton "agenda" (toutes variantes)
-            for link in soup.find_all("a", string=re.compile("agenda", re.I)):
-                next_url = urljoin(url, link["href"])
-                crawl(next_url, depth + 1, max_depth)
+        print(f" - {len(activity_links)} pages d’activités détectées.")
 
-            # Liens vers pages d’activités
-            for a in soup.find_all("a", href=True):
-                href = a["href"]
-                if re.search(r"/activite[s]?/", href) and base in urljoin(url, href):
-                    crawl(urljoin(url, href), depth + 1, max_depth)
+        # 2️⃣ Parcourir chaque page /activite/
+        for link in activity_links:
+            if link in visited:
+                continue
+            visited.add(link)
+            time.sleep(0.4)
+            try:
+                r2 = requests.get(link, timeout=15)
+                if "text/html" not in r2.headers.get("Content-Type", ""):
+                    continue
+                soup2 = BeautifulSoup(r2.text, "html.parser")
 
-            # Extraction d’événements (titres + dates)
-            for h in soup.find_all(["h2", "h3", "h1"]):
-                if any(k in h.get_text().lower() for k in ["concert", "expo", "spectacle", "atelier", "balade"]):
-                    date = None
-                    for p in h.find_all_next("p", limit=5):
-                        if re.search(r"\b20\d{2}\b", p.text):
-                            date = p.text.strip()
-                            break
-                    ev = make_event(h.get_text(), date or START_ISO, url, "visitpoitiers",
-                                    location="Poitiers")
-                    if ev:
-                        events.append(ev)
-        except Exception as e:
-            print(f"[VisitPoitiers] Erreur sur {url}: {e}")
-        time.sleep(0.2)
+                # Nom principal de la page (souvent h1)
+                title_tag = soup2.find(["h1", "h2"])
+                title = title_tag.get_text(strip=True) if title_tag else link.split("/")[-2].replace("-", " ").title()
 
-    for u in start_urls:
-        crawl(u)
-    print(f"[VisitPoitiers] {len(events)} événements collectés (à venir)")
+                # Extraire description courte
+                desc_tag = soup2.find("p")
+                desc = desc_tag.get_text(strip=True) if desc_tag else ""
+
+                # Créer un "événement" de type "établissement"
+                ev = {
+                    "title": title,
+                    "date_start": START_ISO,  # non daté, mais on met la date du jour
+                    "location": "Poitiers",
+                    "link": link,
+                    "source": "visitpoitiers",
+                    "description": desc
+                }
+                events.append(ev)
+
+                # 3️⃣ Chercher des liens vers agendas externes
+                for a2 in soup2.find_all("a", href=True):
+                    href2 = a2["href"]
+                    if any(k in href2.lower() for k in [
+                        "agenda", "event", "evenement", "calendrier", "openagenda",
+                        "facebook.com/events", "google.com/calendar"
+                    ]):
+                        full_link = urljoin(link, href2)
+                        if full_link not in visited:
+                            visited.add(full_link)
+                            print(f"   ↳ Agenda trouvé : {full_link}")
+                            # Ajouter comme “source découverte”
+                            events.append({
+                                "title": f"Agenda lié à {title}",
+                                "date_start": START_ISO,
+                                "location": "Poitiers",
+                                "link": full_link,
+                                "source": "visitpoitiers-agenda",
+                                "description": "Lien externe vers un calendrier ou agenda."
+                            })
+
+            except Exception as e:
+                print(f"[VisitPoitiers] Erreur sur {link}: {e}")
+
+    except Exception as e:
+        print("[VisitPoitiers] ERREUR racine:", e)
+
+    print(f"[VisitPoitiers] {len(events)} pages collectées (activités + agendas externes)")
     return events
+
 
 
 # --- MAIN ---
