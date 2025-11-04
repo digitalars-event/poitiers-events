@@ -1,8 +1,8 @@
 # scrapers/cgr.py
 from playwright.sync_api import sync_playwright
-import requests, json
+from bs4 import BeautifulSoup
 from datetime import datetime
-from urllib.parse import urljoin
+import time
 
 CGR_URLS = {
     "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
@@ -18,68 +18,67 @@ def scrape():
         context = browser.new_context()
 
         for cinema_name, url in CGR_URLS.items():
-            print(f"\n🎬 Analyse du site {cinema_name}...")
+            print(f"\n🎬 Chargement de {cinema_name}...")
             page = context.new_page()
-
             try:
                 page.goto(url, wait_until="domcontentloaded", timeout=30000)
-                page.wait_for_timeout(8000)
+                print("⏳ Attente du rendu React (5s)...")
+                time.sleep(5)
+                html = page.content()
             except Exception as e:
-                print(f"⚠️ Erreur ouverture page {cinema_name}: {e}")
+                print(f"⚠️ Erreur ouverture {cinema_name}: {e}")
                 continue
 
-            # Récupérer tous les liens "films à l’affiche"
-            movie_links = page.locator("a[href*='/films-a-l-affiche/']").evaluate_all("els => els.map(e => e.getAttribute('href'))")
-            print(f"🎞️ {len(movie_links)} liens de films trouvés pour {cinema_name}")
+            soup = BeautifulSoup(html, "html.parser")
 
-            for link in movie_links:
-                if not link:
-                    continue
-                # Générer l’URL JSON Gatsby associée
-                movie_json_url = link.replace("/films-a-l-affiche/", "/page-data/films-a-l-affiche/").rstrip("/") + "/page-data.json"
-                movie_json_url = urljoin("https://cms-assets.webediamovies.pro/prod/cgr/", f"{datetime.now().strftime('%Y-%m-%d')}/public{movie_json_url}")
-                
+            movies = soup.select("h2 a[href*='/films-a-l-affiche/']")
+            print(f"🎞️ {len(movies)} films détectés pour {cinema_name}")
+
+            for movie_link in movies:
                 try:
-                    r = requests.get(movie_json_url, timeout=10)
-                    if r.status_code != 200:
-                        continue
-                    data = r.json()
-                    movie = data.get("result", {}).get("data", {}).get("movie")
-                    if not movie:
-                        continue
+                    title = movie_link.get_text(strip=True)
+                    parent = movie_link.find_parent("div", class_="css-ygq8g8") or movie_link.find_parent("div")
+                    
+                    # Image (affiche)
+                    img_tag = parent.find("img")
+                    image = img_tag["src"] if img_tag else None
 
-                    title = movie.get("title", "Inconnu")
-                    image = movie.get("poster")
-                    movie_id = movie.get("id")
+                    # Description et durée
+                    p_tag = parent.find("p")
+                    duration, description = "", ""
+                    if p_tag:
+                        text = p_tag.get_text(" ", strip=True)
+                        parts = text.split("•")
+                        if len(parts) >= 2:
+                            duration = parts[0].strip()
+                            description = parts[1].strip()
+                        else:
+                            description = text.strip()
 
-                    # Extraction simple des séances
+                    # Horaires
                     showtimes = []
-                    def extract_times(obj):
-                        if isinstance(obj, dict):
-                            for k, v in obj.items():
-                                if isinstance(v, str) and ":" in v:
-                                    showtimes.append(v)
-                                else:
-                                    extract_times(v)
-                        elif isinstance(obj, list):
-                            for v in obj:
-                                extract_times(v)
+                    for tag in parent.select("button, div"):
+                        text = tag.get_text(strip=True)
+                        if ":" in text and len(text) <= 8:  # ex: 14h00, 22h15
+                            showtimes.append(text)
 
-                    extract_times(movie.get("showtimes") or {})
-
-                    all_events.append({
-                        "id": movie_id,
+                    movie_data = {
                         "title": title,
+                        "duration": duration,
+                        "description": description,
                         "image": image,
-                        "cinema": cinema_name,
                         "showtimes": sorted(set(showtimes)),
+                        "cinema": cinema_name,
                         "date": datetime.now().strftime("%Y-%m-%d"),
-                        "source": movie_json_url,
+                        "source": url,
                         "scraped_at": datetime.now().isoformat()
-                    })
-                    print(f"✅ {title} ({cinema_name}) → {len(showtimes)} séances")
+                    }
+
+                    all_events.append(movie_data)
+                    print(f"✅ {title} ({cinema_name}) → {len(showtimes)} horaires")
+
                 except Exception as e:
-                    print(f"⚠️ Erreur chargement {movie_json_url}: {e}")
+                    print(f"⚠️ Erreur parsing film ({cinema_name}) : {e}")
                     continue
 
         browser.close()
@@ -88,7 +87,7 @@ def scrape():
 
 
 if __name__ == "__main__":
-    movies = scrape()
-    print(f"\n💾 {len(movies)} films enregistrés.")
-    for m in movies[:5]:
-        print(f"- {m['title']} ({m['cinema']}) : {len(m['showtimes'])} séances")
+    data = scrape()
+    print(f"\n💾 {len(data)} films sauvegardés.")
+    for d in data[:5]:
+        print(f"- {d['title']} ({d['cinema']}) : {len(d['showtimes'])} séances")
