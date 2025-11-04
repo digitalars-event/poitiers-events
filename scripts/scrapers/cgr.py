@@ -2,7 +2,6 @@
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 from datetime import datetime
-import time
 
 CGR_URLS = {
     "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
@@ -14,16 +13,16 @@ def scrape():
     all_events = []
 
     with sync_playwright() as p:
-        browser = p.firefox.launch(headless=True)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context()
 
         for cinema_name, url in CGR_URLS.items():
             print(f"\n🎬 Chargement de {cinema_name}...")
             page = context.new_page()
             try:
-                page.goto(url, wait_until="domcontentloaded", timeout=30000)
-                print("⏳ Attente du rendu React (5s)...")
-                time.sleep(5)
+                page.goto(url, timeout=60000)
+                # 💡 Attendre l'apparition d'un élément clé du contenu React
+                page.wait_for_selector("a[href*='/films-a-l-affiche/']", timeout=20000)
                 html = page.content()
             except Exception as e:
                 print(f"⚠️ Erreur ouverture {cinema_name}: {e}")
@@ -38,13 +37,13 @@ def scrape():
                 try:
                     title = movie_link.get_text(strip=True)
                     parent = movie_link.find_parent("div", class_="css-ygq8g8") or movie_link.find_parent("div")
-                    
-                    # Image (affiche)
-                    img_tag = parent.find("img")
+
+                    # Image
+                    img_tag = parent.find("img") if parent else None
                     image = img_tag["src"] if img_tag else None
 
-                    # Description et durée
-                    p_tag = parent.find("p")
+                    # Durée et description
+                    p_tag = parent.find("p") if parent else None
                     duration, description = "", ""
                     if p_tag:
                         text = p_tag.get_text(" ", strip=True)
@@ -57,12 +56,12 @@ def scrape():
 
                     # Horaires
                     showtimes = []
-                    for tag in parent.select("button, div"):
-                        text = tag.get_text(strip=True)
-                        if ":" in text and len(text) <= 8:  # ex: 14h00, 22h15
-                            showtimes.append(text)
+                    for tag in parent.select("div, button"):
+                        t = tag.get_text(strip=True)
+                        if ":" in t and len(t) <= 8:
+                            showtimes.append(t)
 
-                    movie_data = {
+                    all_events.append({
                         "title": title,
                         "duration": duration,
                         "description": description,
@@ -72,13 +71,11 @@ def scrape():
                         "date": datetime.now().strftime("%Y-%m-%d"),
                         "source": url,
                         "scraped_at": datetime.now().isoformat()
-                    }
-
-                    all_events.append(movie_data)
+                    })
                     print(f"✅ {title} ({cinema_name}) → {len(showtimes)} horaires")
 
                 except Exception as e:
-                    print(f"⚠️ Erreur parsing film ({cinema_name}) : {e}")
+                    print(f"⚠️ Erreur parsing film ({cinema_name}): {e}")
                     continue
 
         browser.close()
