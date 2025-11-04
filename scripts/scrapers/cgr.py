@@ -1,8 +1,7 @@
 # scrapers/cgr.py
 from playwright.sync_api import sync_playwright
-import json
+import time, json
 from datetime import datetime
-import time
 
 CGR_URLS = {
     "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
@@ -23,9 +22,7 @@ def scrape():
             captured_json = []
 
             def handle_response(response):
-                if "page-data.json" in response.url and any(
-                    key in response.url for key in ["films-a-l-affiche", "horaires"]
-                ):
+                if "page-data/films-a-l-affiche" in response.url and response.url.endswith("page-data.json"):
                     try:
                         data = response.json()
                         captured_json.append({"url": response.url, "data": data})
@@ -33,20 +30,30 @@ def scrape():
                         pass
 
             page.on("response", handle_response)
+            page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            page.wait_for_timeout(8000)
 
-            try:
-                page.goto(url, wait_until="domcontentloaded", timeout=30000)
-                # Laisser le JS charger les données
-                print("⏳ Attente du rendu complet (React)...")
-                time.sleep(12)
-            except Exception as e:
-                print(f"⚠️ Erreur initiale ({cinema_name}) : {e}")
-                continue
+            # Récupérer tous les liens de films sur la page
+            movie_links = page.locator("a[href*='/films-a-l-affiche/']").all()
+            print(f"🎞️ {len(movie_links)} films détectés sur la page")
+
+            for i, link in enumerate(movie_links[:20]):  # limite à 20 pour éviter les boucles infinies
+                try:
+                    href = link.get_attribute("href")
+                    if not href:
+                        continue
+                    print(f"➡️ Ouverture du film {i+1}/{len(movie_links)} : {href}")
+                    page.goto("https://www.cgrcinemas.fr" + href, wait_until="domcontentloaded")
+                    page.wait_for_timeout(4000)
+                except Exception as e:
+                    print(f"⚠️ Erreur navigation film : {e}")
+                    continue
 
             if not captured_json:
-                print(f"⚠️ Aucune requête JSON captée pour {cinema_name}")
+                print(f"⚠️ Aucune requête JSON interceptée pour {cinema_name}")
                 continue
 
+            # Traitement des données interceptées
             for capture in captured_json:
                 data = capture["data"].get("result", {}).get("data", {})
                 movie = data.get("movie")
@@ -57,21 +64,20 @@ def scrape():
                 image = movie.get("poster")
                 movie_id = movie.get("id")
 
-                showtimes_data = movie.get("showtimes") or movie.get("schedules") or {}
+                # Extraction simple des séances
+                showtimes_data = movie.get("showtimes") or {}
                 showtimes = []
 
-                def extract_times(obj, date_key=None):
+                def extract_times(obj):
                     if isinstance(obj, dict):
                         for k, v in obj.items():
-                            if "time" in k and isinstance(v, str):
-                                showtimes.append(f"{date_key or ''} {v}".strip())
-                            elif "date" in k and isinstance(v, str):
-                                extract_times(v, v)
+                            if isinstance(v, str) and ":" in v:
+                                showtimes.append(v)
                             else:
-                                extract_times(v, date_key)
+                                extract_times(v)
                     elif isinstance(obj, list):
                         for v in obj:
-                            extract_times(v, date_key)
+                            extract_times(v)
 
                 extract_times(showtimes_data)
 
@@ -80,14 +86,14 @@ def scrape():
                     "title": title,
                     "image": image,
                     "cinema": cinema_name,
-                    "date": datetime.now().strftime("%Y-%m-%d"),
                     "showtimes": sorted(set(showtimes)),
+                    "date": datetime.now().strftime("%Y-%m-%d"),
                     "source": capture["url"],
                     "scraped_at": datetime.now().isoformat()
                 }
 
                 all_events.append(movie_entry)
-                print(f"🎞️ {title} ({cinema_name}) → {len(showtimes)} séances")
+                print(f"✅ {title} ({cinema_name}) → {len(showtimes)} séances")
 
         browser.close()
 
@@ -95,7 +101,7 @@ def scrape():
 
 
 if __name__ == "__main__":
-    movies = scrape()
-    print(f"\n✅ {len(movies)} films trouvés.")
-    for m in movies[:5]:
-        print(f"- {m['title']} ({m['cinema']}) : {len(m['showtimes'])} séances")
+    data = scrape()
+    print(f"\n💾 {len(data)} films sauvegardés.")
+    for d in data[:5]:
+        print(f"- {d['title']} ({d['cinema']}) : {len(d['showtimes'])} séances")
