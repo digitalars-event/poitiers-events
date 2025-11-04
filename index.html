@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Événements à Poitiers et alentours – Prototype</title>
+    <title>Films CGR – Prototype Poitiers</title>
 
     <style>
       :root {
@@ -13,31 +13,17 @@
         --text: #111;
         --brand: #097d4c;
         --brand-2: #13b46d;
-        --ok: #097d4c;
-        --danger: #ef4444;
-        --card: #fff;
-        --chip: #f2f2f2;
         --border: #ddd;
+        --card: #fff;
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
       html, body {
         background: var(--bg);
         color: var(--text);
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
         margin: 0;
-      }
-
-      a {
-        color: var(--brand);
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
       }
 
       .hero {
@@ -53,7 +39,7 @@
       }
 
       .hero h1 {
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0,0,0,0.3);
         padding: 12px 24px;
         border-radius: 12px;
         font-size: clamp(26px, 3vw, 36px);
@@ -72,7 +58,7 @@
         margin-top: 16px;
       }
 
-      @media (min-width: 680px) {
+      @media (min-width: 700px) {
         .grid { grid-template-columns: 1fr 1fr; }
       }
 
@@ -92,7 +78,7 @@
       }
 
       .card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-3px);
         box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       }
 
@@ -101,7 +87,6 @@
         aspect-ratio: 16 / 9;
         background-size: cover;
         background-position: center;
-        background-color: #eee;
       }
 
       .badge {
@@ -121,7 +106,7 @@
         padding: 14px;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 6px;
       }
 
       .content h3 {
@@ -134,6 +119,43 @@
         color: var(--muted);
       }
 
+      .synopsis {
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--text);
+        max-height: 3.5em;
+        overflow: hidden;
+        position: relative;
+        transition: max-height 0.4s ease;
+      }
+
+      .synopsis.expanded {
+        max-height: 300px;
+      }
+
+      .toggle-btn {
+        background: none;
+        border: none;
+        color: var(--brand);
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 13px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0;
+      }
+
+      .toggle-btn::after {
+        content: "▼";
+        font-size: 11px;
+        transition: transform 0.3s ease;
+      }
+
+      .toggle-btn.active::after {
+        transform: rotate(180deg);
+      }
+
       .chips {
         display: flex;
         flex-wrap: wrap;
@@ -141,7 +163,7 @@
       }
 
       .chip {
-        background: var(--chip);
+        background: #f3f3f3;
         border: 1px solid var(--border);
         border-radius: 999px;
         font-size: 12px;
@@ -188,14 +210,12 @@
   </head>
   <body>
     <div class="hero">
-      <h1>Événements à Poitiers et alentours</h1>
+      <h1>Films à l'affiche – Poitiers</h1>
     </div>
 
     <div class="wrap">
       <section class="grid" id="grid"></section>
-      <footer>
-        ✦ Données issues de <strong>events.json</strong> généré automatiquement via GitHub Actions.
-      </footer>
+      <footer>✦ Données issues de <strong>events.json</strong> (CGR).</footer>
     </div>
 
     <script>
@@ -219,14 +239,8 @@
         const grid = document.getElementById('grid');
         grid.innerHTML = '';
 
-        if (!items.length) {
-          grid.innerHTML = '<div class="panel empty">Aucun film trouvé.</div>';
-          return;
-        }
-
-        items.forEach(ev => {
-          // Vérif si film CGR
-          if (ev.cinema && ev.cinema.includes("CGR")) {
+        items.filter(ev => ev.cinema && ev.cinema.includes("CGR"))
+          .forEach(ev => {
             const poster = ev.poster || ev.image || '';
             const rel = daysUntil(ev.release);
             const genres = ev.genres || 'Genres non précisés';
@@ -239,10 +253,9 @@
                 </div>
                 <div class="content">
                   <h3>${ev.title}</h3>
-                  <div class="meta">
-                    ${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}
-                  </div>
-                  <p style="font-size:13px; line-height:1.5;">${desc}</p>
+                  <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
+                  <p class="synopsis">${desc}</p>
+                  <button class="toggle-btn">Voir plus</button>
                   <div class="chips">
                     ${ev.release ? `<span class="chip">Sortie : ${new Date(ev.release).toLocaleDateString('fr-FR')}</span>` : ''}
                   </div>
@@ -254,7 +267,16 @@
               </article>
             `;
             grid.insertAdjacentHTML('beforeend', html);
-          }
+          });
+
+        // ✅ Gérer les boutons de déploiement
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const p = btn.previousElementSibling;
+            p.classList.toggle('expanded');
+            btn.classList.toggle('active');
+            btn.textContent = p.classList.contains('expanded') ? 'Voir moins' : 'Voir plus';
+          });
         });
       }
 
