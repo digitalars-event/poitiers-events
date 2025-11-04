@@ -1,79 +1,74 @@
 # scrapers/cgr.py
-from playwright.sync_api import sync_playwright
-from bs4 import BeautifulSoup
+import requests
 from datetime import datetime
+from bs4 import BeautifulSoup
 
-CGR_URLS = {
-    "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-    "CGR Castille": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-    "CGR Fontaine-le-Comte": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/"
-}
+BASE_URL = "https://cms-assets.webediamovies.pro/prod/cgr/{date}/public/page-data/films-a-l-affiche"
+TODAY = datetime.now().strftime("%Y-%m-%d")
 
 def scrape():
     all_movies = []
+    index_url = f"{BASE_URL.format(date=TODAY)}/page-data.json"
 
-    with sync_playwright() as p:
-        browser = p.firefox.launch(headless=True)
-        page = browser.new_page()
+    print(f"🎬 Chargement de la liste des films pour le {TODAY}...")
+    res = requests.get(index_url)
+    if res.status_code != 200:
+        print(f"❌ Impossible de récupérer la liste des films ({res.status_code})")
+        return all_movies
 
-        for cinema_name, url in CGR_URLS.items():
-            print(f"🎬 Chargement de {cinema_name}...")
-            page.goto(url, timeout=60000)
-            page.wait_for_timeout(5000)  # attendre le rendu JS
+    data = res.json()
 
-            soup = BeautifulSoup(page.content(), "html.parser")
+    # extraction des liens vers les films individuels
+    paths = []
+    try:
+        paths = [e["path"] for e in data["result"]["data"]["allSitePage"]["edges"]]
+    except Exception:
+        # fallback : recherche dans pageContext si le format diffère
+        page_data = data.get("result", {}).get("pageContext", {})
+        if page_data:
+            paths.append(page_data.get("pagePath"))
 
-            # Extraction des films
-            movies = soup.select(".movie-item, .movie-block")
-            if not movies:
-                print(f"⚠️ Aucun film trouvé pour {cinema_name}")
-                continue
+    if not paths:
+        print("⚠️ Aucun film trouvé dans l’index.")
+        return all_movies
 
-            for movie in movies:
-                try:
-                    title_tag = movie.find("h3") or movie.find("h2")
-                    title = title_tag.get_text(strip=True) if title_tag else "Inconnu"
+    for path in paths:
+        if not path or not path.startswith("/films-a-l-affiche/"):
+            continue
 
-                    img_tag = movie.find("img")
-                    img_url = img_tag["src"] if img_tag else None
+        movie_url = f"{BASE_URL.format(date=TODAY)}{path}/page-data.json"
+        try:
+            movie_res = requests.get(movie_url)
+            movie_res.raise_for_status()
+            movie_data = movie_res.json()
 
-                    p_tag = movie.find("p")
-                    if p_tag:
-                        meta_text = p_tag.get_text(" ", strip=True)
-                        duration = meta_text.split("•")[0].strip() if "•" in meta_text else meta_text
-                        description = meta_text.split("•")[-1].strip() if "•" in meta_text else ""
-                    else:
-                        duration, description = "", ""
+            movie_info = movie_data["result"]["data"]["movie"]
+            title = movie_info.get("title", "Inconnu")
+            image = movie_info.get("poster")
+            movie_id = movie_info.get("id")
 
-                    showtimes = []
-                    for time_box in movie.select(".showtime, .hours, .session-item, .hour-item, .hour, .seance, button"):
-                        text = time_box.get_text(strip=True)
-                        if ":" in text:
-                            showtimes.append(text)
+            # construire la structure
+            movie_entry = {
+                "id": movie_id,
+                "title": title,
+                "image": image,
+                "date": TODAY,
+                "source": movie_url,
+                "scraped_at": datetime.now().isoformat()
+            }
 
-                    movie_data = {
-                        "title": title,
-                        "duration": duration,
-                        "description": description,
-                        "image": img_url,
-                        "showtimes": showtimes,
-                        "cinema": cinema_name,
-                        "source": url,
-                        "scraped_at": datetime.now().isoformat()
-                    }
-                    all_movies.append(movie_data)
+            all_movies.append(movie_entry)
+            print(f"🎞️ {title} ajouté ({movie_id})")
 
-                except Exception as err:
-                    print(f"⚠️ Erreur sur un film ({cinema_name}): {err}")
-                    continue
-
-        browser.close()
+        except Exception as e:
+            print(f"⚠️ Erreur lors du chargement de {movie_url} : {e}")
+            continue
 
     return all_movies
 
 
 if __name__ == "__main__":
-    data = scrape()
-    print(f"✅ {len(data)} films trouvés")
-    for d in data[:5]:
-        print(f"- {d['title']} ({d['cinema']}) : {len(d['showtimes'])} séances")
+    movies = scrape()
+    print(f"\n✅ {len(movies)} films trouvés.")
+    for m in movies[:5]:
+        print(f"- {m['title']} ({m['id']})")
