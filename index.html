@@ -30,8 +30,7 @@
       body {
         background: var(--bg);
         color: var(--text);
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-          Noto Sans, Helvetica, Arial;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
         margin: 0;
       }
 
@@ -48,7 +47,6 @@
         background-image: url('https://www.hifrance.org/wp-content/uploads/2025/10/Poitiers-Site-HI-Banniere.jpg');
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
         height: 200px;
         display: flex;
         align-items: center;
@@ -132,10 +130,6 @@
         outline: none;
       }
 
-      input::placeholder {
-        color: #888;
-      }
-
       label {
         font-size: 12px;
         color: var(--muted);
@@ -201,11 +195,12 @@
 
       .card .cover {
         aspect-ratio: 16 / 9;
-        background: linear-gradient(135deg, #eafaf2, #d9f6e6);
         position: relative;
+        background-size: cover;
+        background-position: center;
       }
 
-      .card .cover .date-badge {
+      .card .cover .badge {
         position: absolute;
         left: 10px;
         top: 10px;
@@ -217,18 +212,6 @@
         color: var(--brand);
       }
 
-      .card .cover .est-badge {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        background: #fff;
-        border: 1px solid #e4e6e5;
-        padding: 6px 10px;
-        border-radius: 10px;
-        font-size: 12px;
-        color: #2087f7;
-      }
-
       .card .content {
         padding: 14px;
         display: flex;
@@ -238,7 +221,7 @@
 
       .card h3 {
         margin: 0;
-        font-size: 16.5px;
+        font-size: 17px;
       }
 
       .meta {
@@ -303,11 +286,9 @@
     <div class="wrap">
       <header class="top">
         <div class="brand">
-          <span class="dot" aria-hidden="true"></span>
+          <span class="dot"></span>
           <div>
-            <div class="subtitle">
-              Prototype clair – données JSON dynamiques (GitHub Actions)
-            </div>
+            <div class="subtitle">Prototype clair – données JSON dynamiques (GitHub Actions)</div>
           </div>
         </div>
 
@@ -319,10 +300,10 @@
       </header>
 
       <section class="panel">
-        <div class="filters" role="region" aria-label="Filtres">
+        <div class="filters">
           <div>
             <label for="q">Rechercher</label>
-            <input id="q" type="search" placeholder="concert, expo, musée…" />
+            <input id="q" type="search" placeholder="concert, expo, film..." />
           </div>
 
           <div>
@@ -331,22 +312,17 @@
               <option value="">Toutes</option>
               <option>Musique</option>
               <option>Exposition</option>
-              <option>Théâtre</option>
-              <option>Conférence</option>
-              <option>Sport</option>
-              <option>Familial</option>
-              <option>Marché</option>
+              <option>Film</option>
               <option>Festival</option>
             </select>
           </div>
 
-          <!-- ✅ Nouveau menu déroulant Type -->
           <div>
             <label for="type">Type</label>
             <select id="type">
               <option value="">Tous</option>
               <option value="evenement">Événements</option>
-              <option value="etablissement">Établissements</option>
+              <option value="cgr">CGR Cinémas</option>
             </select>
           </div>
 
@@ -363,186 +339,98 @@
         </div>
       </section>
 
-      <section class="grid" id="grid" aria-live="polite"></section>
+      <section class="grid" id="grid"></section>
 
       <footer>
-        <p>
-          ✦ Les données proviennent d’un <strong>events.json</strong> généré
-          automatiquement via GitHub Actions.
-        </p>
+        <p>✦ Données générées automatiquement via GitHub Actions (events.json).</p>
       </footer>
     </div>
 
     <script>
-      function fmtDate(iso) {
-        if (!iso) return '';
-        const d = new Date(iso);
-        return new Intl.DateTimeFormat('fr-FR', {
-          weekday: 'short',
-          day: '2-digit',
-          month: 'short',
-          hour: '2-digit',
-          minute: '2-digit',
-        })
-          .format(d)
-          .replaceAll('.', '');
-      }
-    
-      function relDays(iso) {
-        if (!iso) return '';
-        const d = new Date(iso),
-          t = new Date();
-        t.setHours(0, 0, 0, 0);
-        d.setHours(0, 0, 0, 0);
-        const diff = Math.round((d - t) / 86400000);
-        if (diff === 0) return "Aujourd'hui";
-        if (diff === 1) return 'Demain';
-        if (diff < 0) return `${Math.abs(diff)} j passés`;
-        return `Dans ${diff} j`;
-      }
-    
       function slug(x) {
-        if (!x) return '';
-        return x
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[̀-ͯ]/g, '')
-          .replace(/[^a-z0-9]+/g, ' ')
-          .trim();
+        return x?.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
       }
-    
+
       async function loadEvents() {
-        try {
-          const r = await fetch('./events.json?v=' + Date.now(), {
-            cache: 'no-store',
-          });
-          if (r.ok) return await r.json();
-        } catch (e) {
-          console.error('Erreur de chargement JSON', e);
-        }
-        return { events: [] };
+        const r = await fetch('./events.json?v=' + Date.now(), { cache: 'no-store' });
+        return r.ok ? await r.json() : { events: [] };
       }
-    
+
       function render(items) {
         const grid = document.getElementById('grid');
         grid.innerHTML = '';
-    
+
         if (!items.length) {
-          grid.innerHTML =
-            '<div class="panel empty">Aucun élément ne correspond aux filtres.</div>';
+          grid.innerHTML = '<div class="panel empty">Aucun élément trouvé.</div>';
           return;
         }
-    
-        items.forEach((ev) => {
-          const free = Number(ev.price) === 0;
-          const isEvent = !!ev.date_start || !!ev.date;
-    
-          const badge = isEvent
-            ? `<div class="date-badge">${relDays(ev.date_start || ev.date)}</div>`
-            : `<div class="est-badge">Établissement</div>`;
-    
-          const coverStyle = ev.image
-            ? `background-image: url('${ev.image}');
-               background-size: cover;
-               background-position: center;`
-            : `background: linear-gradient(135deg, #eafaf2, #d9f6e6);`;
-    
-          const cover = `
-            <div class="cover" style="${coverStyle}">
-              ${badge}
-            </div>`;
-    
-          const cats = (ev.category || [])
-            .map((c) => `<span class="chip">${c}</span>`)
-            .join(' ');
-          const price = free ? '<span class="chip ok">Gratuit</span>' : '';
-    
-          // ✅ Nouveau bloc d'informations : adresse + horaires
-          let extraInfo = '';
-          if (!isEvent) {
-            if (ev.address) {
-              extraInfo += `<div class="meta"><strong>Adresse :</strong> ${ev.address}</div>`;
-            }
-            if (ev.opening_hours && ev.opening_hours.length > 0) {
-              const horaires = ev.opening_hours
-                .map((h) => `<div>${h}</div>`)
-                .join('');
-              extraInfo += `<div class="meta"><strong>Horaires :</strong> ${horaires}</div>`;
-            }
-          }
-    
-          const html = `
-            ${cover}
-            <div class="content">
-              <h3>${ev.title}</h3>
-              <div class="meta">
-                ${isEvent ? fmtDate(ev.date_start || ev.date) + ' · ' : ''}
-                ${(ev.location || 'Poitiers')}
+
+        items.forEach(ev => {
+          let html = '';
+
+          // 🎬 Spécial CGR
+          if (ev.cinema && ev.cinema.includes("CGR")) {
+            html = `
+              <div class="cover" style="background-image:url('${ev.poster}');">
+                <div class="badge">${ev.cinema}</div>
               </div>
-              ${extraInfo}
-              <div class="chips">${cats} ${price}</div>
-            </div>
-            <div class="actions">
-              <a class="ghost" href="${ev.link || '#'}" target="_blank" rel="noopener">
-                Source : ${(ev.source || 'inconnue')}
-              </a>
-              <a class="btn" href="${ev.link || '#'}" target="_blank" rel="noopener">
-                Voir ${isEvent ? "l'événement" : "la fiche"} →
-              </a>
-            </div>`;
-    
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">${ev.genres || 'Genre inconnu'} · ${ev.duration}</div>
+                <p style="font-size:13px; line-height:1.4;">${ev.description || '—'}</p>
+                <div class="chips">
+                  <span class="chip">Sortie : ${new Date(ev.release).toLocaleDateString('fr-FR')}</span>
+                </div>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Voir sur CGR</a>
+                <a class="btn" href="${ev.source}" target="_blank">Horaires 🎟️</a>
+              </div>`;
+          } else {
+            // autres événements
+            html = `
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">${ev.location || 'Poitiers'}</div>
+                <p style="font-size:13px;">${ev.description || ''}</p>
+              </div>`;
+          }
+
           const el = document.createElement('article');
           el.className = 'card';
           el.innerHTML = html;
           grid.appendChild(el);
         });
       }
-    
+
       function applyFilters(data) {
         const q = slug(document.getElementById('q').value);
         const cat = document.getElementById('cat').value;
         const type = document.getElementById('type').value;
         const freeOnly = document.getElementById('freeOnly').checked;
-    
-        let items = (data.events || [])
-          .map((e) => ({
-            ...e,
-            date: e.date_start || e.date || e.date_end,
-          }))
-          .filter((e) => !freeOnly || Number(e.price) === 0)
-          .filter((e) => !cat || (e.category || []).includes(cat))
-          .filter((e) => {
-            if (!q) return true;
-            const hay = slug(
-              (e.title || '') + ' ' + (e.location || '') + ' ' + (e.category || []).join(' ')
-            );
-            return hay.includes(q);
-          })
-          // ✅ Filtre type (inchangé)
-          .filter((e) => {
-            const isEvent = !!e.date_start || !!e.date;
-            if (type === 'evenement') return isEvent;
-            if (type === 'etablissement') return !isEvent;
-            return true;
-          });
-    
-        document.getElementById('countChip').textContent =
-          items.length + ' élément(s)';
+
+        let items = data.events || [];
+
+        items = items.filter(e => !freeOnly || e.price === 0);
+        if (cat) items = items.filter(e => (e.genres || '').includes(cat));
+        if (type === 'cgr') items = items.filter(e => e.cinema && e.cinema.includes('CGR'));
+        if (type === 'evenement') items = items.filter(e => !e.cinema);
+
+        if (q) {
+          items = items.filter(e => slug(e.title).includes(q));
+        }
+
+        document.getElementById('countChip').textContent = items.length + ' élément(s)';
         render(items);
       }
-    
+
       (async function () {
         const data = await loadEvents();
-        document.getElementById('lastUpdate').textContent =
-          new Date().toLocaleString('fr-FR');
-        const from = document.getElementById('from');
-        if (from) from.valueAsDate = new Date();
-    
-        ['q', 'cat', 'type', 'from', 'freeOnly'].forEach((id) => {
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleString('fr-FR');
+        ['q', 'cat', 'type', 'from', 'freeOnly'].forEach(id => {
           const el = document.getElementById(id);
           if (el) el.addEventListener('input', () => applyFilters(data));
         });
-    
         applyFilters(data);
       })();
     </script>
