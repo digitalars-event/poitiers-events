@@ -1,73 +1,82 @@
 # scrapers/cgr.py
+from playwright.sync_api import sync_playwright
 import requests
+import re
 from datetime import datetime
-import json
 
 CGR_CINEMAS = {
-    "CGR Buxerolles": "P0736",
-    "CGR Castille": "P0096",
-    "CGR Fontaine-le-Comte": "W8624",
+    "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+    "CGR Castille": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+    "CGR Fontaine-le-Comte": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/"
 }
 
-# URL principale des APIs
-BASE_API = "https://www.cgrcinemas.fr/api/gatsby-source-boxofficeapi"
 
-# Liste d'IDs de films connus, utile comme fallback
-DEFAULT_MOVIE_IDS = [
-    "1000000149", "1000003120", "1000004239", "1000006191",
-    "1000007022", "1000007239", "1000008466", "1000009081",
-    "1000020329", "1000030333", "1000030655", "1000032312",
-    "1000032450", "248289", "296641", "303027", "309613",
-    "317579", "324790"
-]
+def extract_movie_ids_from_request(url: str):
+    """Extrait tous les ids= depuis l'URL de la requête /movies"""
+    return re.findall(r"ids=(\d+)", url)
 
 
-def get_movies(cinema_name, cinema_id):
-    """Appelle l'API officielle CGR pour récupérer les films"""
-    print(f"🎬 {cinema_name} – récupération des films en cours...")
+def scrape_cinema(cinema_name, url):
+    """Intercepte la requête /movies pour récupérer les IDs dynamiques"""
+    print(f"\n🎬 {cinema_name}...")
     try:
-        res = requests.get(
-            f"{BASE_API}/movies",
-            params={
-                "basic": "false",
-                "castingLimit": "3",
-                **{f"ids": mid for mid in DEFAULT_MOVIE_IDS}
-            },
-            headers={
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                              "AppleWebKit/537.36 (KHTML, like Gecko) "
-                              "Chrome/142.0.0.0 Safari/537.36"
-            },
-            timeout=30
-        )
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context()
+            page = context.new_page()
 
-        if res.status_code != 200:
-            print(f"⚠️ Erreur API {cinema_name} : {res.status_code}")
-            return []
+            movie_ids = []
+            intercepted_url = None
 
-        movies = res.json()
-        parsed = []
+            def on_request(request):
+                nonlocal movie_ids, intercepted_url
+                if "/api/gatsby-source-boxofficeapi/movies" in request.url:
+                    intercepted_url = request.url
+                    movie_ids = extract_movie_ids_from_request(request.url)
 
-        for m in movies:
-            parsed.append({
-                "id": m.get("id"),
-                "title": m.get("title"),
-                "duration": f"{int(m.get('runtime', 0) // 60)} min",
-                "genres": m.get("genres"),
-                "synopsis": m.get("synopsis") or m.get("locale", {}).get("synopsis"),
-                "poster": m.get("poster"),
-                "studio": m.get("studio", {}).get("name"),
-                "certificate": m.get("certificate"),
-                "release_date": m.get("release"),
-                "casting": [c.get("actor", {}).get("lastName") for c in m.get("cast", {}).get("nodes", [])],
-                "director": [d.get("person", {}).get("lastName") for d in m.get("directors", {}).get("nodes", [])],
-                "cinema": cinema_name,
-                "source": "https://www.cgrcinemas.fr",
-                "scraped_at": datetime.now().isoformat()
-            })
+            page.on("request", on_request)
+            page.goto(url, wait_until="networkidle", timeout=60000)
+            page.wait_for_timeout(4000)  # petite pause pour laisser React charger
 
-        print(f"✅ {len(parsed)} films récupérés pour {cinema_name}")
-        return parsed
+            browser.close()
+
+            if not intercepted_url or not movie_ids:
+                print(f"⚠️ Aucune requête /movies interceptée pour {cinema_name}")
+                return []
+
+            print(f"✅ {len(movie_ids)} IDs détectés → {movie_ids[:5]}...")
+
+            # On refait la requête directement avec requests
+            params = [("ids", mid) for mid in movie_ids]
+            res = requests.get(
+                "https://www.cgrcinemas.fr/api/gatsby-source-boxofficeapi/movies",
+                params=[("basic", "false"), ("castingLimit", "3")] + params,
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=30
+            )
+            if res.status_code != 200:
+                print(f"❌ Erreur API ({res.status_code}) pour {cinema_name}")
+                return []
+
+            data = res.json()
+            movies = []
+
+            for m in data:
+                movies.append({
+                    "title": m.get("title"),
+                    "duration": f"{int(m.get('runtime', 0)//60)} min",
+                    "description": m.get("synopsis") or m.get("locale", {}).get("synopsis"),
+                    "poster": m.get("poster"),
+                    "genres": m.get("genres"),
+                    "certificate": m.get("certificate"),
+                    "release": m.get("release"),
+                    "cinema": cinema_name,
+                    "source": url,
+                    "scraped_at": datetime.now().isoformat()
+                })
+
+            print(f"🎞️ {len(movies)} films récupérés pour {cinema_name}")
+            return movies
 
     except Exception as e:
         print(f"❌ Erreur sur {cinema_name}: {e}")
@@ -75,14 +84,15 @@ def get_movies(cinema_name, cinema_id):
 
 
 def scrape():
-    """Scrape tous les cinémas CGR configurés"""
+    """Scrape tous les cinémas CGR avec interception d’API dynamique"""
     all_movies = []
-    for cinema_name, cinema_id in CGR_CINEMAS.items():
-        all_movies += get_movies(cinema_name, cinema_id)
+    for cinema_name, url in CGR_CINEMAS.items():
+        all_movies += scrape_cinema(cinema_name, url)
     return all_movies
 
 
 if __name__ == "__main__":
-    movies = scrape()
-    print(f"\n💾 {len(movies)} films trouvés.")
-    print(json.dumps(movies[:3], indent=2, ensure_ascii=False))  # aperçu rapide
+    data = scrape()
+    print(f"\n💾 Total: {len(data)} films trouvés.")
+    for m in data[:5]:
+        print(f"- {m['title']} ({m['cinema']})")
