@@ -2,6 +2,7 @@
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 from datetime import datetime
+import time
 
 CGR_URLS = {
     "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
@@ -21,28 +22,35 @@ def scrape():
             page = context.new_page()
             try:
                 page.goto(url, timeout=60000)
-                # 💡 Attendre l'apparition d'un élément clé du contenu React
-                page.wait_for_selector("a[href*='/films-a-l-affiche/']", timeout=20000)
+                # 🕐 Essayer d’attendre jusqu’à 15 secondes maximum
+                page.wait_for_selector("a[href*='/films-a-l-affiche/']", timeout=15000)
+                print("✅ Films détectables dans le DOM, extraction du HTML...")
                 html = page.content()
             except Exception as e:
-                print(f"⚠️ Erreur ouverture {cinema_name}: {e}")
-                continue
+                print(f"⚠️ Erreur ou timeout sur {cinema_name}: {e}")
+                # On tente de récupérer quand même le contenu visible
+                html = page.content()
 
             soup = BeautifulSoup(html, "html.parser")
 
             movies = soup.select("h2 a[href*='/films-a-l-affiche/']")
             print(f"🎞️ {len(movies)} films détectés pour {cinema_name}")
 
+            # 🔍 Si toujours 0, afficher un extrait pour debug
+            if len(movies) == 0:
+                preview = html[:800]
+                print("⚠️ Aucun film détecté, extrait HTML :")
+                print(preview)
+                continue
+
             for movie_link in movies:
                 try:
                     title = movie_link.get_text(strip=True)
                     parent = movie_link.find_parent("div", class_="css-ygq8g8") or movie_link.find_parent("div")
 
-                    # Image
                     img_tag = parent.find("img") if parent else None
                     image = img_tag["src"] if img_tag else None
 
-                    # Durée et description
                     p_tag = parent.find("p") if parent else None
                     duration, description = "", ""
                     if p_tag:
@@ -54,7 +62,6 @@ def scrape():
                         else:
                             description = text.strip()
 
-                    # Horaires
                     showtimes = []
                     for tag in parent.select("div, button"):
                         t = tag.get_text(strip=True)
