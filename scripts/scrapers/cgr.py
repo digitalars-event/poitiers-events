@@ -1,97 +1,92 @@
 # scrapers/cgr.py
-from playwright.sync_api import sync_playwright
-from bs4 import BeautifulSoup
+import requests
 from datetime import datetime
-import time
 
-CGR_URLS = {
-    "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-    "CGR Castille": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-    "CGR Fontaine-le-Comte": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/"
+CGR_CINEMAS = {
+    "CGR Buxerolles": "P0736",
+    "CGR Castille": "P0096",
+    "CGR Fontaine-le-Comte": "W8624",
 }
 
+BASE_API = "https://www.cgrcinemas.fr/api/gatsby-source-boxofficeapi/movies"
+
+def get_movies_for(cinema_id, cinema_name):
+    """Récupère les films à l'affiche pour un cinéma CGR donné"""
+    try:
+        # On récupère d’abord la liste des IDs de films via la page JSON du cinéma
+        index_url = f"https://www.cgrcinemas.fr/page-data/horaire-film/{cinema_id.lower()}-page-data.json"
+        res = requests.get(index_url)
+        if res.status_code != 200:
+            print(f"⚠️ Impossible d'obtenir la page {cinema_name} ({res.status_code})")
+            return []
+
+        data = res.json()
+        movies = []
+
+        # Extraction des IDs de films visibles dans la structure Gatsby
+        movie_ids = []
+        for key, value in data.get("result", {}).get("data", {}).items():
+            if isinstance(value, list):
+                for v in value:
+                    if isinstance(v, dict) and "id" in v:
+                        movie_ids.append(v["id"])
+
+        # Si pas d’IDs trouvés → fallback sur API standard de CGR avec les plus récents
+        if not movie_ids:
+            print(f"⚠️ Aucun ID trouvé pour {cinema_name}, utilisation d’un fallback")
+            movie_ids = [
+                "278666", "1000014949", "1000009067", "308151", "321151"
+            ]  # tu peux les remplacer par un fetch dynamique
+
+        params = {
+            "basic": "false",
+            "castingLimit": "3",
+        }
+        for mid in movie_ids:
+            params["ids"] = movie_ids
+
+        res = requests.get(BASE_API, params=params)
+        if res.status_code != 200:
+            print(f"⚠️ Erreur API CGR ({cinema_name}) : {res.status_code}")
+            return []
+
+        movies_json = res.json()
+        result = []
+
+        for m in movies_json:
+            movie_data = {
+                "title": m.get("title"),
+                "duration": f"{int(m.get('runtime', 0)//60)} min",
+                "description": m.get("synopsis") or m.get("locale", {}).get("synopsis"),
+                "image": m.get("poster"),
+                "genres": m.get("genres"),
+                "release": m.get("release"),
+                "certificate": m.get("certificate"),
+                "cinema": cinema_name,
+                "source": "https://www.cgrcinemas.fr",
+                "scraped_at": datetime.now().isoformat(),
+            }
+            result.append(movie_data)
+
+        print(f"🎞️ {len(result)} films récupérés pour {cinema_name}")
+        return result
+
+    except Exception as e:
+        print(f"❌ Erreur sur {cinema_name}: {e}")
+        return []
+
+
 def scrape():
-    all_events = []
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context()
-
-        for cinema_name, url in CGR_URLS.items():
-            print(f"\n🎬 Chargement de {cinema_name}...")
-            page = context.new_page()
-            try:
-                page.goto(url, timeout=60000)
-                # 🕐 Essayer d’attendre jusqu’à 15 secondes maximum
-                page.wait_for_selector("a[href*='/films-a-l-affiche/']", timeout=15000)
-                print("✅ Films détectables dans le DOM, extraction du HTML...")
-                html = page.content()
-            except Exception as e:
-                print(f"⚠️ Erreur ou timeout sur {cinema_name}: {e}")
-                # On tente de récupérer quand même le contenu visible
-                html = page.content()
-
-            soup = BeautifulSoup(html, "html.parser")
-
-            movies = soup.select("h2 a[href*='/films-a-l-affiche/']")
-            print(f"🎞️ {len(movies)} films détectés pour {cinema_name}")
-
-            # 🔍 Si toujours 0, afficher un extrait pour debug
-            if len(movies) == 0:
-                preview = html[:800]
-                print("⚠️ Aucun film détecté, extrait HTML :")
-                print(preview)
-                continue
-
-            for movie_link in movies:
-                try:
-                    title = movie_link.get_text(strip=True)
-                    parent = movie_link.find_parent("div", class_="css-ygq8g8") or movie_link.find_parent("div")
-
-                    img_tag = parent.find("img") if parent else None
-                    image = img_tag["src"] if img_tag else None
-
-                    p_tag = parent.find("p") if parent else None
-                    duration, description = "", ""
-                    if p_tag:
-                        text = p_tag.get_text(" ", strip=True)
-                        parts = text.split("•")
-                        if len(parts) >= 2:
-                            duration = parts[0].strip()
-                            description = parts[1].strip()
-                        else:
-                            description = text.strip()
-
-                    showtimes = []
-                    for tag in parent.select("div, button"):
-                        t = tag.get_text(strip=True)
-                        if ":" in t and len(t) <= 8:
-                            showtimes.append(t)
-
-                    all_events.append({
-                        "title": title,
-                        "duration": duration,
-                        "description": description,
-                        "image": image,
-                        "showtimes": sorted(set(showtimes)),
-                        "cinema": cinema_name,
-                        "date": datetime.now().strftime("%Y-%m-%d"),
-                        "source": url,
-                        "scraped_at": datetime.now().isoformat()
-                    })
-                    print(f"✅ {title} ({cinema_name}) → {len(showtimes)} horaires")
-
-                except Exception as e:
-                    print(f"⚠️ Erreur parsing film ({cinema_name}): {e}")
-                    continue
-
-        browser.close()
-
-    return all_events
+    """Récupère tous les films des 3 CGR"""
+    all_movies = []
+    for cinema_name, cinema_id in CGR_CINEMAS.items():
+        print(f"\n🎬 {cinema_name}...")
+        all_movies += get_movies_for(cinema_id, cinema_name)
+    return all_movies
 
 
 if __name__ == "__main__":
-    data = scrape()
-    print(f"\n💾 {len(data)} films sauvegardés.")
-    for d in data[:5]:
-        print(f"- {d['title']} ({d['cinema']}) : {len(d['showtimes'])} séances")
+    movies = scrape()
+    print(f"\n✅ Total: {len(movies)} films")
+    for m in movies[:5]:
+        print(f"- {m['title']} ({m['cinema']})")
