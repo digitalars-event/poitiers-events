@@ -23,85 +23,77 @@ def scrape():
 
         soup = BeautifulSoup(html.text, "html.parser")
 
-        # Récupération du menu déroulant des dates
-        date_select = soup.find("select", {"id": "select-date"})
-        date_options = []
-        if date_select:
-            for opt in date_select.find_all("option"):
-                value = opt.get("value")
-                label = opt.text.strip()
-                if value and label:
-                    date_options.append({"date_value": value, "label": label})
+        # Extraction des dates dans la section des jours (bandeau)
+        days_section = soup.find("ul", class_="list-days") or soup.find("div", class_="list-days")
+        days = []
+        if days_section:
+            for li in days_section.find_all(["li", "button", "a"]):
+                label = li.get_text(strip=True)
+                value = li.get("data-date") or li.get("href") or label
+                if label:
+                    days.append({"label": label, "value": value})
         else:
-            print(f"⚠️ Aucune date trouvée pour {cinema_name}")
+            print(f"⚠️ Aucune section de jours trouvée pour {cinema_name}")
+
+        # Déterminer la date active (par défaut celle visible dans le HTML initial)
+        active_day = None
+        if days_section:
+            active_li = days_section.find(class_="active") or days_section.find("li")
+            if active_li:
+                active_day = active_li.get("data-date") or active_li.get_text(strip=True)
+
+        # Films visibles dans la page (correspondent au jour affiché par défaut)
+        movies = soup.select(".movie-item, .movie-block")
+        if not movies:
+            print(f"⚠️ Aucun film trouvé pour {cinema_name}")
             continue
 
-        # Pour chaque date, charger les séances correspondantes
-        for date_item in date_options:
-            date_value = date_item["date_value"]
-            label = date_item["label"]
-
-            # Charger la page spécifique à cette date (URL avec ?date=)
+        for movie in movies:
             try:
-                page = requests.get(f"{url}?date={date_value}", timeout=20)
-                page.raise_for_status()
-            except Exception as e:
-                print(f"⚠️ Erreur chargement date {label} ({cinema_name}): {e}")
+                img_tag = movie.find("img")
+                img_url = img_tag["src"] if img_tag else None
+
+                title_tag = movie.find("h3") or movie.find("h2")
+                title = title_tag.get_text(strip=True) if title_tag else "Inconnu"
+
+                p_tag = movie.find("p")
+                if p_tag:
+                    meta_text = p_tag.get_text(" ", strip=True)
+                    duration = meta_text.split("•")[0].strip() if "•" in meta_text else meta_text
+                    description = meta_text.split("•")[-1].strip() if "•" in meta_text else ""
+                else:
+                    duration, description = "", ""
+
+                # Extraction des horaires
+                showtimes = []
+                for time_box in movie.select(".showtime, .hours, .session-item, .hour-item, .hour, .seance"):
+                    text = time_box.get_text(strip=True)
+                    if ":" in text:
+                        showtimes.append(text)
+
+                if not showtimes:
+                    for btn in movie.select("button"):
+                        t = btn.get_text(strip=True)
+                        if ":" in t:
+                            showtimes.append(t)
+
+                movie_data = {
+                    "title": title,
+                    "duration": duration,
+                    "description": description,
+                    "image": img_url,
+                    "showtimes": showtimes,
+                    "date": active_day or (days[0]["label"] if days else "Date inconnue"),
+                    "cinema": cinema_name,
+                    "source": url,
+                    "scraped_at": datetime.now().isoformat()
+                }
+
+                all_movies.append(movie_data)
+
+            except Exception as err:
+                print(f"⚠️ Erreur sur un film ({cinema_name}): {err}")
                 continue
-
-            day_soup = BeautifulSoup(page.text, "html.parser")
-            movies = day_soup.select(".movie-item, .movie-block")
-
-            for movie in movies:
-                try:
-                    # Image
-                    img_tag = movie.find("img")
-                    img_url = img_tag["src"] if img_tag else None
-
-                    # Titre
-                    title_tag = movie.find("h3") or movie.find("h2")
-                    title = title_tag.get_text(strip=True) if title_tag else "Inconnu"
-
-                    # Durée + Description
-                    p_tag = movie.find("p")
-                    if p_tag:
-                        meta_text = p_tag.get_text(" ", strip=True)
-                        duration = meta_text.split("•")[0].strip() if "•" in meta_text else meta_text
-                        description = meta_text.split("•")[-1].strip() if "•" in meta_text else ""
-                    else:
-                        duration, description = "", ""
-
-                    # Horaires
-                    showtimes = []
-                    for time_box in movie.select(".showtime, .hours, .session-item, .hour-item, .hour, .seance"):
-                        text = time_box.get_text(strip=True)
-                        if ":" in text:
-                            showtimes.append(text)
-
-                    if not showtimes:
-                        for btn in movie.select("button"):
-                            t = btn.get_text(strip=True)
-                            if ":" in t:
-                                showtimes.append(t)
-
-                    # Ajout de la structure du film
-                    movie_data = {
-                        "title": title,
-                        "duration": duration,
-                        "description": description,
-                        "image": img_url,
-                        "showtimes": showtimes,
-                        "date": label,
-                        "cinema": cinema_name,
-                        "source": url,
-                        "scraped_at": datetime.now().isoformat()
-                    }
-
-                    all_movies.append(movie_data)
-
-                except Exception as err:
-                    print(f"⚠️ Erreur sur un film ({cinema_name}, {label}): {err}")
-                    continue
 
     return all_movies
 
@@ -110,4 +102,4 @@ if __name__ == "__main__":
     data = scrape()
     print(f"✅ {len(data)} films trouvés")
     for d in data[:5]:
-        print(f"- {d['title']} ({d['cinema']}, {d['date']}) : {len(d['showtimes'])} séances")
+        print(f"- {d['title']} ({d['cinema']} - {d['date']}) : {len(d['showtimes'])} séances")
