@@ -18,16 +18,13 @@
         --card: #fff;
         --chip: #f2f2f2;
         --border: #ddd;
-        --blue: #007bff;
-        --blue-light: #e8f0ff;
       }
 
       * {
         box-sizing: border-box;
       }
 
-      html,
-      body {
+      html, body {
         background: var(--bg);
         color: var(--text);
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
@@ -68,96 +65,6 @@
         padding: 0 16px;
       }
 
-      header.top {
-        display: grid;
-        gap: 12px;
-        grid-template-columns: 1fr;
-        margin-top: 16px;
-        margin-bottom: 16px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .brand .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--brand), var(--brand-2));
-        box-shadow: 0 0 10px rgba(9, 125, 76, 0.4);
-      }
-
-      .subtitle {
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .panel {
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 12px;
-      }
-
-      .filters {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      @media (min-width: 720px) {
-        header.top {
-          grid-template-columns: 2fr 3fr;
-          align-items: center;
-        }
-
-        .filters {
-          grid-template-columns: 1.2fr 1.2fr 1fr 1fr 1fr;
-        }
-      }
-
-      input,
-      select {
-        width: 100%;
-        background: #fff;
-        color: var(--text);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 10px 12px;
-        outline: none;
-      }
-
-      label {
-        font-size: 12px;
-        color: var(--muted);
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .chip {
-        background: var(--chip);
-        padding: 6px 10px;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        font-size: 12px;
-        color: var(--muted);
-      }
-
-      .chip.ok {
-        color: var(--brand);
-        border-color: var(--brand-2);
-        background: #eafaf2;
-      }
-
       .grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -166,70 +73,80 @@
       }
 
       @media (min-width: 680px) {
-        .grid {
-          grid-template-columns: 1fr 1fr;
-        }
+        .grid { grid-template-columns: 1fr 1fr; }
       }
 
       @media (min-width: 1000px) {
-        .grid {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
+        .grid { grid-template-columns: 1fr 1fr 1fr; }
       }
 
       .card {
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 16px;
-        overflow: clip;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         transition: transform 0.2s, box-shadow 0.2s;
       }
 
       .card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       }
 
-      .card .cover {
-        aspect-ratio: 16 / 9;
+      .cover {
         position: relative;
+        aspect-ratio: 16 / 9;
         background-size: cover;
         background-position: center;
+        background-color: #eee;
       }
 
-      .card .cover .badge {
+      .badge {
         position: absolute;
-        left: 10px;
         top: 10px;
-        background: #fff;
+        left: 10px;
+        background: white;
         border: 1px solid var(--border);
-        padding: 6px 10px;
         border-radius: 10px;
+        padding: 6px 10px;
         font-size: 12px;
         color: var(--brand);
+        font-weight: 600;
       }
 
-      .card .content {
+      .content {
         padding: 14px;
         display: flex;
         flex-direction: column;
         gap: 8px;
       }
 
-      .card h3 {
+      .content h3 {
         margin: 0;
-        font-size: 17px;
+        font-size: 16.5px;
       }
 
       .meta {
-        font-size: 12px;
+        font-size: 13px;
         color: var(--muted);
+      }
+
+      .chips {
         display: flex;
-        gap: 10px;
         flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .chip {
+        background: var(--chip);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 12px;
+        padding: 4px 8px;
+        color: var(--muted);
       }
 
       .actions {
@@ -242,118 +159,60 @@
       }
 
       .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
         background: linear-gradient(135deg, var(--brand), var(--brand-2));
+        color: white;
         border: none;
-        color: #fff;
-        font-weight: 700;
-        padding: 10px 12px;
-        border-radius: 12px;
+        padding: 8px 12px;
+        border-radius: 10px;
         cursor: pointer;
+        text-decoration: none;
+        font-weight: 600;
       }
 
       .ghost {
+        border: 1px solid var(--brand);
         background: transparent;
         color: var(--brand);
-        border: 1px solid var(--brand);
-        padding: 10px 12px;
-        border-radius: 12px;
-        cursor: pointer;
-      }
-
-      .empty {
-        text-align: center;
-        color: var(--muted);
-        padding: 28px 0;
+        padding: 8px 12px;
+        border-radius: 10px;
+        text-decoration: none;
       }
 
       footer {
+        text-align: center;
         color: var(--muted);
         font-size: 12px;
-        text-align: center;
         margin: 24px 0;
       }
     </style>
   </head>
-
   <body>
     <div class="hero">
       <h1>Événements à Poitiers et alentours</h1>
     </div>
 
     <div class="wrap">
-      <header class="top">
-        <div class="brand">
-          <span class="dot"></span>
-          <div>
-            <div class="subtitle">Prototype clair – données JSON dynamiques (GitHub Actions)</div>
-          </div>
-        </div>
-
-        <div class="chips" id="liveInfo">
-          <span class="chip">Dernière màj : <span id="lastUpdate">—</span></span>
-          <span class="chip ok" id="countChip">0 élément(s)</span>
-          <span class="chip">Poitiers · Grand Poitiers · 25 km</span>
-        </div>
-      </header>
-
-      <section class="panel">
-        <div class="filters">
-          <div>
-            <label for="q">Rechercher</label>
-            <input id="q" type="search" placeholder="concert, expo, film..." />
-          </div>
-
-          <div>
-            <label for="cat">Catégorie</label>
-            <select id="cat">
-              <option value="">Toutes</option>
-              <option>Musique</option>
-              <option>Exposition</option>
-              <option>Film</option>
-              <option>Festival</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="type">Type</label>
-            <select id="type">
-              <option value="">Tous</option>
-              <option value="evenement">Événements</option>
-              <option value="cgr">CGR Cinémas</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="from">À partir du</label>
-            <input id="from" type="date" />
-          </div>
-
-          <div>
-            <label for="freeOnly">
-              <input id="freeOnly" type="checkbox" /> Gratuit uniquement
-            </label>
-          </div>
-        </div>
-      </section>
-
       <section class="grid" id="grid"></section>
-
       <footer>
-        <p>✦ Données générées automatiquement via GitHub Actions (events.json).</p>
+        ✦ Données issues de <strong>events.json</strong> généré automatiquement via GitHub Actions.
       </footer>
     </div>
 
     <script>
-      function slug(x) {
-        return x?.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
-      }
-
       async function loadEvents() {
         const r = await fetch('./events.json?v=' + Date.now(), { cache: 'no-store' });
         return r.ok ? await r.json() : { events: [] };
+      }
+
+      function daysUntil(iso) {
+        if (!iso) return '';
+        const d = new Date(iso);
+        const now = new Date();
+        const diff = Math.ceil((d - now) / 86400000);
+        if (diff < 0) return '';
+        if (diff === 0) return 'Aujourd’hui';
+        if (diff === 1) return 'Demain';
+        return 'J-' + diff;
       }
 
       function render(items) {
@@ -361,77 +220,47 @@
         grid.innerHTML = '';
 
         if (!items.length) {
-          grid.innerHTML = '<div class="panel empty">Aucun élément trouvé.</div>';
+          grid.innerHTML = '<div class="panel empty">Aucun film trouvé.</div>';
           return;
         }
 
         items.forEach(ev => {
-          let html = '';
-
-          // 🎬 Spécial CGR
+          // Vérif si film CGR
           if (ev.cinema && ev.cinema.includes("CGR")) {
-            html = `
-              <div class="cover" style="background-image:url('${ev.poster}');">
-                <div class="badge">${ev.cinema}</div>
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">${ev.genres || 'Genre inconnu'} · ${ev.duration}</div>
-                <p style="font-size:13px; line-height:1.4;">${ev.description || '—'}</p>
-                <div class="chips">
-                  <span class="chip">Sortie : ${new Date(ev.release).toLocaleDateString('fr-FR')}</span>
+            const poster = ev.poster || ev.image || '';
+            const rel = daysUntil(ev.release);
+            const genres = ev.genres || 'Genres non précisés';
+            const desc = ev.description || ev.synopsis || '—';
+
+            const html = `
+              <article class="card">
+                <div class="cover" style="background-image:url('${poster}');">
+                  ${rel ? `<div class="badge">${rel}</div>` : ''}
                 </div>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Voir sur CGR</a>
-                <a class="btn" href="${ev.source}" target="_blank">Horaires 🎟️</a>
-              </div>`;
-          } else {
-            // autres événements
-            html = `
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">${ev.location || 'Poitiers'}</div>
-                <p style="font-size:13px;">${ev.description || ''}</p>
-              </div>`;
+                <div class="content">
+                  <h3>${ev.title}</h3>
+                  <div class="meta">
+                    ${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}
+                  </div>
+                  <p style="font-size:13px; line-height:1.5;">${desc}</p>
+                  <div class="chips">
+                    ${ev.release ? `<span class="chip">Sortie : ${new Date(ev.release).toLocaleDateString('fr-FR')}</span>` : ''}
+                  </div>
+                </div>
+                <div class="actions">
+                  <a class="ghost" href="${ev.source}" target="_blank">Site CGR</a>
+                  <a class="btn" href="${ev.source}" target="_blank">Voir les horaires 🎟️</a>
+                </div>
+              </article>
+            `;
+            grid.insertAdjacentHTML('beforeend', html);
           }
-
-          const el = document.createElement('article');
-          el.className = 'card';
-          el.innerHTML = html;
-          grid.appendChild(el);
         });
       }
 
-      function applyFilters(data) {
-        const q = slug(document.getElementById('q').value);
-        const cat = document.getElementById('cat').value;
-        const type = document.getElementById('type').value;
-        const freeOnly = document.getElementById('freeOnly').checked;
-
-        let items = data.events || [];
-
-        items = items.filter(e => !freeOnly || e.price === 0);
-        if (cat) items = items.filter(e => (e.genres || '').includes(cat));
-        if (type === 'cgr') items = items.filter(e => e.cinema && e.cinema.includes('CGR'));
-        if (type === 'evenement') items = items.filter(e => !e.cinema);
-
-        if (q) {
-          items = items.filter(e => slug(e.title).includes(q));
-        }
-
-        document.getElementById('countChip').textContent = items.length + ' élément(s)';
-        render(items);
-      }
-
-      (async function () {
+      (async function() {
         const data = await loadEvents();
-        document.getElementById('lastUpdate').textContent = new Date().toLocaleString('fr-FR');
-        ['q', 'cat', 'type', 'from', 'freeOnly'].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.addEventListener('input', () => applyFilters(data));
-        });
-        applyFilters(data);
+        render(data.events || []);
       })();
     </script>
   </body>
