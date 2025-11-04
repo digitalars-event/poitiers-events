@@ -239,37 +239,45 @@
         const grid = document.getElementById('grid');
         grid.innerHTML = '';
 
-        items.filter(ev => ev.cinema && ev.cinema.includes("CGR"))
-          .forEach(ev => {
-            const poster = ev.poster || ev.image || '';
-            const rel = daysUntil(ev.release);
-            const genres = ev.genres || 'Genres non précisés';
-            const desc = ev.description || ev.synopsis || '—';
-
-            const html = `
-              <article class="card">
-                <div class="cover" style="background-image:url('${poster}');">
-                  ${rel ? `<div class="badge">${rel}</div>` : ''}
-                </div>
-                <div class="content">
-                  <h3>${ev.title}</h3>
-                  <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
-                  <p class="synopsis">${desc}</p>
-                  <button class="toggle-btn">Voir plus</button>
-                  <div class="chips">
-                    ${ev.release ? `<span class="chip">Sortie : ${new Date(ev.release).toLocaleDateString('fr-FR')}</span>` : ''}
-                  </div>
-                </div>
-                <div class="actions">
-                  <a class="ghost" href="${ev.source}" target="_blank">Site CGR</a>
-                  <a class="btn" href="${ev.source}" target="_blank">Voir les horaires</a>
-                </div>
-              </article>
-            `;
-            grid.insertAdjacentHTML('beforeend', html);
+        // ✅ Tri des films par date de sortie (plus proche → plus lointaine)
+        const sorted = items
+          .filter(ev => ev.cinema && ev.cinema.includes("CGR"))
+          .sort((a, b) => {
+            const da = new Date(a.release || 0);
+            const db = new Date(b.release || 0);
+            return da - db; // du plus proche au plus lointain
           });
 
-        // ✅ Gérer les boutons de déploiement
+        sorted.forEach(ev => {
+          const poster = ev.poster || ev.image || '';
+          const rel = daysUntil(ev.release);
+          const genres = ev.genres || 'Genres non précisés';
+          const desc = ev.description || ev.synopsis || '—';
+
+          const html = `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">
+                ${rel ? `<div class="badge">${rel}</div>` : ''}
+              </div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
+                <p class="synopsis">${desc}</p>
+                <button class="toggle-btn">Voir plus</button>
+                <div class="chips">
+                  ${ev.release ? `<span class="chip">Sortie : ${new Date(ev.release).toLocaleDateString('fr-FR')}</span>` : ''}
+                </div>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Site CGR</a>
+                <a class="btn" href="${ev.source}" target="_blank">Voir les horaires</a>
+              </div>
+            </article>
+          `;
+          grid.insertAdjacentHTML('beforeend', html);
+        });
+
+        // ✅ Gérer les boutons déroulants
         document.querySelectorAll('.toggle-btn').forEach(btn => {
           btn.addEventListener('click', () => {
             const p = btn.previousElementSibling;
