@@ -1,8 +1,8 @@
-# scrapers/cgr.py
 from playwright.sync_api import sync_playwright
 import requests
 import re
 from datetime import datetime
+
 
 CGR_CINEMAS = {
     "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
@@ -36,7 +36,7 @@ def scrape_cinema(cinema_name, url):
 
             page.on("request", on_request)
             page.goto(url, wait_until="networkidle", timeout=60000)
-            page.wait_for_timeout(4000)  # petite pause pour laisser React charger
+            page.wait_for_timeout(4000)  # temps pour laisser React charger
 
             browser.close()
 
@@ -46,7 +46,7 @@ def scrape_cinema(cinema_name, url):
 
             print(f"✅ {len(movie_ids)} IDs détectés → {movie_ids[:5]}...")
 
-            # On refait la requête directement avec requests
+            # Refaire la requête API avec requests
             params = [("ids", mid) for mid in movie_ids]
             res = requests.get(
                 "https://www.cgrcinemas.fr/api/gatsby-source-boxofficeapi/movies",
@@ -54,6 +54,7 @@ def scrape_cinema(cinema_name, url):
                 headers={"User-Agent": "Mozilla/5.0"},
                 timeout=30
             )
+
             if res.status_code != 200:
                 print(f"❌ Erreur API ({res.status_code}) pour {cinema_name}")
                 return []
@@ -62,18 +63,25 @@ def scrape_cinema(cinema_name, url):
             movies = []
 
             for m in data:
-                movies.append({
-                    "title": m.get("title"),
-                    "duration": f"{int(m.get('runtime', 0)//60)} min",
-                    "description": m.get("synopsis") or m.get("locale", {}).get("synopsis"),
-                    "poster": m.get("poster"),
-                    "genres": m.get("genres"),
-                    "certificate": m.get("certificate"),
-                    "release": m.get("release"),
-                    "cinema": cinema_name,
-                    "source": url,
-                    "scraped_at": datetime.now().isoformat()
-                })
+                try:
+                    duration_seconds = m.get("runtime") or 0
+                    duration = f"{int(duration_seconds)//60} min" if duration_seconds else "Inconnue"
+
+                    movies.append({
+                        "title": m.get("title"),
+                        "duration": duration,
+                        "description": m.get("synopsis") or m.get("locale", {}).get("synopsis"),
+                        "poster": m.get("poster"),
+                        "genres": m.get("genres"),
+                        "certificate": m.get("certificate"),
+                        "release": m.get("release"),
+                        "cinema": cinema_name,
+                        "source": url,
+                        "scraped_at": datetime.now().isoformat()
+                    })
+                except Exception as e:
+                    print(f"⚠️ Erreur sur un film ({cinema_name}): {e}")
+                    continue
 
             print(f"🎞️ {len(movies)} films récupérés pour {cinema_name}")
             return movies
@@ -84,7 +92,7 @@ def scrape_cinema(cinema_name, url):
 
 
 def scrape():
-    """Scrape tous les cinémas CGR avec interception d’API dynamique"""
+    """Scrape tous les cinémas CGR avec interception dynamique"""
     all_movies = []
     for cinema_name, url in CGR_CINEMAS.items():
         all_movies += scrape_cinema(cinema_name, url)
@@ -93,6 +101,6 @@ def scrape():
 
 if __name__ == "__main__":
     data = scrape()
-    print(f"\n💾 Total: {len(data)} films trouvés.")
+    print(f"\n💾 {len(data)} films sauvegardés dans events.json.")
     for m in data[:5]:
         print(f"- {m['title']} ({m['cinema']})")
