@@ -1,67 +1,78 @@
 # scrapers/cgr.py
-import requests
+from playwright.sync_api import sync_playwright
+import json
 from datetime import datetime
 
-BASE_URL = "https://cms-assets.webediamovies.pro/prod/cgr/{date}/public/page-data/films-a-l-affiche"
-TODAY = datetime.now().strftime("%Y-%m-%d")
+CGR_URLS = {
+    "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+    "CGR Castille": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+    "CGR Fontaine-le-Comte": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/"
+}
 
 def scrape():
-    all_movies = []
-    index_url = f"{BASE_URL.format(date=TODAY)}/page-data.json"
+    all_events = []
 
-    print(f"🎬 Chargement de la liste des films pour le {TODAY}...")
-    res = requests.get(index_url)
-    if res.status_code != 200:
-        print(f"❌ Impossible de récupérer la liste ({res.status_code})")
-        return all_movies
+    with sync_playwright() as p:
+        browser = p.firefox.launch(headless=True)
+        context = browser.new_context()
 
-    data = res.json()
-    result = data.get("result", {}).get("data", {})
+        for cinema_name, url in CGR_URLS.items():
+            print(f"🎬 Chargement de {cinema_name}...")
 
-    # Cherche le bon noeud de films
-    movies_nodes = []
-    for key in result:
-        if isinstance(result[key], dict) and "movies" in result[key]:
-            movies_nodes = result[key]["movies"]
-            break
-        elif isinstance(result[key], list) and len(result[key]) and "title" in result[key][0]:
-            movies_nodes = result[key]
-            break
+            page = context.new_page()
+            captured_json = []
 
-    if not movies_nodes:
-        print("⚠️ Aucun film détecté dans la structure du JSON.")
-        return all_movies
+            # Intercepter toutes les requêtes JSON vers les fichiers "page-data.json"
+            def handle_response(response):
+                if "page-data/films-a-l-affiche" in response.url and response.url.endswith("page-data.json"):
+                    try:
+                        data = response.json()
+                        captured_json.append({"url": response.url, "data": data})
+                    except Exception:
+                        pass
 
-    for m in movies_nodes:
-        try:
-            title = m.get("title") or m.get("name")
-            movie_id = m.get("id") or m.get("movieId")
-            slug = m.get("slug") or f"{movie_id}-{title.lower().replace(' ', '-')}"
-            image = m.get("poster") or m.get("image", {}).get("src")
+            page.on("response", handle_response)
 
-            movie_url = f"{BASE_URL.format(date=TODAY)}/{slug}/page-data.json"
+            # Charger la page et attendre que React ait fini
+            page.goto(url, wait_until="networkidle", timeout=60000)
+            page.wait_for_timeout(8000)
 
-            all_movies.append({
-                "id": movie_id,
-                "title": title,
-                "image": image,
-                "url": movie_url,
-                "date": TODAY,
-                "source": "https://www.cgrcinemas.fr",
-                "scraped_at": datetime.now().isoformat()
-            })
+            if not captured_json:
+                print(f"⚠️ Aucune requête JSON captée pour {cinema_name}")
+                continue
 
-            print(f"🎞️ {title} ajouté ({movie_id})")
+            # Analyse du contenu JSON intercepté
+            for capture in captured_json:
+                data = capture["data"]
+                result = data.get("result", {}).get("data", {})
+                movie_info = result.get("movie")
 
-        except Exception as e:
-            print(f"⚠️ Erreur lecture film : {e}")
-            continue
+                if not movie_info:
+                    continue
 
-    return all_movies
+                title = movie_info.get("title", "Inconnu")
+                image = movie_info.get("poster")
+                movie_id = movie_info.get("id")
+
+                movie_entry = {
+                    "id": movie_id,
+                    "title": title,
+                    "image": image,
+                    "cinema": cinema_name,
+                    "date": datetime.now().strftime("%Y-%m-%d"),
+                    "source": capture["url"],
+                    "scraped_at": datetime.now().isoformat()
+                }
+                all_events.append(movie_entry)
+                print(f"🎞️ {title} ({cinema_name}) ajouté")
+
+        browser.close()
+
+    return all_events
 
 
 if __name__ == "__main__":
     movies = scrape()
-    print(f"\n✅ {len(movies)} films trouvés.")
+    print(f"\n✅ {len(movies)} films trouvés")
     for m in movies[:5]:
-        print(f"- {m['title']} ({m['url']})")
+        print(f"- {m['title']} ({m['cinema']})")
