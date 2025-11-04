@@ -2,6 +2,7 @@
 from playwright.sync_api import sync_playwright
 import json
 from datetime import datetime
+import time
 
 CGR_URLS = {
     "CGR Buxerolles": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
@@ -17,12 +18,11 @@ def scrape():
         context = browser.new_context()
 
         for cinema_name, url in CGR_URLS.items():
-            print(f"🎬 Chargement de {cinema_name}...")
+            print(f"\n🎬 Chargement de {cinema_name}...")
             page = context.new_page()
             captured_json = []
 
             def handle_response(response):
-                # On capte les JSON d'horaires ET de films
                 if "page-data.json" in response.url and any(
                     key in response.url for key in ["films-a-l-affiche", "horaires"]
                 ):
@@ -33,8 +33,15 @@ def scrape():
                         pass
 
             page.on("response", handle_response)
-            page.goto(url, wait_until="networkidle", timeout=60000)
-            page.wait_for_timeout(8000)
+
+            try:
+                page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                # Laisser le JS charger les données
+                print("⏳ Attente du rendu complet (React)...")
+                time.sleep(12)
+            except Exception as e:
+                print(f"⚠️ Erreur initiale ({cinema_name}) : {e}")
+                continue
 
             if not captured_json:
                 print(f"⚠️ Aucune requête JSON captée pour {cinema_name}")
@@ -50,11 +57,9 @@ def scrape():
                 image = movie.get("poster")
                 movie_id = movie.get("id")
 
-                # Extraction des séances (jour + heures)
                 showtimes_data = movie.get("showtimes") or movie.get("schedules") or {}
                 showtimes = []
 
-                # Les structures peuvent varier : on parcourt tout récursivement
                 def extract_times(obj, date_key=None):
                     if isinstance(obj, dict):
                         for k, v in obj.items():
