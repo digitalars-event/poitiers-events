@@ -50,15 +50,22 @@ def main():
             seen.add(key)
             unique.append(ev)
 
-    # --- Tri chronologique (selon release/date ISO si dispo) ---
+    # --- Tri chronologique robuste ---
+    def parse_date(value):
+        """Convertit n'importe quel format ISO en datetime naïf"""
+        if not value:
+            return datetime.max
+        try:
+            dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            # Uniformise : si timezone présente, la convertir en UTC puis rendre naïve
+            if dt.tzinfo is not None:
+                dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
+            return dt
+        except Exception:
+            return datetime.max
+
     def sort_key(ev):
-        for k in ("release", "date"):
-            if ev.get(k):
-                try:
-                    return datetime.fromisoformat(ev[k].replace("Z", "+00:00"))
-                except Exception:
-                    pass
-        return datetime.max
+        return parse_date(ev.get("release")) or parse_date(ev.get("date"))
 
     unique.sort(key=sort_key)
 
@@ -71,7 +78,10 @@ def main():
     with open("events.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"\n💾 {len(unique)} événements sauvegardés dans events.json")
+    print(
+        f"\n💾 {len(unique)} événements sauvegardés dans events.json "
+        f"({len(all_events)} collectés avant dédoublonnage)"
+    )
 
 
 if __name__ == "__main__":
