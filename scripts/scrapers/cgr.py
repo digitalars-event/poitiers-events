@@ -19,6 +19,7 @@ def extract_movie_ids_from_request(url: str):
 def scrape_cinema(cinema_name, url):
     """Intercepte la requête /movies pour récupérer les IDs dynamiques"""
     print(f"\n🎬 {cinema_name}...")
+
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
@@ -35,8 +36,20 @@ def scrape_cinema(cinema_name, url):
                     movie_ids = extract_movie_ids_from_request(request.url)
 
             page.on("request", on_request)
-            page.goto(url, wait_until="networkidle", timeout=60000)
-            page.wait_for_timeout(4000)  # temps pour laisser React charger
+
+            try:
+                # ✅ on attend seulement que le DOM soit prêt (pas le réseau complet)
+                page.goto(url, wait_until="domcontentloaded", timeout=45000)
+            except Exception as e:
+                print(f"⚠️ Erreur de navigation ({cinema_name}) : {e}")
+
+            print("⏳ Attente du rendu dynamique (8s)...")
+            page.wait_for_timeout(8000)
+
+            # On capture le contenu pour déboguer au besoin
+            current_url = page.url
+            if "maintenance" in current_url.lower():
+                print(f"⚠️ {cinema_name} redirigé vers maintenance ({current_url})")
 
             browser.close()
 
@@ -46,7 +59,7 @@ def scrape_cinema(cinema_name, url):
 
             print(f"✅ {len(movie_ids)} IDs détectés → {movie_ids[:5]}...")
 
-            # Refaire la requête API avec requests
+            # --- Requête API directe ---
             params = [("ids", mid) for mid in movie_ids]
             res = requests.get(
                 "https://www.cgrcinemas.fr/api/gatsby-source-boxofficeapi/movies",
