@@ -15,7 +15,7 @@ def get_event_details(ticket_url):
     Fonctionne avec Shotgun, Weezevent ou FnacSpectacles.
     """
     try:
-        res = requests.get(ticket_url, headers=HEADERS, timeout=20)
+        res = requests.get(ticket_url, headers=HEADERS, timeout=30)
         if res.status_code != 200:
             return {}
 
