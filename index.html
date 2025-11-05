@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Événements CGR & Arena – Poitiers</title>
+    <title>Événements CGR, Arena & Republic Corner – Poitiers</title>
 
     <style>
       :root {
@@ -231,7 +231,10 @@
       <h2 class="section-title">🎤 Concerts & Spectacles (Arena)</h2>
       <section class="grid" id="gridArena"></section>
 
-      <footer>✦ Données issues de <strong>events.json</strong> (CGR & Arena).</footer>
+      <h2 class="section-title">🎭 Soirées & Humour (Republic Corner)</h2>
+      <section class="grid" id="gridRC"></section>
+
+      <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena & Republic Corner).</footer>
     </div>
 
     <script>
@@ -251,7 +254,6 @@
         return 'J-' + diff;
       }
 
-      // Nettoyage du texte de date Arena
       function cleanArenaDate(text) {
         if (!text) return '';
         return text.replace(/^.*?(dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)/i, '$1');
@@ -260,7 +262,6 @@
       function renderCGR(events) {
         const grid = document.getElementById('gridCGR');
         grid.innerHTML = '';
-
         const sorted = events
           .filter(ev => ev.cinema && ev.cinema.includes("CGR"))
           .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
@@ -270,8 +271,7 @@
           const rel = daysUntil(ev.release);
           const genres = ev.genres || 'Genres non précisés';
           const desc = ev.description || ev.synopsis || '—';
-
-          const html = `
+          grid.insertAdjacentHTML('beforeend', `
             <article class="card">
               <div class="cover" style="background-image:url('${poster}');">
                 ${rel ? `<div class="badge">${rel}</div>` : ''}
@@ -281,23 +281,18 @@
                 <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
                 <p class="synopsis">${desc}</p>
                 <button class="toggle-btn">Voir plus</button>
-                <div class="chips">
-                  ${ev.release ? `<span class="chip">Sortie : ${new Date(ev.release).toLocaleDateString('fr-FR')}</span>` : ''}
-                </div>
               </div>
               <div class="actions">
                 <a class="ghost" href="${ev.source}" target="_blank">Site CGR</a>
                 <a class="btn" href="${ev.source}" target="_blank">Voir les horaires</a>
               </div>
-            </article>`;
-          grid.insertAdjacentHTML('beforeend', html);
+            </article>`);
         });
       }
 
       function renderArena(events) {
         const grid = document.getElementById('gridArena');
         grid.innerHTML = '';
-
         const sorted = events
           .filter(ev => ev.cinema && ev.cinema.includes("Arena"))
           .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
@@ -306,7 +301,7 @@
           const poster = ev.poster || ev.image || '';
           const rel = daysUntil(ev.release);
           const date = cleanArenaDate(ev.date);
-          const html = `
+          grid.insertAdjacentHTML('beforeend', `
             <article class="card">
               <div class="cover" style="background-image:url('${poster}');">
                 ${rel ? `<div class="badge">${rel}</div>` : ''}
@@ -314,16 +309,42 @@
               <div class="content">
                 <h3>${ev.title}</h3>
                 <div class="meta">Arena Futuroscope · ${date}</div>
-                <div class="chips">
-                  ${ev.release ? `<span class="chip">Date : ${new Date(ev.release).toLocaleDateString('fr-FR')}</span>` : ''}
-                </div>
               </div>
               <div class="actions">
                 <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
                 <a class="btn" href="${ev.reservation}" target="_blank">Réserver</a>
               </div>
-            </article>`;
-          grid.insertAdjacentHTML('beforeend', html);
+            </article>`);
+        });
+      }
+
+      function renderRC(events) {
+        const grid = document.getElementById('gridRC');
+        grid.innerHTML = '';
+        const sorted = events
+          .filter(ev => ev.cinema && ev.cinema.includes("Republic"))
+          .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
+
+        sorted.forEach(ev => {
+          const poster = ev.poster || '';
+          const rel = daysUntil(ev.date);
+          const desc = (ev.description || '').substring(0, 300) + '...';
+          grid.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">
+                ${rel ? `<div class="badge">${rel}</div>` : ''}
+              </div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">${ev.address || 'Espace Republic Corner, Poitiers'}</div>
+                <p class="synopsis">${desc}</p>
+                <button class="toggle-btn">Voir plus</button>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Billetterie</a>
+                <a class="btn" href="${ev.source}" target="_blank">Réserver</a>
+              </div>
+            </article>`);
         });
       }
 
@@ -331,8 +352,8 @@
         const data = await loadEvents();
         renderCGR(data.events || []);
         renderArena(data.events || []);
+        renderRC(data.events || []);
 
-        // Activation des "voir plus"
         document.addEventListener('click', e => {
           if (e.target.classList.contains('toggle-btn')) {
             const p = e.target.previousElementSibling;
