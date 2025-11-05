@@ -4,14 +4,33 @@
 import json
 from datetime import datetime, timezone
 
-# --- Import du scraper Republic Corner ---
-from scrapers import republic_corner
+# --- Imports des scrapers ---
+from scrapers import cgr, arena, republic_corner
+
 
 def main():
     all_events = []
 
+    # --- CGR ---
+    print("🎬 CGR...")
+    try:
+        cgr_events = cgr.scrape()
+        print(f"✅ {len(cgr_events)} événements récupérés depuis les cinémas CGR.")
+        all_events += cgr_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping CGR : {e}")
+
+    # --- ARENA ---
+    print("\n🎤 ARENA FUTUROSCOPE...")
+    try:
+        arena_events = arena.scrape_arena()
+        print(f"✅ {len(arena_events)} événements récupérés depuis l'Arena Futuroscope.")
+        all_events += arena_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping Arena : {e}")
+
     # --- REPUBLIC CORNER ---
-    print("🎭 REPUBLIC CORNER...")
+    print("\n🎭 REPUBLIC CORNER...")
     try:
         rc_events = republic_corner.scrape_republic_corner()
         print(f"✅ {len(rc_events)} événements récupérés depuis le Republic Corner.")
@@ -19,29 +38,34 @@ def main():
     except Exception as e:
         print(f"❌ Erreur lors du scraping Republic Corner : {e}")
 
-    # --- Nettoyage (doublons, tri) ---
+    # --- Nettoyage des doublons ---
     seen = set()
     unique = []
     for ev in all_events:
-        key = (ev.get("title", "").strip().lower(), ev.get("source", "").strip().lower())
+        key = (
+            ev.get("title", "").strip().lower(),
+            ev.get("source", "").strip().lower(),
+        )
         if key not in seen:
             seen.add(key)
             unique.append(ev)
 
-    # --- Tri par date (si dispo) ---
+    # --- Tri chronologique (selon release/date ISO si dispo) ---
     def sort_key(ev):
-        try:
-            # On privilégie release (format ISO) si présent, sinon la date brute
-            return ev.get("release") or ev.get("date") or ""
-        except Exception:
-            return ""
+        for k in ("release", "date"):
+            if ev.get(k):
+                try:
+                    return datetime.fromisoformat(ev[k].replace("Z", "+00:00"))
+                except Exception:
+                    pass
+        return datetime.max
 
     unique.sort(key=sort_key)
 
     # --- Sauvegarde ---
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "events": unique
+        "events": unique,
     }
 
     with open("events.json", "w", encoding="utf-8") as f:
