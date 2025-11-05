@@ -4,29 +4,20 @@
 import json
 from datetime import datetime, timezone
 
-# Import conditionnels
-from scrapers import cgr, arena
+# --- Import du scraper Republic Corner ---
+from scrapers import republic_corner
 
 def main():
     all_events = []
 
-    # --- CGR ---
-    # print("🎬 CGR...")
-    # try:
-    #     cgr_events = cgr.scrape()
-    #     print(f"✅ {len(cgr_events)} événements récupérés depuis CGR.")
-    #     all_events += cgr_events
-    # except Exception as e:
-    #     print(f"❌ Erreur lors du scraping CGR : {e}")
-
-    # --- ARENA ---
-    print("\n🎤 ARENA FUTUROSCOPE...")
+    # --- REPUBLIC CORNER ---
+    print("🎭 REPUBLIC CORNER...")
     try:
-        arena_events = arena.scrape_arena()
-        print(f"✅ {len(arena_events)} événements récupérés depuis l'Arena.")
-        all_events += arena_events
+        rc_events = republic_corner.scrape_republic_corner()
+        print(f"✅ {len(rc_events)} événements récupérés depuis le Republic Corner.")
+        all_events += rc_events
     except Exception as e:
-        print(f"❌ Erreur lors du scraping Arena : {e}")
+        print(f"❌ Erreur lors du scraping Republic Corner : {e}")
 
     # --- Nettoyage (doublons, tri) ---
     seen = set()
@@ -40,6 +31,7 @@ def main():
     # --- Tri par date (si dispo) ---
     def sort_key(ev):
         try:
+            # On privilégie release (format ISO) si présent, sinon la date brute
             return ev.get("release") or ev.get("date") or ""
         except Exception:
             return ""
