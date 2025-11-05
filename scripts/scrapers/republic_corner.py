@@ -4,16 +4,15 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
+import json
+import re
 
 BASE_URL = "https://republic-corner.fr/espace-republic-corner/"
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 
 def get_event_details(ticket_url):
-    """
-    Récupère les informations depuis la page billetterie (titre, date, description).
-    Fonctionne avec Shotgun, Weezevent ou FnacSpectacles.
-    """
+    """Récupère les informations depuis la page billetterie (Shotgun, Weezevent, Fnac...)."""
     try:
         res = requests.get(ticket_url, headers=HEADERS, timeout=30)
         if res.status_code != 200:
@@ -21,48 +20,41 @@ def get_event_details(ticket_url):
 
         soup = BeautifulSoup(res.text, "html.parser")
 
-        # --- Shotgun ---
+        # --- SHOTGUN ---
         if "shotgun.live" in ticket_url:
-            title = soup.find("h1")
-            date = soup.find("time")
+            # Extraire le JSON-LD contenant les infos de l'événement
+            ld_json = soup.find("script", type="application/ld+json")
+            if ld_json:
+                data = json.loads(ld_json.string)
+                title = data.get("name")
+                date = data.get("startDate")
+                image = data.get("image")
+                address = (
+                    data.get("location", {})
+                    .get("address", {})
+                    .get("streetAddress", "Espace Republic Corner, Poitiers")
+                )
+                desc = soup.find("meta", {"name": "description"})
+                return {
+                    "title": title,
+                    "date": date,
+                    "description": desc["content"] if desc else None,
+                    "address": address,
+                    "poster": image,
+                }
+
+        # --- WEEZEVENT ---
+        if "weezevent.com" in ticket_url:
+            title = soup.select_one(".gemino-data-event-title")
+            date = soup.select_one(".gemino-data-event-date")
             desc = soup.find("meta", {"name": "description"})
+            image = soup.select_one("#gemino-img-banner")
             return {
                 "title": title.get_text(strip=True) if title else None,
                 "date": date.get_text(strip=True) if date else None,
                 "description": desc["content"] if desc else None,
-            }
-
-        # --- Weezevent ---
-        if "weezevent.com" in ticket_url:
-            title = soup.find("h1")
-            desc = soup.find("meta", {"name": "description"})
-            date = None
-            # Recherche d'une date dans le texte
-            for t in soup.find_all(text=True):
-                if any(mois in t.lower() for mois in ["janvier", "février", "mars", "avril", "mai", "juin",
-                                                      "juillet", "août", "septembre", "octobre", "novembre", "décembre"]):
-                    date = t.strip()
-                    break
-            return {
-                "title": title.get_text(strip=True) if title else None,
-                "date": date,
-                "description": desc["content"] if desc else None,
-            }
-
-        # --- FnacSpectacles ---
-        if "fnacspectacles.com" in ticket_url:
-            title = soup.find("h1")
-            desc = soup.find("meta", {"name": "description"})
-            date = None
-            for t in soup.find_all(text=True):
-                if any(mois in t.lower() for mois in ["janvier", "février", "mars", "avril", "mai", "juin",
-                                                      "juillet", "août", "septembre", "octobre", "novembre", "décembre"]):
-                    date = t.strip()
-                    break
-            return {
-                "title": title.get_text(strip=True) if title else None,
-                "date": date,
-                "description": desc["content"] if desc else None,
+                "poster": image["src"] if image else None,
+                "address": "Espace Republic Corner, Poitiers",
             }
 
         return {}
@@ -79,9 +71,9 @@ def scrape_republic_corner():
         return []
 
     soup = BeautifulSoup(res.text, "html.parser")
-
-    # Chaque événement est une colonne contenant une image et un bouton "Billetterie"
     events = []
+
+    # Chaque événement est une colonne contenant une image et un bouton Billetterie
     for col in soup.select(".et_pb_column"):
         img_tag = col.select_one("img")
         btn_tag = col.select_one("a.et_pb_button")
@@ -92,17 +84,19 @@ def scrape_republic_corner():
         poster = img_tag.get("src")
         ticket_link = btn_tag.get("href")
 
-        # On suit le lien pour récupérer les infos
+        # Détails via page billetterie
         details = get_event_details(ticket_link)
-        title = details.get("title") or "Événement"
+        title = details.get("title") or "Événement Republic Corner"
         date = details.get("date")
         description = details.get("description")
+        address = details.get("address", "Espace Republic Corner, Poitiers")
 
         event = {
             "title": title.strip(),
-            "date": date.strip() if date else None,
+            "date": date.strip() if isinstance(date, str) else date,
             "description": description,
-            "poster": poster,
+            "poster": details.get("poster") or poster,
+            "address": address,
             "cinema": "Republic Corner",
             "source": ticket_link,
             "scraped_at": datetime.now().isoformat()
