@@ -261,153 +261,68 @@
     </div>
 
     <script>
+      let allEvents = [];
+
       async function loadEvents() {
         const r = await fetch('./events.json?v=' + Date.now(), { cache: 'no-store' });
         return r.ok ? await r.json() : { events: [] };
       }
 
-      function daysUntil(iso) {
-        if (!iso) return '';
-        const d = new Date(iso);
-        const now = new Date();
-        const diff = Math.ceil((d - now) / 86400000);
-        if (diff < 0) return '';
-        if (diff === 0) return 'Aujourd’hui';
-        if (diff === 1) return 'Demain';
-        return 'J-' + diff;
-      }
+      function renderAll(events) {
+        const grids = {
+          CGR: document.getElementById('gridCGR'),
+          Arena: document.getElementById('gridArena'),
+          RC: document.getElementById('gridRC'),
+          Expo: document.getElementById('gridExpo'),
+        };
+        Object.values(grids).forEach(g => g.innerHTML = '');
 
-      function cleanArenaDate(text) {
-        if (!text) return '';
-        return text.replace(/^.*?(dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)/i, '$1');
-      }
-
-      function renderCGR(events) {
-        const grid = document.getElementById('gridCGR');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("CGR"))
-          .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || ev.image || '';
-          const rel = daysUntil(ev.release);
-          const genres = ev.genres || 'Genres non précisés';
-          const desc = ev.description || ev.synopsis || '—';
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
-                <p class="synopsis">${desc}</p>
-                <button class="toggle-btn">Voir plus</button>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Site CGR</a>
-                <a class="btn" href="${ev.source}" target="_blank">Voir les horaires</a>
-              </div>
-            </article>`);
-        });
-      }
-
-      function renderArena(events) {
-        const grid = document.getElementById('gridArena');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("Arena"))
-          .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || ev.image || '';
-          const rel = daysUntil(ev.release);
-          const date = cleanArenaDate(ev.date);
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">Arena Futuroscope · ${date}</div>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
-                <a class="btn" href="${ev.reservation}" target="_blank">Réserver</a>
-              </div>
-            </article>`);
-        });
-      }
-
-      function renderRC(events) {
-        const grid = document.getElementById('gridRC');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("Republic"))
-          .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
-
-        sorted.forEach(ev => {
+        events.forEach(ev => {
           const poster = ev.poster || '';
-          const rel = daysUntil(ev.date);
-          const desc = (ev.description || '').substring(0, 300) + '...';
-          grid.insertAdjacentHTML('beforeend', `
+          const html = `
             <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
+              <div class="cover" style="background-image:url('${poster}');"></div>
               <div class="content">
                 <h3>${ev.title}</h3>
-                <div class="meta">${ev.address || 'Espace Republic Corner, Poitiers'}</div>
-                <p class="synopsis">${desc}</p>
-                <button class="toggle-btn">Voir plus</button>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Billetterie</a>
-                <a class="btn" href="${ev.source}" target="_blank">Réserver</a>
-              </div>
-            </article>`);
-        });
-      }
-
-      function renderExpo(events) {
-        const grid = document.getElementById('gridExpo');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("Parc Expo"))
-          .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || '';
-          const rel = daysUntil(ev.date);
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">Parc Expo Grand Poitiers</div>
+                <div class="meta">${ev.cinema || ''}</div>
               </div>
               <div class="actions">
                 <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
                 <a class="btn" href="${ev.source}" target="_blank">Voir l'événement</a>
               </div>
-            </article>`);
+            </article>`;
+          
+          if (ev.cinema?.includes('CGR')) grids.CGR.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Arena')) grids.Arena.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Republic')) grids.RC.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Parc Expo')) grids.Expo.insertAdjacentHTML('beforeend', html);
         });
+      }
+
+      function filterEvents() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const activeFilters = Array.from(document.querySelectorAll('.filters input:checked')).map(i => i.value);
+
+        const filtered = allEvents.filter(ev => {
+          const matchSearch =
+            ev.title?.toLowerCase().includes(query) ||
+            ev.cinema?.toLowerCase().includes(query) ||
+            ev.description?.toLowerCase().includes(query);
+          const matchFilter = activeFilters.some(f => ev.cinema?.includes(f));
+          return matchSearch && matchFilter;
+        });
+
+        renderAll(filtered);
       }
 
       (async function() {
         const data = await loadEvents();
-        renderCGR(data.events || []);
-        renderArena(data.events || []);
-        renderRC(data.events || []);
-        renderExpo(data.events || []);
+        allEvents = data.events || [];
+        renderAll(allEvents);
 
-        document.addEventListener('click', e => {
-          if (e.target.classList.contains('toggle-btn')) {
-            const p = e.target.previousElementSibling;
-            p.classList.toggle('expanded');
-            e.target.classList.toggle('active');
-            e.target.textContent = p.classList.contains('expanded') ? 'Voir moins' : 'Voir plus';
-          }
+        document.getElementById('searchInput').addEventListener('input', filterEvents);
+        document.querySelectorAll('.filters input').forEach(cb => {
+          cb.addEventListener('change', filterEvents);
         });
       })();
     </script>
