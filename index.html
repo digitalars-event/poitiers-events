@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Événements CGR, Arena & Republic Corner – Poitiers</title>
+    <title>Événements CGR, Arena, Republic Corner & Parc Expo – Poitiers</title>
 
     <style>
       :root {
@@ -234,7 +234,10 @@
       <h2 class="section-title">🎭 Soirées & Humour (Republic Corner)</h2>
       <section class="grid" id="gridRC"></section>
 
-      <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena & Republic Corner).</footer>
+      <h2 class="section-title">🏛️ Événements (Parc Expo Grand Poitiers)</h2>
+      <section class="grid" id="gridExpo"></section>
+
+      <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena, Republic Corner & Parc Expo).</footer>
     </div>
 
     <script>
@@ -262,8 +265,7 @@
       function renderCGR(events) {
         const grid = document.getElementById('gridCGR');
         grid.innerHTML = '';
-        const sorted = events
-          .filter(ev => ev.cinema && ev.cinema.includes("CGR"))
+        const sorted = events.filter(ev => ev.cinema?.includes("CGR"))
           .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
 
         sorted.forEach(ev => {
@@ -293,8 +295,7 @@
       function renderArena(events) {
         const grid = document.getElementById('gridArena');
         grid.innerHTML = '';
-        const sorted = events
-          .filter(ev => ev.cinema && ev.cinema.includes("Arena"))
+        const sorted = events.filter(ev => ev.cinema?.includes("Arena"))
           .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
 
         sorted.forEach(ev => {
@@ -321,8 +322,7 @@
       function renderRC(events) {
         const grid = document.getElementById('gridRC');
         grid.innerHTML = '';
-        const sorted = events
-          .filter(ev => ev.cinema && ev.cinema.includes("Republic"))
+        const sorted = events.filter(ev => ev.cinema?.includes("Republic"))
           .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
 
         sorted.forEach(ev => {
@@ -348,11 +348,38 @@
         });
       }
 
+      function renderExpo(events) {
+        const grid = document.getElementById('gridExpo');
+        grid.innerHTML = '';
+        const sorted = events.filter(ev => ev.cinema?.includes("Parc Expo"))
+          .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
+
+        sorted.forEach(ev => {
+          const poster = ev.poster || '';
+          const rel = daysUntil(ev.date);
+          grid.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">
+                ${rel ? `<div class="badge">${rel}</div>` : ''}
+              </div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">Parc Expo Grand Poitiers</div>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
+                <a class="btn" href="${ev.source}" target="_blank">Voir l'événement</a>
+              </div>
+            </article>`);
+        });
+      }
+
       (async function() {
         const data = await loadEvents();
         renderCGR(data.events || []);
         renderArena(data.events || []);
         renderRC(data.events || []);
+        renderExpo(data.events || []);
 
         document.addEventListener('click', e => {
           if (e.target.classList.contains('toggle-btn')) {
