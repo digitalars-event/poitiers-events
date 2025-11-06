@@ -5,7 +5,7 @@ import json
 from datetime import datetime, timezone
 
 # --- Imports des scrapers ---
-from scrapers import cgr, arena, republic_corner
+from scrapers import cgr, arena, republic_corner, parc_expo
 
 
 def main():
@@ -37,6 +37,15 @@ def main():
         all_events += rc_events
     except Exception as e:
         print(f"❌ Erreur lors du scraping Republic Corner : {e}")
+
+    # --- PARC EXPO GRAND POITIERS ---
+    print("\n🏛️ PARC EXPO GRAND POITIERS...")
+    try:
+        expo_events = parc_expo.scrape_parc_expo()
+        print(f"✅ {len(expo_events)} événements récupérés depuis le Parc Expo Grand Poitiers.")
+        all_events += expo_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping Parc Expo : {e}")
 
     # --- Nettoyage des doublons ---
     seen = set()
@@ -82,6 +91,13 @@ def main():
         f"\n💾 {len(unique)} événements sauvegardés dans events.json "
         f"({len(all_events)} collectés avant dédoublonnage)"
     )
+
+    # --- Résumé final ---
+    print("\n📊 RÉCAPITULATIF PAR SOURCE :")
+    print(f"   🎬 CGR : {len(locals().get('cgr_events', []))}")
+    print(f"   🎤 Arena : {len(locals().get('arena_events', []))}")
+    print(f"   🎭 Republic Corner : {len(locals().get('rc_events', []))}")
+    print(f"   🏛️ Parc Expo : {len(locals().get('expo_events', []))}")
 
 
 if __name__ == "__main__":
