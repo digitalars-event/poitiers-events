@@ -12,31 +12,31 @@ def main():
     all_events = []
 
     # --- CGR ---
-    #print("🎬 CGR...")
-    #try:
-    #    cgr_events = cgr.scrape()
-    #    print(f"✅ {len(cgr_events)} événements récupérés depuis les cinémas CGR.")
-    #    all_events += cgr_events
-    #except Exception as e:
-    #    print(f"❌ Erreur lors du scraping CGR : {e}")
+    print("🎬 CGR...")
+    try:
+        cgr_events = cgr.scrape()
+        print(f"✅ {len(cgr_events)} événements récupérés depuis les cinémas CGR.")
+        all_events += cgr_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping CGR : {e}")
 
     # --- ARENA ---
-    #print("\n🎤 ARENA FUTUROSCOPE...")
-    #try:
-    #    arena_events = arena.scrape_arena()
-    #    print(f"✅ {len(arena_events)} événements récupérés depuis l'Arena Futuroscope.")
-    #    all_events += arena_events
-    #except Exception as e:
-    #    print(f"❌ Erreur lors du scraping Arena : {e}")
+    print("\n🎤 ARENA FUTUROSCOPE...")
+    try:
+        arena_events = arena.scrape_arena()
+        print(f"✅ {len(arena_events)} événements récupérés depuis l'Arena Futuroscope.")
+        all_events += arena_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping Arena : {e}")
 
     # --- REPUBLIC CORNER ---
-    #print("\n🎭 REPUBLIC CORNER...")
-    #try:
-    #    rc_events = republic_corner.scrape_republic_corner()
-    #    print(f"✅ {len(rc_events)} événements récupérés depuis le Republic Corner.")
-    #    all_events += rc_events
-    #except Exception as e:
-    #    print(f"❌ Erreur lors du scraping Republic Corner : {e}")
+    print("\n🎭 REPUBLIC CORNER...")
+    try:
+        rc_events = republic_corner.scrape_republic_corner()
+        print(f"✅ {len(rc_events)} événements récupérés depuis le Republic Corner.")
+        all_events += rc_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping Republic Corner : {e}")
 
     # --- PARC EXPO GRAND POITIERS ---
     print("\n🏛️ PARC EXPO GRAND POITIERS...")
