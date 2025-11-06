@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Événements à Poitiers</title>
+    <title>Événements CGR, Arena, Republic Corner & Parc Expo – Poitiers</title>
 
     <style>
       :root {
@@ -26,7 +26,26 @@
         margin: 0;
       }
 
-      /* 🔍 BARRE DE RECHERCHE */
+      .hero {
+        background-image: url('https://www.hifrance.org/wp-content/uploads/2025/10/Poitiers-Site-HI-Banniere.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      }
+
+      .hero h1 {
+        background: rgba(0,0,0,0.3);
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-size: clamp(26px, 3vw, 36px);
+      }
+
+      /* 🔍 Barre de recherche + filtres */
       .search-bar {
         display: flex;
         flex-direction: column;
@@ -56,7 +75,6 @@
         border-color: var(--brand);
       }
 
-      /* ✅ Filtres établissements */
       .filters {
         display: flex;
         flex-wrap: wrap;
@@ -84,25 +102,6 @@
       .filter-item input[type="checkbox"] {
         accent-color: var(--brand);
         cursor: pointer;
-      }
-
-      .hero {
-        background-image: url('https://www.hifrance.org/wp-content/uploads/2025/10/Poitiers-Site-HI-Banniere.jpg');
-        background-size: cover;
-        background-position: center;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-      }
-
-      .hero h1 {
-        background: rgba(0,0,0,0.3);
-        padding: 12px 24px;
-        border-radius: 12px;
-        font-size: clamp(26px, 3vw, 36px);
       }
 
       .wrap {
@@ -179,51 +178,20 @@
         gap: 6px;
       }
 
-      .content h3 {
-        margin: 0;
-        font-size: 16.5px;
-      }
+      .content h3 { margin: 0; font-size: 16.5px; }
+      .meta { font-size: 13px; color: var(--muted); }
+      .synopsis { font-size: 13px; line-height: 1.5; color: var(--text); max-height: 3.5em; overflow: hidden; position: relative; transition: max-height 0.4s ease; }
+      .synopsis.expanded { max-height: 300px; }
 
-      .meta {
-        font-size: 13px;
-        color: var(--muted);
-      }
+      .toggle-btn { background: none; border: none; color: var(--brand); font-weight: 600; cursor: pointer; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; padding: 0; }
+      .toggle-btn::after { content: "▼"; font-size: 11px; transition: transform 0.3s ease; }
+      .toggle-btn.active::after { transform: rotate(180deg); }
 
-      .actions {
-        margin-top: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        padding: 0 14px 14px 14px;
-      }
+      .actions { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 0 14px 14px 14px; }
+      .btn { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; border: none; padding: 8px 12px; border-radius: 10px; cursor: pointer; text-decoration: none; font-weight: 600; }
+      .ghost { border: 1px solid var(--brand); background: transparent; color: var(--brand); padding: 8px 12px; border-radius: 10px; text-decoration: none; }
 
-      .btn {
-        background: linear-gradient(135deg, var(--brand), var(--brand-2));
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 10px;
-        cursor: pointer;
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .ghost {
-        border: 1px solid var(--brand);
-        background: transparent;
-        color: var(--brand);
-        padding: 8px 12px;
-        border-radius: 10px;
-        text-decoration: none;
-      }
-
-      footer {
-        text-align: center;
-        color: var(--muted);
-        font-size: 12px;
-        margin: 24px 0;
-      }
+      footer { text-align: center; color: var(--muted); font-size: 12px; margin: 24px 0; }
     </style>
   </head>
 
@@ -232,10 +200,9 @@
       <h1>Événements à Poitiers</h1>
     </div>
 
-    <!-- 🔍 BARRE DE RECHERCHE + FILTRES -->
+    <!-- 🔍 Barre de recherche + filtres -->
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Rechercher un événement à Poitiers (ex : concert, film, humour...)" />
-
       <div class="filters">
         <label class="filter-item"><input type="checkbox" value="CGR" checked /> 🎬 CGR</label>
         <label class="filter-item"><input type="checkbox" value="Arena" checked /> 🎤 Arena</label>
@@ -268,6 +235,22 @@
         return r.ok ? await r.json() : { events: [] };
       }
 
+      function daysUntil(iso) {
+        if (!iso) return '';
+        const d = new Date(iso);
+        const now = new Date();
+        const diff = Math.ceil((d - now) / 86400000);
+        if (diff < 0) return '';
+        if (diff === 0) return 'Aujourd’hui';
+        if (diff === 1) return 'Demain';
+        return 'J-' + diff;
+      }
+
+      function cleanArenaDate(text) {
+        if (!text) return '';
+        return text.replace(/^.*?(dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)/i, '$1');
+      }
+
       function renderAll(events) {
         const grids = {
           CGR: document.getElementById('gridCGR'),
@@ -277,25 +260,84 @@
         };
         Object.values(grids).forEach(g => g.innerHTML = '');
 
-        events.forEach(ev => {
-          const poster = ev.poster || '';
-          const html = `
+        // 🎬 CGR
+        events.filter(ev => ev.cinema?.includes('CGR')).forEach(ev => {
+          const poster = ev.poster || ev.image || '';
+          const rel = daysUntil(ev.release);
+          const genres = ev.genres || 'Genres non précisés';
+          const desc = ev.description || ev.synopsis || '—';
+          grids.CGR.insertAdjacentHTML('beforeend', `
             <article class="card">
-              <div class="cover" style="background-image:url('${poster}');"></div>
+              <div class="cover" style="background-image:url('${poster}');">${rel ? `<div class="badge">${rel}</div>` : ''}</div>
               <div class="content">
                 <h3>${ev.title}</h3>
-                <div class="meta">${ev.cinema || ''}</div>
+                <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
+                <p class="synopsis">${desc}</p>
+                <button class="toggle-btn">Voir plus</button>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Site CGR</a>
+                <a class="btn" href="${ev.source}" target="_blank">Voir les horaires</a>
+              </div>
+            </article>`);
+        });
+
+        // 🎤 ARENA
+        events.filter(ev => ev.cinema?.includes('Arena')).forEach(ev => {
+          const poster = ev.poster || ev.image || '';
+          const rel = daysUntil(ev.release);
+          const date = cleanArenaDate(ev.date);
+          grids.Arena.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">${rel ? `<div class="badge">${rel}</div>` : ''}</div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">Arena Futuroscope · ${date}</div>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
+                <a class="btn" href="${ev.reservation || ev.source}" target="_blank">Réserver</a>
+              </div>
+            </article>`);
+        });
+
+        // 🎭 REPUBLIC CORNER
+        events.filter(ev => ev.cinema?.includes('Republic')).forEach(ev => {
+          const poster = ev.poster || '';
+          const rel = daysUntil(ev.date);
+          const desc = (ev.description || '').substring(0, 300) + '...';
+          grids.RC.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">${rel ? `<div class="badge">${rel}</div>` : ''}</div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">${ev.address || 'Espace Republic Corner, Poitiers'}</div>
+                <p class="synopsis">${desc}</p>
+                <button class="toggle-btn">Voir plus</button>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Billetterie</a>
+                <a class="btn" href="${ev.source}" target="_blank">Réserver</a>
+              </div>
+            </article>`);
+        });
+
+        // 🏛️ PARC EXPO
+        events.filter(ev => ev.cinema?.includes('Parc Expo')).forEach(ev => {
+          const poster = ev.poster || '';
+          const rel = daysUntil(ev.date);
+          grids.Expo.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">${rel ? `<div class="badge">${rel}</div>` : ''}</div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">Parc Expo Grand Poitiers</div>
               </div>
               <div class="actions">
                 <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
                 <a class="btn" href="${ev.source}" target="_blank">Voir l'événement</a>
               </div>
-            </article>`;
-          
-          if (ev.cinema?.includes('CGR')) grids.CGR.insertAdjacentHTML('beforeend', html);
-          else if (ev.cinema?.includes('Arena')) grids.Arena.insertAdjacentHTML('beforeend', html);
-          else if (ev.cinema?.includes('Republic')) grids.RC.insertAdjacentHTML('beforeend', html);
-          else if (ev.cinema?.includes('Parc Expo')) grids.Expo.insertAdjacentHTML('beforeend', html);
+            </article>`);
         });
       }
 
@@ -321,8 +363,15 @@
         renderAll(allEvents);
 
         document.getElementById('searchInput').addEventListener('input', filterEvents);
-        document.querySelectorAll('.filters input').forEach(cb => {
-          cb.addEventListener('change', filterEvents);
+        document.querySelectorAll('.filters input').forEach(cb => cb.addEventListener('change', filterEvents));
+
+        document.addEventListener('click', e => {
+          if (e.target.classList.contains('toggle-btn')) {
+            const p = e.target.previousElementSibling;
+            p.classList.toggle('expanded');
+            e.target.classList.toggle('active');
+            e.target.textContent = p.classList.contains('expanded') ? 'Voir moins' : 'Voir plus';
+          }
         });
       })();
     </script>
