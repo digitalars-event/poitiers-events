@@ -129,56 +129,10 @@
         color: var(--muted);
       }
 
-      .synopsis {
+      .date-info {
         font-size: 13px;
-        line-height: 1.5;
-        color: var(--text);
-        max-height: 3.5em;
-        overflow: hidden;
-        position: relative;
-        transition: max-height 0.4s ease;
-      }
-
-      .synopsis.expanded {
-        max-height: 300px;
-      }
-
-      .toggle-btn {
-        background: none;
-        border: none;
         color: var(--brand);
         font-weight: 600;
-        cursor: pointer;
-        font-size: 13px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 0;
-      }
-
-      .toggle-btn::after {
-        content: "▼";
-        font-size: 11px;
-        transition: transform 0.3s ease;
-      }
-
-      .toggle-btn.active::after {
-        transform: rotate(180deg);
-      }
-
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-
-      .chip {
-        background: #f3f3f3;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        font-size: 12px;
-        padding: 4px 8px;
-        color: var(--muted);
       }
 
       .actions {
@@ -225,19 +179,10 @@
     </div>
 
     <div class="wrap">
-      <h2 class="section-title">🎬 Films à l'affiche (CGR)</h2>
-      <section class="grid" id="gridCGR"></section>
-
-      <h2 class="section-title">🎤 Concerts & Spectacles (Arena)</h2>
-      <section class="grid" id="gridArena"></section>
-
-      <h2 class="section-title">🎭 Soirées & Humour (Republic Corner)</h2>
-      <section class="grid" id="gridRC"></section>
-
       <h2 class="section-title">🏛️ Événements (Parc Expo Grand Poitiers)</h2>
       <section class="grid" id="gridExpo"></section>
 
-      <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena, Republic Corner & Parc Expo).</footer>
+      <footer>✦ Données issues de <strong>events.json</strong>.</footer>
     </div>
 
     <script>
@@ -257,97 +202,6 @@
         return 'J-' + diff;
       }
 
-      function cleanArenaDate(text) {
-        if (!text) return '';
-        return text.replace(/^.*?(dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)/i, '$1');
-      }
-
-      function renderCGR(events) {
-        const grid = document.getElementById('gridCGR');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("CGR"))
-          .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || ev.image || '';
-          const rel = daysUntil(ev.release);
-          const genres = ev.genres || 'Genres non précisés';
-          const desc = ev.description || ev.synopsis || '—';
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
-                <p class="synopsis">${desc}</p>
-                <button class="toggle-btn">Voir plus</button>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Site CGR</a>
-                <a class="btn" href="${ev.source}" target="_blank">Voir les horaires</a>
-              </div>
-            </article>`);
-        });
-      }
-
-      function renderArena(events) {
-        const grid = document.getElementById('gridArena');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("Arena"))
-          .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || ev.image || '';
-          const rel = daysUntil(ev.release);
-          const date = cleanArenaDate(ev.date);
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">Arena Futuroscope · ${date}</div>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
-                <a class="btn" href="${ev.reservation}" target="_blank">Réserver</a>
-              </div>
-            </article>`);
-        });
-      }
-
-      function renderRC(events) {
-        const grid = document.getElementById('gridRC');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("Republic"))
-          .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || '';
-          const rel = daysUntil(ev.date);
-          const desc = (ev.description || '').substring(0, 300) + '...';
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">${ev.address || 'Espace Republic Corner, Poitiers'}</div>
-                <p class="synopsis">${desc}</p>
-                <button class="toggle-btn">Voir plus</button>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Billetterie</a>
-                <a class="btn" href="${ev.source}" target="_blank">Réserver</a>
-              </div>
-            </article>`);
-        });
-      }
-
       function renderExpo(events) {
         const grid = document.getElementById('gridExpo');
         grid.innerHTML = '';
@@ -357,6 +211,13 @@
         sorted.forEach(ev => {
           const poster = ev.poster || '';
           const rel = daysUntil(ev.date);
+          const dateText = ev.date ? new Date(ev.date).toLocaleDateString('fr-FR', {
+            weekday: 'long',
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric'
+          }) : '';
+
           grid.insertAdjacentHTML('beforeend', `
             <article class="card">
               <div class="cover" style="background-image:url('${poster}');">
@@ -365,6 +226,7 @@
               <div class="content">
                 <h3>${ev.title}</h3>
                 <div class="meta">Parc Expo Grand Poitiers</div>
+                ${dateText ? `<div class="date-info">${dateText}</div>` : ''}
               </div>
               <div class="actions">
                 <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
@@ -376,19 +238,7 @@
 
       (async function() {
         const data = await loadEvents();
-        renderCGR(data.events || []);
-        renderArena(data.events || []);
-        renderRC(data.events || []);
         renderExpo(data.events || []);
-
-        document.addEventListener('click', e => {
-          if (e.target.classList.contains('toggle-btn')) {
-            const p = e.target.previousElementSibling;
-            p.classList.toggle('expanded');
-            e.target.classList.toggle('active');
-            e.target.textContent = p.classList.contains('expanded') ? 'Voir moins' : 'Voir plus';
-          }
-        });
       })();
     </script>
   </body>
