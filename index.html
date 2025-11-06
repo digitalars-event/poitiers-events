@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Événements CGR, Arena, Republic Corner & Parc Expo – Poitiers</title>
+    <title>Événements à Poitiers</title>
 
     <style>
       :root {
@@ -24,6 +24,35 @@
         color: var(--text);
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
         margin: 0;
+      }
+
+      /* 🔍 BARRE DE RECHERCHE */
+      .search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        padding: 16px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .search-bar input {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px 14px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        font-size: 15px;
+        outline: none;
+        transition: box-shadow 0.2s;
+      }
+
+      .search-bar input:focus {
+        box-shadow: 0 0 0 2px var(--brand-2);
+        border-color: var(--brand);
       }
 
       .hero {
@@ -129,58 +158,6 @@
         color: var(--muted);
       }
 
-      .synopsis {
-        font-size: 13px;
-        line-height: 1.5;
-        color: var(--text);
-        max-height: 3.5em;
-        overflow: hidden;
-        position: relative;
-        transition: max-height 0.4s ease;
-      }
-
-      .synopsis.expanded {
-        max-height: 300px;
-      }
-
-      .toggle-btn {
-        background: none;
-        border: none;
-        color: var(--brand);
-        font-weight: 600;
-        cursor: pointer;
-        font-size: 13px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 0;
-      }
-
-      .toggle-btn::after {
-        content: "▼";
-        font-size: 11px;
-        transition: transform 0.3s ease;
-      }
-
-      .toggle-btn.active::after {
-        transform: rotate(180deg);
-      }
-
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-
-      .chip {
-        background: #f3f3f3;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        font-size: 12px;
-        padding: 4px 8px;
-        color: var(--muted);
-      }
-
       .actions {
         margin-top: auto;
         display: flex;
@@ -220,11 +197,16 @@
   </head>
 
   <body>
+    <!-- 🔍 BARRE DE RECHERCHE -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Rechercher un événement à Poitiers (ex : concert, film, humour...)" />
+    </div>
+
     <div class="hero">
       <h1>Événements à Poitiers</h1>
     </div>
 
-    <div class="wrap">
+    <div class="wrap" id="mainContent">
       <h2 class="section-title">🎬 Films à l'affiche (CGR)</h2>
       <section class="grid" id="gridCGR"></section>
 
@@ -241,153 +223,62 @@
     </div>
 
     <script>
+      let allEvents = [];
+
       async function loadEvents() {
         const r = await fetch('./events.json?v=' + Date.now(), { cache: 'no-store' });
         return r.ok ? await r.json() : { events: [] };
       }
 
-      function daysUntil(iso) {
-        if (!iso) return '';
-        const d = new Date(iso);
-        const now = new Date();
-        const diff = Math.ceil((d - now) / 86400000);
-        if (diff < 0) return '';
-        if (diff === 0) return 'Aujourd’hui';
-        if (diff === 1) return 'Demain';
-        return 'J-' + diff;
-      }
+      function renderAll(events) {
+        const grids = {
+          CGR: document.getElementById('gridCGR'),
+          Arena: document.getElementById('gridArena'),
+          RC: document.getElementById('gridRC'),
+          Expo: document.getElementById('gridExpo'),
+        };
+        Object.values(grids).forEach(g => g.innerHTML = '');
 
-      function cleanArenaDate(text) {
-        if (!text) return '';
-        return text.replace(/^.*?(dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)/i, '$1');
-      }
-
-      function renderCGR(events) {
-        const grid = document.getElementById('gridCGR');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("CGR"))
-          .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || ev.image || '';
-          const rel = daysUntil(ev.release);
-          const genres = ev.genres || 'Genres non précisés';
-          const desc = ev.description || ev.synopsis || '—';
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
-                <p class="synopsis">${desc}</p>
-                <button class="toggle-btn">Voir plus</button>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Site CGR</a>
-                <a class="btn" href="${ev.source}" target="_blank">Voir les horaires</a>
-              </div>
-            </article>`);
-        });
-      }
-
-      function renderArena(events) {
-        const grid = document.getElementById('gridArena');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("Arena"))
-          .sort((a, b) => new Date(a.release || 0) - new Date(b.release || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || ev.image || '';
-          const rel = daysUntil(ev.release);
-          const date = cleanArenaDate(ev.date);
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">Arena Futuroscope · ${date}</div>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
-                <a class="btn" href="${ev.reservation}" target="_blank">Réserver</a>
-              </div>
-            </article>`);
-        });
-      }
-
-      function renderRC(events) {
-        const grid = document.getElementById('gridRC');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("Republic"))
-          .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
-
-        sorted.forEach(ev => {
+        events.forEach(ev => {
           const poster = ev.poster || '';
-          const rel = daysUntil(ev.date);
-          const desc = (ev.description || '').substring(0, 300) + '...';
-          grid.insertAdjacentHTML('beforeend', `
+          const rel = '';
+          const html = `
             <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
+              <div class="cover" style="background-image:url('${poster}');"></div>
               <div class="content">
                 <h3>${ev.title}</h3>
-                <div class="meta">${ev.address || 'Espace Republic Corner, Poitiers'}</div>
-                <p class="synopsis">${desc}</p>
-                <button class="toggle-btn">Voir plus</button>
-              </div>
-              <div class="actions">
-                <a class="ghost" href="${ev.source}" target="_blank">Billetterie</a>
-                <a class="btn" href="${ev.source}" target="_blank">Réserver</a>
-              </div>
-            </article>`);
-        });
-      }
-
-      function renderExpo(events) {
-        const grid = document.getElementById('gridExpo');
-        grid.innerHTML = '';
-        const sorted = events.filter(ev => ev.cinema?.includes("Parc Expo"))
-          .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
-
-        sorted.forEach(ev => {
-          const poster = ev.poster || '';
-          const rel = daysUntil(ev.date);
-          grid.insertAdjacentHTML('beforeend', `
-            <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">
-                ${rel ? `<div class="badge">${rel}</div>` : ''}
-              </div>
-              <div class="content">
-                <h3>${ev.title}</h3>
-                <div class="meta">Parc Expo Grand Poitiers</div>
+                <div class="meta">${ev.cinema || ''}</div>
               </div>
               <div class="actions">
                 <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
                 <a class="btn" href="${ev.source}" target="_blank">Voir l'événement</a>
               </div>
-            </article>`);
+            </article>`;
+          
+          if (ev.cinema?.includes('CGR')) grids.CGR.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Arena')) grids.Arena.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Republic')) grids.RC.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Parc Expo')) grids.Expo.insertAdjacentHTML('beforeend', html);
         });
+      }
+
+      function filterEvents(query) {
+        query = query.toLowerCase();
+        const filtered = allEvents.filter(ev =>
+          ev.title?.toLowerCase().includes(query) ||
+          ev.cinema?.toLowerCase().includes(query) ||
+          ev.description?.toLowerCase().includes(query)
+        );
+        renderAll(filtered);
       }
 
       (async function() {
         const data = await loadEvents();
-        renderCGR(data.events || []);
-        renderArena(data.events || []);
-        renderRC(data.events || []);
-        renderExpo(data.events || []);
+        allEvents = data.events || [];
+        renderAll(allEvents);
 
-        document.addEventListener('click', e => {
-          if (e.target.classList.contains('toggle-btn')) {
-            const p = e.target.previousElementSibling;
-            p.classList.toggle('expanded');
-            e.target.classList.toggle('active');
-            e.target.textContent = p.classList.contains('expanded') ? 'Voir moins' : 'Voir plus';
-          }
+        document.getElementById('searchInput').addEventListener('input', e => {
+          filterEvents(e.target.value);
         });
       })();
     </script>
