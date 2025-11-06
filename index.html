@@ -29,13 +29,14 @@
       /* 🔍 BARRE DE RECHERCHE */
       .search-bar {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
         background: #f7f7f7;
         padding: 16px;
         position: sticky;
         top: 0;
         z-index: 100;
+        border-bottom: 1px solid var(--border);
       }
 
       .search-bar input {
@@ -47,11 +48,43 @@
         font-size: 15px;
         outline: none;
         transition: box-shadow 0.2s;
+        margin-bottom: 10px;
       }
 
       .search-bar input:focus {
         box-shadow: 0 0 0 2px var(--brand-2);
         border-color: var(--brand);
+      }
+
+      /* ✅ Filtres établissements */
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .filter-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 6px 10px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .filter-item:hover {
+        border-color: var(--brand);
+        background: #f0fef8;
+      }
+
+      .filter-item input[type="checkbox"] {
+        accent-color: var(--brand);
+        cursor: pointer;
       }
 
       .hero {
@@ -199,23 +232,22 @@
     <div class="hero">
       <h1>Événements à Poitiers</h1>
     </div>
-    <!-- 🔍 BARRE DE RECHERCHE -->
+
+    <!-- 🔍 BARRE DE RECHERCHE + FILTRES -->
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Rechercher un événement à Poitiers (ex : concert, film, humour...)" />
+
+      <div class="filters">
+        <label class="filter-item"><input type="checkbox" value="CGR" checked /> 🎬 CGR</label>
+        <label class="filter-item"><input type="checkbox" value="Arena" checked /> 🎤 Arena</label>
+        <label class="filter-item"><input type="checkbox" value="Republic" checked /> 🎭 Republic Corner</label>
+        <label class="filter-item"><input type="checkbox" value="Parc Expo" checked /> 🏛️ Parc Expo</label>
+      </div>
     </div>
 
     <div class="wrap" id="mainContent">
-      <h2 class="section-title">🎬 Films à l'affiche (CGR)</h2>
-      <section class="grid" id="gridCGR"></section>
-
-      <h2 class="section-title">🎤 Concerts & Spectacles (Arena)</h2>
-      <section class="grid" id="gridArena"></section>
-
-      <h2 class="section-title">🎭 Soirées & Humour (Republic Corner)</h2>
-      <section class="grid" id="gridRC"></section>
-
-      <h2 class="section-title">🏛️ Événements (Parc Expo Grand Poitiers)</h2>
-      <section class="grid" id="gridExpo"></section>
+      <h2 class="section-title">Événements disponibles</h2>
+      <section class="grid" id="gridAll"></section>
 
       <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena, Republic Corner & Parc Expo).</footer>
     </div>
@@ -228,18 +260,12 @@
         return r.ok ? await r.json() : { events: [] };
       }
 
-      function renderAll(events) {
-        const grids = {
-          CGR: document.getElementById('gridCGR'),
-          Arena: document.getElementById('gridArena'),
-          RC: document.getElementById('gridRC'),
-          Expo: document.getElementById('gridExpo'),
-        };
-        Object.values(grids).forEach(g => g.innerHTML = '');
+      function render(events) {
+        const grid = document.getElementById('gridAll');
+        grid.innerHTML = '';
 
         events.forEach(ev => {
           const poster = ev.poster || '';
-          const rel = '';
           const html = `
             <article class="card">
               <div class="cover" style="background-image:url('${poster}');"></div>
@@ -252,31 +278,34 @@
                 <a class="btn" href="${ev.source}" target="_blank">Voir l'événement</a>
               </div>
             </article>`;
-          
-          if (ev.cinema?.includes('CGR')) grids.CGR.insertAdjacentHTML('beforeend', html);
-          else if (ev.cinema?.includes('Arena')) grids.Arena.insertAdjacentHTML('beforeend', html);
-          else if (ev.cinema?.includes('Republic')) grids.RC.insertAdjacentHTML('beforeend', html);
-          else if (ev.cinema?.includes('Parc Expo')) grids.Expo.insertAdjacentHTML('beforeend', html);
+          grid.insertAdjacentHTML('beforeend', html);
         });
       }
 
-      function filterEvents(query) {
-        query = query.toLowerCase();
-        const filtered = allEvents.filter(ev =>
-          ev.title?.toLowerCase().includes(query) ||
-          ev.cinema?.toLowerCase().includes(query) ||
-          ev.description?.toLowerCase().includes(query)
-        );
-        renderAll(filtered);
+      function filterEvents() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const activeFilters = Array.from(document.querySelectorAll('.filters input:checked')).map(i => i.value);
+
+        const filtered = allEvents.filter(ev => {
+          const matchSearch =
+            ev.title?.toLowerCase().includes(query) ||
+            ev.cinema?.toLowerCase().includes(query) ||
+            ev.description?.toLowerCase().includes(query);
+          const matchFilter = activeFilters.some(f => ev.cinema?.includes(f));
+          return matchSearch && matchFilter;
+        });
+
+        render(filtered);
       }
 
       (async function() {
         const data = await loadEvents();
         allEvents = data.events || [];
-        renderAll(allEvents);
+        render(allEvents);
 
-        document.getElementById('searchInput').addEventListener('input', e => {
-          filterEvents(e.target.value);
+        document.getElementById('searchInput').addEventListener('input', filterEvents);
+        document.querySelectorAll('.filters input').forEach(cb => {
+          cb.addEventListener('change', filterEvents);
         });
       })();
     </script>
