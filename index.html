@@ -351,52 +351,28 @@
       function renderExpo(events) {
         const grid = document.getElementById('gridExpo');
         grid.innerHTML = '';
-      
-        const sorted = events
-          .filter(ev => ev.cinema?.includes("Parc Expo"))
+        const sorted = events.filter(ev => ev.cinema?.includes("Parc Expo"))
           .sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
-      
+
         sorted.forEach(ev => {
           const poster = ev.poster || '';
           const rel = daysUntil(ev.date);
-      
-          // Formater la date de manière lisible
-          const dateText = ev.date
-            ? new Date(ev.date).toLocaleDateString('fr-FR', {
-                weekday: 'long',
-                day: '2-digit',
-                month: 'long',
-                year: 'numeric',
-              })
-            : 'Date non précisée';
-      
           grid.insertAdjacentHTML('beforeend', `
             <article class="card">
               <div class="cover" style="background-image:url('${poster}');">
                 ${rel ? `<div class="badge">${rel}</div>` : ''}
               </div>
-      
               <div class="content">
                 <h3>${ev.title}</h3>
                 <div class="meta">Parc Expo Grand Poitiers</div>
               </div>
-      
-              <div class="date-block" 
-                   style="background:#f3f3f3; color:#333; font-size:13px; 
-                          font-weight:600; text-align:center; 
-                          padding:8px; border-top:1px solid #ddd;">
-                ${dateText}
-              </div>
-      
               <div class="actions">
                 <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
                 <a class="btn" href="${ev.source}" target="_blank">Voir l'événement</a>
               </div>
-            </article>
-          `);
+            </article>`);
         });
       }
-
 
       (async function() {
         const data = await loadEvents();
