@@ -17,10 +17,9 @@ def scrape_parc_expo():
         return []
 
     soup = BeautifulSoup(res.text, "html.parser")
-    events = []
 
-    # Chaque carte événement semble être dans un bloc "article" ou div similaire
-    cards = soup.select("article, .wp-block-columns, .event-item")
+    events = []
+    cards = soup.select(".event-item, .wp-block-columns, article")  # tolérance large
     if not cards:
         print("⚠️ Aucun événement détecté sur la page.")
         return []
@@ -37,25 +36,12 @@ def scrape_parc_expo():
             img_tag = card.find("img")
             poster = img_tag["src"] if img_tag else None
 
-            # 🗓️ Bloc date spécifique
-            day_tag = card.select_one(
-                ".font-extrabold.text-medium, .relative.z-10.font-extrabold"
-            )
-            month_tag = card.select_one(
-                ".font-light.text-small, .relative.z-10.font-light"
-            )
-
-            if day_tag and month_tag:
-                day_text = day_tag.get_text(" ", strip=True).replace("&gt;", ">")
-                month_text = month_tag.get_text(" ", strip=True)
-                date = f"{day_text} {month_text}".strip()
-            else:
-                date = None
+            # 🗓️ Date
+            date_tag = card.find(class_="event-date") or card.find("time")
+            date = date_tag.get_text(strip=True) if date_tag else None
 
             # 🎫 Nom de l'événement
-            title_tag = (
-                card.find("h2") or card.find("h3") or card.find("strong") or card.find("p")
-            )
+            title_tag = card.find("h2") or card.find("h3") or card.find("strong")
             title = title_tag.get_text(strip=True) if title_tag else None
 
             # Vérifie qu’on a un minimum d’infos
