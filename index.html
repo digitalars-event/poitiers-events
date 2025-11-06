@@ -245,8 +245,17 @@
     </div>
 
     <div class="wrap" id="mainContent">
-      <h2 class="section-title">Événements disponibles</h2>
-      <section class="grid" id="gridAll"></section>
+      <h2 class="section-title">🎬 Films à l'affiche (CGR)</h2>
+      <section class="grid" id="gridCGR"></section>
+
+      <h2 class="section-title">🎤 Concerts & Spectacles (Arena)</h2>
+      <section class="grid" id="gridArena"></section>
+
+      <h2 class="section-title">🎭 Soirées & Humour (Republic Corner)</h2>
+      <section class="grid" id="gridRC"></section>
+
+      <h2 class="section-title">🏛️ Événements (Parc Expo Grand Poitiers)</h2>
+      <section class="grid" id="gridExpo"></section>
 
       <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena, Republic Corner & Parc Expo).</footer>
     </div>
@@ -259,9 +268,14 @@
         return r.ok ? await r.json() : { events: [] };
       }
 
-      function render(events) {
-        const grid = document.getElementById('gridAll');
-        grid.innerHTML = '';
+      function renderAll(events) {
+        const grids = {
+          CGR: document.getElementById('gridCGR'),
+          Arena: document.getElementById('gridArena'),
+          RC: document.getElementById('gridRC'),
+          Expo: document.getElementById('gridExpo'),
+        };
+        Object.values(grids).forEach(g => g.innerHTML = '');
 
         events.forEach(ev => {
           const poster = ev.poster || '';
@@ -277,7 +291,11 @@
                 <a class="btn" href="${ev.source}" target="_blank">Voir l'événement</a>
               </div>
             </article>`;
-          grid.insertAdjacentHTML('beforeend', html);
+          
+          if (ev.cinema?.includes('CGR')) grids.CGR.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Arena')) grids.Arena.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Republic')) grids.RC.insertAdjacentHTML('beforeend', html);
+          else if (ev.cinema?.includes('Parc Expo')) grids.Expo.insertAdjacentHTML('beforeend', html);
         });
       }
 
@@ -294,13 +312,13 @@
           return matchSearch && matchFilter;
         });
 
-        render(filtered);
+        renderAll(filtered);
       }
 
       (async function() {
         const data = await loadEvents();
         allEvents = data.events || [];
-        render(allEvents);
+        renderAll(allEvents);
 
         document.getElementById('searchInput').addEventListener('input', filterEvents);
         document.querySelectorAll('.filters input').forEach(cb => {
