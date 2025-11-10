@@ -5,7 +5,7 @@ import json
 from datetime import datetime, timezone
 
 # --- Imports des scrapers ---
-from scrapers import cgr, arena, republic_corner, parc_expo
+from scrapers import cgr, arena, republic_corner, parc_expo, tap
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
     except Exception as e:
         print(f"❌ Erreur lors du scraping CGR : {e}")
 
-    # --- ARENA ---
+    # --- ARENA FUTUROSCOPE ---
     print("\n🎤 ARENA FUTUROSCOPE...")
     try:
         arena_events = arena.scrape_arena()
@@ -47,6 +47,18 @@ def main():
     except Exception as e:
         print(f"❌ Erreur lors du scraping Parc Expo : {e}")
 
+    # --- TAP POITIERS ---
+    print("\n🎭 TAP POITIERS...")
+    try:
+        tap_data = tap.scrape_tap()
+        cinema_events = tap_data.get("cinema", [])
+        spectacle_events = tap_data.get("spectacle", [])
+        total_tap = len(cinema_events) + len(spectacle_events)
+        print(f"✅ {total_tap} événements récupérés depuis le TAP Poitiers ({len(cinema_events)} cinéma, {len(spectacle_events)} spectacles).")
+        all_events += cinema_events + spectacle_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping TAP Poitiers : {e}")
+
     # --- Nettoyage des doublons ---
     seen = set()
     unique = []
@@ -61,12 +73,10 @@ def main():
 
     # --- Tri chronologique robuste ---
     def parse_date(value):
-        """Convertit n'importe quel format ISO en datetime naïf"""
         if not value:
             return datetime.max
         try:
             dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
-            # Uniformise : si timezone présente, la convertir en UTC puis rendre naïve
             if dt.tzinfo is not None:
                 dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
             return dt
@@ -98,6 +108,7 @@ def main():
     print(f"   🎤 Arena : {len(locals().get('arena_events', []))}")
     print(f"   🎭 Republic Corner : {len(locals().get('rc_events', []))}")
     print(f"   🏛️ Parc Expo : {len(locals().get('expo_events', []))}")
+    print(f"   🎭 TAP Poitiers : {len(locals().get('cinema_events', [])) + len(locals().get('spectacle_events', []))}")
 
 
 if __name__ == "__main__":
