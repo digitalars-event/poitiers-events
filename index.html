@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Événements CGR, Arena, Republic Corner & Parc Expo – Poitiers</title>
+    <title>Événements CGR, Arena, Republic Corner, Parc Expo & TAP – Poitiers</title>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SBQ1Y2G8H"></script>
@@ -11,7 +11,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-9SBQ1Y2G8H');
     </script>
 
@@ -45,7 +44,7 @@
         align-items: center;
         justify-content: center;
         color: white;
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        text-shadow: 0 2px 6px rgba(0,0,0,0.4);
       }
 
       .hero h1 {
@@ -55,7 +54,7 @@
         font-size: clamp(26px, 3vw, 36px);
       }
 
-      /* 🔍 Barre de recherche + filtres */
+      /* Barre de recherche + filtres */
       .search-bar {
         display: flex;
         flex-direction: column;
@@ -206,9 +205,7 @@
   </head>
 
   <body>
-    <div class="hero">
-      <h1>Événements à Poitiers</h1>
-    </div>
+    <div class="hero"><h1>Événements à Poitiers</h1></div>
 
     <!-- 🔍 Barre de recherche + filtres -->
     <div class="search-bar">
@@ -218,6 +215,7 @@
         <label class="filter-item"><input type="checkbox" value="Arena" checked /> 🎤 Arena</label>
         <label class="filter-item"><input type="checkbox" value="Republic" checked /> 🎭 Republic Corner</label>
         <label class="filter-item"><input type="checkbox" value="Parc Expo" checked /> 🏛️ Parc Expo</label>
+        <label class="filter-item"><input type="checkbox" value="TAP" checked /> 🎭 TAP Poitiers</label>
       </div>
     </div>
 
@@ -234,7 +232,10 @@
       <h2 class="section-title">🏛️ Événements (Parc Expo Grand Poitiers)</h2>
       <section class="grid" id="gridExpo"></section>
 
-      <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena, Republic Corner & Parc Expo).</footer>
+      <h2 class="section-title">🎭 TAP Poitiers (Cinéma & Spectacles)</h2>
+      <section class="grid" id="gridTAP"></section>
+
+      <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena, Republic Corner, Parc Expo & TAP).</footer>
     </div>
 
     <script>
@@ -256,6 +257,36 @@
         return 'J-' + diff;
       }
 
+      function daysUntilText(dateText) {
+        if (!dateText) return '';
+        const match = dateText.match(/(\d{1,2})\s*(?:[a-zéû]+\s*)?(\d{4})?/i);
+        const yearMatch = dateText.match(/(\d{4})/);
+        const year = yearMatch ? parseInt(yearMatch[1]) : new Date().getFullYear();
+
+        const mois = {
+          janvier: 'January', février: 'February', mars: 'March', avril: 'April',
+          mai: 'May', juin: 'June', juillet: 'July', août: 'August',
+          septembre: 'September', octobre: 'October', novembre: 'November', décembre: 'December'
+        };
+        let monthName = null;
+        for (const [fr, en] of Object.entries(mois)) {
+          if (dateText.toLowerCase().includes(fr)) {
+            monthName = en;
+            break;
+          }
+        }
+        if (!monthName || !match) return '';
+        const day = parseInt(match[1]);
+        const d = new Date(`${monthName} ${day}, ${year}`);
+        if (isNaN(d)) return '';
+        const now = new Date();
+        const diff = Math.ceil((d - now) / 86400000);
+        if (diff < 0) return '';
+        if (diff === 0) return 'Aujourd’hui';
+        if (diff === 1) return 'Demain';
+        return 'J-' + diff;
+      }
+
       function cleanArenaDate(text) {
         if (!text) return '';
         return text.replace(/^.*?(dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)/i, '$1');
@@ -267,6 +298,7 @@
           Arena: document.getElementById('gridArena'),
           RC: document.getElementById('gridRC'),
           Expo: document.getElementById('gridExpo'),
+          TAP: document.getElementById('gridTAP')
         };
         Object.values(grids).forEach(g => g.innerHTML = '');
 
@@ -315,7 +347,6 @@
         events.filter(ev => ev.cinema?.includes('Republic')).forEach(ev => {
           const poster = ev.poster || '';
           const rel = daysUntil(ev.date);
-          const desc = (ev.description || '').substring(0, 300) + '...';
           grids.RC.insertAdjacentHTML('beforeend', `
             <article class="card">
               <div class="cover" style="background-image:url('${poster}');">${rel ? `<div class="badge">${rel}</div>` : ''}</div>
@@ -347,12 +378,53 @@
               </div>
             </article>`);
         });
+
+        // 🎭 TAP CINÉMA
+        events.filter(ev => ev.cinema?.includes('TAP Cinéma')).forEach(ev => {
+          const poster = ev.poster || '';
+          const genres = ev.genres || 'Genres non précisés';
+          const desc = ev.description || '—';
+          grids.TAP.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');"></div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
+                <p class="synopsis">${desc}</p>
+                <button class="toggle-btn">Voir plus</button>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Site TAP Cinéma</a>
+                <a class="btn" href="${ev.source}" target="_blank">Voir le film</a>
+              </div>
+            </article>`);
+        });
+
+        // 🎭 TAP SPECTACLES (avec badge J-X)
+        events.filter(ev => ev.cinema === 'TAP Poitiers').forEach(ev => {
+          const poster = ev.poster || '';
+          const date = cleanArenaDate(ev.date);
+          const rel = daysUntilText(ev.date);
+          grids.TAP.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">
+                ${rel ? `<div class="badge">${rel}</div>` : ''}
+              </div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">TAP Poitiers · ${date}</div>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
+                <a class="btn" href="${ev.reservation || ev.source}" target="_blank">Réserver</a>
+              </div>
+            </article>`);
+        });
       }
 
       function filterEvents() {
         const query = document.getElementById('searchInput').value.toLowerCase();
         const activeFilters = Array.from(document.querySelectorAll('.filters input:checked')).map(i => i.value);
-
         const filtered = allEvents.filter(ev => {
           const matchSearch =
             ev.title?.toLowerCase().includes(query) ||
@@ -361,7 +433,6 @@
           const matchFilter = activeFilters.some(f => ev.cinema?.includes(f));
           return matchSearch && matchFilter;
         });
-
         renderAll(filtered);
       }
 
