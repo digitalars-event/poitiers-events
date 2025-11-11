@@ -297,10 +297,11 @@
           </div>
         </div>
       
-        <label class="filter-item"><input type="checkbox" value="Arena" checked /> 🎤 Arena</label>
-        <label class="filter-item"><input type="checkbox" value="Republic" checked /> 🎭 Republic Corner</label>
-        <label class="filter-item"><input type="checkbox" value="Parc Expo" checked /> 🏛️ Parc Expo</label>
-        <label class="filter-item"><input type="checkbox" value="TAP" checked /> 🎭 TAP Poitiers</label>
+        <label class="filter-item"><input type="checkbox" value="Arena" checked />   Arena</label>
+        <label class="filter-item"><input type="checkbox" value="Republic" checked />   Republic Corner</label>
+        <label class="filter-item"><input type="checkbox" value="Parc Expo" checked />   Parc Expo</label>
+        <label class="filter-item"><input type="checkbox" value="TAP" checked />   TAP Poitiers</label>
+        <label class="filter-item"><input type="checkbox" value="Confort Moderne" checked />   Confort Moderne</label>
       </div>
 
 
@@ -322,6 +323,9 @@
 
       <h2 class="section-title">🎭 TAP Poitiers (Cinéma & Spectacles)</h2>
       <section class="grid" id="gridTAP"></section>
+
+      <h2 class="section-title">🎸 Confort Moderne</h2>
+      <section class="grid" id="gridCM"></section>
 
       <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena, Republic Corner, Parc Expo & TAP).</footer>
     </div>
@@ -386,7 +390,8 @@
           Arena: document.getElementById('gridArena'),
           RC: document.getElementById('gridRC'),
           Expo: document.getElementById('gridExpo'),
-          TAP: document.getElementById('gridTAP')
+          TAP: document.getElementById('gridTAP'),
+          CM: document.getElementById('gridCM')   // 👈 AJOUT
         };
         Object.values(grids).forEach(g => g.innerHTML = '');
 
@@ -398,7 +403,7 @@
           const desc = ev.description || ev.synopsis || '—';
           grids.CGR.insertAdjacentHTML('beforeend', `
             <article class="card">
-              <div class="cover" style="background-image:url('${poster}');">${rel ? `<div class="badge">${rel}</div>` : ''}</div>
+              <div class="cover" style="background-image:url('${poster}');"><div class="badge">Actuellement à l'affiche</div></div>
               <div class="content">
                 <h3>${ev.title}</h3>
                 <div class="meta">${ev.cinema} · ${genres} · ${ev.duration || 'Durée inconnue'}</div>
@@ -501,6 +506,27 @@
               <div class="content">
                 <h3>${ev.title}</h3>
                 <div class="meta">TAP Poitiers · ${date}</div>
+              </div>
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
+                <a class="btn" href="${ev.reservation || ev.source}" target="_blank">Réserver</a>
+              </div>
+            </article>`);
+        });
+
+        // 🎸 CONFORT MODERNE (même visuel que TAP spectacles)
+        events.filter(ev => ev.cinema === 'Confort Moderne').forEach(ev => {
+          const poster = ev.poster || '';
+          const date = cleanArenaDate(ev.date);
+          const rel = daysUntilText(ev.date);  // badge J-X calculé depuis la date texte
+          grids.CM.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">
+                ${rel ? `<div class="badge">${rel}</div>` : ''}
+              </div>
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">Confort Moderne · ${date}</div>
               </div>
               <div class="actions">
                 <a class="ghost" href="${ev.source}" target="_blank">Plus d'infos</a>
