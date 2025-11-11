@@ -201,6 +201,81 @@
       .ghost { border: 1px solid var(--brand); background: transparent; color: var(--brand); padding: 8px 12px; border-radius: 10px; text-decoration: none; }
 
       footer { text-align: center; color: var(--muted); font-size: 12px; margin: 24px 0; }
+      /* 🌿 Menu déroulant CGR corrigé et cohérent */
+      .dropdown {
+        position: relative;
+        user-select: none;
+      }
+      
+      .dropdown-toggle {
+        align-items: center;
+        cursor: pointer;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 10px 14px;
+        min-width: 200px;
+        z-index: 999;
+        text-align: left;
+      }
+      
+      .dropdown-content label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        font-size: 15px;
+        padding: 6px 10px;
+        cursor: pointer;
+        transition: background 0.2s;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      
+      .dropdown-content label:hover {
+        background: #f6fdf9;
+        border-radius: 6px;
+      }
+      
+      .dropdown-content input[type="checkbox"] {
+          accent-color: var(--brand);
+          transform: scale(1.1);
+          flex-shrink: 0;
+          width: 20px; /* largeur fixe pour un alignement parfait */
+        }
+
+
+      .dropdown-content label span {
+        flex: 1;
+        text-align: left;
+      }
+      
+      .dropdown-content label:hover {
+          background: #f6fdf9;
+          border-radius: 6px;
+        }
+
+            
+      .dropdown:hover .dropdown-content,
+      .dropdown.active .dropdown-content {
+        display: block;
+      }
+      
+      /* Corrige le débordement du menu */
+      .filters {
+        position: relative;
+        z-index: 5;
+      }
+
     </style>
   </head>
 
@@ -211,28 +286,41 @@
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Rechercher un événement à Poitiers (ex : concert, film, humour...)" />
       <div class="filters">
-        <label class="filter-item"><input type="checkbox" value="CGR" checked /> CGR</label>
-        <label class="filter-item"><input type="checkbox" value="Arena" checked /> Arena</label>
-        <label class="filter-item"><input type="checkbox" value="Republic" checked /> Republic Corner</label>
-        <label class="filter-item"><input type="checkbox" value="Parc Expo" checked /> Parc Expo</label>
-        <label class="filter-item"><input type="checkbox" value="TAP" checked /> TAP Poitiers</label>
+        <div class="filter-item dropdown">
+          <label class="dropdown-toggle">
+            <input type="checkbox" value="CGR" checked /> 🎬 CGR ▼
+          </label>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="CGR Castille" checked /> Castille</label>
+            <label><input type="checkbox" value="CGR Buxerolles" checked /> Buxerolles</label>
+            <label><input type="checkbox" value="CGR Fontaine-le-Comte" checked /> Fontaine-le-Comte</label>
+          </div>
+        </div>
+      
+        <label class="filter-item"><input type="checkbox" value="Arena" checked /> 🎤 Arena</label>
+        <label class="filter-item"><input type="checkbox" value="Republic" checked /> 🎭 Republic Corner</label>
+        <label class="filter-item"><input type="checkbox" value="Parc Expo" checked /> 🏛️ Parc Expo</label>
+        <label class="filter-item"><input type="checkbox" value="TAP" checked /> 🎭 TAP Poitiers</label>
       </div>
+
+
+
     </div>
 
     <div class="wrap" id="mainContent">
-      <h2 class="section-title">Films à l'affiche (CGR)</h2>
+      <h2 class="section-title">🎬 Films à l'affiche (CGR)</h2>
       <section class="grid" id="gridCGR"></section>
 
-      <h2 class="section-title">Concerts & Spectacles (Arena)</h2>
+      <h2 class="section-title">🎤 Concerts & Spectacles (Arena)</h2>
       <section class="grid" id="gridArena"></section>
 
-      <h2 class="section-title">Soirées & Humour (Republic Corner)</h2>
+      <h2 class="section-title">🎭 Soirées & Humour (Republic Corner)</h2>
       <section class="grid" id="gridRC"></section>
 
-      <h2 class="section-title">Événements (Parc Expo Grand Poitiers)</h2>
+      <h2 class="section-title">🏛️ Événements (Parc Expo Grand Poitiers)</h2>
       <section class="grid" id="gridExpo"></section>
 
-      <h2 class="section-title">TAP Poitiers (Cinéma & Spectacles)</h2>
+      <h2 class="section-title">🎭 TAP Poitiers (Cinéma & Spectacles)</h2>
       <section class="grid" id="gridTAP"></section>
 
       <footer>✦ Données issues de <strong>events.json</strong> (CGR, Arena, Republic Corner, Parc Expo & TAP).</footer>
@@ -424,33 +512,112 @@
 
       function filterEvents() {
         const query = document.getElementById('searchInput').value.toLowerCase();
-        const activeFilters = Array.from(document.querySelectorAll('.filters input:checked')).map(i => i.value);
+        const checkboxes = Array.from(document.querySelectorAll('.filters input[type="checkbox"]'));
+        const checkedValues = checkboxes.filter(cb => cb.checked).map(cb => cb.value);
+      
+        const cgrGlobal = document.querySelector('.dropdown-toggle input[value="CGR"]');
+        const cgrSubs = Array.from(document.querySelectorAll('.dropdown-content input[type="checkbox"]'));
+        const activeCGRSubs = cgrSubs.filter(cb => cb.checked).map(cb => cb.value);
+      
         const filtered = allEvents.filter(ev => {
-          const matchSearch =
+          const textMatch =
             ev.title?.toLowerCase().includes(query) ||
-            ev.cinema?.toLowerCase().includes(query) ||
-            ev.description?.toLowerCase().includes(query);
-          const matchFilter = activeFilters.some(f => ev.cinema?.includes(f));
-          return matchSearch && matchFilter;
+            ev.description?.toLowerCase().includes(query) ||
+            ev.cinema?.toLowerCase().includes(query);
+      
+          let match = false;
+      
+          // 🎬 Gestion CGR
+          if (ev.cinema?.startsWith('CGR')) {
+            // Si le global est décoché → tout masquer
+            if (!cgrGlobal.checked) return false;
+      
+            // Si global coché + aucun sous-ciné coché → tout afficher
+            if (activeCGRSubs.length === 0) return true;
+      
+            // Sinon : afficher seulement les sous-cinés cochés
+            match = activeCGRSubs.includes(ev.cinema);
+          } else {
+            // Autres cinés
+            match = checkedValues.some(f =>
+              ev.cinema?.toLowerCase().includes(f.toLowerCase())
+            );
+          }
+      
+          return textMatch && match;
         });
+      
         renderAll(filtered);
       }
+
+
 
       (async function() {
         const data = await loadEvents();
         allEvents = data.events || [];
         renderAll(allEvents);
-
+      
+        // Recherche texte
         document.getElementById('searchInput').addEventListener('input', filterEvents);
-        document.querySelectorAll('.filters input').forEach(cb => cb.addEventListener('change', filterEvents));
+      
+        // Ajout d'écouteurs sur TOUS les filtres (y compris dropdowns)
+        function bindFilterListeners() {
+          document.querySelectorAll('.filters input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', filterEvents);
+          });
+        }
 
+        // Synchronisation CGR principal ↔ sous-catégories
+        function bindCGRLogic() {
+          const cgrGlobal = document.querySelector('.dropdown-toggle input[value="CGR"]');
+          const cgrSubs = Array.from(document.querySelectorAll('.dropdown-content input[type="checkbox"]'));
+        
+          // ✅ Clic sur le CGR global → coche/décoche tous les sous-cinés
+          cgrGlobal.addEventListener('change', () => {
+            cgrSubs.forEach(cb => (cb.checked = cgrGlobal.checked));
+            filterEvents();
+          });
+        
+          // ✅ Clic sur un sous-ciné → met à jour l’état du global
+          cgrSubs.forEach(cb => {
+            cb.addEventListener('change', () => {
+              const anyChecked = cgrSubs.some(sub => sub.checked);
+              cgrGlobal.checked = anyChecked; // Si aucun sous-ciné → global décoché
+              filterEvents();
+            });
+          });
+        }
+                
+        bindFilterListeners();
+        bindCGRLogic();
+        setupDropdownToggle();
+        
+              
+        // Gérer ouverture/fermeture du menu sans interférer avec la case
+        function setupDropdownToggle() {
+          const dropdown = document.querySelector('.dropdown');
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+          const checkbox = toggle.querySelector('input[type="checkbox"]');
+        
+          // Clic sur la case → juste filtrer (sans ouvrir le menu)
+          checkbox.addEventListener('click', e => {
+            e.stopPropagation();
+            setTimeout(() => filterEvents(), 50);
+          });
+        
+          // Clic sur le bloc "CGR ▼" (hors case) → ouvrir / fermer
+          toggle.addEventListener('click', e => {
+            if (e.target === checkbox) return;
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+          });
+        }
+        
+        // Fermer le menu si clic ailleurs
         document.addEventListener('click', e => {
-          if (e.target.classList.contains('toggle-btn')) {
-            const p = e.target.previousElementSibling;
-            p.classList.toggle('expanded');
-            e.target.classList.toggle('active');
-            e.target.textContent = p.classList.contains('expanded') ? 'Voir moins' : 'Voir plus';
-          }
+          document.querySelectorAll('.dropdown.active').forEach(d => {
+            if (!d.contains(e.target)) d.classList.remove('active');
+          });
         });
       })();
     </script>
