@@ -5,7 +5,7 @@ import json
 from datetime import datetime, timezone
 
 # --- Imports des scrapers ---
-from scrapers import cgr, arena, republic_corner, parc_expo, tap
+from scrapers import cgr, arena, republic_corner, parc_expo, tap, confort_moderne
 
 
 def main():
@@ -59,6 +59,15 @@ def main():
     except Exception as e:
         print(f"❌ Erreur lors du scraping TAP Poitiers : {e}")
 
+    # --- CONFORT MODERNE ---
+    print("\n🎸 CONFORT MODERNE...")
+    try:
+        confort_events = confort_moderne.scrape_confort_moderne()
+        print(f"✅ {len(confort_events)} événements récupérés depuis le Confort Moderne.")
+        all_events += confort_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping Confort Moderne : {e}")
+
     # --- Nettoyage des doublons ---
     seen = set()
     unique = []
@@ -109,6 +118,7 @@ def main():
     print(f"   🎭 Republic Corner : {len(locals().get('rc_events', []))}")
     print(f"   🏛️ Parc Expo : {len(locals().get('expo_events', []))}")
     print(f"   🎭 TAP Poitiers : {len(locals().get('cinema_events', [])) + len(locals().get('spectacle_events', []))}")
+    print(f"   🎸 Confort Moderne : {len(locals().get('confort_events', []))}")
 
 
 if __name__ == "__main__":
