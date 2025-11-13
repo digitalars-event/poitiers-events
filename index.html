@@ -452,6 +452,7 @@
         <label class="filter-item"><input type="checkbox" value="Parc Expo" checked />Parc Expo</label>
         <label class="filter-item"><input type="checkbox" value="TAP" checked />TAP Poitiers</label>
         <label class="filter-item"><input type="checkbox" value="Confort Moderne" checked />Confort Moderne</label>
+        <label class="filter-item"><input type="checkbox" value="Maison des 3 Quartiers" checked />Maison des 3 Quartiers</label>
       </div>
     </div>
 
@@ -498,6 +499,15 @@
         <button class="carousel-btn right" data-target="gridCM">›</button>
       </div>
 
+      <h2 class="section-title">🏢 Maison des 3 Quartiers</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn left" data-target="gridM3Q">‹</button>
+        <section class="grid" id="gridM3Q"></section>
+        <button class="carousel-btn right" data-target="gridM3Q">›</button>
+      </div>
+
+      
+
       <footer>✦ Données issues de <strong>events.json</strong>.</footer>
     </div>
 
@@ -534,22 +544,47 @@
         return text.replace(/^.*?(dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)/i, '$1');
       }
 
-      function bindToggleButtons(){
-        // Retire les anciens écouteurs en clonant
+      function bindToggleButtons() {
         document.querySelectorAll('.toggle-btn').forEach(btn => {
-          btn.replaceWith(btn.cloneNode(true));
-        });
+          const content = btn.closest('.content');
+          const p = content.querySelector('.synopsis');
       
-        document.querySelectorAll('.toggle-btn').forEach(btn => {
+          const full = p.dataset.full || '';
+          const short = p.innerText;
+      
           btn.addEventListener('click', () => {
-            const content = btn.closest('.content');
-            const p = content ? content.querySelector('.synopsis') : null;
-            if (!p) return;
             const expanded = p.classList.toggle('expanded');
-            btn.classList.toggle('active', expanded);
-            btn.textContent = expanded ? 'Voir moins' : 'Voir plus';
+      
+            if (expanded) {
+              p.textContent = full;
+              btn.textContent = "Voir moins";
+              btn.classList.add("active");
+            } else {
+              p.textContent = short;
+              btn.textContent = "Voir plus";
+              btn.classList.remove("active");
+            }
           });
         });
+      }
+
+      function cleanM3QDescription(ev) {
+        let desc = ev.description || '';
+      
+        // 1) Retire le titre du début s’il est présent dans la description
+        if (desc.toLowerCase().startsWith(ev.title?.toLowerCase())) {
+          desc = desc.substring(ev.title.length).trim();
+        }
+      
+        // 2) Retire la date en doublon si elle apparait au début du texte
+        if (ev.date && desc.toLowerCase().startsWith(ev.date.toLowerCase())) {
+          desc = desc.substring(ev.date.length).trim();
+        }
+      
+        // 3) Nettoyage des multiples espaces / nouvelles lignes
+        desc = desc.replace(/\s+/g, ' ').trim();
+      
+        return desc;
       }
 
       /* === RENDER ALL (intégralement conservée) === */
@@ -560,7 +595,8 @@
           RC: document.getElementById('gridRC'),
           Expo: document.getElementById('gridExpo'),
           TAP: document.getElementById('gridTAP'),
-          CM: document.getElementById('gridCM')
+          CM: document.getElementById('gridCM'),
+          M3Q: document.getElementById('gridM3Q')
         };
       
         Object.values(grids).forEach(g => {
@@ -692,7 +728,60 @@
             </article>`);
         });
         updateCarouselVisibility('CM');
-      
+
+        // === MAISON DES 3 QUARTIERS ===
+        events.filter(ev => ev.cinema?.includes('Maison des 3 Quartiers')).forEach(ev => {
+        
+          const poster = ev.poster || ev.image || '';
+          const dateISO = ev.date || null;
+        
+          // Badge J-X
+          let badge = '';
+          if (dateISO) {
+            const diffText = daysUntil(dateISO);
+            if (diffText) {
+              badge = `<div class="badge">${diffText}</div>`;
+            }
+          }
+        
+          // Texte affiché : si description vide → on montre le subtitle
+          const summary = ev.description && ev.description.length > 5
+              ? ev.description
+              : (ev.subtitle || '').replace(/→.*$/, '').trim(); // supprime la ligne "→ ... / ..."
+        
+          // Détails étendus pour le bouton “voir plus”
+          const fullText = ev.subtitle || ev.description || '';
+        
+          grids.M3Q.insertAdjacentHTML('beforeend', `
+            <article class="card">
+              <div class="cover" style="background-image:url('${poster}');">
+                ${badge}
+              </div>
+        
+              <div class="content">
+                <h3>${ev.title}</h3>
+                <div class="meta">
+                  ${ev.date_text || ''} 
+                  ${ev.time ? ' · ' + ev.time : ''}
+                </div>
+        
+                <p class="synopsis" data-full="${fullText.replace(/"/g, '&quot;')}">
+                  ${summary}
+                </p>
+        
+                <button class="toggle-btn">Voir plus</button>
+              </div>
+        
+              <div class="actions">
+                <a class="ghost" href="${ev.source}" target="_blank">Infos</a>
+                <a class="btn" href="${ev.ticket || ev.source}" target="_blank">Billetterie</a>
+              </div>
+            </article>
+          `);
+        });
+        updateCarouselVisibility('M3Q');
+
+        
         bindToggleButtons();
       }
 
