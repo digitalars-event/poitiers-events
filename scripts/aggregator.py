@@ -5,7 +5,7 @@ import json
 from datetime import datetime, timezone
 
 # --- Imports des scrapers ---
-from scrapers import cgr, arena, republic_corner, parc_expo, tap, confort_moderne
+from scrapers import cgr, arena, republic_corner, parc_expo, tap, confort_moderne, m3q
 
 
 def main():
@@ -68,6 +68,15 @@ def main():
     except Exception as e:
         print(f"❌ Erreur lors du scraping Confort Moderne : {e}")
 
+    # --- Maison des 3 quartiers ---
+    print("\n🏡 MAISON DES 3 QUARTIERS (M3Q)...")
+    try:
+        m3q_events = m3q.scrape_m3q()
+        print(f"✅ {len(m3q_events)} événements récupérés depuis la M3Q.")
+        all_events += m3q_events
+    except Exception as e:
+        print(f"❌ Erreur lors du scraping M3Q : {e}")
+
     # --- Nettoyage des doublons ---
     seen = set()
     unique = []
@@ -119,6 +128,7 @@ def main():
     print(f"   🏛️ Parc Expo : {len(locals().get('expo_events', []))}")
     print(f"   🎭 TAP Poitiers : {len(locals().get('cinema_events', [])) + len(locals().get('spectacle_events', []))}")
     print(f"   🎸 Confort Moderne : {len(locals().get('confort_events', []))}")
+    print(f"   🎬 M3Q : {len(locals().get('m3q_events', []))}")
 
 
 if __name__ == "__main__":
