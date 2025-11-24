@@ -1,6 +1,18 @@
 {
-  "generated_at": "2025-11-23T18:49:56.332029+00:00",
+  "generated_at": "2025-11-24T03:50:33.472559+00:00",
   "events": [
+    {
+      "title": "Cinema Paradiso",
+      "duration": "118 min",
+      "description": "Alfredo vient de mourir. Pour Salvatore, cinéaste en vogue, c'est tout un pan de son passé qui s'écroule. On l’appelait Toto a l'époque. Il partageait son temps libre entre l'office où il était enfant de chœur et la salle de cinéma paroissiale, en particulier la cabine de projection où régnait Alfredo...",
+      "poster": "https://all.web.img.acsta.net/pictures/15/06/03/15/09/279596.jpg",
+      "genres": "Comédie dramatique",
+      "certificate": null,
+      "release": "1989-09-20T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914661"
+    },
     {
       "title": "The Doors : When You're Strange",
       "duration": "101 min",
@@ -11,7 +23,19 @@
       "release": "2010-06-09T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302725"
+      "scraped_at": "2025-11-24T03:48:09.733240"
+    },
+    {
+      "title": "Demain",
+      "duration": "118 min",
+      "description": "Il y a 10 ans, Cyril Dion et Mélanie Laurent étaient partis avec une équipe de quatre personnes enquêter dans dix pays pour comprendre ce qui pourrait provoquer une catastrophe écologique et surtout comment l'éviter. Durant leur voyage, ils ont rencontré les pionniers qui réinventent l’agriculture, l’énergie, l’économie, la démocratie et l’éducation. Et si montrer des solutions, raconter une histoire qui fait du bien, était la meilleure façon de résoudre les crises écologiques, économiques et sociales, que traversent nos pays ?",
+      "poster": "https://all.web.img.acsta.net/pictures/15/10/01/10/14/101232.jpg",
+      "genres": "Documentaire",
+      "certificate": null,
+      "release": "2015-12-02T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914644"
     },
     {
       "title": "Altaïr Conférences - Peuples du froid : Sibérie, Mongolie, Himalaya",
@@ -23,7 +47,55 @@
       "release": "2023-02-01T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350883"
+      "scraped_at": "2025-11-24T03:48:28.204483"
+    },
+    {
+      "title": "The First Slam Dunk",
+      "duration": "124 min",
+      "description": "Le meneur de jeu de Shohoku, Ryota Miyagi, joue toujours intelligemment et à la vitesse de l'éclair, contournant ses adversaires tout en gardant son sang-froid. Né et élevé à Okinawa, Ryota avait un frère aîné de trois ans de plus. Sur les traces de ce dernier, joueur local célèbre dès son plus jeune âge, Ryota est également devenu accro au basket. En deuxième année de lycée, Ryota fait partie de l'équipe de basket-ball du lycée Shohoku, aux côtés de Sakuragi, Rukawa, Akagi et Mitsui, et participe au championnat national inter-lycées. À présent, ils sont sur le point de se mesurer aux champions en titre, les joueurs du lycée Sannoh Kogyo.",
+      "poster": "https://all.web.img.acsta.net/pictures/23/04/18/18/46/1142239.jpg",
+      "genres": "Animation, Comédie, Drame",
+      "certificate": null,
+      "release": "2023-07-26T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914656"
+    },
+    {
+      "title": "Il faut sauver Noël",
+      "duration": "42 min",
+      "description": "Au village, tout le monde se prépare pour Noël. Mais cette année, un évènement va venir perturber la fête : toutes les décorations ont disparu, plus aucune boule pour décorer les sapins ! Nos deux jeunes héros vont devoir découvrir qui se cache derrière ce mystère. Un programme de 2 courts métrages.",
+      "poster": "https://all.web.img.acsta.net/img/1a/20/1a2042353c206fca9cbbf764f0966b08.jpg",
+      "genres": "Animation, Famille",
+      "certificate": null,
+      "release": "2024-11-20T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914627"
+    },
+    {
+      "title": "Le Grand Noël des animaux",
+      "duration": "72 min",
+      "description": "Noël approche et l’impatience grandit dans la forêt : tout le monde s’apprête à vivre un moment féérique au cœur de l’hiver… Mais, catastrophe, il faut sauver le traineau du père Noël ! C’est une mission pour nos ami·es renarde et cigogne, tandis qu’une toute petite poussine va tout faire pour sauver la grande fête du poulailler. Et la jeune lynx arrivera-t-elle à temps pour vivre le grand spectacle magique en haut de la montagne ? Aux quatre coins du monde, Noël réserve de merveilleuses surprises…",
+      "poster": "https://all.web.img.acsta.net/img/83/8c/838c1716340088cf339686e0796ae416.jpg",
+      "genres": "Animation, Famille",
+      "certificate": "U",
+      "release": "2024-11-27T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914650"
+    },
+    {
+      "title": "Dounia, le grand pays blanc",
+      "duration": "51 min",
+      "description": "Après Dounia et la Princesse d’Alep, les aventures de Dounia, petite fille aux éclats d’étoiles dans les cheveux, se poursuivent dans son pays d’adoption : le Canada. Entourée de ses grands-parents et de son amie Rosalie, elle affronte de nouveaux défis : le froid mordant de l’hiver et une nouvelle culture jusqu’alors inconnue. Plus que jamais, Dounia est convaincue que les battements de son cœur guideront le retour de son père jusqu’à elle…",
+      "poster": "https://all.web.img.acsta.net/img/c2/92/c292175f05d5aa9e9b03bff6e9c12cee.jpg",
+      "genres": "Animation",
+      "certificate": null,
+      "release": "2025-03-12T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914659"
     },
     {
       "title": "Ariodante",
@@ -35,7 +107,19 @@
       "release": "2025-05-11T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302715"
+      "scraped_at": "2025-11-24T03:48:09.733229"
+    },
+    {
+      "title": "Muganga - Celui qui soigne",
+      "duration": "105 min",
+      "description": "Certains combats peuvent changer le cours de l'histoire. Denis Mukwege, médecin congolais et futur Prix Nobel de la paix, soigne — au péril de sa vie — des milliers de femmes victimes de violences sexuelles en République démocratique du Congo. Sa rencontre avec Guy Cadière, chirurgien belge, va redonner un souffle à son engagement.",
+      "poster": "https://all.web.img.acsta.net/img/6f/60/6f60495595fe4650b54c1c4af165106c.jpg",
+      "genres": "Drame",
+      "certificate": "-12A",
+      "release": "2025-09-24T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914645"
     },
     {
       "title": "Sacré Cœur",
@@ -47,7 +131,7 @@
       "release": "2025-10-01T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350852"
+      "scraped_at": "2025-11-24T03:48:28.204462"
     },
     {
       "title": "C'était mieux demain",
@@ -59,7 +143,7 @@
       "release": "2025-10-08T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350793"
+      "scraped_at": "2025-11-24T03:48:28.204425"
     },
     {
       "title": "Chien 51",
@@ -71,7 +155,31 @@
       "release": "2025-10-15T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302695"
+      "scraped_at": "2025-11-24T03:48:09.733209"
+    },
+    {
+      "title": "Chien 51",
+      "duration": "106 min",
+      "description": "Dans un futur proche, Paris a été divisé en 3 zones qui séparent les classes sociales et où l’intelligence artificielle ALMA a révolutionné le travail de la police. Jusqu’à ce que son inventeur soit assassiné et que Salia et Zem, deux policiers que tout oppose, soient forcés à collaborer pour mener l’enquête.",
+      "poster": "https://all.web.img.acsta.net/img/24/03/24032bb47ae5e53aa875a3a3919df81d.jpg",
+      "genres": "Thriller, Policier, Science fiction",
+      "certificate": "UA",
+      "release": "2025-10-15T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914633"
+    },
+    {
+      "title": "Deux pianos",
+      "duration": "115 min",
+      "description": "Mathias Vogler rentre en France après un long exil. La mentore de sa jeunesse, Elena, souhaite qu’il donne une série de concerts au piano à ses côtés à l’Auditorium de Lyon. Mais dès son retour, une rencontre avec un enfant qui lui ressemble comme deux gouttes d’eau, son double, plonge Mathias dans une frénésie qui menace de le faire sombrer, et le mènera à Claude : son amour de jeunesse.",
+      "poster": "https://all.web.img.acsta.net/img/6b/fc/6bfcb8dabd4459e8a0b9da36da3bf6e4.jpg",
+      "genres": "Drame",
+      "certificate": "U",
+      "release": "2025-10-15T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914635"
     },
     {
       "title": "Chien 51",
@@ -83,7 +191,7 @@
       "release": "2025-10-15T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350811"
+      "scraped_at": "2025-11-24T03:48:28.204435"
     },
     {
       "title": "Kaamelott – Deuxième Volet",
@@ -95,7 +203,7 @@
       "release": "2025-10-22T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302734"
+      "scraped_at": "2025-11-24T03:48:09.733249"
     },
     {
       "title": "Chainsaw Man – Le Film : L’arc de Reze",
@@ -107,7 +215,31 @@
       "release": "2025-10-22T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302742"
+      "scraped_at": "2025-11-24T03:48:09.733257"
+    },
+    {
+      "title": "Kaamelott – Deuxième Volet",
+      "duration": "139 min",
+      "description": "Les Dieux sont en colère contre Arthur ! Après la destruction de Kaamelott, son refus obstiné de tuer Lancelot précipite le Royaume de Logres à sa perte. Il réunit ses Chevaliers, novices téméraires et vétérans désabusés, autour de la Nouvelle Table Ronde et les envoie prouver leur valeur aux quatre coins du Monde, des Marais Orcaniens aux terres glacées du Dragon Opalescent.",
+      "poster": "https://all.web.img.acsta.net/img/d9/8c/d98cf2f82174e030b461d6a7103c58ec.jpg",
+      "genres": "Comédie, Historique, Aventure",
+      "certificate": "U",
+      "release": "2025-10-22T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914652"
+    },
+    {
+      "title": "Chainsaw Man – Le Film : L’arc de Reze",
+      "duration": "101 min",
+      "description": "Pour la première fois, Chainsaw Man fait son apparition sur grand écran dans une aventure épique et spectaculaire, dans la continuité de la série animée à succès. Denji travaillait comme Devil Hunter au service des yakuzas, dans l’espoir d’effacer la lourde dette laissée par ses parents… jusqu’au jour où les yakuzas le trahissent et le fassent exécuter. Mais avant de perdre complètement connaissance, Denji conclut un pacte avec Pochita, son fidèle chien-démon tronçonneuse, et celui-ci lui sauve la vie. Avec ce pacte, les deux personnages fusionnent et créent ainsi l’inarrêtable Chainsaw Man. Alors qu’une guerre sanglante fait rage entre démons, chasseurs et ennemis de l’ombre et qu’une mystérieuse jeune fille nommée Reze fait irruption dans son univers, Denji doit livrer son combat le plus périlleux — un combat guidé par l’amour, dans un monde où la survie ne connaît aucune règle.",
+      "poster": "https://all.web.img.acsta.net/img/b5/a4/b5a4016e849b372cd08f7723ff8972b1.jpg",
+      "genres": "Animation, Épouvante-horreur",
+      "certificate": "-12",
+      "release": "2025-10-22T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914657"
     },
     {
       "title": "Kaamelott – Deuxième Volet",
@@ -119,7 +251,7 @@
       "release": "2025-10-22T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350868"
+      "scraped_at": "2025-11-24T03:48:28.204473"
     },
     {
       "title": "La Femme la plus riche du Monde",
@@ -131,7 +263,7 @@
       "release": "2025-10-29T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302693"
+      "scraped_at": "2025-11-24T03:48:09.733208"
     },
     {
       "title": "Regretting You",
@@ -143,7 +275,7 @@
       "release": "2025-10-29T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302702"
+      "scraped_at": "2025-11-24T03:48:09.733217"
     },
     {
       "title": "Yoroï",
@@ -155,7 +287,7 @@
       "release": "2025-10-29T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302708"
+      "scraped_at": "2025-11-24T03:48:09.733223"
     },
     {
       "title": "Smashing Machine",
@@ -167,7 +299,7 @@
       "release": "2025-10-29T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302731"
+      "scraped_at": "2025-11-24T03:48:09.733246"
     },
     {
       "title": "Les Intrus – Chapitre 2",
@@ -179,7 +311,19 @@
       "release": "2025-10-29T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302736"
+      "scraped_at": "2025-11-24T03:48:09.733251"
+    },
+    {
+      "title": "Yoroï",
+      "duration": "102 min",
+      "description": "Après une dernière tournée éprouvante, Aurélien décide de s'installer au Japon avec sa femme Nanako, enceinte de leur premier enfant. Alors que le jeune couple emménage dans une maison traditionnelle dans la campagne japonaise, Aurélien découvre dans un puits une armure ancestrale qui va réveiller d'étranges créatures, les Yokaïs.",
+      "poster": "https://all.web.img.acsta.net/img/8d/14/8d14de5f174c2eda406c19b663fbe942.jpg",
+      "genres": "Fantastique, Aventure",
+      "certificate": "-12",
+      "release": "2025-10-29T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914637"
     },
     {
       "title": "La Femme la plus riche du Monde",
@@ -191,7 +335,7 @@
       "release": "2025-10-29T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350808"
+      "scraped_at": "2025-11-24T03:48:28.204434"
     },
     {
       "title": "Regretting You",
@@ -203,7 +347,7 @@
       "release": "2025-10-29T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350816"
+      "scraped_at": "2025-11-24T03:48:28.204439"
     },
     {
       "title": "T'as Pas Changé",
@@ -215,7 +359,7 @@
       "release": "2025-11-05T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302690"
+      "scraped_at": "2025-11-24T03:48:09.733204"
     },
     {
       "title": "Les Braises",
@@ -227,7 +371,7 @@
       "release": "2025-11-05T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302704"
+      "scraped_at": "2025-11-24T03:48:09.733219"
     },
     {
       "title": "Baroudeurs du Christ",
@@ -239,7 +383,7 @@
       "release": "2025-11-05T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302718"
+      "scraped_at": "2025-11-24T03:48:09.733232"
     },
     {
       "title": "Predator: Badlands",
@@ -251,7 +395,7 @@
       "release": "2025-11-05T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302745"
+      "scraped_at": "2025-11-24T03:48:09.733260"
     },
     {
       "title": "T'as Pas Changé",
@@ -263,7 +407,7 @@
       "release": "2025-11-05T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350805"
+      "scraped_at": "2025-11-24T03:48:28.204432"
     },
     {
       "title": "La Fille mal gardée (The Royal Ballet)",
@@ -275,7 +419,7 @@
       "release": "2025-11-05T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350831"
+      "scraped_at": "2025-11-24T03:48:28.204448"
     },
     {
       "title": "Predator: Badlands",
@@ -287,7 +431,7 @@
       "release": "2025-11-05T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350889"
+      "scraped_at": "2025-11-24T03:48:28.204486"
     },
     {
       "title": "La bonne étoile",
@@ -299,7 +443,7 @@
       "release": "2025-11-12T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302688"
+      "scraped_at": "2025-11-24T03:48:09.733202"
     },
     {
       "title": "Le Gang des Amazones",
@@ -311,7 +455,7 @@
       "release": "2025-11-12T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302692"
+      "scraped_at": "2025-11-24T03:48:09.733206"
     },
     {
       "title": "Insaisissables 3",
@@ -323,19 +467,19 @@
       "release": "2025-11-12T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302728"
+      "scraped_at": "2025-11-24T03:48:09.733243"
     },
     {
-      "title": "Eleanor The Great",
-      "duration": "98 min",
-      "description": "Eleanor Morgenstein est une femme de 94 ans pleine d’esprit et pétulante. Après une perte bouleversante, elle raconte une histoire qui prend un tournant dangereux.",
-      "poster": "https://all.web.img.acsta.net/img/5f/7d/5f7df65d8afac8184a5d1667a397a6f7.jpg",
-      "genres": "Comédie dramatique",
-      "certificate": null,
-      "release": "2025-11-19T00:00:00.000Z",
+      "title": "Détective Conan : La Mémoire Retrouvée",
+      "duration": "110 min",
+      "description": "À Tokyo, Conan assiste impuissant à l’assassinat d’un ancien collègue de Kogorô.  Déterminé à venger son ami en débusquant le meurtrier, ce dernier remonte une piste qui le conduit aux montagnes enneigées de Nagano. Sur place, il fera équipe avec Kansuke Yamato qui a lui-même été gravement blessé lors d’une avalanche 10 mois plus tôt. Or ses souvenirs perdus pourraient bien fournir la clef pour résoudre l’enquête.",
+      "poster": "https://all.web.img.acsta.net/img/01/40/01405ebaa8048ea4f80dd53569ed37ac.jpg",
+      "genres": "Animation, Policier",
+      "certificate": "U",
+      "release": "2025-11-12T00:00:00.000Z",
       "cinema": "CGR Castille",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-      "scraped_at": "2025-11-23T18:47:44.254052"
+      "scraped_at": "2025-11-24T03:48:18.914638"
     },
     {
       "title": "Cendrillon (The Royal Ballet)",
@@ -347,7 +491,7 @@
       "release": "2025-11-25T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350829"
+      "scraped_at": "2025-11-24T03:48:28.204446"
     },
     {
       "title": "Vie Privée",
@@ -359,7 +503,7 @@
       "release": "2025-11-26T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302676"
+      "scraped_at": "2025-11-24T03:48:09.733189"
     },
     {
       "title": "Hell in Paradise",
@@ -371,7 +515,7 @@
       "release": "2025-11-26T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302686"
+      "scraped_at": "2025-11-24T03:48:09.733200"
     },
     {
       "title": "Follement(e)",
@@ -383,7 +527,7 @@
       "release": "2025-11-26T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302706"
+      "scraped_at": "2025-11-24T03:48:09.733221"
     },
     {
       "title": "Zootopie 2",
@@ -395,7 +539,31 @@
       "release": "2025-11-26T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302730"
+      "scraped_at": "2025-11-24T03:48:09.733244"
+    },
+    {
+      "title": "Vie Privée",
+      "duration": "105 min",
+      "description": "Lilian Steiner est une psychiatre reconnue. Quand elle apprend la mort de l’une de ses patientes, elle se persuade qu’il s’agit d’un meurtre. Troublée, elle décide de mener son enquête.",
+      "poster": "https://all.web.img.acsta.net/img/3a/9d/3a9d3503d9ccc1fec7fbdc4bf2934da7.jpg",
+      "genres": "Policier, Thriller, Drame",
+      "certificate": "U",
+      "release": "2025-11-26T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914616"
+    },
+    {
+      "title": "Zootopie 2",
+      "duration": "108 min",
+      "description": "ZOOTOPIE 2 permettra de retrouver le savoureux duo de choc formé par les jeunes policiers Judy Hopps et Nick Wilde, qui, après avoir résolu la plus grande affaire criminelle de l'histoire de Zootopie, découvrent que leur collaboration n'est pas aussi solide qu'ils le pensaient lorsque le chef Bogo leur ordonne de participer à un programme de thérapie réservé aux coéquipiers en crise. Leur partenariat sera même soumis à rude épreuve lorsqu'ils devront éclaircir - sous couverture et dans des quartiers inconnus de la ville - un nouveau mystère et s’engager sur la piste sinueuse d'un serpent venimeux fraîchement arrivé dans la cité animale…",
+      "poster": "https://all.web.img.acsta.net/img/45/ac/45ac77474bfae505033a30909e4eda41.jpg",
+      "genres": "Animation, Aventure, Famille, Comédie",
+      "certificate": null,
+      "release": "2025-11-26T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914647"
     },
     {
       "title": "Zootopie 2",
@@ -407,7 +575,7 @@
       "release": "2025-11-26T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350865"
+      "scraped_at": "2025-11-24T03:48:28.204471"
     },
     {
       "title": "L'Intermédiaire (Relay)",
@@ -419,7 +587,7 @@
       "release": "2025-11-26T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350876"
+      "scraped_at": "2025-11-24T03:48:28.204479"
     },
     {
       "title": "Miki + Crenoka",
@@ -431,7 +599,7 @@
       "type": "Concert",
       "location": "Salle de concerts",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Miki-Crenoka/2991",
-      "scraped_at": "2025-11-23T18:49:50.725122"
+      "scraped_at": "2025-11-24T03:50:27.556646"
     },
     {
       "title": "PIERRE GARNIER",
@@ -441,7 +609,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/pierre-garnier-2/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/58336",
-      "scraped_at": "2025-11-23T18:47:54.264480"
+      "scraped_at": "2025-11-24T03:48:29.012645"
     },
     {
       "title": "Équipe de Foot + Fragile",
@@ -453,7 +621,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/quipe-de-Foot-Fragile/3029",
-      "scraped_at": "2025-11-23T18:49:51.290273"
+      "scraped_at": "2025-11-24T03:50:28.104460"
     },
     {
       "title": "FDJ-SUEZ LE GRAND DÉPART",
@@ -463,7 +631,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/fdj-suez-le-grand-depart/",
       "reservation": "https://www.fdj-suez.fr/billetterie/",
-      "scraped_at": "2025-11-23T18:47:54.266136"
+      "scraped_at": "2025-11-24T03:48:29.014249"
     },
     {
       "title": "Panique à Noël",
@@ -475,7 +643,7 @@
       "release": "2025-12-03T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302710"
+      "scraped_at": "2025-11-24T03:48:09.733224"
     },
     {
       "title": "Five Nights At Freddy's 2",
@@ -487,7 +655,43 @@
       "release": "2025-12-03T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302743"
+      "scraped_at": "2025-11-24T03:48:09.733259"
+    },
+    {
+      "title": "Teresa",
+      "duration": "104 min",
+      "description": "Calcutta, 1948. Mère Teresa s’apprête à quitter le couvent pour fonder l’ordre des Missionnaires de la Charité. En sept jours décisifs, entre foi, compassion et doute, elle forge la décision qui marquera à jamais son destin - et celui de milliers de vies.",
+      "poster": "https://all.web.img.acsta.net/img/8b/96/8b96982e9c067893ea72070c122c3e7e.jpg",
+      "genres": "Biopic, Drame, Historique",
+      "certificate": null,
+      "release": "2025-12-03T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914629"
+    },
+    {
+      "title": "Mektoub my Love : Canto Due",
+      "duration": "134 min",
+      "description": "Amin revient à Sète après ses études à Paris, rêvant toujours de cinéma. Un producteur américain en vacances s’intéresse par hasard à son projet, Les Principes essentiels de l’existence universelle, et veut que sa femme, Jess, en soit l’héroïne. Mais le destin, capricieux, impose ses propres règles.",
+      "poster": "https://all.web.img.acsta.net/img/c1/0a/c10a87e47650432370a6030d595fac06.jpg",
+      "genres": "Drame, Romance",
+      "certificate": null,
+      "release": "2025-12-03T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914649"
+    },
+    {
+      "title": "Bardot",
+      "duration": "90 min",
+      "description": "Jamais vraiment dans une case, muse de cinéastes finissant par sacrifier tout à la cause animale, Brigitte Bardot est une femme libre mais sans doute incomprise. BARDOT revient sur les aspects si contradictoires de sa vie, de sa carrière artistique légendaire à sa célèbre fondation. Elle qui bouscula l’image des femmes et fut en avance sur la conscience écologique et le bien-être animal qui semblent, enfin, pour tous une évidence. Une réflexion croisée sur ce que signifie être une femme artiste, une femme libre et parfois en avance sur son temps.",
+      "poster": "https://all.web.img.acsta.net/img/18/89/188956009aaf66c5f715713a92dd670a.jpg",
+      "genres": "Documentaire",
+      "certificate": null,
+      "release": "2025-12-03T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914654"
     },
     {
       "title": "Five Nights At Freddy's 2",
@@ -499,7 +703,7 @@
       "release": "2025-12-03T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350886"
+      "scraped_at": "2025-11-24T03:48:28.204484"
     },
     {
       "title": "AMIR",
@@ -509,7 +713,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/amir/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/31535?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.267752"
+      "scraped_at": "2025-11-24T03:48:29.015811"
     },
     {
       "title": "Darius Jones Trio",
@@ -521,7 +725,7 @@
       "type": "Concert",
       "location": "Club",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Darius-Jones-Trio/3045",
-      "scraped_at": "2025-11-23T18:49:51.899443"
+      "scraped_at": "2025-11-24T03:50:28.624570"
     },
     {
       "title": "The World Of Hans Zimmer - A New Dimension",
@@ -533,7 +737,7 @@
       "release": "2025-12-04T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302719"
+      "scraped_at": "2025-11-24T03:48:09.733234"
     },
     {
       "title": "The World Of Hans Zimmer - A New Dimension",
@@ -545,7 +749,7 @@
       "release": "2025-12-04T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350858"
+      "scraped_at": "2025-11-24T03:48:28.204465"
     },
     {
       "title": "Skarra Mucci x Manudigital + première partie",
@@ -557,7 +761,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Skarra-Mucci-x-Manudigital-premire-partie/3053",
-      "scraped_at": "2025-11-23T18:49:52.312687"
+      "scraped_at": "2025-11-24T03:50:29.072461"
     },
     {
       "title": "CLARA LUCIANI",
@@ -567,7 +771,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/clara-luciani/",
       "reservation": " https://www.peelproductions.fr/reserver/clara-luciani-1/6103?idwl= ",
-      "scraped_at": "2025-11-23T18:47:54.269382"
+      "scraped_at": "2025-11-24T03:48:29.017379"
     },
     {
       "title": "JUJUTSU KAISEN : Exécution",
@@ -579,7 +783,7 @@
       "release": "2025-12-06T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302716"
+      "scraped_at": "2025-11-24T03:48:09.733231"
     },
     {
       "title": "JUJUTSU KAISEN : Exécution",
@@ -591,7 +795,7 @@
       "release": "2025-12-06T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350855"
+      "scraped_at": "2025-11-24T03:48:28.204464"
     },
     {
       "title": "HELENA",
@@ -601,7 +805,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/helena/",
       "reservation": "https://cheyenne.trium.fr/index.php/6/manifestation/32427",
-      "scraped_at": "2025-11-23T18:47:54.271010"
+      "scraped_at": "2025-11-24T03:48:29.019609"
     },
     {
       "title": "Bekar + ROMSII",
@@ -613,7 +817,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Bekar-ROMSII/3011",
-      "scraped_at": "2025-11-23T18:49:52.837805"
+      "scraped_at": "2025-11-24T03:50:29.801937"
     },
     {
       "title": "HELLDEBERT",
@@ -623,7 +827,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/helldebert/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/32944?w=114?idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.272649"
+      "scraped_at": "2025-11-24T03:48:29.021189"
     },
     {
       "title": "TAYC X Red Bull Symphonic : Dernier accord",
@@ -635,7 +839,7 @@
       "release": "2025-12-09T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302723"
+      "scraped_at": "2025-11-24T03:48:09.733238"
     },
     {
       "title": "ALTERNA SPVB VS PANATHINAIKOS",
@@ -645,7 +849,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/alterna-spvb-vs-panathinaikos/",
       "reservation": "https://alternaspvb.billetterie-club.fr",
-      "scraped_at": "2025-11-23T18:47:54.274272"
+      "scraped_at": "2025-11-24T03:48:29.022745"
     },
     {
       "title": "Chasse gardée 2",
@@ -657,7 +861,19 @@
       "release": "2025-12-10T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302711"
+      "scraped_at": "2025-11-24T03:48:09.733226"
+    },
+    {
+      "title": "Chasse gardée 2",
+      "duration": "Inconnue",
+      "description": "Deux ans se sont écoulés à Saint Hubert. La vie y est paisible, peut-être trop pour Adélaïde et Simon qui souffrent du manque d’amis de leur âge. C’est sans compter sur l’arrivée de Stanislas, le fils de Bernard (l'ancien président des chasseurs du village), qui revient vivre à la campagne avec sa femme et ses deux enfants. Ils sont beaux, jeunes, et sympas. Leur seul défaut : ils pratiquent la chasse à courre ! La paix du village va être mise à mal : nouveaux voisins, nouveaux problèmes…",
+      "poster": "https://all.web.img.acsta.net/img/57/a8/57a8c1e690e543eb1f3db1a21fa5884b.jpg",
+      "genres": "Comédie",
+      "certificate": null,
+      "release": "2025-12-10T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914640"
     },
     {
       "title": "Chasse gardée 2",
@@ -669,7 +885,7 @@
       "release": "2025-12-10T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350823"
+      "scraped_at": "2025-11-24T03:48:28.204443"
     },
     {
       "title": "Casse-Noisette (The Royal Ballet)",
@@ -681,7 +897,7 @@
       "release": "2025-12-10T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350834"
+      "scraped_at": "2025-11-24T03:48:28.204450"
     },
     {
       "title": "Mission Père Noël",
@@ -693,7 +909,7 @@
       "release": "2025-12-10T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350850"
+      "scraped_at": "2025-11-24T03:48:28.204461"
     },
     {
       "title": "CARMINA BURANA",
@@ -703,7 +919,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/carmina-burana-2/",
       "reservation": "https://billetterie-franceconcert.tickandlive.com/reserver/carmina-burana-64/79127",
-      "scraped_at": "2025-11-23T18:47:54.275887"
+      "scraped_at": "2025-11-24T03:48:29.024306"
     },
     {
       "title": "ELODIE POUX",
@@ -713,7 +929,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/elodie-poux/",
       "reservation": "https://www.box.fr/reserver/elodie-poux-190/2045192",
-      "scraped_at": "2025-11-23T18:47:54.277529"
+      "scraped_at": "2025-11-24T03:48:29.025865"
     },
     {
       "title": "M POKORA",
@@ -723,7 +939,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/m-pokora-2/",
       "reservation": "https://www.box.fr/reserver/m-pokora-37/2068521",
-      "scraped_at": "2025-11-23T18:47:54.279132"
+      "scraped_at": "2025-11-24T03:48:29.027406"
     },
     {
       "title": "Noël Parallèle édition tropical winter",
@@ -735,7 +951,7 @@
       "type": "Événement",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Nol-Parallle-dition-tropical-winter/3061",
-      "scraped_at": "2025-11-23T18:49:53.394836"
+      "scraped_at": "2025-11-24T03:50:30.308395"
     },
     {
       "title": "LAURENT GERRA",
@@ -745,7 +961,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/laurent-gerra/",
       "reservation": "https://www.box.fr/reserver/laurent-gerra-68/2069288",
-      "scraped_at": "2025-11-23T18:47:54.280726"
+      "scraped_at": "2025-11-24T03:48:29.028957"
     },
     {
       "title": "Parking + Tendre Broussaille",
@@ -757,7 +973,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Parking-Tendre-Broussaille/3048",
-      "scraped_at": "2025-11-23T18:49:53.818056"
+      "scraped_at": "2025-11-24T03:50:31.002693"
     },
     {
       "title": "Avatar : de feu et de cendres",
@@ -769,7 +985,7 @@
       "release": "2025-12-17T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302726"
+      "scraped_at": "2025-11-24T03:48:09.733241"
     },
     {
       "title": "L’Âme Idéale",
@@ -781,7 +997,7 @@
       "release": "2025-12-17T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302733"
+      "scraped_at": "2025-11-24T03:48:09.733248"
     },
     {
       "title": "Heidi et le lynx des montagnes",
@@ -793,7 +1009,19 @@
       "release": "2025-12-17T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302737"
+      "scraped_at": "2025-11-24T03:48:09.733253"
+    },
+    {
+      "title": "Avatar : de feu et de cendres",
+      "duration": "197 min",
+      "description": "Le troisième volet de la saga \"Avatar\".",
+      "poster": "https://all.web.img.acsta.net/img/52/fb/52fb8f0345af2b0940557aa049ca19fd.jpg",
+      "genres": "Science fiction, Aventure, Animation",
+      "certificate": null,
+      "release": "2025-12-17T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2025-11-24T03:48:18.914642"
     },
     {
       "title": "Avatar : de feu et de cendres",
@@ -805,7 +1033,7 @@
       "release": "2025-12-17T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350863"
+      "scraped_at": "2025-11-24T03:48:28.204470"
     },
     {
       "title": "Heidi et le lynx des montagnes",
@@ -817,7 +1045,7 @@
       "release": "2025-12-17T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350871"
+      "scraped_at": "2025-11-24T03:48:28.204476"
     },
     {
       "title": "La Femme de ménage",
@@ -829,7 +1057,7 @@
       "release": "2025-12-24T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302739"
+      "scraped_at": "2025-11-24T03:48:09.733254"
     },
     {
       "title": "La Femme de ménage",
@@ -841,7 +1069,7 @@
       "release": "2025-12-24T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350878"
+      "scraped_at": "2025-11-24T03:48:28.204480"
     },
     {
       "title": "DISNEY",
@@ -851,7 +1079,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/disney/",
       "reservation": "https://www.box.fr/reserver/disney-en-concert-43/2028875",
-      "scraped_at": "2025-11-23T18:47:54.282327"
+      "scraped_at": "2025-11-24T03:48:29.030499"
     },
     {
       "title": "La Traviata (The Royal Opera)",
@@ -863,7 +1091,7 @@
       "release": "2026-01-14T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350837"
+      "scraped_at": "2025-11-24T03:48:28.204451"
     },
     {
       "title": "CASSE-NOISETTE",
@@ -873,7 +1101,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/casse-noisette-3/",
       "reservation": "https://billetterie-franceconcert.tickandlive.com/reserver/casse-noisette-184/97475",
-      "scraped_at": "2025-11-23T18:47:54.283935"
+      "scraped_at": "2025-11-24T03:48:29.032057"
     },
     {
       "title": "TSS + Revnoir",
@@ -885,7 +1113,7 @@
       "type": "Concert",
       "location": "Club",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/TSS-Revnoir/3039",
-      "scraped_at": "2025-11-23T18:49:53.818702"
+      "scraped_at": "2025-11-24T03:50:31.003190"
     },
     {
       "title": "STORIES",
@@ -895,7 +1123,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/stories/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/stories-billet/idmanif/608772",
-      "scraped_at": "2025-11-23T18:47:54.285513"
+      "scraped_at": "2025-11-24T03:48:29.033596"
     },
     {
       "title": "FEU! CHATTERTON",
@@ -905,7 +1133,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/feu-chatterton/",
       "reservation": "https://www.box.fr/reserver/feu-chatterton-48/2100543",
-      "scraped_at": "2025-11-23T18:47:54.287098"
+      "scraped_at": "2025-11-24T03:48:29.035158"
     },
     {
       "title": "LOUANE",
@@ -915,7 +1143,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/louane/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/louane-billet/idmanif/602210",
-      "scraped_at": "2025-11-23T18:47:54.288678"
+      "scraped_at": "2025-11-24T03:48:29.036698"
     },
     {
       "title": "Sopico + première partie",
@@ -927,7 +1155,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Sopico-premire-partie/3026",
-      "scraped_at": "2025-11-23T18:49:54.326023"
+      "scraped_at": "2025-11-24T03:50:31.520975"
     },
     {
       "title": "BALAVOINE, MA BATAILLE",
@@ -937,7 +1165,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/balavoine-ma-bataille/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60312",
-      "scraped_at": "2025-11-23T18:47:54.290296"
+      "scraped_at": "2025-11-24T03:48:29.038270"
     },
     {
       "title": "LES CHEVALIERS DU FIEL",
@@ -947,7 +1175,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/les-chevaliers-du-fiel/",
       "reservation": "https://www.box.fr/reserver/les-chevaliers-du-fiel-103/2100508",
-      "scraped_at": "2025-11-23T18:47:54.291886"
+      "scraped_at": "2025-11-24T03:48:29.039826"
     },
     {
       "title": "[COMPLET] Bertrand Belin + Roma Luca",
@@ -959,7 +1187,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/COMPLET-Bertrand-Belin-Roma-Luca/3021",
-      "scraped_at": "2025-11-23T18:49:54.875163"
+      "scraped_at": "2025-11-24T03:50:32.019722"
     },
     {
       "title": "Marsupilami",
@@ -971,7 +1199,7 @@
       "release": "2026-02-04T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302740"
+      "scraped_at": "2025-11-24T03:48:09.733256"
     },
     {
       "title": "Marsupilami",
@@ -983,7 +1211,7 @@
       "release": "2026-02-04T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350881"
+      "scraped_at": "2025-11-24T03:48:28.204482"
     },
     {
       "title": "SO FLOYD, THE PINK FLOYD SHOW",
@@ -993,7 +1221,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/so-floyd/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/58492",
-      "scraped_at": "2025-11-23T18:47:54.293516"
+      "scraped_at": "2025-11-24T03:48:29.041371"
     },
     {
       "title": "Woolf Works (The Royal Ballet)",
@@ -1005,7 +1233,7 @@
       "release": "2026-02-09T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350839"
+      "scraped_at": "2025-11-24T03:48:28.204452"
     },
     {
       "title": "L'Infiltrée",
@@ -1017,7 +1245,7 @@
       "release": "2026-02-11T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302713"
+      "scraped_at": "2025-11-24T03:48:09.733227"
     },
     {
       "title": "L'Infiltrée",
@@ -1029,7 +1257,7 @@
       "release": "2026-02-11T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350826"
+      "scraped_at": "2025-11-24T03:48:28.204445"
     },
     {
       "title": "LEADERS CUP – 2026",
@@ -1039,7 +1267,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/leaders-cup-2026/",
       "reservation": "https://billetterie.leaderscup.fr/fr",
-      "scraped_at": "2025-11-23T18:47:54.295126"
+      "scraped_at": "2025-11-24T03:48:29.042917"
     },
     {
       "title": "GOLDMEN",
@@ -1049,7 +1277,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/goldmen-2/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/29578?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.296707"
+      "scraped_at": "2025-11-24T03:48:29.044518"
     },
     {
       "title": "KENDJI",
@@ -1059,7 +1287,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/kendji/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/31712?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.298302"
+      "scraped_at": "2025-11-24T03:48:29.046077"
     },
     {
       "title": "FESTIVAL MONDIAL DE LA MAGIE",
@@ -1069,7 +1297,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/festival-mondial-de-la-magie/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/61157 ",
-      "scraped_at": "2025-11-23T18:47:54.299904"
+      "scraped_at": "2025-11-24T03:48:29.047622"
     },
     {
       "title": "15 000 VOIX POUR LES LÉGENDES DU ROCK",
@@ -1079,7 +1307,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/15-000-voix-pour-les-legendes-du-rock/",
       "reservation": "https://dhmanagement.trium.fr/fr/t/-/event/58054",
-      "scraped_at": "2025-11-23T18:47:54.301548"
+      "scraped_at": "2025-11-24T03:48:29.049178"
     },
     {
       "title": "Giselle (The Royal Ballet)",
@@ -1091,7 +1319,7 @@
       "release": "2026-03-03T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350842"
+      "scraped_at": "2025-11-24T03:48:28.204454"
     },
     {
       "title": "I GOTTA FEELING",
@@ -1101,7 +1329,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/i-gotta-feeling/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/31687?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.303160"
+      "scraped_at": "2025-11-24T03:48:29.050722"
     },
     {
       "title": "Les années 80",
@@ -1111,7 +1339,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/les-annees-80/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/31153?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.304756"
+      "scraped_at": "2025-11-24T03:48:29.052268"
     },
     {
       "title": "LAC DES CYGNES",
@@ -1121,7 +1349,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/lac-des-cygnes/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/61224",
-      "scraped_at": "2025-11-23T18:47:54.306418"
+      "scraped_at": "2025-11-24T03:48:29.053846"
     },
     {
       "title": "MYD (live) + première partie",
@@ -1133,7 +1361,7 @@
       "type": "Concert",
       "location": "Salle de concerts",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/MYD-live-premire-partie/3049",
-      "scraped_at": "2025-11-23T18:49:54.875511"
+      "scraped_at": "2025-11-24T03:50:32.020070"
     },
     {
       "title": "DAVID HALLYDAY",
@@ -1143,7 +1371,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/david-hallyday-2/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60100",
-      "scraped_at": "2025-11-23T18:47:54.308074"
+      "scraped_at": "2025-11-24T03:48:29.055412"
     },
     {
       "title": "SANTA",
@@ -1153,7 +1381,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/santa-2/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/33153?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.309696"
+      "scraped_at": "2025-11-24T03:48:29.056972"
     },
     {
       "title": "STAR ACADEMY: TOUR 2026",
@@ -1163,7 +1391,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/star-academ-tour-2026-le-meilleur-de-la-star-acadmy-en-live/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/63614",
-      "scraped_at": "2025-11-23T18:47:54.311372"
+      "scraped_at": "2025-11-24T03:48:29.058509"
     },
     {
       "title": "Colours in the Street + première partie",
@@ -1175,7 +1403,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Colours-in-the-Street-premire-partie/3059",
-      "scraped_at": "2025-11-23T18:49:55.394089"
+      "scraped_at": "2025-11-24T03:50:32.500216"
     },
     {
       "title": "STARS 80 – FOREVER",
@@ -1185,7 +1413,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/star-80-forever/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/61614",
-      "scraped_at": "2025-11-23T18:47:54.313031"
+      "scraped_at": "2025-11-24T03:48:29.060055"
     },
     {
       "title": "PAUL MIRABEL",
@@ -1195,7 +1423,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/paul-mirabel-par-amour/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/49178",
-      "scraped_at": "2025-11-23T18:47:54.314639"
+      "scraped_at": "2025-11-24T03:48:29.061657"
     },
     {
       "title": "IRISH CELTIC",
@@ -1205,7 +1433,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/irish-celtic/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60068",
-      "scraped_at": "2025-11-23T18:47:54.316261"
+      "scraped_at": "2025-11-24T03:48:29.063255"
     },
     {
       "title": "JARRY",
@@ -1215,7 +1443,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/jarry/",
       "reservation": "https://www.box.fr/reserver/jarry-144/2037830",
-      "scraped_at": "2025-11-23T18:47:54.317855"
+      "scraped_at": "2025-11-24T03:48:29.064874"
     },
     {
       "title": "MESSMER",
@@ -1225,7 +1453,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/messmer-3/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60186",
-      "scraped_at": "2025-11-23T18:47:54.319460"
+      "scraped_at": "2025-11-24T03:48:29.066418"
     },
     {
       "title": "BLACK LEGENDS",
@@ -1235,7 +1463,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/black-legends/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/32404?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.321063"
+      "scraped_at": "2025-11-24T03:48:29.067965"
     },
     {
       "title": "LE LAC DES CYGNES",
@@ -1245,7 +1473,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/le-lac-des-cygnes-5/",
       "reservation": "https://billetterie-franceconcert.tickandlive.com/reserver/le-lac-des-cygnes-175/123213 ",
-      "scraped_at": "2025-11-23T18:47:54.322655"
+      "scraped_at": "2025-11-24T03:48:29.069511"
     },
     {
       "title": "JULIEN DORE",
@@ -1255,7 +1483,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/julien-dore-2/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/60462",
-      "scraped_at": "2025-11-23T18:47:54.324271"
+      "scraped_at": "2025-11-24T03:48:29.071092"
     },
     {
       "title": "DIANE SEGARD",
@@ -1265,7 +1493,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/diane-segard/",
       "reservation": "https://www.box.fr/reserver/diane-segard-60/1997192",
-      "scraped_at": "2025-11-23T18:47:54.325859"
+      "scraped_at": "2025-11-24T03:48:29.072638"
     },
     {
       "title": "Siegfried (The Royal Opera)",
@@ -1277,7 +1505,7 @@
       "release": "2026-03-31T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350845"
+      "scraped_at": "2025-11-24T03:48:28.204457"
     },
     {
       "title": "ISHA & Limsa d’Aulnay + première partie",
@@ -1289,7 +1517,7 @@
       "type": "Concert",
       "location": "Salle de concerts",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/ISHA-Limsa-dAulnay-premire-partie/3057",
-      "scraped_at": "2025-11-23T18:49:55.394674"
+      "scraped_at": "2025-11-24T03:50:32.500741"
     },
     {
       "title": "DAMSO",
@@ -1299,7 +1527,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/damso/",
       "reservation": "https://billetterie.damso.com/fr/product/6/arena_futuroscope/damso",
-      "scraped_at": "2025-11-23T18:47:54.327464"
+      "scraped_at": "2025-11-24T03:48:29.074212"
     },
     {
       "title": "ELECTRO SYMPHONY VOL.2",
@@ -1309,7 +1537,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/electro-symphony-vol-2/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/electro-symphony-vol2-billet/idmanif/626483/idtier/38916868",
-      "scraped_at": "2025-11-23T18:47:54.329062"
+      "scraped_at": "2025-11-24T03:48:29.075753"
     },
     {
       "title": "BEN MAZUE",
@@ -1319,7 +1547,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/ben-mazue/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/33001?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.330668"
+      "scraped_at": "2025-11-24T03:48:29.077298"
     },
     {
       "title": "La Flûte Enchantée (The Royal Opera)",
@@ -1331,7 +1559,7 @@
       "release": "2026-04-21T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350847"
+      "scraped_at": "2025-11-24T03:48:28.204459"
     },
     {
       "title": "THE WORLD OF QUEEN",
@@ -1341,7 +1569,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/the-world-of-queen/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/the-world-of-queen-billet/idmanif/603327",
-      "scraped_at": "2025-11-23T18:47:54.332284"
+      "scraped_at": "2025-11-24T03:48:29.078848"
     },
     {
       "title": "LE ROI SOLEIL",
@@ -1351,7 +1579,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/le-roi-soleil/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/32273?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.333913"
+      "scraped_at": "2025-11-24T03:48:29.080390"
     },
     {
       "title": "THE JEFF PANACLOC COMPANY",
@@ -1361,7 +1589,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/the-jeff-panacloc-company/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/32055?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.335516"
+      "scraped_at": "2025-11-24T03:48:29.081941"
     },
     {
       "title": "KENDJI",
@@ -1371,7 +1599,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/kendji-2/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60955",
-      "scraped_at": "2025-11-23T18:47:54.337205"
+      "scraped_at": "2025-11-24T03:48:29.083484"
     },
     {
       "title": "URBAN CORNER 2",
@@ -1381,7 +1609,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/urban-corner-2/",
       "reservation": "https://my.weezevent.com/urban-corner-2-le-show-rap-francais-xxl-a-larena-futuroscope",
-      "scraped_at": "2025-11-23T18:47:54.338810"
+      "scraped_at": "2025-11-24T03:48:29.085040"
     },
     {
       "title": "REPUBLIC COMEDY CLUB – LES 3 ANS !",
@@ -1391,7 +1619,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/republic-comedy-club-les-3-ans/",
       "reservation": "https://my.weezevent.com/republic-comedy-club-les-3-ans?_gl=1*jr0u6e*_gcl_au*ODk5MDUxMjUuMTc1NDI5MzE0Mi4xNDQ4MDYwNzA5LjE3NTc0MDU2MjguMTc1NzQwNTY0NA..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTc5Mzk1NzckbzQ0MyRnMSR0MTc1NzkzOTU5MCRqNDckbDAkaDE1MDQ3OTI0MjA.",
-      "scraped_at": "2025-11-23T18:47:54.340408"
+      "scraped_at": "2025-11-24T03:48:29.086573"
     },
     {
       "title": "LA DAME DE PIERRE",
@@ -1401,7 +1629,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/la-dame-de-pierre/",
       "reservation": "https://ladamedepierre.trium.fr/fr/t/-/event/63632",
-      "scraped_at": "2025-11-23T18:47:54.342003"
+      "scraped_at": "2025-11-24T03:48:29.088128"
     },
     {
       "title": "NINO ARIAL",
@@ -1411,7 +1639,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/nino-arial-pas-comme-eux/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/64040",
-      "scraped_at": "2025-11-23T18:47:54.343602"
+      "scraped_at": "2025-11-24T03:48:29.089666"
     },
     {
       "title": "DJADJA & DINAZ",
@@ -1421,7 +1649,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/djadja-dinaz/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/62137 ",
-      "scraped_at": "2025-11-23T18:47:54.345226"
+      "scraped_at": "2025-11-24T03:48:29.091221"
     },
     {
       "title": "GENERATION CELINE",
@@ -1431,7 +1659,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/generation-celine/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60344",
-      "scraped_at": "2025-11-23T18:47:54.346815"
+      "scraped_at": "2025-11-24T03:48:29.092753"
     },
     {
       "title": "PLK – TOUR 2026",
@@ -1441,7 +1669,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/plk-tour-2026/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/63838",
-      "scraped_at": "2025-11-23T18:47:54.348422"
+      "scraped_at": "2025-11-24T03:48:29.094302"
     },
     {
       "title": "LA LEGENDE DE MONTE-CRISTO",
@@ -1451,7 +1679,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/la-legende-de-monte-cristo/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60581",
-      "scraped_at": "2025-11-23T18:47:54.350019"
+      "scraped_at": "2025-11-24T03:48:29.095852"
     },
     {
       "title": "CHRISTOPHE MAÉ",
@@ -1461,7 +1689,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/cristophe-mae/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/63399",
-      "scraped_at": "2025-11-23T18:47:54.351600"
+      "scraped_at": "2025-11-24T03:48:29.097391"
     },
     {
       "title": "L’HÉRITAGE GOLDMAN 2 LA TOURNÉE ÉVÈNEMENT",
@@ -1471,7 +1699,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/lheritage-goldman-2-la-tournee-evenement/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/62381 ",
-      "scraped_at": "2025-11-23T18:47:54.353236"
+      "scraped_at": "2025-11-24T03:48:29.098941"
     },
     {
       "title": "ERIC SERRA",
@@ -1481,7 +1709,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/eric-serra/",
       "reservation": "https://www.box.fr/reserver/eric-serra-live-1/2100851",
-      "scraped_at": "2025-11-23T18:47:54.354825"
+      "scraped_at": "2025-11-24T03:48:29.100484"
     },
     {
       "title": "CLAUDIO CAPEO",
@@ -1491,7 +1719,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/claudio-capeo-2/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/32587?w=114&idtier=679706",
-      "scraped_at": "2025-11-23T18:47:54.356457"
+      "scraped_at": "2025-11-24T03:48:29.102041"
     },
     {
       "title": "REDOUANE BOUGHERABA",
@@ -1501,7 +1729,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/redouane-bougheraba-2/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/63516",
-      "scraped_at": "2025-11-23T18:47:54.358065"
+      "scraped_at": "2025-11-24T03:48:29.103582"
     },
     {
       "title": "MICHELE LAROQUE ET KAD MERAD",
@@ -1511,7 +1739,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/michele-laroque-et-kad-merad/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60119",
-      "scraped_at": "2025-11-23T18:47:54.359654"
+      "scraped_at": "2025-11-24T03:48:29.105154"
     },
     {
       "title": "ONE NIGHT OF QUEEN – WEMBLEY",
@@ -1521,7 +1749,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/one-night-of-queen-wembley/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/63294",
-      "scraped_at": "2025-11-23T18:47:54.361254"
+      "scraped_at": "2025-11-24T03:48:29.106685"
     },
     {
       "title": "FOREVER TRIBUTE TO MICHAEL JACKSON",
@@ -1531,7 +1759,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/forever-tribute-to-michael-jackson/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/62700",
-      "scraped_at": "2025-11-23T18:47:54.362840"
+      "scraped_at": "2025-11-24T03:48:29.108230"
     },
     {
       "title": "IL ÉTAIT UNE FOIS… ENNINO MORRICONE & NINO ROTA",
@@ -1541,7 +1769,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/il-etait-une-fois-ennino-morricone-nino-rota/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/64305",
-      "scraped_at": "2025-11-23T18:47:54.364477"
+      "scraped_at": "2025-11-24T03:48:29.109768"
     },
     {
       "title": "LES ETOILES DU CIRQUE DE PEKIN – ODYSSEE",
@@ -1551,7 +1779,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/les-etoiles-du-cirque-de-pekin-odysse/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/63222",
-      "scraped_at": "2025-11-23T18:47:54.366105"
+      "scraped_at": "2025-11-24T03:48:29.111304"
     },
     {
       "title": "JARRY",
@@ -1561,7 +1789,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/jarry-2/",
       "reservation": "https://www.box.fr/reserver/jarry-172/2100834",
-      "scraped_at": "2025-11-23T18:47:54.367715"
+      "scraped_at": "2025-11-24T03:48:29.112848"
     },
     {
       "title": "IBRAHIM MAALOUF",
@@ -1571,7 +1799,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/ibrahim-maalouf/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/ibrahim-maalouf-20-ans-de-live-billet/idmanif/640358?clickId=UDrS-yT6GxycUeX1ok1alzx7UkpRO-29ARMS0E0&irgwc=1&afsrc=1&utm_source=Bandsintown&utm_medium=affiliate&utm_campaign=219208&utm_content=1107977_7516",
-      "scraped_at": "2025-11-23T18:47:54.369330"
+      "scraped_at": "2025-11-24T03:48:29.114380"
     },
     {
       "title": "KEEN’V",
@@ -1581,7 +1809,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/keenv-2/",
       "reservation": "https://cornolti.trium.fr/fr/t/-/event/63122",
-      "scraped_at": "2025-11-23T18:47:54.370942"
+      "scraped_at": "2025-11-24T03:48:29.115919"
     },
     {
       "title": "JULIEN CLERC",
@@ -1591,7 +1819,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/julien-clerc/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60160",
-      "scraped_at": "2025-11-23T18:47:54.372555"
+      "scraped_at": "2025-11-24T03:48:29.117476"
     },
     {
       "title": "The Cure : The Show Of A Lost World",
@@ -1603,7 +1831,7 @@
       "release": null,
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2025-11-23T18:47:35.302721"
+      "scraped_at": "2025-11-24T03:48:09.733236"
     },
     {
       "title": "Altaïr Conférences - Terre Neuve Canada",
@@ -1615,7 +1843,7 @@
       "release": null,
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350813"
+      "scraped_at": "2025-11-24T03:48:28.204437"
     },
     {
       "title": "Route 66, la piste du rêve américain",
@@ -1627,7 +1855,7 @@
       "release": null,
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350819"
+      "scraped_at": "2025-11-24T03:48:28.204440"
     },
     {
       "title": "Sénégal du nord au sud",
@@ -1639,7 +1867,7 @@
       "release": null,
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350821"
+      "scraped_at": "2025-11-24T03:48:28.204442"
     },
     {
       "title": "The Cure : The Show Of A Lost World",
@@ -1651,7 +1879,7 @@
       "release": null,
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350860"
+      "scraped_at": "2025-11-24T03:48:28.204467"
     },
     {
       "title": "Altaïr Conférences : Bretagne – Par le sentier des douaniers GR 34",
@@ -1663,7 +1891,7 @@
       "release": null,
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2025-11-23T18:47:53.350873"
+      "scraped_at": "2025-11-24T03:48:28.204478"
     },
     {
       "title": "Événement Republic Corner",
@@ -1673,7 +1901,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/mune-poitiers",
-      "scraped_at": "2025-11-23T18:47:56.937990"
+      "scraped_at": "2025-11-24T03:48:32.517998"
     },
     {
       "title": "Événement Republic Corner",
@@ -1683,7 +1911,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/djsetbylarsen-poitiers",
-      "scraped_at": "2025-11-23T18:47:57.246441"
+      "scraped_at": "2025-11-24T03:48:32.653563"
     },
     {
       "title": "Tanguy Pastureau",
@@ -1693,7 +1921,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/tanguy-pastureau-poitiers?_gl=1*19tf4xz*_gcl_au*MzgyMjc4MDEuMTczODQwNDAxMy45NDM0MTAyODYuMTc0MDk5MjQ4Ny4xNzQwOTkyNDg4*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*MTc0MTI0ODA4My4yMjcuMS4xNzQxMjQ4NjQ3LjYwLjAuMjA2ODA3MzQ0Nw..",
-      "scraped_at": "2025-11-23T18:47:57.931911"
+      "scraped_at": "2025-11-24T03:48:33.280680"
     },
     {
       "title": "Événement Republic Corner",
@@ -1703,7 +1931,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/dragdrop-poitiers",
-      "scraped_at": "2025-11-23T18:47:57.977825"
+      "scraped_at": "2025-11-24T03:48:33.348188"
     },
     {
       "title": "Événement Republic Corner",
@@ -1713,7 +1941,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/blackmetal-deathcodesociety-poitiers",
-      "scraped_at": "2025-11-23T18:47:58.180154"
+      "scraped_at": "2025-11-24T03:48:33.483212"
     },
     {
       "title": "Événement Republic Corner",
@@ -1723,7 +1951,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/larsandfriends3-poitiers",
-      "scraped_at": "2025-11-23T18:47:58.222828"
+      "scraped_at": "2025-11-24T03:48:33.544099"
     },
     {
       "title": "Événement Republic Corner",
@@ -1733,7 +1961,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/tonayshow6-poitiers",
-      "scraped_at": "2025-11-23T18:47:58.266310"
+      "scraped_at": "2025-11-24T03:48:33.684305"
     },
     {
       "title": "Republic Comedy Club #37 - SpÃ©cial climat",
@@ -1743,7 +1971,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/republic-comedy-club-37-special-climat?_gl=1*pyyv0w*_gcl_au*MzE3MzY1NTMuMTc2MjE1NjQzOC4xNjkzNzEzMDQwLjE3NjIxNTY0NTkuMTc2MjE1NjQ2Mg..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NjIyNDgxMTIkbzQ4MiRnMSR0MTc2MjI1MTAyNyRqNTkkbDAkaDcxNzYwMDY4",
-      "scraped_at": "2025-11-23T18:47:58.869854"
+      "scraped_at": "2025-11-24T03:48:34.318985"
     },
     {
       "title": "Événement Republic Corner",
@@ -1753,7 +1981,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/brokenback-en-concert-a-l-espace-republic-corner",
-      "scraped_at": "2025-11-23T18:47:58.912075"
+      "scraped_at": "2025-11-24T03:48:34.368712"
     },
     {
       "title": "Événement Republic Corner",
@@ -1763,7 +1991,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/keblack-poitiers",
-      "scraped_at": "2025-11-23T18:47:58.954227"
+      "scraped_at": "2025-11-24T03:48:34.507207"
     },
     {
       "title": "Événement Republic Corner",
@@ -1773,7 +2001,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/afterpartykeblack",
-      "scraped_at": "2025-11-23T18:47:58.996088"
+      "scraped_at": "2025-11-24T03:48:34.566120"
     },
     {
       "title": "Événement Republic Corner",
@@ -1783,7 +2011,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://www.helloasso.com/associations/mama-dancing-queen/evenements/mama-dancing-queen-blonde-venus-26-09-2025-2?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnazisdHSj-WCCc5tbCdG_YKLFZh60Llx2CKJbw-ZC7rVLEwM3B3qrWdZvDPI_aem_pqNCDWWhQ6uvUDkKJT1z4g",
-      "scraped_at": "2025-11-23T18:47:59.192772"
+      "scraped_at": "2025-11-24T03:48:34.726995"
     },
     {
       "title": "Événement Republic Corner",
@@ -1793,7 +2021,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/urbancorner7-poitiers",
-      "scraped_at": "2025-11-23T18:47:59.233679"
+      "scraped_at": "2025-11-24T03:48:34.788923"
     },
     {
       "title": "Nash",
@@ -1803,7 +2031,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/nash-poitiers?_gl=1*5vtkyk*_gcl_au*MzgyMjc4MDEuMTczODQwNDAxMy4xMTU5NDg3Njc5LjE3MzkxNzUyNTMuMTczOTE3NTI1Mw..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*MTczOTE3NTI0OS4xNzQuMS4xNzM5MTc1ODExLjQ0LjAuMTA0NTc4NTg5OA..",
-      "scraped_at": "2025-11-23T18:47:59.832984"
+      "scraped_at": "2025-11-24T03:48:35.431720"
     },
     {
       "title": "Le loup en slip 2",
@@ -1813,7 +2041,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/le-loup-en-slip-2-poitiers?_gl=1*d8acgm*_gcl_au*ODk5MDUxMjUuMTc1NDI5MzE0Mi4xODM1NjU5NjE5LjE3NjA5NDQ0NTIuMTc2MDk0NDQ1Mw..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NjA5NDY5MjAkbzQ3MSRnMSR0MTc2MDk0NzIyMiRqNTYkbDAkaDIzNjUyOTA4NA..",
-      "scraped_at": "2025-11-23T18:48:00.408200"
+      "scraped_at": "2025-11-24T03:48:36.065531"
     },
     {
       "title": "Événement Republic Corner",
@@ -1823,7 +2051,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/party90200-12-poitiers",
-      "scraped_at": "2025-11-23T18:48:00.460000"
+      "scraped_at": "2025-11-24T03:48:36.115454"
     },
     {
       "title": "Le Nouvel An au Republic Corner",
@@ -1833,7 +2061,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/le-nouvel-an-au-republic-corner?_gl=1*1akm9ix*_gcl_au*MzE3MzY1NTMuMTc2MjE1NjQzOC43NTQ1NjMxNTUuMTc2MzQ1NDc4OS4xNzYzNDU0Nzkw*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NjM0NTQ3ODQkbzQ5NyRnMSR0MTc2MzQ1NDgwMiRqNDIkbDAkaDE2MTY3NTQyMDA.",
-      "scraped_at": "2025-11-23T18:48:00.978392"
+      "scraped_at": "2025-11-24T03:48:36.747279"
     },
     {
       "title": "Événement Republic Corner",
@@ -1843,7 +2071,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/oxmopuccino-espacerepubliccorner",
-      "scraped_at": "2025-11-23T18:48:01.114836"
+      "scraped_at": "2025-11-24T03:48:36.881892"
     },
     {
       "title": "La Bajon",
@@ -1853,7 +2081,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/la-bajon-poitiers?_gl=1*1e6hmqk*_gcl_au*NTI5NTM0MzAyLjE3NDYxODk3OTcuMzQ1MDA2MDc2LjE3NTI1NjczOTQuMTc1MjU2NzM5NA..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTI1NjczOTQkbzM5NSRnMSR0MTc1MjU2NzQyNyRqMjckbDAkaDE1NjM0MDUxNjg.",
-      "scraped_at": "2025-11-23T18:48:01.650850"
+      "scraped_at": "2025-11-24T03:48:37.456331"
     },
     {
       "title": "Événement Republic Corner",
@@ -1863,7 +2091,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/charlie-winston-poitiers",
-      "scraped_at": "2025-11-23T18:48:01.692484"
+      "scraped_at": "2025-11-24T03:48:37.516587"
     },
     {
       "title": "Philippine Delaire",
@@ -1873,7 +2101,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/philippine-delaire-poitiers?_gl=1*191nvdy*_gcl_au*MTIwNDM3NjAzOS4xNzMwNDk1MjkwLjM5MDc2MzM1NS4xNzM3OTg4ODA5LjE3Mzc5ODg4MTA.*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*MTczODIyNjc3MS4xNzAuMS4xNzM4MjI2Nzg1LjQ2LjAuMA..",
-      "scraped_at": "2025-11-23T18:48:02.328095"
+      "scraped_at": "2025-11-24T03:48:38.222929"
     },
     {
       "title": "Henri DÃ¨s en solo Ã  l'Espace Republic Corner",
@@ -1883,7 +2111,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/henri-des-a-lespace-republic-corner?_gl=1*1va7dvt*_gcl_au*ODk5MDUxMjUuMTc1NDI5MzE0Mi4yMDEwNzU0NDE1LjE3NTg1MjYyODUuMTc1ODUyNjI4Ng..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTg1MjYyODEkbzQ0NCRnMSR0MTc1ODUyNjQ2OCRqMzkkbDAkaDEwNzYwNjgzODY.",
-      "scraped_at": "2025-11-23T18:48:02.911819"
+      "scraped_at": "2025-11-24T03:48:38.820390"
     },
     {
       "title": "Jason Brokerss en spectacle Ã  Poitiers Ã  l'Espace Republic Corner",
@@ -1893,7 +2121,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/jason-brokerss-poitiers?fbclid=IwZXh0bgNhZW0CMTAAAR0DM1pn52EQH8YPh8Fp2dLOEC4DfjbBMZ9KYmdYjT1THeqKObiRDZm5zk0_aem_AnM-EWoHPngiDVbyQHOhPQ",
-      "scraped_at": "2025-11-23T18:48:03.436644"
+      "scraped_at": "2025-11-24T03:48:39.376915"
     },
     {
       "title": "Événement Republic Corner",
@@ -1903,7 +2131,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/evelamarka-poitiers",
-      "scraped_at": "2025-11-23T18:48:03.482096"
+      "scraped_at": "2025-11-24T03:48:39.425327"
     },
     {
       "title": "Eddy le quartier",
@@ -1913,7 +2141,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/eddy-le-quartier-poitiers?_gl=1*o34pd1*_gcl_au*NTI5NTM0MzAyLjE3NDYxODk3OTcuMTYxNTEzMDYwLjE3NTEwMzgxNDAuMTc1MTAzODE0MA..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTEwMzgxMzUkbzM4NyRnMSR0MTc1MTAzODE1MCRqNDUkbDAkaDE3NzU5NzIyNzM.",
-      "scraped_at": "2025-11-23T18:48:04.039995"
+      "scraped_at": "2025-11-24T03:48:40.105101"
     },
     {
       "title": "Événement Republic Corner",
@@ -1923,7 +2151,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/zaho-poitiers",
-      "scraped_at": "2025-11-23T18:48:04.090693"
+      "scraped_at": "2025-11-24T03:48:40.166326"
     },
     {
       "title": "Événement Republic Corner",
@@ -1933,7 +2161,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/lubiana-poitiers",
-      "scraped_at": "2025-11-23T18:48:04.134189"
+      "scraped_at": "2025-11-24T03:48:40.506999"
     },
     {
       "title": "Guillaume Meurice Ã  l'Espace Republic Corner",
@@ -1943,7 +2171,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/guillaume-meurice-a-lespace-republic-corner?_gl=1*ysy5lc*_gcl_au*ODk5MDUxMjUuMTc1NDI5MzE0Mi41NzA5OTkxMTUuMTc1OTEzNTU3NC4xNzU5MTM1NTc3*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTkzODgxNzEkbzQ1NyRnMSR0MTc1OTM4ODE5OCRqMzMkbDAkaDE5NDgwMjAwODc.",
-      "scraped_at": "2025-11-23T18:48:04.924095"
+      "scraped_at": "2025-11-24T03:48:41.050140"
     },
     {
       "title": "Tom Baldetti",
@@ -1953,7 +2181,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/tom-baldetti-poitiers?_gl=1*14p10l3*_gcl_au*NTI5NTM0MzAyLjE3NDYxODk3OTcuMTE1NTU4Mjc0OC4xNzQ3MDM0MzU4LjE3NDcwMzQzNjA.*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NDcwMzQzNTEkbzMzNSRnMSR0MTc0NzAzNTAwOCRqNTIkbDAkaDE2MjU4NDUzNg..",
-      "scraped_at": "2025-11-23T18:48:05.549464"
+      "scraped_at": "2025-11-24T03:48:41.582134"
     },
     {
       "title": "Événement Republic Corner",
@@ -1963,7 +2191,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/tairo-poitiers",
-      "scraped_at": "2025-11-23T18:48:05.667285"
+      "scraped_at": "2025-11-24T03:48:41.644269"
     },
     {
       "title": "Mathieu MadÃ©nian",
@@ -1973,7 +2201,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/mathieu-madenian-poitiers?_gl=1*cwaduw*_gcl_au*NTI5NTM0MzAyLjE3NDYxODk3OTcuMTE1NTU4Mjc0OC4xNzQ3MDM0MzU4LjE3NDcwMzQzNjA.*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NDcyOTIxNTIkbzM0NCRnMSR0MTc0NzI5MjUzNCRqNTAkbDAkaDE2MTMzNTY2MzM.",
-      "scraped_at": "2025-11-23T18:48:06.220180"
+      "scraped_at": "2025-11-24T03:48:42.200041"
     },
     {
       "title": "Alexis Le Rossignol",
@@ -1983,7 +2211,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/alexis-le-rossignol-poitiers?_gl=1*m0js16*_gcl_au*NTI5NTM0MzAyLjE3NDYxODk3OTcuMzQ1MDA2MDc2LjE3NTI1NjczOTQuMTc1MjU2NzM5NA..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTI2NTEzMTEkbzM5OSRnMSR0MTc1MjY1MTM0OCRqMjMkbDAkaDEwMDk0OTYxNTQ.",
-      "scraped_at": "2025-11-23T18:48:06.758335"
+      "scraped_at": "2025-11-24T03:48:42.858955"
     },
     {
       "title": "Morgane Cadignan",
@@ -1993,7 +2221,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/morgane-cadignan-poitiers-espace-republic-corner?_gl=1*1vsseso*_gcl_au*NTI5NTM0MzAyLjE3NDYxODk3OTcuMTgwNjYyOTk4LjE3NDg1OTAyMDQuMTc0ODU5MDIwNQ..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NDkxMzYxOTMkbzM3MyRnMSR0MTc0OTEzNjIzMCRqMjMkbDAkaDc0NTkyMzM3NA..",
-      "scraped_at": "2025-11-23T18:48:07.498125"
+      "scraped_at": "2025-11-24T03:48:43.403661"
     },
     {
       "title": "Julien Bing",
@@ -2003,7 +2231,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/julien-bing-poitiers-espace-republic-corner?_gl=1*1d5ke17*_gcl_au*NTI5NTM0MzAyLjE3NDYxODk3OTcuMTc1NzczNDM1Ni4xNzQ3ODQyMjM3LjE3NDc4NDIyMzg.*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NDgzNTExMTQkbzM2MSRnMSR0MTc0ODM1MTE3OSRqNTkkbDAkaDIwMzg1ODcwMjckZEtQeWxVSUZsX2I0SXVaUzlPNDFCRmFaNE5VWnhXZUlBbkE.",
-      "scraped_at": "2025-11-23T18:48:08.076800"
+      "scraped_at": "2025-11-24T03:48:43.956051"
     },
     {
       "title": "Emy en spectacle Ã  l'Espace Republic Corner",
@@ -2013,7 +2241,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/emy-poitiers-espace-republic-corner?_gl=1*1aoelga*_gcl_au*NTI5NTM0MzAyLjE3NDYxODk3OTcuMTc1NzczNDM1Ni4xNzQ3ODQyMjM3LjE3NDc4NDIyMzg.*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NDgyNDI5ODMkbzM1MyRnMSR0MTc0ODI0MzUxMSRqNDEkbDAkaDExNTUzMjA1MjkkZEtQeWxVSUZsX2I0SXVaUzlPNDFCRmFaNE5VWnhXZUlBbkE.",
-      "scraped_at": "2025-11-23T18:48:08.756081"
+      "scraped_at": "2025-11-24T03:48:44.514850"
     },
     {
       "title": "PV Ã  l'Espace Republic Corner",
@@ -2023,7 +2251,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/pv-poitiers?_gl=1*tizwfw*_gcl_au*ODk5MDUxMjUuMTc1NDI5MzE0Mi4xMjEwNDI3MTEwLjE3NTk3NTM4NjMuMTc1OTc1Mzg3MQ..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTk5Mjg4NzUkbzQ2NSRnMSR0MTc1OTkyODg4NCRqNTEkbDAkaDc0NDM0MDg4OQ..",
-      "scraped_at": "2025-11-23T18:48:09.290606"
+      "scraped_at": "2025-11-24T03:48:45.054304"
     },
     {
       "title": "Alexis Tramoni Ã  l'Espace Republic Corner",
@@ -2033,7 +2261,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/alexis-tramoni-poitiers?_gl=1*7kqhbt*_gcl_au*MzE3MzY1NTMuMTc2MjE1NjQzOC43NTQ1NjMxNTUuMTc2MzQ1NDc4OS4xNzYzNDU0Nzkw*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NjM2NDEzNDgkbzQ5OSRnMSR0MTc2MzY0MTM1MyRqNTUkbDAkaDE2MzQzNzE4Ng..",
-      "scraped_at": "2025-11-23T18:48:09.811463"
+      "scraped_at": "2025-11-24T03:48:45.621378"
     },
     {
       "title": "Urban Corner #2 : le show rap franÃ§ais XXL Ã  l'Arena Futuroscope !",
@@ -2043,7 +2271,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/urban-corner-2-le-show-rap-francais-xxl-a-larena-futuroscope",
-      "scraped_at": "2025-11-23T18:48:10.397574"
+      "scraped_at": "2025-11-24T03:48:46.143308"
     },
     {
       "title": "Republic Comedy Club - Les 3 ans !",
@@ -2053,7 +2281,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/republic-comedy-club-les-3-ans?_gl=1*jr0u6e*_gcl_au*ODk5MDUxMjUuMTc1NDI5MzE0Mi4xNDQ4MDYwNzA5LjE3NTc0MDU2MjguMTc1NzQwNTY0NA..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTc5Mzk1NzckbzQ0MyRnMSR0MTc1NzkzOTU5MCRqNDckbDAkaDE1MDQ3OTI0MjA.",
-      "scraped_at": "2025-11-23T18:48:10.939040"
+      "scraped_at": "2025-11-24T03:48:46.672073"
     },
     {
       "title": "Jean-Benoit Diallo",
@@ -2063,7 +2291,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/jean-benoit-diallo-poitiers?_gl=1*172tj2o*_gcl_au*ODk5MDUxMjUuMTc1NDI5MzE0Mi4xODM1NjU5NjE5LjE3NjA5NDQ0NTIuMTc2MDk0NDQ1Mw..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NjA5NDY5MjAkbzQ3MSRnMSR0MTc2MDk0Njk3NiRqNCRsMCRoMjM2NTI5MDg0",
-      "scraped_at": "2025-11-23T18:48:11.474942"
+      "scraped_at": "2025-11-24T03:48:47.276740"
     },
     {
       "title": "Événement Republic Corner",
@@ -2073,7 +2301,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://shotgun.live/fr/events/ensemble-poitiers",
-      "scraped_at": "2025-11-23T18:48:11.512854"
+      "scraped_at": "2025-11-24T03:48:47.422349"
     },
     {
       "title": "Événement Republic Corner",
@@ -2083,7 +2311,7 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://www.fnacspectacles.com/event/pablo-mira-cherche-encore-le-titre-de-son-spectacle-tournee-republic-corner-20897815/",
-      "scraped_at": "2025-11-23T18:48:41.919962"
+      "scraped_at": "2025-11-24T03:49:17.740563"
     },
     {
       "title": "Tristan Lopin",
@@ -2093,23 +2321,15 @@
       "address": "Espace Republic Corner, Poitiers",
       "cinema": "Republic Corner",
       "source": "https://my.weezevent.com/tristan-lopin-poitiers?_gl=1*px155s*_gcl_au*MzE3MzY1NTMuMTc2MjE1NjQzOC4xNjkzNzEzMDQwLjE3NjIxNTY0NTkuMTc2MjE1NjQ2Mg..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NjIxNjAyMjUkbzQ3OSRnMSR0MTc2MjE2MDIzMSRqNTQkbDAkaDE2Mzk0NTU0OTg.",
-      "scraped_at": "2025-11-23T18:48:42.634100"
+      "scraped_at": "2025-11-24T03:49:18.232866"
     },
     {
       "title": "Les actualitésdu Parc des Expositions",
       "date": null,
-      "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/11/no-fast-fashion-768x960.jpg",
+      "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/11/Affiche-A4-NDO25-768x1086.png",
       "cinema": "Parc Expo Grand Poitiers",
-      "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/no-fast-fashion/",
-      "scraped_at": "2025-11-23T18:48:43.320989"
-    },
-    {
-      "title": "No Fast Fashion",
-      "date": null,
-      "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/11/no-fast-fashion-768x960.jpg",
-      "cinema": "Parc Expo Grand Poitiers",
-      "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/no-fast-fashion/",
-      "scraped_at": "2025-11-23T18:48:43.321160"
+      "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/la-nuit-de-lorientation/",
+      "scraped_at": "2025-11-24T03:49:18.950054"
     },
     {
       "title": "La Nuit de l’Orientation",
@@ -2117,7 +2337,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/11/Affiche-A4-NDO25-768x1086.png",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/la-nuit-de-lorientation/",
-      "scraped_at": "2025-11-23T18:48:43.321317"
+      "scraped_at": "2025-11-24T03:49:18.950229"
     },
     {
       "title": "Salon bien-être et Arts divinatoires",
@@ -2125,7 +2345,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/06/salon-arts-divinatoires-poitiers2025-768x589.jpeg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/salon-bien-etre-et-arts-divinatoires/",
-      "scraped_at": "2025-11-23T18:48:43.321459"
+      "scraped_at": "2025-11-24T03:49:18.950375"
     },
     {
       "title": "Salon et spectacles du Paranormal",
@@ -2133,7 +2353,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/11/paranormal-768x586.webp",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/salon-et-spectacles-du-paranormal/",
-      "scraped_at": "2025-11-23T18:48:43.321602"
+      "scraped_at": "2025-11-24T03:49:18.950521"
     },
     {
       "title": "Stellar Festival",
@@ -2141,7 +2361,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/10/571760914_18048604625675183_147924947496989118_n-1-768x960.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/stellar-festival-winter-edition/",
-      "scraped_at": "2025-11-23T18:48:43.321756"
+      "scraped_at": "2025-11-24T03:49:18.950671"
     },
     {
       "title": "Tisséade",
@@ -2149,7 +2369,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/12/tisseade-sans-dates-768x960.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/tisseade/",
-      "scraped_at": "2025-11-23T18:48:43.321935"
+      "scraped_at": "2025-11-24T03:49:18.950839"
     },
     {
       "title": "Le Salon du Lycéen et de l’Etudiant",
@@ -2157,7 +2377,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/10/Poitiers_SLE_26_A3-768x1086.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/le-salon-du-lyceen-et-de-letudiant/",
-      "scraped_at": "2025-11-23T18:48:43.322094"
+      "scraped_at": "2025-11-24T03:49:18.950992"
     },
     {
       "title": "Gamers Assembly",
@@ -2165,7 +2385,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/09/der190605158-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/evenement/gamers-assembly/",
-      "scraped_at": "2025-11-23T18:48:43.322293"
+      "scraped_at": "2025-11-24T03:49:18.951148"
     },
     {
       "title": "Foire de Poitiers",
@@ -2173,7 +2393,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2024/03/FoireJ2-1090-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/evenement/foire-de-poitiers/",
-      "scraped_at": "2025-11-23T18:48:43.322438"
+      "scraped_at": "2025-11-24T03:49:18.951294"
     },
     {
       "title": "La ferme s’invite",
@@ -2181,7 +2401,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2024/03/Ferme-1060-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/evenement/la-ferme-sinvite/",
-      "scraped_at": "2025-11-23T18:48:43.322586"
+      "scraped_at": "2025-11-24T03:49:18.951436"
     },
     {
       "title": "Les actualitésdu Parc des Expositions",
@@ -2189,7 +2409,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/09/Maison-1072-scaled-e1681486984338-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/actualites/",
-      "scraped_at": "2025-11-23T18:48:43.322725"
+      "scraped_at": "2025-11-24T03:49:18.951579"
     },
     {
       "title": "Les espaces à disposition",
@@ -2197,7 +2417,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/08/export-Fichier-10.png",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/informations-pratiques/espaces/",
-      "scraped_at": "2025-11-23T18:48:43.322881"
+      "scraped_at": "2025-11-24T03:49:18.951735"
     },
     {
       "title": "Actuellement à l'affiche",
@@ -2208,20 +2428,8 @@
       "certificate": null,
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com#la-petite-derniere",
-      "scraped_at": "2025-11-23T18:48:44.685035"
-    },
-    {
-      "title": "La Petite Dernière",
-      "duration": "1h47 min",
-      "description": "Fatima, 17 ans, est la petite dernière. Elle vit en banlieue avec ses sœurs, dans une famille joyeuse et aimante. Bonne élève, elle intègre une fac de philosophie à Paris et découvre un tout nouveau monde. Alors que débute sa vie de jeune femme, elle s’émancipe de sa famille et ses traditions. Fatima se met alors à questionner son identité. Comment concilier sa foi avec ses désirs naissants ?",
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/09/lapetitederniere_affiche-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
-      "genres": null,
-      "certificate": null,
-      "release": null,
-      "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com/cinema/la-petite-derniere/",
-      "scraped_at": "2025-11-23T18:48:45.882367"
+      "source": "https://www.tap-poitiers.com#l-etranger",
+      "scraped_at": "2025-11-24T03:49:20.281356"
     },
     {
       "title": "L’Étranger",
@@ -2233,19 +2441,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/l-etranger/",
-      "scraped_at": "2025-11-23T18:48:46.324469"
-    },
-    {
-      "title": "Un simple accident",
-      "duration": "1h42 min",
-      "description": "Iran, de nos jours. Un homme croise par hasard celui qu’il croit être son ancien tortionnaire. Mais face à ce père de famille qui nie farouchement avoir été son bourreau, le doute s’installe.",
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/09/un-simple-accident_affiche-1-scaled-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
-      "genres": null,
-      "certificate": null,
-      "release": null,
-      "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com/cinema/un-simple-accident-2/",
-      "scraped_at": "2025-11-23T18:48:47.104533"
+      "scraped_at": "2025-11-24T03:49:21.179181"
     },
     {
       "title": "La Femme la plus riche du Monde",
@@ -2257,7 +2453,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/la-femme-la-plus-riche-du-monde/",
-      "scraped_at": "2025-11-23T18:48:47.802254"
+      "scraped_at": "2025-11-24T03:49:21.697812"
     },
     {
       "title": "Deux procureurs",
@@ -2269,7 +2465,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/deux-procureurs/",
-      "scraped_at": "2025-11-23T18:48:48.726882"
+      "scraped_at": "2025-11-24T03:49:22.644529"
     },
     {
       "title": "L’Inconnu de la Grande Arche",
@@ -2281,7 +2477,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/l-inconnu-de-la-grande-arche/",
-      "scraped_at": "2025-11-23T18:48:49.496266"
+      "scraped_at": "2025-11-24T03:49:23.562535"
     },
     {
       "title": "Les Braises",
@@ -2293,19 +2489,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/les-braises/",
-      "scraped_at": "2025-11-23T18:48:50.339458"
-    },
-    {
-      "title": "Une guitare à la mer",
-      "duration": "0h56 min",
-      "description": "C’est l’histoire d’une fouine qui voudrait vivre comme elle l’entend : aller de ferme en ferme, jouer de la musique et vendre quelques cravates par-ci, par-là. Mais les animaux des alentours se montrent rarement accueillants… Et si le bonheur c’était de trouver un ami pour jouer de la guitare au coin du feu ? C’est l’histoire d’un garçon qui rencontre un tout petit monstre par une nuit de pleine lune. C’est aussi l’histoire d’une famille de capybaras et d’un poussin qui n’auraient jamais dû se rencontrer. Ces histoires, ce sont avant tout des fables sur le bonheur d’être ensemble.",
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/10/guitare_affiche-scaled-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
-      "genres": null,
-      "certificate": null,
-      "release": null,
-      "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com/cinema/une-guitare-a-la-mer/",
-      "scraped_at": "2025-11-23T18:48:51.176270"
+      "scraped_at": "2025-11-24T03:49:24.249341"
     },
     {
       "title": "Les Aigles de la République",
@@ -2317,7 +2501,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/les-aigles-de-la-republique/",
-      "scraped_at": "2025-11-23T18:48:51.956107"
+      "scraped_at": "2025-11-24T03:49:24.690444"
     },
     {
       "title": "Kika",
@@ -2329,19 +2513,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/kika/",
-      "scraped_at": "2025-11-23T18:48:52.372887"
-    },
-    {
-      "title": "Arco",
-      "duration": "1h28 min",
-      "description": "En 2075, une petite fille de 10 ans, Iris, voit un mystérieux garçon vêtu d’une combinaison arc-en-ciel tomber du ciel. C’est Arco. Il vient d’un futur lointain et idyllique où voyager dans le temps est possible. Iris le recueille et va l’aider par tous les moyens à rentrer chez lui.",
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/11/arco_affiche-tt-width-150-height-204-crop-1-bgcolor-000000.png",
-      "genres": null,
-      "certificate": null,
-      "release": null,
-      "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com/cinema/arco/",
-      "scraped_at": "2025-11-23T18:48:53.251549"
+      "scraped_at": "2025-11-24T03:49:25.382837"
     },
     {
       "title": "L’Arbre de la connaissance",
@@ -2353,7 +2525,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/l-arbre-de-la-connaissance/",
-      "scraped_at": "2025-11-23T18:48:53.933876"
+      "scraped_at": "2025-11-24T03:49:26.365768"
     },
     {
       "title": "Franz K.",
@@ -2365,7 +2537,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/franz-k/",
-      "scraped_at": "2025-11-23T18:48:54.757281"
+      "scraped_at": "2025-11-24T03:49:27.059186"
     },
     {
       "title": "Dossier 137",
@@ -2377,7 +2549,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/dossier-137/",
-      "scraped_at": "2025-11-23T18:48:55.587102"
+      "scraped_at": "2025-11-24T03:49:27.978858"
     },
     {
       "title": "Trans Memoria",
@@ -2389,43 +2561,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/trans-memoria/",
-      "scraped_at": "2025-11-23T18:48:56.453080"
-    },
-    {
-      "title": "John McCabe",
-      "duration": "2h00 min",
-      "description": "En 1902, John McCabe arrive à Presbyterian Church, une petite ville de l’Ouest américain, pour ouvrir un bordel. Mme Constance Miller, une prostituée, lui propose son aide et son expérience en échange d’une partie des bénéfices. Mc Cabe accepte, mais le succès de l’établissement fait des jaloux…",
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/07/affiche-john-mccabe-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
-      "genres": null,
-      "certificate": null,
-      "release": null,
-      "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com/cinema/john-mccabe/",
-      "scraped_at": "2025-11-23T18:48:57.017358"
-    },
-    {
-      "title": "À 2000 mètres d’Andriivka",
-      "duration": "1h51 min",
-      "description": "Une section ukrainienne doit traverser un kilomètre de forêt lourdement fortifiée afin de libérer un village stratégique de l’occupation russe.",
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/11/a-2000m-d-andriivka-affiche-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
-      "genres": null,
-      "certificate": null,
-      "release": null,
-      "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com/cinema/a-2000-metres-d-andriivka/",
-      "scraped_at": "2025-11-23T18:48:57.685717"
-    },
-    {
-      "title": "Little Trouble Girls",
-      "duration": "1h29 min",
-      "description": "Lucia, une jeune fille introvertie, rejoint la chorale de son école et se lie d’amitié avec Ana-Maria, populaire et séduisante. Confrontée à un environnement inconnu et à l’éveil de sa sexualité, Lucia commence à remettre en question ses croyances, perturbant l’harmonie du chœur.",
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/11/littletroubleaffiche-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
-      "genres": null,
-      "certificate": null,
-      "release": null,
-      "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com/cinema/little-trouble-girls/",
-      "scraped_at": "2025-11-23T18:48:58.653239"
+      "scraped_at": "2025-11-24T03:49:28.917107"
     },
     {
       "title": "Bugonia",
@@ -2437,7 +2573,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/bugonia/",
-      "scraped_at": "2025-11-23T18:48:59.267619"
+      "scraped_at": "2025-11-24T03:49:29.721488"
     },
     {
       "title": "Les enfants vont bien",
@@ -2449,7 +2585,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/les-enfants-vont-bien/",
-      "scraped_at": "2025-11-23T18:48:59.990650"
+      "scraped_at": "2025-11-24T03:49:30.316043"
     },
     {
       "title": "Dites-lui que je l’aime",
@@ -2461,7 +2597,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/dites-lui-que-je-l-aime/",
-      "scraped_at": "2025-11-23T18:49:00.641294"
+      "scraped_at": "2025-11-24T03:49:31.251123"
     },
     {
       "title": "Love Me Tender",
@@ -2473,7 +2609,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/love-me-tender/",
-      "scraped_at": "2025-11-23T18:49:01.264901"
+      "scraped_at": "2025-11-24T03:49:31.975895"
     },
     {
       "title": "Midi-ciné Poitiers Film Festival : Repas de famille #1",
@@ -2485,7 +2621,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/midi-cine-poitiers-film-festival-repas-de-famille-1/",
-      "scraped_at": "2025-11-23T18:49:02.228056"
+      "scraped_at": "2025-11-24T03:49:32.400073"
     },
     {
       "title": "Souvent l’hiver se mutine",
@@ -2497,7 +2633,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/souvent-l-hiver-se-mutine/",
-      "scraped_at": "2025-11-23T18:49:02.662801"
+      "scraped_at": "2025-11-24T03:49:33.087741"
     },
     {
       "title": "L’Incroyable Femme des neiges",
@@ -2509,7 +2645,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/l-incroyable-femme-des-neiges/",
-      "scraped_at": "2025-11-23T18:49:03.291185"
+      "scraped_at": "2025-11-24T03:49:33.934389"
     },
     {
       "title": "Midi-ciné Poitiers Film Festival : Repas de famille #2",
@@ -2521,7 +2657,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/midi-cine-poitiers-film-festival-repas-de-famille-2/",
-      "scraped_at": "2025-11-23T18:49:03.934263"
+      "scraped_at": "2025-11-24T03:49:34.574688"
     },
     {
       "title": "Une année italienne",
@@ -2533,7 +2669,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/une-annee-italienne/",
-      "scraped_at": "2025-11-23T18:49:04.560853"
+      "scraped_at": "2025-11-24T03:49:35.264039"
     },
     {
       "title": "La Condition",
@@ -2545,7 +2681,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/la-condition/",
-      "scraped_at": "2025-11-23T18:49:05.167688"
+      "scraped_at": "2025-11-24T03:49:35.983772"
     },
     {
       "title": "Baise-en-ville",
@@ -2557,7 +2693,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/baise-en-ville/",
-      "scraped_at": "2025-11-23T18:49:05.850566"
+      "scraped_at": "2025-11-24T03:49:36.700033"
     },
     {
       "title": "Salyut-7",
@@ -2569,7 +2705,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/salyut-7/",
-      "scraped_at": "2025-11-23T18:49:06.757093"
+      "scraped_at": "2025-11-24T03:49:37.134246"
     },
     {
       "title": "L’Incroyable Femme des neiges",
@@ -2579,7 +2715,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/l-incroyable-femme-des-neiges/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:07.845688"
+      "scraped_at": "2025-11-24T03:49:38.849809"
     },
     {
       "title": "Ma Petite",
@@ -2589,7 +2725,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/ma-petite-2/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:08.766857"
+      "scraped_at": "2025-11-24T03:49:39.763587"
     },
     {
       "title": "Midi-musique : Into the Winds",
@@ -2599,7 +2735,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/midi-musique-into-the-winds/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:09.687879"
+      "scraped_at": "2025-11-24T03:49:40.667703"
     },
     {
       "title": "Portés de femmes",
@@ -2609,17 +2745,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/portes-de-femmes/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:10.603187"
-    },
-    {
-      "title": "Le Masque et la Plume #2",
-      "date": "12 décembre 2025",
-      "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/11/inter_poiters_4100x29002-768x543-tt-width-768-height-630-fill-0-crop-1-bgcolor-000000.jpg",
-      "cinema": "TAP Poitiers",
-      "source": "https://www.tap-poitiers.com/spectacle/le-masque-et-la-plume-2/",
-      "reservation": null,
-      "scraped_at": "2025-11-23T18:49:11.328512"
+      "scraped_at": "2025-11-24T03:49:41.093135"
     },
     {
       "title": "On va déguster",
@@ -2629,7 +2755,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/on-va-deguster/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:11.965817"
+      "scraped_at": "2025-11-24T03:49:41.829668"
     },
     {
       "title": "Le Masque et la Plume #1",
@@ -2639,7 +2765,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/le-masque-et-la-plume/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:12.570440"
+      "scraped_at": "2025-11-24T03:49:42.482800"
     },
     {
       "title": "Zoom Zoom Zen",
@@ -2649,7 +2775,17 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/zoom-zoom-zen/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:13.216779"
+      "scraped_at": "2025-11-24T03:49:43.134091"
+    },
+    {
+      "title": "Le Masque et la Plume #2",
+      "date": "12 décembre 2025",
+      "release": null,
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/11/inter_poiters_4100x29002-768x543-tt-width-768-height-630-fill-0-crop-1-bgcolor-000000.jpg",
+      "cinema": "TAP Poitiers",
+      "source": "https://www.tap-poitiers.com/spectacle/le-masque-et-la-plume-2/",
+      "reservation": null,
+      "scraped_at": "2025-11-24T03:49:43.989788"
     },
     {
       "title": "Mozart, Rossini",
@@ -2659,7 +2795,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/mozart-rossini/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:13.633784"
+      "scraped_at": "2025-11-24T03:49:44.870941"
     },
     {
       "title": "Des nouvelles d’ailleurs",
@@ -2669,7 +2805,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/des-nouvelles-d-ailleurs/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:14.346647"
+      "scraped_at": "2025-11-24T03:49:45.837690"
     },
     {
       "title": "NEW",
@@ -2679,7 +2815,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/new/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:15.017482"
+      "scraped_at": "2025-11-24T03:49:46.494399"
     },
     {
       "title": "MINI NEW",
@@ -2689,7 +2825,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/mini-new/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:15.743108"
+      "scraped_at": "2025-11-24T03:49:47.209779"
     },
     {
       "title": "Luz Casal",
@@ -2699,7 +2835,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/luz-casal/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:16.867706"
+      "scraped_at": "2025-11-24T03:49:49.253959"
     },
     {
       "title": "Jean-François Heisser",
@@ -2709,7 +2845,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/jean-francois-heisser/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:17.290693"
+      "scraped_at": "2025-11-24T03:49:50.009739"
     },
     {
       "title": "While My Guitar Gently Weeps",
@@ -2719,7 +2855,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/while-my-guitar-gently-weeps/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:18.214110"
+      "scraped_at": "2025-11-24T03:49:50.755811"
     },
     {
       "title": "Stand-up",
@@ -2729,7 +2865,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/stand-up/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:18.869046"
+      "scraped_at": "2025-11-24T03:49:51.380950"
     },
     {
       "title": "Beethoven",
@@ -2739,7 +2875,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/beethoven-9/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:19.813667"
+      "scraped_at": "2025-11-24T03:49:52.055023"
     },
     {
       "title": "Bertrand Belin",
@@ -2749,7 +2885,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/bertrand-belin-2/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:20.421322"
+      "scraped_at": "2025-11-24T03:49:52.690365"
     },
     {
       "title": "Titre à trouver",
@@ -2759,7 +2895,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/titre-a-trouver/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:21.076073"
+      "scraped_at": "2025-11-24T03:49:53.426728"
     },
     {
       "title": "à l’ombre d’un vaste détail, hors tempête.",
@@ -2769,7 +2905,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/a-l-ombre-d-un-vaste-detail-hors-tempete/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:21.496036"
+      "scraped_at": "2025-11-24T03:49:54.278780"
     },
     {
       "title": "Musique et mini loups",
@@ -2779,7 +2915,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/musique-et-mini-loups/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:22.203579"
+      "scraped_at": "2025-11-24T03:49:54.929024"
     },
     {
       "title": "Life Coach",
@@ -2789,7 +2925,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/life-coach/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:22.837791"
+      "scraped_at": "2025-11-24T03:49:55.367853"
     },
     {
       "title": "Chœur et orchestre des jeunes",
@@ -2799,7 +2935,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/choeur-et-orchestre-des-jeunes-9/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:23.243290"
+      "scraped_at": "2025-11-24T03:49:56.071650"
     },
     {
       "title": "Foutue bergerie",
@@ -2809,7 +2945,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/foutue-bergerie/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:24.013472"
+      "scraped_at": "2025-11-24T03:49:56.776801"
     },
     {
       "title": "Orchestre national Bordeaux Aquitaine",
@@ -2819,7 +2955,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/orchestre-national-bordeaux-aquitaine-3/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:25.335854"
+      "scraped_at": "2025-11-24T03:49:58.541652"
     },
     {
       "title": "Sherlock Junior",
@@ -2829,7 +2965,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/sherlock-junior/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:25.999358"
+      "scraped_at": "2025-11-24T03:49:59.234287"
     },
     {
       "title": "Niquer la fatalité",
@@ -2839,7 +2975,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/niquer-la-fatalite/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:26.894319"
+      "scraped_at": "2025-11-24T03:50:00.099267"
     },
     {
       "title": "Fou de sport",
@@ -2849,7 +2985,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/fou-de-sport/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:27.504204"
+      "scraped_at": "2025-11-24T03:50:00.740803"
     },
     {
       "title": "Beethoven, Cherubini",
@@ -2859,7 +2995,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/beethoven-cherubini/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:27.926493"
+      "scraped_at": "2025-11-24T03:50:01.390415"
     },
     {
       "title": "Kintsugi",
@@ -2869,7 +3005,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/kintsugi/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:28.649958"
+      "scraped_at": "2025-11-24T03:50:02.398290"
     },
     {
       "title": "Éloge du déménagement",
@@ -2879,7 +3015,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/eloge-du-demenagement/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:29.090881"
+      "scraped_at": "2025-11-24T03:50:03.084658"
     },
     {
       "title": "Partager le vide",
@@ -2889,7 +3025,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/partager-le-vide/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:29.804748"
+      "scraped_at": "2025-11-24T03:50:03.745018"
     },
     {
       "title": "PINK MATTERS",
@@ -2899,7 +3035,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/pink-matters/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:30.248282"
+      "scraped_at": "2025-11-24T03:50:04.461686"
     },
     {
       "title": "AC/DC",
@@ -2909,7 +3045,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/ac-dc/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:30.938885"
+      "scraped_at": "2025-11-24T03:50:05.145155"
     },
     {
       "title": "Último helecho",
@@ -2919,7 +3055,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/ultimo-helecho/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:31.347035"
+      "scraped_at": "2025-11-24T03:50:05.866700"
     },
     {
       "title": "Portrait",
@@ -2929,7 +3065,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/portrait/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:31.766382"
+      "scraped_at": "2025-11-24T03:50:06.514143"
     },
     {
       "title": "La contreclé",
@@ -2939,7 +3075,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/la-contrecle/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:33.114391"
+      "scraped_at": "2025-11-24T03:50:08.368375"
     },
     {
       "title": "Le genre cigale",
@@ -2949,7 +3085,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/le-genre-cigale/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:33.526538"
+      "scraped_at": "2025-11-24T03:50:09.062882"
     },
     {
       "title": "SCHÖNHEIT IST NEBENSACHE",
@@ -2959,7 +3095,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/schonheit-ist-nebensache/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:34.176598"
+      "scraped_at": "2025-11-24T03:50:09.803120"
     },
     {
       "title": "Shiraz",
@@ -2969,7 +3105,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/shiraz/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:34.596286"
+      "scraped_at": "2025-11-24T03:50:10.451404"
     },
     {
       "title": "Fandango Reloaded",
@@ -2979,7 +3115,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/fandango-reloaded/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:35.015697"
+      "scraped_at": "2025-11-24T03:50:11.350008"
     },
     {
       "title": "Maldonne",
@@ -2989,7 +3125,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/maldonne/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:35.435037"
+      "scraped_at": "2025-11-24T03:50:12.019936"
     },
     {
       "title": "Hommage à Leonard Cohen",
@@ -2999,7 +3135,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/hommage-a-leonard-cohen/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:36.147751"
+      "scraped_at": "2025-11-24T03:50:12.663798"
     },
     {
       "title": "Lieux Communs",
@@ -3009,7 +3145,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/lieux-communs/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:36.793676"
+      "scraped_at": "2025-11-24T03:50:13.307592"
     },
     {
       "title": "ArC AtlantiC",
@@ -3019,7 +3155,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/arc-atlantic-derives-sonores/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:37.879650"
+      "scraped_at": "2025-11-24T03:50:14.359814"
     },
     {
       "title": "Bal Drigall",
@@ -3029,7 +3165,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/bal-drigall/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:38.544463"
+      "scraped_at": "2025-11-24T03:50:15.371302"
     },
     {
       "title": "Milhaud, Mařatka, Haydn",
@@ -3039,7 +3175,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/milhaud-maratka-haydn/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:39.194647"
+      "scraped_at": "2025-11-24T03:50:16.029615"
     },
     {
       "title": "Trio Sōra",
@@ -3049,7 +3185,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/trio-sora/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:40.204282"
+      "scraped_at": "2025-11-24T03:50:16.748639"
     },
     {
       "title": "Teatro Sant’Angelo",
@@ -3059,7 +3195,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/teatro-sant-angelo/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:41.977338"
+      "scraped_at": "2025-11-24T03:50:18.520678"
     },
     {
       "title": "Terairofeu",
@@ -3069,7 +3205,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/terairofeu/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:42.616820"
+      "scraped_at": "2025-11-24T03:50:19.166663"
     },
     {
       "title": "Pagamania",
@@ -3079,7 +3215,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/pagamania/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:43.247079"
+      "scraped_at": "2025-11-24T03:50:19.846501"
     },
     {
       "title": "Anatomia",
@@ -3089,7 +3225,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/anatomia/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:43.966872"
+      "scraped_at": "2025-11-24T03:50:20.661104"
     },
     {
       "title": "Qui m’appelle ?",
@@ -3099,17 +3235,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/qui-m-appelle/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:44.609411"
-    },
-    {
-      "title": "WAQF",
-      "date": "6 juin 2026",
-      "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/06/p-76_waqf-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
-      "cinema": "TAP Poitiers",
-      "source": "https://www.tap-poitiers.com/spectacle/waqf/",
-      "reservation": null,
-      "scraped_at": "2025-11-23T18:49:45.496165"
+      "scraped_at": "2025-11-24T03:50:21.422877"
     },
     {
       "title": "HAPAX",
@@ -3119,7 +3245,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/hapax/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:46.166370"
+      "scraped_at": "2025-11-24T03:50:22.101345"
     },
     {
       "title": "Toucher",
@@ -3129,7 +3255,17 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/toucher/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:46.842022"
+      "scraped_at": "2025-11-24T03:50:22.811238"
+    },
+    {
+      "title": "WAQF",
+      "date": "6 juin 2026",
+      "release": null,
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/06/p-76_waqf-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
+      "cinema": "TAP Poitiers",
+      "source": "https://www.tap-poitiers.com/spectacle/waqf/",
+      "reservation": null,
+      "scraped_at": "2025-11-24T03:50:23.565549"
     },
     {
       "title": "Ivanov",
@@ -3139,7 +3275,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/ivanov/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:47.526975"
+      "scraped_at": "2025-11-24T03:50:24.307557"
     },
     {
       "title": "Ils vécurent enfants et firent beaucoup d’heureux",
@@ -3149,7 +3285,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/ils-vecurent-enfants-et-firent-beaucoup-d-heureux/",
       "reservation": null,
-      "scraped_at": "2025-11-23T18:49:48.270596"
+      "scraped_at": "2025-11-24T03:50:24.997958"
     },
     {
       "title": "Pardon pour la lumière",
@@ -3161,7 +3297,7 @@
       "type": "Exposition",
       "location": "",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Pardon-pour-la-lumire/3040",
-      "scraped_at": "2025-11-23T18:49:50.724699"
+      "scraped_at": "2025-11-24T03:50:27.556231"
     },
     {
       "cinema": "Maison des 3 Quartiers",
