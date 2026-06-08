@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T10:11:38.549074+00:00",
+  "generated_at": "2026-06-08T15:21:16.982648+00:00",
   "events": [
     {
       "title": "Ghost in the Shell",
@@ -11,7 +11,19 @@
       "release": "1997-01-29T00:00:00.000Z",
       "cinema": "CGR Castille",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-      "scraped_at": "2026-06-08T10:09:47.601771"
+      "scraped_at": "2026-06-08T15:19:42.055335"
+    },
+    {
+      "title": "The Dark Knight, Le Chevalier Noir",
+      "duration": "152 min",
+      "description": "Dans ce nouveau volet, Batman augmente les mises dans sa guerre contre le crime. Avec l'appui du lieutenant de police Jim Gordon et du procureur de Gotham, Harvey Dent, Batman vise à éradiquer le crime organisé qui pullule dans la ville. Leur association est très efficace mais elle sera bientôt bouleversée par le chaos déclenché par un criminel extraordinaire que les citoyens de Gotham connaissent sous le nom de Joker.",
+      "poster": "https://all.web.img.acsta.net/medias/nmedia/18/63/97/89/18949761.jpg",
+      "genres": "Action, Thriller",
+      "certificate": null,
+      "release": "2008-08-13T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869656"
     },
     {
       "title": "The Dark Knight, Le Chevalier Noir",
@@ -23,7 +35,31 @@
       "release": "2008-08-13T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279541"
+      "scraped_at": "2026-06-08T15:19:51.130042"
+    },
+    {
+      "title": "Inception",
+      "duration": "148 min",
+      "description": "Dom Cobb est un voleur expérimenté – le meilleur qui soit dans l’art périlleux de l’extraction : sa spécialité consiste à s’approprier les secrets les plus précieux d’un individu, enfouis au plus profond de son subconscient, pendant qu’il rêve et que son esprit est particulièrement vulnérable. Très recherché pour ses talents dans l’univers trouble de l’espionnage industriel, Cobb est aussi devenu un fugitif traqué dans le monde entier qui a perdu tout ce qui lui est cher. Mais une ultime mission pourrait lui permettre de retrouver sa vie d’avant – à condition qu’il puisse accomplir l’impossible : l’inception. Au lieu de subtiliser un rêve, Cobb et son équipe doivent faire l’inverse : implanter une idée dans l’esprit d’un individu. S’ils y parviennent, il pourrait s’agir du crime parfait. Et pourtant, aussi méthodiques et doués soient-ils, rien n’aurait pu préparer Cobb et ses partenaires à un ennemi redoutable qui semble avoir systématiquement un coup d’avance sur eux. Un ennemi dont seul Cobb aurait pu soupçonner l’existence.",
+      "poster": "https://all.web.img.acsta.net/medias/nmedia/18/72/34/14/19476654.jpg",
+      "genres": "Science fiction, Thriller",
+      "certificate": null,
+      "release": "2010-07-21T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869658"
+    },
+    {
+      "title": "Interstellar",
+      "duration": "169 min",
+      "description": "Le film raconte les aventures d’un groupe d’explorateurs qui utilisent une faille récemment découverte dans l’espace-temps afin de repousser les limites humaines et partir à la conquête des distances astronomiques dans un voyage interstellaire.",
+      "poster": "https://all.web.img.acsta.net/pictures/14/09/24/12/08/158828.jpg",
+      "genres": "Science fiction, Drame",
+      "certificate": "U",
+      "release": "2014-11-05T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869654"
     },
     {
       "title": "Bohemian Rhapsody",
@@ -35,7 +71,7 @@
       "release": "2018-10-31T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279542"
+      "scraped_at": "2026-06-08T15:19:51.130044"
     },
     {
       "title": "Bob Marley: One Love",
@@ -47,7 +83,7 @@
       "release": "2024-02-14T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279546"
+      "scraped_at": "2026-06-08T15:19:51.130051"
     },
     {
       "title": "Un parfait inconnu",
@@ -59,7 +95,7 @@
       "release": "2025-01-29T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279545"
+      "scraped_at": "2026-06-08T15:19:51.130047"
     },
     {
       "title": "Olivia",
@@ -71,7 +107,19 @@
       "release": "2026-01-21T00:00:00.000Z",
       "cinema": "CGR Castille",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-      "scraped_at": "2026-06-08T10:09:47.601774"
+      "scraped_at": "2026-06-08T15:19:42.055341"
+    },
+    {
+      "title": "La Grande rêvasion",
+      "duration": "45 min",
+      "description": "Un programme où l’imagination donne des ailes ! Avoir le trac avant de monter sur scène et s’inventer un monde, découvrir un objet bien mystérieux ou ce qui se cache dans une grande boîte, ces trois court-métrages éveilleront l’imaginaire et aideront les jeunes spectateurs à trouver la confiance en eux. Programme : La Grande rêvasion de Rémi Durin (France, Belgique, 2025, 26') : Alors que le spectacle de l’école va commencer et que les applaudissements du public résonnent, Andréa n’ose pas rejoindre ses camarades sur scène. Pour se cacher, elle file s’enrouler dans une cape de fortune dont le tissu semble interminable. Elle en ressort finalement dans un magnifique palais, entouré d’un nuage aussi moelleux qu’impénétrable. Qu’y a-t-il dans la boîte ? de Bram Algoed (Belgique, 2023, 9') : L’histoire d’un pilote, d’un capitaine, d’un machiniste, d’un chauffeur, d’un facteur, d’une fille… et d’une boîte géante. Qu’y a-t-il dans la boîte, la boîte géante que le pilote a ramenée d’un pays très, très lointain ? J’ai trouvé une boîte d'Eric Montchaud (France, 2024, 9') : Un jour, Guy, un oiseau qui courait dans la forêt, heurte une boîte. Guy se demande : « Mais à quoi peut-elle bien servir cette boîte ? »",
+      "poster": "https://all.web.img.acsta.net/img/de/c0/dec0a9439dda983e4fab8fe508f525e0.jpg",
+      "genres": "Animation, Famille",
+      "certificate": null,
+      "release": "2026-01-28T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055330"
     },
     {
       "title": "Tramhaus + Chevreuil",
@@ -83,7 +131,7 @@
       "type": "Concert",
       "location": "Club",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Tramhaus-Chevreuil/3128",
-      "scraped_at": "2026-06-08T10:11:37.075979"
+      "scraped_at": "2026-06-08T15:21:16.692700"
     },
     {
       "title": "Compostelle",
@@ -95,7 +143,67 @@
       "release": "2026-04-01T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353041"
+      "scraped_at": "2026-06-08T15:19:32.869624"
+    },
+    {
+      "title": "Super Mario Galaxy Le Film",
+      "duration": "99 min",
+      "description": "Après SUPER MARIO BROS., l’adaptation cinématographique du célèbre jeu vidéo et forts du succès remporté dans le monde entier avec plus d’un milliard de dollars de recettes, ILLUMINATION et NINTENDO se retrouvent une nouvelle fois, afin de nous offrir un tout nouveau chapitre, cette fois à dimension cosmique, mais tout aussi bourré d’action : SUPER MARIO GALAXY. À peine installés au Royaume Champignon, un mystérieux appel à l'aide va pousser Mario et Luigi à reprendre du service et plonger dans les zones d’ombre du passé de la princesse Peach. Une mission qui va propulser nos héros et leur nouvelle constellation d’amis, très loin de chez eux, à travers un périple intergalactique, à la découverte de nouveaux mondes où se forgeront des alliances pour le moins inattendues.",
+      "poster": "https://all.web.img.acsta.net/img/92/3c/923c580e3fb2488d308865d6b6a2e381.jpg",
+      "genres": "Animation, Aventure, Famille, Action, Fantastique",
+      "certificate": "U",
+      "release": "2026-04-01T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869673"
+    },
+    {
+      "title": "Super Mario Galaxy Le Film",
+      "duration": "99 min",
+      "description": "Après SUPER MARIO BROS., l’adaptation cinématographique du célèbre jeu vidéo et forts du succès remporté dans le monde entier avec plus d’un milliard de dollars de recettes, ILLUMINATION et NINTENDO se retrouvent une nouvelle fois, afin de nous offrir un tout nouveau chapitre, cette fois à dimension cosmique, mais tout aussi bourré d’action : SUPER MARIO GALAXY. À peine installés au Royaume Champignon, un mystérieux appel à l'aide va pousser Mario et Luigi à reprendre du service et plonger dans les zones d’ombre du passé de la princesse Peach. Une mission qui va propulser nos héros et leur nouvelle constellation d’amis, très loin de chez eux, à travers un périple intergalactique, à la découverte de nouveaux mondes où se forgeront des alliances pour le moins inattendues.",
+      "poster": "https://all.web.img.acsta.net/img/92/3c/923c580e3fb2488d308865d6b6a2e381.jpg",
+      "genres": "Animation, Aventure, Famille, Action, Fantastique",
+      "certificate": "U",
+      "release": "2026-04-01T00:00:00.000Z",
+      "cinema": "CGR Fontaine-le-Comte",
+      "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
+      "scraped_at": "2026-06-08T15:19:51.130061"
+    },
+    {
+      "title": "Juste une illusion",
+      "duration": "116 min",
+      "description": "Nous sommes en 1985, Vincent, bientôt 13 ans, vit en banlieue parisienne dans une famille de la classe moyenne, entre un grand frère distant et des parents en conflit permanent. Alors qu’il n’est « déjà plus » un enfant et qu’il n’est « pas encore » un adulte nous allons partager ses questions et ses doutes sur l’identité, l’amitié, la famille, la religion, le désir et les premiers élans amoureux. Une comédie sur cette période de l’enfance où l’espoir de changer le monde n’était pas “Juste une illusion…”",
+      "poster": "https://all.web.img.acsta.net/img/cf/9e/cf9effb40e5ae3747fdb68a68289e81a.jpg",
+      "genres": "Comédie dramatique",
+      "certificate": "U",
+      "release": "2026-04-15T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055321"
+    },
+    {
+      "title": "Michael",
+      "duration": "128 min",
+      "description": "Michael dresse le portrait cinématographique de la vie de l'un des artistes les plus influents de notre époque. Le film raconte l'histoire de Michael Jackson au-delà de la musique, depuis la découverte d'un talent hors du commun en tant que leader des Jackson Five, jusqu'à l'artiste visionnaire dont l'ambition créative a alimenté une quête incessante pour devenir le plus grand artiste au monde. Mettant en lumière sa vie hors scène et ses performances les plus emblématiques de ses débuts en solo, le film offre au public une place au premier rang pour découvrir Michael Jackson comme jamais auparavant. C'est ici que son histoire commence.",
+      "poster": "https://all.web.img.acsta.net/img/f2/01/f201af7e5a1b0119af9047725a3f2785.jpeg",
+      "genres": "Biopic, Concert, Drame",
+      "certificate": "U",
+      "release": "2026-04-22T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869659"
+    },
+    {
+      "title": "Michael",
+      "duration": "128 min",
+      "description": "Michael dresse le portrait cinématographique de la vie de l'un des artistes les plus influents de notre époque. Le film raconte l'histoire de Michael Jackson au-delà de la musique, depuis la découverte d'un talent hors du commun en tant que leader des Jackson Five, jusqu'à l'artiste visionnaire dont l'ambition créative a alimenté une quête incessante pour devenir le plus grand artiste au monde. Mettant en lumière sa vie hors scène et ses performances les plus emblématiques de ses débuts en solo, le film offre au public une place au premier rang pour découvrir Michael Jackson comme jamais auparavant. C'est ici que son histoire commence.",
+      "poster": "https://all.web.img.acsta.net/img/f2/01/f201af7e5a1b0119af9047725a3f2785.jpeg",
+      "genres": "Biopic, Concert, Drame",
+      "certificate": "U",
+      "release": "2026-04-22T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055338"
     },
     {
       "title": "Michael",
@@ -107,7 +215,31 @@
       "release": "2026-04-22T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279543"
+      "scraped_at": "2026-06-08T15:19:51.130045"
+    },
+    {
+      "title": "Le Diable s'habille en Prada 2",
+      "duration": "119 min",
+      "description": "Miranda, Andy, Emily et Nigel replongent dans l’univers impitoyable et glamour du magazine Runway et des rues new-yorkaises où l’élégance est une arme redoutable.",
+      "poster": "https://all.web.img.acsta.net/img/0b/6d/0b6d0b00d5fe060cc9b8500e7bf741bf.jpg",
+      "genres": "Comédie, Drame",
+      "certificate": "U",
+      "release": "2026-04-29T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869610"
+    },
+    {
+      "title": "Le Diable s'habille en Prada 2",
+      "duration": "119 min",
+      "description": "Miranda, Andy, Emily et Nigel replongent dans l’univers impitoyable et glamour du magazine Runway et des rues new-yorkaises où l’élégance est une arme redoutable.",
+      "poster": "https://all.web.img.acsta.net/img/0b/6d/0b6d0b00d5fe060cc9b8500e7bf741bf.jpg",
+      "genres": "Comédie, Drame",
+      "certificate": "U",
+      "release": "2026-04-29T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055318"
     },
     {
       "title": "Le Diable s'habille en Prada 2",
@@ -119,7 +251,19 @@
       "release": "2026-04-29T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279524"
+      "scraped_at": "2026-06-08T15:19:51.130024"
+    },
+    {
+      "title": "Pour le plaisir",
+      "duration": "89 min",
+      "description": "Et si on vous racontait l’invention du siècle ? Un couple, une vérité qui explose. Fanny et Tom sont mariés et heureux depuis 20 ans. Mais un jour un secret éclate : Fanny n’a jamais eu d’orgasme. Tom, ingénieur, décide alors de relever un défi audacieux : créer l’objet qui révolutionnera le plaisir féminin. Ensemble, ils se lancent dans cette quête aussi déjantée qu’émouvante qui va transformer leur couple. Jusqu’où iront-ils ? Loin, très loin.",
+      "poster": "https://all.web.img.acsta.net/img/fe/a2/fea2774a98df8c1101bafd7896f82b68.jpg",
+      "genres": "Comédie",
+      "certificate": "U",
+      "release": "2026-05-06T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869637"
     },
     {
       "title": "Pour le plaisir",
@@ -131,7 +275,55 @@
       "release": "2026-05-06T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279532"
+      "scraped_at": "2026-06-08T15:19:51.130031"
+    },
+    {
+      "title": "La Vénus électrique",
+      "duration": "122 min",
+      "description": "Paris, 1928. Antoine Balestro, jeune peintre en vogue, n’arrive plus à travailler depuis la mort de son épouse et désespère Armand, son galeriste. Un soir d'ivresse, Antoine tente d’entrer en contact avec sa femme par l’intermédiaire d’une voyante. Sans le savoir, il parle en réalité avec Suzanne, une modeste foraine qui s’est glissée dans la roulotte pour y voler de la nourriture. Suzanne se révèle douée pour l’imposture et, rapidement secondée par Armand, elle enchaîne les fausses séances. Peu à peu, Antoine retrouve l'inspiration, mais pour Suzanne les choses se compliquent alors qu’elle tombe doucement amoureuse de l’homme qu’elle manipule...",
+      "poster": "https://all.web.img.acsta.net/img/8f/b2/8fb29a2a2cc94a83af4989ba69a23fcd.jpg",
+      "genres": "Comédie, Romance",
+      "certificate": "U",
+      "release": "2026-05-12T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869626"
+    },
+    {
+      "title": "La Vénus électrique",
+      "duration": "122 min",
+      "description": "Paris, 1928. Antoine Balestro, jeune peintre en vogue, n’arrive plus à travailler depuis la mort de son épouse et désespère Armand, son galeriste. Un soir d'ivresse, Antoine tente d’entrer en contact avec sa femme par l’intermédiaire d’une voyante. Sans le savoir, il parle en réalité avec Suzanne, une modeste foraine qui s’est glissée dans la roulotte pour y voler de la nourriture. Suzanne se révèle douée pour l’imposture et, rapidement secondée par Armand, elle enchaîne les fausses séances. Peu à peu, Antoine retrouve l'inspiration, mais pour Suzanne les choses se compliquent alors qu’elle tombe doucement amoureuse de l’homme qu’elle manipule...",
+      "poster": "https://all.web.img.acsta.net/img/8f/b2/8fb29a2a2cc94a83af4989ba69a23fcd.jpg",
+      "genres": "Comédie, Romance",
+      "certificate": "U",
+      "release": "2026-05-12T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055323"
+    },
+    {
+      "title": "Obsession",
+      "duration": "109 min",
+      "description": "Et si vous pouviez réaliser votre rêve le plus fou ? Un jeune introverti met la main sur un objet magique capable d’exaucer n’importe quel souhait. Son crush de toujours tombe alors raide dingue de lui… jusqu’à l’obsession la plus totale. Faites attention à ce que vous souhaitez !",
+      "poster": "https://all.web.img.acsta.net/img/00/20/0020008382daf6b1305be800e8342a72.jpg",
+      "genres": "Épouvante-horreur",
+      "certificate": "-16",
+      "release": "2026-05-13T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869638"
+    },
+    {
+      "title": "L’Abandon",
+      "duration": "100 min",
+      "description": "Tout le monde connaît le nom de Samuel Paty, mais peu de gens connaissent réellement son histoire. Le 16 octobre 2020, Samuel Paty, professeur d’Histoire-Géographie, est assassiné à la sortie de son collège. À la lumière des enquêtes et des procès, ce film revient sur ses onze derniers jours, et l’engrenage qui a conduit à sa mort tragique.",
+      "poster": "https://all.web.img.acsta.net/img/2a/ff/2aff99358841773f126dd22734bbb72b.jpg",
+      "genres": "Drame",
+      "certificate": "UA",
+      "release": "2026-05-13T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055331"
     },
     {
       "title": "Obsession",
@@ -143,7 +335,7 @@
       "release": "2026-05-13T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279533"
+      "scraped_at": "2026-06-08T15:19:51.130032"
     },
     {
       "title": "L’Abandon",
@@ -155,7 +347,55 @@
       "release": "2026-05-13T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279534"
+      "scraped_at": "2026-06-08T15:19:51.130034"
+    },
+    {
+      "title": "Histoires parallèles",
+      "duration": "139 min",
+      "description": "En quête d’inspiration pour son nouveau roman, Sylvie espionne ses voisins d’en face. Quand elle engage le jeune Adam pour l’aider dans son quotidien, elle ignore que celui-ci va bouleverser sa vie et son travail, jusqu’à ce que la fiction qu’elle avait imaginée dépasse leur réalité à tous.",
+      "poster": "https://all.web.img.acsta.net/img/f3/5d/f35d2ca86b5d6c0d9b76fc8b07e56cb4.jpg",
+      "genres": "Drame",
+      "certificate": "U",
+      "release": "2026-05-14T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869633"
+    },
+    {
+      "title": "Passenger",
+      "duration": "94 min",
+      "description": "Après avoir été témoin d’un terrible accident de la route, un jeune couple réalise qu’il n’a pas quitté les lieux du drame sans être suivi. Une présence démoniaque, le Passager, se joint à leur voyage en van et transforme leur aventure en un véritable cauchemar, déterminée à ne s’arrêter qu’une fois qu’elle les aura tous les deux emportés.",
+      "poster": "https://all.web.img.acsta.net/img/a6/0a/a60a11b68595a370995f33405c41e9e1.jpg",
+      "genres": "Épouvante-horreur",
+      "certificate": "-12",
+      "release": "2026-05-20T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869614"
+    },
+    {
+      "title": "Autofiction",
+      "duration": "112 min",
+      "description": "Raúl est un cinéaste culte en pleine crise créative. Lorsqu’un drame frappe l’une de ses plus proches collaboratrices, il s’en inspire pour écrire son prochain film. Peu à peu, il imagine Elsa, une réalisatrice en pleine écriture, dont le parcours commence à refléter le sien. Les deux cinéastes deviennent les deux facettes d’un même personnage, dans un jeu de miroirs où l’impudeur de l’autofiction dévoile autant qu’elle détruit. Mais jusqu’où peut-on aller pour raconter une histoire ?",
+      "poster": "https://all.web.img.acsta.net/img/99/ee/99ee4688f7d7695bf36eff48bf9da890.jpg",
+      "genres": "Comédie dramatique",
+      "certificate": "U",
+      "release": "2026-05-20T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869635"
+    },
+    {
+      "title": "Star Wars: The Mandalorian and Grogu",
+      "duration": "132 min",
+      "description": "La chute du maléfique Empire Galactique a précipité la dispersion des seigneurs de guerre impériaux à travers la galaxie… Pour protéger tout ce pour quoi la Rébellion s’est battue, la jeune Nouvelle République décide de faire appel au légendaire chasseur de primes mandalorien Din Djarin et son jeune apprenti Grogu…",
+      "poster": "https://all.web.img.acsta.net/img/6e/84/6e847b845d10b7194d43f604b3ef1f20.jpg",
+      "genres": "Science fiction, Fantastique, Aventure, Action",
+      "certificate": "UA",
+      "release": "2026-05-20T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869671"
     },
     {
       "title": "Les Goûteuses d'Hitler",
@@ -167,7 +407,19 @@
       "release": "2026-05-20T00:00:00.000Z",
       "cinema": "CGR Castille",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-      "scraped_at": "2026-06-08T10:09:47.601773"
+      "scraped_at": "2026-06-08T15:19:42.055336"
+    },
+    {
+      "title": "Star Wars: The Mandalorian and Grogu",
+      "duration": "132 min",
+      "description": "La chute du maléfique Empire Galactique a précipité la dispersion des seigneurs de guerre impériaux à travers la galaxie… Pour protéger tout ce pour quoi la Rébellion s’est battue, la jeune Nouvelle République décide de faire appel au légendaire chasseur de primes mandalorien Din Djarin et son jeune apprenti Grogu…",
+      "poster": "https://all.web.img.acsta.net/img/6e/84/6e847b845d10b7194d43f604b3ef1f20.jpg",
+      "genres": "Science fiction, Fantastique, Aventure, Action",
+      "certificate": "UA",
+      "release": "2026-05-20T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055347"
     },
     {
       "title": "Passenger",
@@ -179,7 +431,7 @@
       "release": "2026-05-20T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279528"
+      "scraped_at": "2026-06-08T15:19:51.130026"
     },
     {
       "title": "Star Wars: The Mandalorian and Grogu",
@@ -191,7 +443,79 @@
       "release": "2026-05-20T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279555"
+      "scraped_at": "2026-06-08T15:19:51.130059"
+    },
+    {
+      "title": "Le Virtuose",
+      "duration": "109 min",
+      "description": "Doté d’une ouïe exceptionnelle, un jeune accordeur de piano voit sa vie basculer lorsque son talent attire l’attention de criminels qui l’entraînent dans une série de cambriolages de plus en plus risqués. Malgré lui, il s’enfonce dans un engrenage dangereux qui pourrait lui coûter bien plus que sa liberté.",
+      "poster": "https://all.web.img.acsta.net/img/a0/72/a072f3d4406da64a5e8aedbb26054ac6.jpg",
+      "genres": "Thriller",
+      "certificate": "U",
+      "release": "2026-05-27T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869612"
+    },
+    {
+      "title": "Mata",
+      "duration": "98 min",
+      "description": "Blessée lors d’une opération clandestine au Niger, Mata, une agente du service action de la DGSE, perd la trace de son compagnon Antoine, capturé sur place. À son retour, elle est affectée à la Sécurité Intérieure du Territoire et se saisit d’une mission de contre-espionnage dans les Alpes : une ombre semble relier ce dossier à l’embuscade en Afrique. Convaincue que ses supérieurs lui dissimulent des informations et hantée par la captivité d’Antoine, elle se lance dans une course contre la montre, hors de tout cadre officiel… au risque de tout perdre.",
+      "poster": "https://all.web.img.acsta.net/img/f1/9a/f19a49c4c33ddb15673d9f218cd73c79.jpg",
+      "genres": "Thriller, Espionnage",
+      "certificate": "U",
+      "release": "2026-05-27T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869616"
+    },
+    {
+      "title": "Colony",
+      "duration": "122 min",
+      "description": "Dans un gratte-ciel du centre de Séoul, une mystérieuse contamination se propage brusquement. L’immeuble est bouclé et toutes les personnes présentes confinées. Au départ, les infectés rampent comme des bêtes. Mais peu à peu, ils évoluent…",
+      "poster": "https://all.web.img.acsta.net/img/76/24/762414ae8d9a780867c83c2f3e9ea456.jpg",
+      "genres": "Épouvante-horreur",
+      "certificate": "-12A",
+      "release": "2026-05-27T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869628"
+    },
+    {
+      "title": "L'Objet du délit",
+      "duration": "133 min",
+      "description": "Dans les coulisses d'une ambitieuse production de l’opéra \"Les Noces de Figaro\", les tensions montent lorsqu’une accusation d’agression sexuelle éclate, mettant en péril la production et forçant chacun à prendre position. Les conflits d’opinion et de génération se font jour, et comme toujours chez Agnès Jaoui, le rire n'est jamais loin du drame.",
+      "poster": "https://all.web.img.acsta.net/img/f1/13/f113b78c6126c1a49a0168d53497267c.jpg",
+      "genres": "Comédie dramatique",
+      "certificate": "U",
+      "release": "2026-05-27T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869630"
+    },
+    {
+      "title": "Colony",
+      "duration": "122 min",
+      "description": "Dans un gratte-ciel du centre de Séoul, une mystérieuse contamination se propage brusquement. L’immeuble est bouclé et toutes les personnes présentes confinées. Au départ, les infectés rampent comme des bêtes. Mais peu à peu, ils évoluent…",
+      "poster": "https://all.web.img.acsta.net/img/76/24/762414ae8d9a780867c83c2f3e9ea456.jpg",
+      "genres": "Épouvante-horreur",
+      "certificate": "-12A",
+      "release": "2026-05-27T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055324"
+    },
+    {
+      "title": "L'Objet du délit",
+      "duration": "133 min",
+      "description": "Dans les coulisses d'une ambitieuse production de l’opéra \"Les Noces de Figaro\", les tensions montent lorsqu’une accusation d’agression sexuelle éclate, mettant en péril la production et forçant chacun à prendre position. Les conflits d’opinion et de génération se font jour, et comme toujours chez Agnès Jaoui, le rire n'est jamais loin du drame.",
+      "poster": "https://all.web.img.acsta.net/img/f1/13/f113b78c6126c1a49a0168d53497267c.jpg",
+      "genres": "Comédie dramatique",
+      "certificate": "U",
+      "release": "2026-05-27T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055326"
     },
     {
       "title": "Tout va super",
@@ -203,7 +527,7 @@
       "release": "2026-05-27T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279529"
+      "scraped_at": "2026-06-08T15:19:51.130027"
     },
     {
       "title": "Colony",
@@ -215,7 +539,55 @@
       "release": "2026-05-27T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279530"
+      "scraped_at": "2026-06-08T15:19:51.130029"
+    },
+    {
+      "title": "Scary Movie",
+      "duration": "96 min",
+      "description": "Vingt-six ans après avoir échappé à un tueur masqué étrangement familier (« Ghostface »), les héros emblématiques de la saga sont de nouveau dans la ligne de mire du meurtrier, et aucune franchise de film d’horreur n’est à l’abri.",
+      "poster": "https://all.web.img.acsta.net/img/bd/e1/bde1b6a103ec4de9e8d82759bc58dd82.jpg",
+      "genres": "Épouvante-horreur, Comédie",
+      "certificate": "-12",
+      "release": "2026-06-03T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869591"
+    },
+    {
+      "title": "Anna et les enfants",
+      "duration": "90 min",
+      "description": "Anna est atteinte d’une phobie rare :  la phobie des enfants ! Ça n’est pas qu’elle n’aime pas les enfants… c’est juste qu’elle en a peur. Quand elle retombe amoureuse de l’ex de sa vie, tout va pour le mieux… jusqu’au jour où elle découvre qu’il a deux enfants, mais surtout qu’elle va devoir rester seule avec eux !",
+      "poster": "https://all.web.img.acsta.net/img/33/65/336519ed2fc62325a8c8312d73c26557.jpg",
+      "genres": "Comédie",
+      "certificate": "U",
+      "release": "2026-06-03T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869640"
+    },
+    {
+      "title": "Saccharine",
+      "duration": "112 min",
+      "description": "Une étudiante en médecine mal dans son corps se met à consommer une étrange gélule pour perdre du poids, libérant une force surnaturelle qui envahit de plus en plus son quotidien.",
+      "poster": "https://all.web.img.acsta.net/img/54/a2/54a2a6ae0f24c6c00cce85ef5c523a3c.jpg",
+      "genres": "Épouvante-horreur",
+      "certificate": "-16",
+      "release": "2026-06-03T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869642"
+    },
+    {
+      "title": "La Bataille de Gaulle : L’âge de fer",
+      "duration": "160 min",
+      "description": "Juin 1940. La France s'effondre et signe l’armistice. Au milieu du chaos, un homme refuse de céder. Seul contre tous, ce général inconnu s'échappe vers Londres pour sauver ce qu'il reste d'un rêve : la liberté. Sans armée, sans appui, sans espoir. Mais avec une folle conviction : la France, sa France, n'a pas déposé les armes. Il tente un ultime pari : convaincre le monde que la bataille de France n'est ni terminée, ni perdue. La réalité est têtue, et lui donne tort. Mais peu à peu se lèvent autour de lui en Angleterre, en France et en Afrique des résistants de l'ombre, des lycéens révoltés, des soldats déterminés. Leur foi, leur audace, leur rage de liberté défient l'Histoire qui semblait pourtant écrite d’avance.",
+      "poster": "https://all.web.img.acsta.net/img/77/c5/77c52cb63e96528fac960a9785dba1be.jpg",
+      "genres": "Thriller, Historique",
+      "certificate": "UA",
+      "release": "2026-06-03T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869662"
     },
     {
       "title": "Nouveaux copains à Puffin Rock",
@@ -227,7 +599,31 @@
       "release": "2026-06-03T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353067"
+      "scraped_at": "2026-06-08T15:19:32.869668"
+    },
+    {
+      "title": "La Bataille de Gaulle : L’âge de fer",
+      "duration": "160 min",
+      "description": "Juin 1940. La France s'effondre et signe l’armistice. Au milieu du chaos, un homme refuse de céder. Seul contre tous, ce général inconnu s'échappe vers Londres pour sauver ce qu'il reste d'un rêve : la liberté. Sans armée, sans appui, sans espoir. Mais avec une folle conviction : la France, sa France, n'a pas déposé les armes. Il tente un ultime pari : convaincre le monde que la bataille de France n'est ni terminée, ni perdue. La réalité est têtue, et lui donne tort. Mais peu à peu se lèvent autour de lui en Angleterre, en France et en Afrique des résistants de l'ombre, des lycéens révoltés, des soldats déterminés. Leur foi, leur audace, leur rage de liberté défient l'Histoire qui semblait pourtant écrite d’avance.",
+      "poster": "https://all.web.img.acsta.net/img/77/c5/77c52cb63e96528fac960a9785dba1be.jpg",
+      "genres": "Thriller, Historique",
+      "certificate": "UA",
+      "release": "2026-06-03T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055340"
+    },
+    {
+      "title": "Nouveaux copains à Puffin Rock",
+      "duration": "79 min",
+      "description": "De jour comme de nuit, la vie s’écoule paisiblement pour les habitants de Puffin Rock. L’arrivée d’un vol de macareux chassés de leur île par une tempête, réjouit la colonie de la jeune Oona qui les accueille à bras ouverts : c’est l’occasion de rencontrer de nouveaux compagnons de jeu. C’est alors que l’un des oeufs disparait dans d’étranges circonstances. Accompagnée de tous ses amis, cette dernière entame une course contre la montre pour le retrouver avant qu’une grande tempête frappe l’archipel. La solidarité prouvera encore une fois que l’union fait la force et la vie pourra ainsi continuer sur la petite île dans une douce harmonie.",
+      "poster": "https://all.web.img.acsta.net/img/08/20/082028a510ebcaa259712094f41f2f45.jpg",
+      "genres": "Animation, Famille",
+      "certificate": "U",
+      "release": "2026-06-03T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055344"
     },
     {
       "title": "Scary Movie",
@@ -239,7 +635,7 @@
       "release": "2026-06-03T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279509"
+      "scraped_at": "2026-06-08T15:19:51.130004"
     },
     {
       "title": "La Bataille de Gaulle : L’âge de fer",
@@ -251,7 +647,7 @@
       "release": "2026-06-03T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279547"
+      "scraped_at": "2026-06-08T15:19:51.130052"
     },
     {
       "title": "Mirage",
@@ -263,7 +659,7 @@
       "release": "2026-06-09T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353055"
+      "scraped_at": "2026-06-08T15:19:32.869650"
     },
     {
       "title": "Whitney Johnson · Lia Kohl · Macie Stewart",
@@ -275,7 +671,7 @@
       "type": "Concert",
       "location": "Club",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Whitney-Johnson-Lia-Kohl-Macie-Stewart/3110",
-      "scraped_at": "2026-06-08T10:11:27.453953"
+      "scraped_at": "2026-06-08T15:21:09.446444"
     },
     {
       "title": "Disclosure Day",
@@ -287,7 +683,19 @@
       "release": "2026-06-10T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353028"
+      "scraped_at": "2026-06-08T15:19:32.869605"
+    },
+    {
+      "title": "The Furious",
+      "duration": "114 min",
+      "description": "Après l’enlèvement de sa fille par un réseau criminel et face à l’inaction de la police, Wang Wei se lance dans une traque implacable pour la retrouver. Son seul allié, Navin, est un journaliste tenace dont la femme a mystérieusement disparu. Unis par un même désir de vengeance, ces deux hommes que tout oppose affrontent les ravisseurs dans un face-à-face explosif mêlant arts martiaux et justice sans merci.",
+      "poster": "https://all.web.img.acsta.net/img/c1/4c/c14ccb43ff32469ec7a48e89cecce867.jpg",
+      "genres": "Action, Arts martiaux, Thriller",
+      "certificate": "-12A",
+      "release": "2026-06-10T00:00:00.000Z",
+      "cinema": "CGR Buxerolles",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
+      "scraped_at": "2026-06-08T15:19:32.869608"
     },
     {
       "title": "Le Vertige",
@@ -299,7 +707,7 @@
       "release": "2026-06-10T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353049"
+      "scraped_at": "2026-06-08T15:19:32.869648"
     },
     {
       "title": "Disclosure Day",
@@ -311,7 +719,19 @@
       "release": "2026-06-10T00:00:00.000Z",
       "cinema": "CGR Castille",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-      "scraped_at": "2026-06-08T10:09:47.601758"
+      "scraped_at": "2026-06-08T15:19:42.055306"
+    },
+    {
+      "title": "D’un monde à l’autre",
+      "duration": "75 min",
+      "description": "D’un monde à l’autre est un documentaire intime, un voyage humain et sensoriel à travers le deuil et l’amitié. Après la mort accidentelle de son meilleur ami, Jérémie entame un chemin de recueillement grâce à la rencontre d’un explorateur français, Loury, qui parcourt des territoires inhabités dans des conditions extrêmes. Ils vont partir ensemble à travers la banquise arctique. Livrés à eux-mêmes, les deux hommes vont s’éprouver, jusqu’à redevenir vivants.",
+      "poster": "https://all.web.img.acsta.net/img/fb/8f/fb8fee195be5ead35206ce1fcbbf868b.jpg",
+      "genres": "Documentaire",
+      "certificate": null,
+      "release": "2026-06-10T00:00:00.000Z",
+      "cinema": "CGR Castille",
+      "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
+      "scraped_at": "2026-06-08T15:19:42.055328"
     },
     {
       "title": "Disclosure Day",
@@ -323,7 +743,7 @@
       "release": "2026-06-10T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279521"
+      "scraped_at": "2026-06-08T15:19:51.130017"
     },
     {
       "title": "Fils de personne",
@@ -335,7 +755,7 @@
       "release": "2026-06-10T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279523"
+      "scraped_at": "2026-06-08T15:19:51.130022"
     },
     {
       "title": "THE JEFF PANACLOC COMPANY",
@@ -345,7 +765,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/the-jeff-panacloc-company/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/32055?w=114&idtier=679706",
-      "scraped_at": "2026-06-08T10:09:58.540812"
+      "scraped_at": "2026-06-08T15:19:52.070510"
     },
     {
       "title": "Groundation + The Pictavians",
@@ -357,7 +777,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Groundation-The-Pictavians/3070",
-      "scraped_at": "2026-06-08T10:11:28.238615"
+      "scraped_at": "2026-06-08T15:21:10.092399"
     },
     {
       "title": "KENDJI",
@@ -367,7 +787,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/kendji-2/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60955",
-      "scraped_at": "2026-06-08T10:09:58.542014"
+      "scraped_at": "2026-06-08T15:19:52.072104"
     },
     {
       "title": "Café parlanjhe #La cuisine",
@@ -379,7 +799,7 @@
       "type": "RencontreAtelier",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Caf-parlanjhe-La-cuisine/3094",
-      "scraped_at": "2026-06-08T10:11:28.816486"
+      "scraped_at": "2026-06-08T15:21:10.542422"
     },
     {
       "title": "BTS World Tour 'Arirang' in BUSAN : Live Viewing",
@@ -391,7 +811,7 @@
       "release": "2026-06-13T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353059"
+      "scraped_at": "2026-06-08T15:19:32.869653"
     },
     {
       "title": "Johnny Hallyday, Lorada Tour - Bercy 1995",
@@ -403,7 +823,7 @@
       "release": "2026-06-15T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279538"
+      "scraped_at": "2026-06-08T15:19:51.130041"
     },
     {
       "title": "Deviens Génial",
@@ -415,7 +835,7 @@
       "release": "2026-06-17T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353043"
+      "scraped_at": "2026-06-08T15:19:32.869631"
     },
     {
       "title": "The Giaccomo",
@@ -427,7 +847,7 @@
       "release": "2026-06-17T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353044"
+      "scraped_at": "2026-06-08T15:19:32.869643"
     },
     {
       "title": "Backrooms",
@@ -439,7 +859,7 @@
       "release": "2026-06-17T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353065"
+      "scraped_at": "2026-06-08T15:19:32.869665"
     },
     {
       "title": "Toy Story 5",
@@ -451,7 +871,7 @@
       "release": "2026-06-17T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353066"
+      "scraped_at": "2026-06-08T15:19:32.869667"
     },
     {
       "title": "Toy Story 5",
@@ -463,7 +883,7 @@
       "release": "2026-06-17T00:00:00.000Z",
       "cinema": "CGR Castille",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-      "scraped_at": "2026-06-08T10:09:47.601776"
+      "scraped_at": "2026-06-08T15:19:42.055343"
     },
     {
       "title": "Backrooms",
@@ -475,7 +895,7 @@
       "release": "2026-06-17T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279549"
+      "scraped_at": "2026-06-08T15:19:51.130055"
     },
     {
       "title": "Toy Story 5",
@@ -487,7 +907,7 @@
       "release": "2026-06-17T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279550"
+      "scraped_at": "2026-06-08T15:19:51.130056"
     },
     {
       "title": "Igorrr + Downterra",
@@ -499,7 +919,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Igorrr-Downterra/3087",
-      "scraped_at": "2026-06-08T10:11:29.636074"
+      "scraped_at": "2026-06-08T15:21:11.192254"
     },
     {
       "title": "AG-EAR : Assemblée Générale, concerts et DJ sets",
@@ -511,7 +931,7 @@
       "type": "ConcertÉvénementRencontreProjection",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/AG-EAR-Assemble-Gnrale-concerts-et-DJ-sets/3125",
-      "scraped_at": "2026-06-08T10:11:30.385176"
+      "scraped_at": "2026-06-08T15:21:11.589844"
     },
     {
       "title": "La Nuit de la Géopolitique 2026",
@@ -523,7 +943,7 @@
       "release": "2026-06-22T00:00:00.000Z",
       "cinema": "CGR Castille",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-      "scraped_at": "2026-06-08T10:09:47.601769"
+      "scraped_at": "2026-06-08T15:19:42.055333"
     },
     {
       "title": "Des Minions et des monstres",
@@ -535,7 +955,7 @@
       "release": "2026-06-24T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353068"
+      "scraped_at": "2026-06-08T15:19:32.869670"
     },
     {
       "title": "Des Minions et des monstres",
@@ -547,7 +967,7 @@
       "release": "2026-06-24T00:00:00.000Z",
       "cinema": "CGR Castille",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0096-cgr-poitiers-castille/",
-      "scraped_at": "2026-06-08T10:09:47.601777"
+      "scraped_at": "2026-06-08T15:19:42.055346"
     },
     {
       "title": "Des Minions et des monstres",
@@ -559,7 +979,7 @@
       "release": "2026-06-24T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279552"
+      "scraped_at": "2026-06-08T15:19:51.130058"
     },
     {
       "title": "Festival Bruisme#14 : La Voix des Sirènes : rencontre, Milkweed, La Nòvia : Ekomane / Nancarrow, TZZ, Soso & Kiki dj set : Faites du Bruisme",
@@ -571,7 +991,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Festival-Bruisme14-La-Voix-des-Sirnes-rencontre-Milkweed-La-Nvia-Ekomane-Nancarrow-TZZ-Soso-Kiki-dj-set-Faites-du-Bruisme/3119",
-      "scraped_at": "2026-06-08T10:11:31.289617"
+      "scraped_at": "2026-06-08T15:21:12.244315"
     },
     {
       "title": "Bleach : Thousand-Year Blood War - The Calamity",
@@ -583,7 +1003,7 @@
       "release": "2026-06-27T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353057"
+      "scraped_at": "2026-06-08T15:19:32.869651"
     },
     {
       "title": "Festival Bruisme#14 · Erwan Keravec : There will be no miracles here",
@@ -595,7 +1015,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Festival-Bruisme14-Erwan-Keravec-There-will-be-no-miracles-here/3122",
-      "scraped_at": "2026-06-08T10:11:32.109229"
+      "scraped_at": "2026-06-08T15:21:12.785630"
     },
     {
       "title": "Festival Bruisme #14 : Le Grand Couturier Ensemble 0 : Open Symmetry · Julien Claire ·  Tribalism3 · Soso & Kiki dj set",
@@ -607,7 +1027,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Festival-Bruisme-14-Le-Grand-Couturier-Ensemble-0-Open-Symmetry-Julien-Claire-Tribalism3-Soso-Kiki-dj-set/3123",
-      "scraped_at": "2026-06-08T10:11:33.017068"
+      "scraped_at": "2026-06-08T15:21:13.502296"
     },
     {
       "title": "Festival Bruisme#14 : Marion Cousin & Eloise Decazes · Félicie Bazelaire : Fascinations",
@@ -619,7 +1039,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Festival-Bruisme14-Marion-Cousin-Eloise-Decazes-Flicie-Bazelaire-Fascinations/3124",
-      "scraped_at": "2026-06-08T10:11:33.658677"
+      "scraped_at": "2026-06-08T15:21:14.112042"
     },
     {
       "title": "In Waves",
@@ -631,7 +1051,7 @@
       "release": "2026-07-01T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353062"
+      "scraped_at": "2026-06-08T15:19:32.869661"
     },
     {
       "title": "Julien Doré - Le Dernier pestacle",
@@ -643,7 +1063,7 @@
       "release": "2026-07-02T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353047"
+      "scraped_at": "2026-06-08T15:19:32.869646"
     },
     {
       "title": "Julien Doré - Le Dernier pestacle",
@@ -655,7 +1075,7 @@
       "release": "2026-07-02T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279537"
+      "scraped_at": "2026-06-08T15:19:51.130037"
     },
     {
       "title": "La Bataille de Gaulle - J’écris ton nom",
@@ -667,7 +1087,7 @@
       "release": "2026-07-03T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353063"
+      "scraped_at": "2026-06-08T15:19:32.869664"
     },
     {
       "title": "La Bataille de Gaulle - J’écris ton nom",
@@ -679,7 +1099,7 @@
       "release": "2026-07-03T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279548"
+      "scraped_at": "2026-06-08T15:19:51.130054"
     },
     {
       "title": "URBAN CORNER 2",
@@ -689,7 +1109,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/urban-corner-2/",
       "reservation": "https://my.weezevent.com/urban-corner-2-le-show-rap-francais-xxl-a-larena-futuroscope",
-      "scraped_at": "2026-06-08T10:09:58.543185"
+      "scraped_at": "2026-06-08T15:19:52.073687"
     },
     {
       "title": "REPUBLIC COMEDY CLUB – LES 3 ANS !",
@@ -699,7 +1119,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/republic-comedy-club-les-3-ans/",
       "reservation": "https://my.weezevent.com/republic-comedy-club-les-3-ans?_gl=1*jr0u6e*_gcl_au*ODk5MDUxMjUuMTc1NDI5MzE0Mi4xNDQ4MDYwNzA5LjE3NTc0MDU2MjguMTc1NzQwNTY0NA..*_ga*ODUwMzYxNTE2LjE3MjE3MjIwNTM.*_ga_39H9VBFX7G*czE3NTc5Mzk1NzckbzQ0MyRnMSR0MTc1NzkzOTU5MCRqNDckbDAkaDE1MDQ3OTI0MjA.",
-      "scraped_at": "2026-06-08T10:09:58.544342"
+      "scraped_at": "2026-06-08T15:19:52.075272"
     },
     {
       "title": "Artus - Le Show XXL au cinéma",
@@ -711,7 +1131,7 @@
       "release": "2026-09-24T00:00:00.000Z",
       "cinema": "CGR Buxerolles",
       "source": "https://www.cgrcinemas.fr/horaire-film/p0736-cgr-buxerolles-poitiers/",
-      "scraped_at": "2026-06-08T10:09:38.353046"
+      "scraped_at": "2026-06-08T15:19:32.869645"
     },
     {
       "title": "Artus - Le Show XXL au cinéma",
@@ -723,7 +1143,7 @@
       "release": "2026-09-24T00:00:00.000Z",
       "cinema": "CGR Fontaine-le-Comte",
       "source": "https://www.cgrcinemas.fr/horaire-film/w8624-cgr-fontaine-le-comte-poitiers/",
-      "scraped_at": "2026-06-08T10:09:57.279535"
+      "scraped_at": "2026-06-08T15:19:51.130036"
     },
     {
       "title": "Hollywood Bazar + Viv",
@@ -735,7 +1155,7 @@
       "type": "Concert",
       "location": "Club",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Hollywood-Bazar-Viv/3126",
-      "scraped_at": "2026-06-08T10:11:33.659073"
+      "scraped_at": "2026-06-08T15:21:14.112520"
     },
     {
       "title": "LA DAME DE PIERRE",
@@ -745,7 +1165,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/la-dame-de-pierre/",
       "reservation": "https://ladamedepierre.trium.fr/fr/t/-/event/63632",
-      "scraped_at": "2026-06-08T10:09:58.545507"
+      "scraped_at": "2026-06-08T15:19:52.076865"
     },
     {
       "title": "La Colonie de Vacances",
@@ -757,7 +1177,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/La-Colonie-de-Vacances/3099",
-      "scraped_at": "2026-06-08T10:11:34.279070"
+      "scraped_at": "2026-06-08T15:21:14.569552"
     },
     {
       "title": "Rise of the Northstar + Ten56.",
@@ -769,7 +1189,7 @@
       "type": "Concert",
       "location": "Salle de concerts",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Rise-of-the-Northstar-Ten56/3108",
-      "scraped_at": "2026-06-08T10:11:34.279322"
+      "scraped_at": "2026-06-08T15:21:14.569891"
     },
     {
       "title": "BIGFLO & OLI",
@@ -779,7 +1199,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/bigflo-oli/",
       "reservation": "https://www.peelproductions.fr/reserver/bigflo-oli-poitiers-zenith/8849",
-      "scraped_at": "2026-06-08T10:09:58.546689"
+      "scraped_at": "2026-06-08T15:19:52.078435"
     },
     {
       "title": "NINO ARIAL",
@@ -789,7 +1209,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/nino-arial-pas-comme-eux/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/64040",
-      "scraped_at": "2026-06-08T10:09:58.547864"
+      "scraped_at": "2026-06-08T15:19:52.080026"
     },
     {
       "title": "DJADJA & DINAZ",
@@ -799,7 +1219,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/djadja-dinaz/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/62137",
-      "scraped_at": "2026-06-08T10:09:58.549028"
+      "scraped_at": "2026-06-08T15:19:52.081621"
     },
     {
       "title": "GENERATION CELINE",
@@ -809,7 +1229,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/generation-celine/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60344",
-      "scraped_at": "2026-06-08T10:09:58.550194"
+      "scraped_at": "2026-06-08T15:19:52.083178"
     },
     {
       "title": "Yvnnis + première partie",
@@ -821,7 +1241,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Yvnnis-premire-partie/3114",
-      "scraped_at": "2026-06-08T10:11:34.902227"
+      "scraped_at": "2026-06-08T15:21:15.086918"
     },
     {
       "title": "PLK – TOUR 2026",
@@ -831,7 +1251,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/plk-tour-2026/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/63838",
-      "scraped_at": "2026-06-08T10:09:58.551347"
+      "scraped_at": "2026-06-08T15:19:52.084733"
     },
     {
       "title": "Ma Petite + Le Grand Barouf",
@@ -843,7 +1263,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Ma-Petite-Le-Grand-Barouf/3129",
-      "scraped_at": "2026-06-08T10:11:35.602658"
+      "scraped_at": "2026-06-08T15:21:15.535410"
     },
     {
       "title": "VÉRONIQUE SANSON",
@@ -853,7 +1273,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/veronique-sanson-hasta-luego/",
       "reservation": "https://caramba.trium.fr/fr/t/-/event/67090",
-      "scraped_at": "2026-06-08T10:09:58.552512"
+      "scraped_at": "2026-06-08T15:19:52.086261"
     },
     {
       "title": "LA LEGENDE DE MONTE-CRISTO",
@@ -863,7 +1283,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/la-legende-de-monte-cristo/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60581",
-      "scraped_at": "2026-06-08T10:09:58.553676"
+      "scraped_at": "2026-06-08T15:19:52.087838"
     },
     {
       "title": "FLORENT PAGNY",
@@ -873,7 +1293,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/florent-pagny/",
       "reservation": "https://www.box.fr/reserver/florent-pagny-80/2101046",
-      "scraped_at": "2026-06-08T10:09:58.554831"
+      "scraped_at": "2026-06-08T15:19:52.089381"
     },
     {
       "title": "JOSMAN",
@@ -883,7 +1303,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/josman/",
       "reservation": "https://www.nonstopproductions.fr/fr/product/7383/arena_futuroscope/josman",
-      "scraped_at": "2026-06-08T10:09:58.555975"
+      "scraped_at": "2026-06-08T15:19:52.090919"
     },
     {
       "title": "LEGENDARY ROCK VOICES",
@@ -893,7 +1313,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/legendary-rock-voices/",
       "reservation": "https://widgets.mticket.fr/widget1/widget/event/56?_gl=1*o9hrmn*_ga*MjAyNjMzNTAyMS4xNzY0NzgwOTI4*_ga_XW31VBQDS7*czE3NjQ3ODA5MjgkbzEkZzAkdDE3NjQ3ODA5MzIkajU2JGwwJGg4NTUxNTYzODg.",
-      "scraped_at": "2026-06-08T10:09:58.557136"
+      "scraped_at": "2026-06-08T15:19:52.092440"
     },
     {
       "title": "Lilly Wood and The Prick + première partie",
@@ -905,7 +1325,7 @@
       "type": "Concert",
       "location": "Salle de concerts",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Lilly-Wood-and-The-Prick-premire-partie/3091",
-      "scraped_at": "2026-06-08T10:11:35.603058"
+      "scraped_at": "2026-06-08T15:21:15.535912"
     },
     {
       "title": "CHRISTOPHE MAÉ",
@@ -915,7 +1335,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/christophe-mae/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/64298",
-      "scraped_at": "2026-06-08T10:09:58.558279"
+      "scraped_at": "2026-06-08T15:19:52.093985"
     },
     {
       "title": "The Amber Day + première partie",
@@ -927,7 +1347,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/The-Amber-Day-premire-partie/3112",
-      "scraped_at": "2026-06-08T10:11:36.438811"
+      "scraped_at": "2026-06-08T15:21:16.134282"
     },
     {
       "title": "PATRICK BRUEL",
@@ -937,7 +1357,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/patrick-bruel/",
       "reservation": "https://www.box.fr/reserver/patrick-bruel-189/2101003",
-      "scraped_at": "2026-06-08T10:09:58.559438"
+      "scraped_at": "2026-06-08T15:19:52.095532"
     },
     {
       "title": "L’HÉRITAGE GOLDMAN 2 LA TOURNÉE ÉVÈNEMENT",
@@ -947,7 +1367,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/lheritage-goldman-2-la-tournee-evenement/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/62381%20",
-      "scraped_at": "2026-06-08T10:09:58.560590"
+      "scraped_at": "2026-06-08T15:19:52.097072"
     },
     {
       "title": "ERIC SERRA",
@@ -957,7 +1377,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/eric-serra/",
       "reservation": "https://www.box.fr/reserver/eric-serra-live-1/2100851",
-      "scraped_at": "2026-06-08T10:09:58.561751"
+      "scraped_at": "2026-06-08T15:19:52.098602"
     },
     {
       "title": "Sinclair + Aïssa Mallouk",
@@ -969,7 +1389,7 @@
       "type": "Concert",
       "location": "Confort Moderne, Poitiers",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Sinclair-Assa-Mallouk/3102",
-      "scraped_at": "2026-06-08T10:11:37.075517"
+      "scraped_at": "2026-06-08T15:21:16.692150"
     },
     {
       "title": "CLAUDIO CAPEO",
@@ -979,7 +1399,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/claudio-capeo-2/",
       "reservation": "https://caramba.trium.fr/fr/t/ClaudioCapeoZenith26/event/56560",
-      "scraped_at": "2026-06-08T10:09:58.562898"
+      "scraped_at": "2026-06-08T15:19:52.100124"
     },
     {
       "title": "REDOUANE BOUGHERABA",
@@ -989,7 +1409,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/redouane-bougheraba-2/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/redouane-bougheraba-billet/idmanif/638173",
-      "scraped_at": "2026-06-08T10:09:58.564051"
+      "scraped_at": "2026-06-08T15:19:52.101649"
     },
     {
       "title": "CASSE-NOISETTE",
@@ -999,7 +1419,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/casse-noisette-2/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/casse-noisette-ballet-et-orchestre-billet/idmanif/642097",
-      "scraped_at": "2026-06-08T10:09:58.565203"
+      "scraped_at": "2026-06-08T15:19:52.103162"
     },
     {
       "title": "K-POP FOREVER !",
@@ -1009,7 +1429,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/k-pop-forever/",
       "reservation": "https://billetterie-indigo-productions.tickandlive.com/reserver/k-pop-forever-2/144538",
-      "scraped_at": "2026-06-08T10:09:58.566370"
+      "scraped_at": "2026-06-08T15:19:52.104714"
     },
     {
       "title": "MICHELE LAROQUE ET KAD MERAD",
@@ -1019,7 +1439,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/michele-laroque-et-kad-merad/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60119",
-      "scraped_at": "2026-06-08T10:09:58.567519"
+      "scraped_at": "2026-06-08T15:19:52.106265"
     },
     {
       "title": "Cirque du Soleil",
@@ -1029,7 +1449,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/cirque-du-soleil/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/cirque-du-soleil-ovo-billet/idmanif/649290",
-      "scraped_at": "2026-06-08T10:09:58.568670"
+      "scraped_at": "2026-06-08T15:19:52.107816"
     },
     {
       "title": "ONE NIGHT OF QUEEN – WEMBLEY",
@@ -1039,7 +1459,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/one-night-of-queen-wembley/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/63294",
-      "scraped_at": "2026-06-08T10:09:58.569840"
+      "scraped_at": "2026-06-08T15:19:52.109352"
     },
     {
       "title": "BEN plg + première partie",
@@ -1051,7 +1471,7 @@
       "type": "Concert",
       "location": "Salle de concerts",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/BEN-plg-premire-partie/3127",
-      "scraped_at": "2026-06-08T10:11:37.075783"
+      "scraped_at": "2026-06-08T15:21:16.692486"
     },
     {
       "title": "RFM PARTY 80",
@@ -1061,7 +1481,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/rfm-party-80/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/66059",
-      "scraped_at": "2026-06-08T10:09:58.570991"
+      "scraped_at": "2026-06-08T15:19:52.110913"
     },
     {
       "title": "FOREVER TRIBUTE TO MICHAEL JACKSON",
@@ -1071,7 +1491,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/forever-tribute-to-michael-jackson/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/62700",
-      "scraped_at": "2026-06-08T10:09:58.572144"
+      "scraped_at": "2026-06-08T15:19:52.112440"
     },
     {
       "title": "IL ÉTAIT UNE FOIS… ENNINO MORRICONE & NINO ROTA",
@@ -1081,7 +1501,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/il-etait-une-fois-ennino-morricone-nino-rota/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/64305",
-      "scraped_at": "2026-06-08T10:09:58.573310"
+      "scraped_at": "2026-06-08T15:19:52.113966"
     },
     {
       "title": "LES ETOILES DU CIRQUE DE PEKIN – ODYSSEE",
@@ -1091,7 +1511,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/les-etoiles-du-cirque-de-pekin-odysse/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/63222",
-      "scraped_at": "2026-06-08T10:09:58.574487"
+      "scraped_at": "2026-06-08T15:19:52.115512"
     },
     {
       "title": "FABRICE EBOUÉ",
@@ -1101,7 +1521,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/fabrice-eboue/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/64362",
-      "scraped_at": "2026-06-08T10:09:58.575634"
+      "scraped_at": "2026-06-08T15:19:52.117031"
     },
     {
       "title": "DE MICHEL A FRANCE",
@@ -1111,7 +1531,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/de-michel-a-france/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/67760",
-      "scraped_at": "2026-06-08T10:09:58.576797"
+      "scraped_at": "2026-06-08T15:19:52.118561"
     },
     {
       "title": "CLEMENT VIKTOROVITCH",
@@ -1121,7 +1541,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/clement-viktorovitch/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/67274",
-      "scraped_at": "2026-06-08T10:09:58.577981"
+      "scraped_at": "2026-06-08T15:19:52.120073"
     },
     {
       "title": "GRAND CORPS MALADE",
@@ -1131,7 +1551,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/grand-corps-malade-3/",
       "reservation": "https://caramba.trium.fr/fr/t/GCM27/event/64473",
-      "scraped_at": "2026-06-08T10:09:58.579143"
+      "scraped_at": "2026-06-08T15:19:52.121613"
     },
     {
       "title": "SO FLOYD",
@@ -1141,7 +1561,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/so-floyd/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/58492",
-      "scraped_at": "2026-06-08T10:09:58.580296"
+      "scraped_at": "2026-06-08T15:19:52.123146"
     },
     {
       "title": "CELTIC LEGENDS – 25 TH ANNIVERSARY TOUR",
@@ -1151,7 +1571,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/celtic-legends-25-th-anniversary-tour/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/64620",
-      "scraped_at": "2026-06-08T10:09:58.581441"
+      "scraped_at": "2026-06-08T15:19:52.124690"
     },
     {
       "title": "VERONIC DICAIRE",
@@ -1161,7 +1581,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/veronic-dicaire/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/64782",
-      "scraped_at": "2026-06-08T10:09:58.582591"
+      "scraped_at": "2026-06-08T15:19:52.126223"
     },
     {
       "title": "LES MUSIQUES DE JOHN WILLIAMS ET HANS ZIMMER",
@@ -1171,7 +1591,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/les-musiques-de-john-williams-et-hans-zimmer/",
       "reservation": "https://www.talticket.com/evenement/les-musiques-de-john-williams-et-hans-zimmer-poitiers-2027",
-      "scraped_at": "2026-06-08T10:09:58.583747"
+      "scraped_at": "2026-06-08T15:19:52.127760"
     },
     {
       "title": "THE AUSTRALIAN PINK FLOYD SHOW",
@@ -1181,7 +1601,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/the-australian-pink-floyd-show/",
       "reservation": "",
-      "scraped_at": "2026-06-08T10:09:58.584902"
+      "scraped_at": "2026-06-08T15:19:52.129276"
     },
     {
       "title": "JARRY",
@@ -1191,7 +1611,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/jarry-2/",
       "reservation": "https://www.box.fr/reserver/jarry-172/2100834",
-      "scraped_at": "2026-06-08T10:09:58.586056"
+      "scraped_at": "2026-06-08T15:19:52.130802"
     },
     {
       "title": "ALDEBERT",
@@ -1201,7 +1621,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/aldebert/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/65483",
-      "scraped_at": "2026-06-08T10:09:58.587211"
+      "scraped_at": "2026-06-08T15:19:52.132344"
     },
     {
       "title": "THE U2 EXPERIENCE",
@@ -1211,7 +1631,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/the-u2-experience/",
       "reservation": "https://billetterie-indigo-productions.tickandlive.com/reserver/the-u2-experience-11/153438",
-      "scraped_at": "2026-06-08T10:09:58.588388"
+      "scraped_at": "2026-06-08T15:19:52.133878"
     },
     {
       "title": "BERNARD LAVILLIERS",
@@ -1221,7 +1641,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/bernard-lavilliers-2/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/66126",
-      "scraped_at": "2026-06-08T10:09:58.589569"
+      "scraped_at": "2026-06-08T15:19:52.135396"
     },
     {
       "title": "HOSHI",
@@ -1231,7 +1651,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/hoshi/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/hoshi-billet/idmanif/643337",
-      "scraped_at": "2026-06-08T10:09:58.590730"
+      "scraped_at": "2026-06-08T15:19:52.136936"
     },
     {
       "title": "DANY BOON",
@@ -1241,7 +1661,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/danny-boon/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/65161",
-      "scraped_at": "2026-06-08T10:09:58.591904"
+      "scraped_at": "2026-06-08T15:19:52.138477"
     },
     {
       "title": "IBRAHIM MAALOUF",
@@ -1251,7 +1671,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/ibrahim-maalouf/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/ibrahim-maalouf-20-ans-de-live-billet/idmanif/640358?clickId=UDrS-yT6GxycUeX1ok1alzx7UkpRO-29ARMS0E0&irgwc=1&afsrc=1&utm_source=Bandsintown&utm_medium=affiliate&utm_campaign=219208&utm_content=1107977_7516",
-      "scraped_at": "2026-06-08T10:09:58.593073"
+      "scraped_at": "2026-06-08T15:19:52.140004"
     },
     {
       "title": "LES BODIN’S",
@@ -1261,7 +1681,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/les-bodins/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/64964",
-      "scraped_at": "2026-06-08T10:09:58.594230"
+      "scraped_at": "2026-06-08T15:19:52.141546"
     },
     {
       "title": "TAYC",
@@ -1271,7 +1691,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/tayc/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/tayc-billet/idmanif/659154/idtier/30115863",
-      "scraped_at": "2026-06-08T10:09:58.595389"
+      "scraped_at": "2026-06-08T15:19:52.143073"
     },
     {
       "title": "MESSMER",
@@ -1281,7 +1701,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/messmer/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/66714",
-      "scraped_at": "2026-06-08T10:09:58.596555"
+      "scraped_at": "2026-06-08T15:19:52.144608"
     },
     {
       "title": "KEEN’V",
@@ -1291,7 +1711,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/keenv-2/",
       "reservation": "https://cornolti.trium.fr/fr/t/-/event/63122",
-      "scraped_at": "2026-06-08T10:09:58.597708"
+      "scraped_at": "2026-06-08T15:19:52.146137"
     },
     {
       "title": "LAURENT GERRA",
@@ -1301,7 +1721,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/laurent-gerra/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/laurent-gerra-billet/idmanif/654318/idtier/30115863",
-      "scraped_at": "2026-06-08T10:09:58.598877"
+      "scraped_at": "2026-06-08T15:19:52.147680"
     },
     {
       "title": "LE LAC DES CYGNES",
@@ -1311,7 +1731,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/le-lac-des-cygnes-5/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/le-lac-des-cygnes-ballet-et-orchestre-billet/idmanif/659371/idtier/30115863",
-      "scraped_at": "2026-06-08T10:09:58.600042"
+      "scraped_at": "2026-06-08T15:19:52.149201"
     },
     {
       "title": "TOUJOURS VIVANT",
@@ -1321,7 +1741,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/toujours-vivant/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/66575",
-      "scraped_at": "2026-06-08T10:09:58.601211"
+      "scraped_at": "2026-06-08T15:19:52.150729"
     },
     {
       "title": "NINO ARIAL",
@@ -1331,7 +1751,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/nino-arial/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/66661",
-      "scraped_at": "2026-06-08T10:09:58.602418"
+      "scraped_at": "2026-06-08T15:19:52.152245"
     },
     {
       "title": "JULIEN CLERC",
@@ -1341,7 +1761,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/julien-clerc/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/60160",
-      "scraped_at": "2026-06-08T10:09:58.603577"
+      "scraped_at": "2026-06-08T15:19:52.153764"
     },
     {
       "title": "VIANNEY",
@@ -1351,7 +1771,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/vianney/",
       "reservation": "https://cheyenne.trium.fr/fr/t/-/event/67984",
-      "scraped_at": "2026-06-08T10:09:58.604755"
+      "scraped_at": "2026-06-08T15:19:52.155286"
     },
     {
       "title": "I GOTTA FEELING",
@@ -1361,7 +1781,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/i-gotta-feeling-saison-3/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/65642",
-      "scraped_at": "2026-06-08T10:09:58.605925"
+      "scraped_at": "2026-06-08T15:19:52.156810"
     },
     {
       "title": "THE WORLD OF QUEEN",
@@ -1371,7 +1791,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/the-world-of-queen/",
       "reservation": "https://billetterie-lesdernierscouches.tickandlive.com/reserver/the-world-of-queen-40/151030",
-      "scraped_at": "2026-06-08T10:09:58.607090"
+      "scraped_at": "2026-06-08T15:19:52.158343"
     },
     {
       "title": "PATRICK FIORI",
@@ -1381,7 +1801,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/patrick-fiori-2/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/64267",
-      "scraped_at": "2026-06-08T10:09:58.608261"
+      "scraped_at": "2026-06-08T15:19:52.159889"
     },
     {
       "title": "PHILIPPE CAVERIVIERE",
@@ -1391,7 +1811,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/philippe-caveriviere/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/philippe-caveriviere-billet/idmanif/656003/idtier/30115863",
-      "scraped_at": "2026-06-08T10:09:58.609449"
+      "scraped_at": "2026-06-08T15:19:52.161423"
     },
     {
       "title": "THE AMENO TOUR",
@@ -1401,7 +1821,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/the-ameno-tour/",
       "reservation": "https://www.ticketmaster.fr/fr/manifestation/era-billet/idmanif/654725/idtier/30115863",
-      "scraped_at": "2026-06-08T10:09:58.610628"
+      "scraped_at": "2026-06-08T15:19:52.162959"
     },
     {
       "title": "FESTIVAL MONDIAL DE LA MAGIE",
@@ -1411,7 +1831,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/festival-mondial-de-la-magie/",
       "reservation": "",
-      "scraped_at": "2026-06-08T10:09:58.611832"
+      "scraped_at": "2026-06-08T15:19:52.164508"
     },
     {
       "title": "Les années 80",
@@ -1421,7 +1841,7 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/les-annees-80/",
       "reservation": "https://az-prod.trium.fr/index.php/22/manifestation/31153?w=114&idtier=679706",
-      "scraped_at": "2026-06-08T10:09:58.613190"
+      "scraped_at": "2026-06-08T15:19:52.166035"
     },
     {
       "title": "GOLDMEN",
@@ -1431,23 +1851,15 @@
       "cinema": "Arena Futuroscope",
       "source": "https://www.arena-futuroscope.com/arena-event/goldmen-3/",
       "reservation": "https://az-prod.trium.fr/fr/t/-/event/66449",
-      "scraped_at": "2026-06-08T10:09:58.614691"
+      "scraped_at": "2026-06-08T15:19:52.167592"
     },
     {
       "title": "Les actualitésdu Parc des Expositions",
       "date": null,
-      "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2026/04/affiches-768x960.jpg",
+      "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2026/03/CAEV0044-Fichier-aft-ILLUSIONS-TOUR-768x1082.png",
       "cinema": "Parc Expo Grand Poitiers",
-      "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/championnats-de-france-de-gymnastique-equipes-b/",
-      "scraped_at": "2026-06-08T10:10:04.111843"
-    },
-    {
-      "title": "Championnat de France de gymnastique par équipes – B",
-      "date": null,
-      "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2026/04/affiches-768x960.jpg",
-      "cinema": "Parc Expo Grand Poitiers",
-      "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/championnats-de-france-de-gymnastique-equipes-b/",
-      "scraped_at": "2026-06-08T10:10:04.111974"
+      "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/illusions-tour/",
+      "scraped_at": "2026-06-08T15:19:55.717741"
     },
     {
       "title": "Illusions Tour",
@@ -1455,7 +1867,15 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2026/03/CAEV0044-Fichier-aft-ILLUSIONS-TOUR-768x1082.png",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/illusions-tour/",
-      "scraped_at": "2026-06-08T10:10:04.112074"
+      "scraped_at": "2026-06-08T15:19:55.717898"
+    },
+    {
+      "title": "Championnat de France de gymnastique par équipes – B",
+      "date": null,
+      "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2026/04/affiches-768x960.jpg",
+      "cinema": "Parc Expo Grand Poitiers",
+      "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/championnats-de-france-de-gymnastique-equipes-b/",
+      "scraped_at": "2026-06-08T15:19:55.718038"
     },
     {
       "title": "24 Heures pour l’Emploi et la Formation",
@@ -1463,7 +1883,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2023/12/24H_poitiers_2024-2.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/24-heures-pour-lemploi-et-la-formation/",
-      "scraped_at": "2026-06-08T10:10:04.112184"
+      "scraped_at": "2026-06-08T15:19:55.718170"
     },
     {
       "title": "Salon Maison et créations",
@@ -1471,7 +1891,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/06/instagram-768x960.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/salon-maison/",
-      "scraped_at": "2026-06-08T10:10:04.112286"
+      "scraped_at": "2026-06-08T15:19:55.718300"
     },
     {
       "title": "La ferme s’invite",
@@ -1479,7 +1899,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2024/03/Ferme-1060-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/evenement/la-ferme-sinvite/",
-      "scraped_at": "2026-06-08T10:10:04.112386"
+      "scraped_at": "2026-06-08T15:19:55.718425"
     },
     {
       "title": "Le Grand Salon de la Gastronomie",
@@ -1487,7 +1907,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2025/03/salon-gastronomique-2025-50-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/agenda/evenement/salon-de-la-gastronomie/",
-      "scraped_at": "2026-06-08T10:10:04.112491"
+      "scraped_at": "2026-06-08T15:19:55.718568"
     },
     {
       "title": "Gamers Assembly",
@@ -1495,7 +1915,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/09/der190605158-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/evenement/gamers-assembly/",
-      "scraped_at": "2026-06-08T10:10:04.112591"
+      "scraped_at": "2026-06-08T15:19:55.718699"
     },
     {
       "title": "Foire de Poitiers",
@@ -1503,7 +1923,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2024/03/FoireJ2-1090-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/evenement/foire-de-poitiers/",
-      "scraped_at": "2026-06-08T10:10:04.112689"
+      "scraped_at": "2026-06-08T15:19:55.718825"
     },
     {
       "title": "Les actualitésdu Parc des Expositions",
@@ -1511,7 +1931,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/09/Maison-1072-scaled-e1681486984338-768x512.jpg",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/actualites/",
-      "scraped_at": "2026-06-08T10:10:04.112793"
+      "scraped_at": "2026-06-08T15:19:55.718947"
     },
     {
       "title": "Les espaces à disposition",
@@ -1519,7 +1939,7 @@
       "poster": "https://www.parcexpo-grandpoitiers.fr/app/uploads/2022/08/export-Fichier-10.png",
       "cinema": "Parc Expo Grand Poitiers",
       "source": "https://www.parcexpo-grandpoitiers.fr/informations-pratiques/espaces/",
-      "scraped_at": "2026-06-08T10:10:04.112898"
+      "scraped_at": "2026-06-08T15:19:55.719088"
     },
     {
       "title": "Actuellement à l'affiche",
@@ -1530,8 +1950,20 @@
       "certificate": null,
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
-      "source": "https://www.tap-poitiers.com#histoires-paralleles",
-      "scraped_at": "2026-06-08T10:10:05.864729"
+      "source": "https://www.tap-poitiers.com#vivaldi-et-moi",
+      "scraped_at": "2026-06-08T15:19:57.176791"
+    },
+    {
+      "title": "Vivaldi et moi",
+      "duration": "1h51 min",
+      "description": "Au début du XVIIIᵉ siècle, l’Ospedale della Pietà à Venise recueille et forme de jeunes orphelines à la musique. Dissimulées au public, souvent masquées ou derrière une grille, l’orchestre de jeunes filles se produit pour les riches mécènes de l’institution. Cécilia, 20 ans, y excelle en tant que violoniste. Jusqu’au jour où l’arrivée d’un nouveau maître de musique, Antonio Vivaldi, vient bousculer sa vie et celle de l’Ospedale.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/04/vivaldi_affiche-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/vivaldi-et-moi/",
+      "scraped_at": "2026-06-08T15:19:58.007139"
     },
     {
       "title": "Histoires parallèles",
@@ -1543,7 +1975,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/histoires-paralleles/",
-      "scraped_at": "2026-06-08T10:10:06.816861"
+      "scraped_at": "2026-06-08T15:19:58.718758"
     },
     {
       "title": "L’Être Aimé",
@@ -1555,7 +1987,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/l-etre-aime/",
-      "scraped_at": "2026-06-08T10:10:08.130619"
+      "scraped_at": "2026-06-08T15:19:59.464535"
     },
     {
       "title": "Cocotte",
@@ -1567,7 +1999,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/cocotte/",
-      "scraped_at": "2026-06-08T10:10:09.263890"
+      "scraped_at": "2026-06-08T15:20:00.254039"
     },
     {
       "title": "À bras-le-corps",
@@ -1579,7 +2011,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/a-bras-le-corps/",
-      "scraped_at": "2026-06-08T10:10:10.354459"
+      "scraped_at": "2026-06-08T15:20:00.703049"
     },
     {
       "title": "Loin de moi la colère",
@@ -1591,7 +2023,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/loin-de-moi-la-colere/",
-      "scraped_at": "2026-06-08T10:10:11.248223"
+      "scraped_at": "2026-06-08T15:20:01.941899"
     },
     {
       "title": "En nous",
@@ -1603,7 +2035,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/en-nous/",
-      "scraped_at": "2026-06-08T10:10:12.085194"
+      "scraped_at": "2026-06-08T15:20:02.393836"
     },
     {
       "title": "L’Affaire Zanetti",
@@ -1615,7 +2047,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/l-affaire-zanetti/",
-      "scraped_at": "2026-06-08T10:10:12.935918"
+      "scraped_at": "2026-06-08T15:20:03.017582"
     },
     {
       "title": "Toutes mes soeurs",
@@ -1627,7 +2059,7 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/toutes-mes-soeurs/",
-      "scraped_at": "2026-06-08T10:10:13.768379"
+      "scraped_at": "2026-06-08T15:20:03.677564"
     },
     {
       "title": "Cinque Secondi",
@@ -1639,7 +2071,19 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/cinque-secondi/",
-      "scraped_at": "2026-06-08T10:10:14.609282"
+      "scraped_at": "2026-06-08T15:20:04.120574"
+    },
+    {
+      "title": "Le Mécano de la Générale",
+      "duration": "1h29 min",
+      "description": "Le cheminot Johnnie Gray partage sa vie entre sa fiancée Annabelle Lee et sa locomotive, la Générale. En pleine Guerre de Sécession, il souhaite s’engager dans l’armée sudiste, mais celle-ci estime qu’il se montrera plus utile en restant mécanicien. Pour prouver à Annabelle qu’il n’est pas lâche, il se lance seul à la poursuite d’espions nordistes qui se sont emparés d’elle et de sa locomotive…",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/affichelemecano-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/le-mecano-de-la-generale/",
+      "scraped_at": "2026-06-08T15:20:04.987081"
     },
     {
       "title": "Ginza Cosmetics",
@@ -1651,10 +2095,106 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/ginza-cosmetics/",
-      "scraped_at": "2026-06-08T10:10:15.271434"
+      "scraped_at": "2026-06-08T15:20:05.731657"
     },
     {
-      "title": "Les Nuits en or 2026",
+      "title": "Louise et la Légende du serpent à plumes",
+      "duration": "0h44 min",
+      "description": "Louise, vient d’emménager avec sa famille à Mexico, mais elle a du mal à s’y faire et trouve un réconfort salvateur auprès de son lézard adoré, Keza. Lorsque celui-ci s’échappe, il entraîne Louise vers d’incroyables aventures à la découverte du Mexique et de ses habitants.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2023/01/affiche-louise-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/louise-et-la-legende-du-serpent-a-plumes/",
+      "scraped_at": "2026-06-08T15:20:06.277916"
+    },
+    {
+      "title": "Une année italienne",
+      "duration": "1h42 min",
+      "description": "Fred, jeune Suédoise de 17 ans, emménage à Trieste pour une année de terminale au lycée de la ville. Seule fille de sa classe, elle se retrouve au centre d’un trio inséparable de garçons. Ensemble, ils expérimentent de nouveaux sentiments, confrontent leurs doutes, et soumettent leur amitié à rude épreuve. Cette année du bac les marquera pour toujours.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2025/10/une-annee-italienne-affiche-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/une-annee-italienne/",
+      "scraped_at": "2026-06-08T15:20:07.443185"
+    },
+    {
+      "title": "Cuba & Alaska",
+      "duration": "1h33 min",
+      "description": "Emporté par leur énergie punk, le poignant journal de guerre de deux jeunes Ukrainiennes engagées depuis quatre ans comme secouristes sur le front et amies à la vie, à la mort.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/affiche-cuba-et-alaska-tt-width-150-height-204-crop-1-bgcolor-000000.png",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/cuba-alaska/",
+      "scraped_at": "2026-06-08T15:20:08.308908"
+    },
+    {
+      "title": "The Christophers",
+      "duration": "1h40 min",
+      "description": "Julian Sklar, ancienne figure majeure du pop art londonien devenu misanthrope n’a plus rien peint depuis des décennies. Ses enfants, avides d’héritage, engagent Lori, restauratrice et ex-faussaire, pour se faire passer pour son assistante. Sa mission : finir en secret une série de huit toiles inachevées, les « Christophers », et en tirer une fortune.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/the-christophers-aff-120x160-69f0d8674b562-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/the-christophers/",
+      "scraped_at": "2026-06-08T15:20:09.000414"
+    },
+    {
+      "title": "It’s Never Over, Jeff Buckley",
+      "duration": "1h50 min",
+      "description": "La cinéaste nommée aux Oscars, Amy Berg, retrace la vie de Jeff Buckley, ce jeune prodige à la voix céleste et à l’art audacieux, qui a laissé le monde musical des années 90 sous le choc en mourant brutalement à 30 ans, peu après la sortie de son premier album acclamé par la critique,Grace.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/7-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/it-s-never-over-jeff-buckley/",
+      "scraped_at": "2026-06-08T15:20:09.694697"
+    },
+    {
+      "title": "MacPat le chat chanteur",
+      "duration": "0h40 min",
+      "description": "En plein cœur de Londres, Paddy MacPat et Fred, son ami musicien forment un duo mélodieux pour le plus grand plaisir des passants jusqu’au jour où ils sont séparés. Un programme qui met à l’honneur nos amis les chats !",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2024/10/affiche-macpat-bd-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/macpat-le-chat-chanteur/",
+      "scraped_at": "2026-06-08T15:20:10.380697"
+    },
+    {
+      "title": "Persepolis",
+      "duration": "1h35 min",
+      "description": "Téhéran 1978 : Marjane, huit ans, songe à l’avenir et se rêve en prophète sauvant le monde. Choyée par des parents modernes et cultivés, particulièrement liée à sa grand-mère, elle suit avec exaltation les évènements qui vont mener à la révolution et provoquer la chute du régime du Chah.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/7246_vod_thumb_292043-tt-width-150-height-204-crop-1-bgcolor-000000.png",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/persepolis/",
+      "scraped_at": "2026-06-08T15:20:11.139349"
+    },
+    {
+      "title": "L’Amant",
+      "duration": "1h55 min",
+      "description": "Indochine, fin des années 20. Sur le bac qui traverse le Mékong, une jeune française rencontre le Chinois, un homme riche et élégant, qui lui propose de terminer le voyage dans sa limousine. Ensemble, ils connaîtront une passion dévorante, charnelle et irraisonnée.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/174953b071f115c1d5d1afca8f3c279f-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/l-amant/",
+      "scraped_at": "2026-06-08T15:20:11.771361"
+    },
+    {
+      "title": "Les Nuits en Or 2026",
       "duration": null,
       "description": "L’Académie des César vous invite à découvrir Les Nuits en Or, un programme dédié aux courts métrages récompensés par l’ensemble des Académies de Cinéma du monde !",
       "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/affichenuitsenor26-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
@@ -1663,7 +2203,103 @@
       "release": null,
       "cinema": "TAP Cinéma Poitiers",
       "source": "https://www.tap-poitiers.com/cinema/les-nuits-en-or-2026/",
-      "scraped_at": "2026-06-08T10:10:15.950430"
+      "scraped_at": "2026-06-08T15:20:12.558638"
+    },
+    {
+      "title": "Superasticot",
+      "duration": "0h40 min",
+      "description": "Superasticot, le plus ondulant et le plus tortillant de tous les superhéros ! Superasticot est superélancé, Superasticot est supermusclé ! Héros au grand cœur, il passe ses journées à sauver les animaux du jardin. Quand le maléfique Saurien Magicien le capture, qui pourra lui venir en aide ?",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2024/03/superasticot_affiche-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/superasticot/",
+      "scraped_at": "2026-06-08T15:20:13.183639"
+    },
+    {
+      "title": "Shana",
+      "duration": "1h20 min",
+      "description": "Shana traverse les galères du quotidien avec une énergie débordante et le soutien de sa bande de copines. Lorsque sa grand-mère décède, elle hérite d’une bague censée protéger du mauvais œil. Shana a bien besoin de ce coup de pouce. D’autant qu’avec la sortie de prison de son compagnon toxique, les mésaventures s’accumulent !",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/shana_affiche-francaise-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/shana/",
+      "scraped_at": "2026-06-08T15:20:13.817867"
+    },
+    {
+      "title": "Ulysse",
+      "duration": "1h37 min",
+      "description": "Alice, chercheuse en sociologie découvre qu’elle est enceinte. Luc, son mari, exulte. Ce sera un garçon ! Ils l’appelleront Ulysse. Sauf qu’à un an, Ulysse ne rentre pas dans les courbes. Les pédiatres s’interrogent et le verdict tombe : syndrome génétique. Ulysse ne sera pas comme les autres. Mais comment sera-t-il ?",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/ulysse-i-120x160_hd-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/ulysse/",
+      "scraped_at": "2026-06-08T15:20:14.655920"
+    },
+    {
+      "title": "L’Illusion de Yakushima",
+      "duration": "1h52 min",
+      "description": "Corry est française et vit au Japon. Elle partage sa vie avec Jin et s’occupe d’enfants en attente de greffe cardiaque à l’hôpital de Kobé. Alors que la culture Japonaise a du mal à accepter le don d’organe, Corry se bat au quotidien pour faire évoluer les mentalités et trouver plus de donneurs. Quand Jin disparait un jour sans laisser de trace, elle tente de le retrouver, mais doit aussi mener une course contre la montre pour que la greffe de son jeune patient aboutisse…",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/l-illusion_pres_120-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/l-illusion-de-yakushima/",
+      "scraped_at": "2026-06-08T15:20:15.368780"
+    },
+    {
+      "title": "La Baleine et le musicien",
+      "duration": "1h23 min",
+      "description": "Après avoir découvert que sa musique semble mystérieusement attirer les cétacés, le compositeur Rone embarque pour une expérience singulière : tenter d’établir un dialogue musical en pleine mer avec une baleine à bosse. Lui répondra-t-elle ?",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/affiche-la-baleine-et-le-musicien-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/la-baleine-et-le-musicien/",
+      "scraped_at": "2026-06-08T15:20:16.128772"
+    },
+    {
+      "title": "Prouve que tu résistes",
+      "duration": "0h52 min",
+      "description": "Quelle est la situation des femmes dans les musiques actuelles ? 20 témoignages de femmes : artistes, techniciennes, élue, étudiantes, collectifs féminins…",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/themes/tap/images/template/default-image-tt-width-150-height-204-crop-1-bgcolor-000000.png",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/prouve-que-tu-resistes/",
+      "scraped_at": "2026-06-08T15:20:16.952952"
+    },
+    {
+      "title": "Hamlet (Comédie-Française)",
+      "duration": "2h05 min",
+      "description": "En adoptant le point de vue d’Hamlet, Ivo van Hove plonge sans fard le spectateur dans la conscience troublée du jeune homme. Scène après scène, le public devient spectateur de la bataille qui se déroule dans le crâne et le coeur surchargés d’Hamlet…",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/9deabc47655863e0791ef5cf1e1a1f75-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/hamlet-comedie-francaise/",
+      "scraped_at": "2026-06-08T15:20:17.746490"
+    },
+    {
+      "title": "Le Cuirassé Potemkine",
+      "duration": "1h08 min",
+      "description": "Conçu pour commémorer l’anniversaire de la révolution avortée de 1905,Le Cuirassé Potemkined’Eisenstein met en scène la mutinerie sur le Cuirassé Potemkine comme événement déclencheur d’un mouvement révolutionnaire qui gagnera tout le pays.",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/ce35fa44788dd24a3c2507f9a2efeb60-tt-width-150-height-204-crop-1-bgcolor-000000.jpg",
+      "genres": null,
+      "certificate": null,
+      "release": null,
+      "cinema": "TAP Cinéma Poitiers",
+      "source": "https://www.tap-poitiers.com/cinema/le-cuirasse-potemkine/",
+      "scraped_at": "2026-06-08T15:20:18.401565"
     },
     {
       "title": "Jean-François Heisser",
@@ -1673,7 +2309,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/jean-francois-heisser/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:17.606081"
+      "scraped_at": "2026-06-08T15:20:19.264218"
     },
     {
       "title": "Ivanov",
@@ -1683,7 +2319,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/ivanov/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:18.332600"
+      "scraped_at": "2026-06-08T15:20:19.822396"
     },
     {
       "title": "Ils vécurent enfants et firent beaucoup d’heureux",
@@ -1693,7 +2329,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/ils-vecurent-enfants-et-firent-beaucoup-d-heureux/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:19.249876"
+      "scraped_at": "2026-06-08T15:20:20.352763"
     },
     {
       "title": "Réunion annuelle du public 2025-2026",
@@ -1703,7 +2339,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/reunion-annuelle-du-public-2026/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:20.209360"
+      "scraped_at": "2026-06-08T15:20:21.081515"
     },
     {
       "title": "Présentation de la saison 2026-2027",
@@ -1713,7 +2349,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/presentation-de-la-saison-2026-2027/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:20.854959"
+      "scraped_at": "2026-06-08T15:20:21.492587"
     },
     {
       "title": "L’Odyssée",
@@ -1723,7 +2359,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/l-odyssee/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:21.767858"
+      "scraped_at": "2026-06-08T15:20:21.935174"
     },
     {
       "title": "Entre-Temps",
@@ -1733,7 +2369,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/entre-temps/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:22.914399"
+      "scraped_at": "2026-06-08T15:20:22.359112"
     },
     {
       "title": "LaBul",
@@ -1743,7 +2379,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/labul/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:23.899936"
+      "scraped_at": "2026-06-08T15:20:23.005635"
     },
     {
       "title": "Brass Blowers of Northampton",
@@ -1753,7 +2389,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/brass-blowers-of-northampton/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:25.216658"
+      "scraped_at": "2026-06-08T15:20:23.630678"
     },
     {
       "title": "Cécile McLorin Salvant",
@@ -1763,7 +2399,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/cecile-mclorin-salvant/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:26.169541"
+      "scraped_at": "2026-06-08T15:20:24.442432"
     },
     {
       "title": "ÉquipÂge",
@@ -1773,7 +2409,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/equipage/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:27.331084"
+      "scraped_at": "2026-06-08T15:20:25.210265"
     },
     {
       "title": "Aline Piboule, piano",
@@ -1783,7 +2419,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/aline-piboule-piano/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:27.987889"
+      "scraped_at": "2026-06-08T15:20:26.093129"
     },
     {
       "title": "Il faut être juste avec Freud",
@@ -1793,7 +2429,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/il-faut-etre-juste-avec-freud/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:29.974842"
+      "scraped_at": "2026-06-08T15:20:27.300798"
     },
     {
       "title": "Tout est calme dans les hauteurs",
@@ -1803,7 +2439,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/tout-est-calme-dans-les-hauteurs/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:30.929958"
+      "scraped_at": "2026-06-08T15:20:27.956216"
     },
     {
       "title": "Zoo Circus",
@@ -1813,7 +2449,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/zoo-circus/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:31.924702"
+      "scraped_at": "2026-06-08T15:20:28.746334"
     },
     {
       "title": "Ultrasensibles",
@@ -1823,7 +2459,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/ultrasensibles/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:32.865616"
+      "scraped_at": "2026-06-08T15:20:29.429232"
     },
     {
       "title": "Schubert, Beethoven",
@@ -1833,7 +2469,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/schubert-beethoven/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:33.836395"
+      "scraped_at": "2026-06-08T15:20:30.100806"
     },
     {
       "title": "Pinocchio",
@@ -1843,7 +2479,17 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/pinocchio-2/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:34.723872"
+      "scraped_at": "2026-06-08T15:20:30.527051"
+    },
+    {
+      "title": "Panique !!",
+      "date": "28 novembre 2026",
+      "release": null,
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/p-29_panique-768x432-tt-width-768-height-630-fill-0-crop-1-bgcolor-000000.png",
+      "cinema": "TAP Poitiers",
+      "source": "https://www.tap-poitiers.com/spectacle/panique/",
+      "reservation": null,
+      "scraped_at": "2026-06-08T15:20:31.226340"
     },
     {
       "title": "Amazigh",
@@ -1853,7 +2499,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/amazigh/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:35.647106"
+      "scraped_at": "2026-06-08T15:20:32.026096"
     },
     {
       "title": "Immaqaa, ici peut-être",
@@ -1863,7 +2509,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/immaqaa-ici-peut-etre/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:36.665207"
+      "scraped_at": "2026-06-08T15:20:32.871067"
     },
     {
       "title": "Chostakovitch, Mozart",
@@ -1873,7 +2519,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/chostakovitch-mozart/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:37.643780"
+      "scraped_at": "2026-06-08T15:20:33.560965"
     },
     {
       "title": "La Fabuleuse Histoire de l’opéra-comique",
@@ -1883,7 +2529,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/la-fabuleuse-histoire-de-l-opera-comique/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:38.649944"
+      "scraped_at": "2026-06-08T15:20:34.367924"
     },
     {
       "title": "Les Vêpres de Monteverdi",
@@ -1893,7 +2539,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/les-vepres-de-monteverdi/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:39.513962"
+      "scraped_at": "2026-06-08T15:20:35.088054"
     },
     {
       "title": "DELETE",
@@ -1903,7 +2549,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/delete/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:40.487347"
+      "scraped_at": "2026-06-08T15:20:36.684953"
     },
     {
       "title": "MAKOTO SAN",
@@ -1913,17 +2559,17 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/makoto-san/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:42.786825"
+      "scraped_at": "2026-06-08T15:20:37.385016"
     },
     {
       "title": "Dual",
       "date": "18 janvier 2027",
       "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/p-39_dual-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/p-39_dual-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.png",
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/dual/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:43.809708"
+      "scraped_at": "2026-06-08T15:20:38.183500"
     },
     {
       "title": "Tambour de Pan",
@@ -1933,7 +2579,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/tambour-de-pan/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:44.716395"
+      "scraped_at": "2026-06-08T15:20:38.887095"
     },
     {
       "title": "Hervé x MazelFreten",
@@ -1943,7 +2589,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/herve-x-mazelfreten/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:45.634565"
+      "scraped_at": "2026-06-08T15:20:39.558301"
     },
     {
       "title": "Tomber sans bruit",
@@ -1953,7 +2599,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/tomber-sans-bruit/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:46.560443"
+      "scraped_at": "2026-06-08T15:20:40.211126"
     },
     {
       "title": "Les Métamorphoses",
@@ -1963,7 +2609,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/les-metamorphoses/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:47.444902"
+      "scraped_at": "2026-06-08T15:20:40.853771"
     },
     {
       "title": "Cherubini, Berlioz, Schumann",
@@ -1973,7 +2619,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/cherubini-berlioz-schumann/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:48.479071"
+      "scraped_at": "2026-06-08T15:20:41.650129"
     },
     {
       "title": "La Loi du Marché",
@@ -1983,7 +2629,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/la-loi-du-marche/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:49.515157"
+      "scraped_at": "2026-06-08T15:20:42.307100"
     },
     {
       "title": "Cantates de Bach",
@@ -1993,7 +2639,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/cantates-de-bach/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:50.472771"
+      "scraped_at": "2026-06-08T15:20:42.972394"
     },
     {
       "title": "Charlot s’amuse",
@@ -2003,7 +2649,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/charlot-s-amuse/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:51.330859"
+      "scraped_at": "2026-06-08T15:20:43.628433"
     },
     {
       "title": "Les Voix de Carmen",
@@ -2013,7 +2659,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/les-voix-de-carmen/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:52.290764"
+      "scraped_at": "2026-06-08T15:20:44.075021"
     },
     {
       "title": "Symphonies",
@@ -2023,7 +2669,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/symphonies/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:53.167939"
+      "scraped_at": "2026-06-08T15:20:45.777830"
     },
     {
       "title": "Pourquoi les poules préfèrent être élevées en batterie",
@@ -2033,7 +2679,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/pourquoi-les-poules-preferent-etre-elevees-en-batterie/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:55.327839"
+      "scraped_at": "2026-06-08T15:20:46.265607"
     },
     {
       "title": "Yongoyély",
@@ -2043,7 +2689,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/yongoyely/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:56.343454"
+      "scraped_at": "2026-06-08T15:20:47.075844"
     },
     {
       "title": "Chœur et orchestre des jeunes",
@@ -2053,7 +2699,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/choeur-et-orchestre-des-jeunes-10/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:57.219409"
+      "scraped_at": "2026-06-08T15:20:47.516709"
     },
     {
       "title": "Figures argentines",
@@ -2063,7 +2709,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/figures-argentines/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:58.190541"
+      "scraped_at": "2026-06-08T15:20:48.190748"
     },
     {
       "title": "Austerlitz",
@@ -2073,7 +2719,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/austerlitz/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:10:59.191560"
+      "scraped_at": "2026-06-08T15:20:49.010169"
     },
     {
       "title": "Singe",
@@ -2083,27 +2729,27 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/singe/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:00.097384"
+      "scraped_at": "2026-06-08T15:20:49.785376"
     },
     {
       "title": "Performeureuses",
       "date": "Du  1 au 2 avril 2027",
       "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2013/06/yanwagner2-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/performeureuses_01_fernanda-tafner-hd-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/performeureuses/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:01.292977"
+      "scraped_at": "2026-06-08T15:20:50.516690"
     },
     {
       "title": "Le Bal des ardents",
       "date": "2 avril 2027",
       "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2013/06/orfeo8-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/capture-d-ecran-2025-12-08-a-08-41-26-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/le-bal-des-ardents/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:02.195224"
+      "scraped_at": "2026-06-08T15:20:51.501018"
     },
     {
       "title": "Naïade",
@@ -2113,17 +2759,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/naiade/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:03.122832"
-    },
-    {
-      "title": "Errances nocturnes",
-      "date": "3 avril 2027",
-      "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2013/06/roots2-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
-      "cinema": "TAP Poitiers",
-      "source": "https://www.tap-poitiers.com/spectacle/errances-nocturnes/",
-      "reservation": null,
-      "scraped_at": "2026-06-08T10:11:04.018477"
+      "scraped_at": "2026-06-08T15:20:52.165600"
     },
     {
       "title": "LA LIESSE",
@@ -2133,7 +2769,17 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/la-liesse/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:04.920031"
+      "scraped_at": "2026-06-08T15:20:52.842537"
+    },
+    {
+      "title": "Errances nocturnes",
+      "date": "3 avril 2027",
+      "release": null,
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2013/06/roots2-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
+      "cinema": "TAP Poitiers",
+      "source": "https://www.tap-poitiers.com/spectacle/errances-nocturnes/",
+      "reservation": null,
+      "scraped_at": "2026-06-08T15:20:53.518743"
     },
     {
       "title": "About Love and Death",
@@ -2143,17 +2789,17 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/about-love-and-death/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:05.580833"
+      "scraped_at": "2026-06-08T15:20:54.990932"
     },
     {
       "title": "Poitiers",
       "date": "4 avril 2027",
       "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2013/06/zhu-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/06/poitiersarthurpequin-scaled-1-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/poitiers/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:07.584213"
+      "scraped_at": "2026-06-08T15:20:55.657895"
     },
     {
       "title": "Bruitage",
@@ -2163,7 +2809,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/bruitage/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:08.492838"
+      "scraped_at": "2026-06-08T15:20:56.372655"
     },
     {
       "title": "We, Sex & Fun",
@@ -2173,7 +2819,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/we-sex-fun/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:09.356101"
+      "scraped_at": "2026-06-08T15:20:57.145246"
     },
     {
       "title": "El ángulo muerto",
@@ -2183,17 +2829,17 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/el-angulo-muerto/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:10.317037"
+      "scraped_at": "2026-06-08T15:20:57.875425"
     },
     {
       "title": "Après moi, le déluge",
       "date": "Du  8 au 9 avril 2027",
       "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2013/07/33tours1-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
+      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/dsc5445web-768x512-tt-width-768-height-630-fill-0-crop-1-bgcolor-000000.png",
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/apres-moi-le-deluge/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:11.176390"
+      "scraped_at": "2026-06-08T15:20:58.578206"
     },
     {
       "title": "Royaume",
@@ -2203,7 +2849,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/royaume/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:12.083218"
+      "scraped_at": "2026-06-08T15:20:59.248245"
     },
     {
       "title": "JE(S)",
@@ -2213,7 +2859,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/jes/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:12.954578"
+      "scraped_at": "2026-06-08T15:20:59.686884"
     },
     {
       "title": "Mozart",
@@ -2223,7 +2869,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/mozart-5/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:13.853137"
+      "scraped_at": "2026-06-08T15:21:00.367362"
     },
     {
       "title": "Histoire d’un Cid",
@@ -2233,7 +2879,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/histoire-d-un-cid/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:14.918112"
+      "scraped_at": "2026-06-08T15:21:01.190510"
     },
     {
       "title": "Célia Oneto Bensaid, piano",
@@ -2243,7 +2889,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/celia-oneto-bensaid-piano/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:15.802227"
+      "scraped_at": "2026-06-08T15:21:01.634744"
     },
     {
       "title": "Another Look",
@@ -2253,7 +2899,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/another-look/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:16.733370"
+      "scraped_at": "2026-06-08T15:21:02.048077"
     },
     {
       "title": "Jardin d’Éther",
@@ -2263,7 +2909,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/jardin-d-ether/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:17.635390"
+      "scraped_at": "2026-06-08T15:21:03.418443"
     },
     {
       "title": "Les 100 non-accordéonistes",
@@ -2273,7 +2919,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/les-100-non-accordeonistes/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:19.532441"
+      "scraped_at": "2026-06-08T15:21:04.065081"
     },
     {
       "title": "Dirau",
@@ -2283,7 +2929,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/dirau/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:20.436431"
+      "scraped_at": "2026-06-08T15:21:04.754205"
     },
     {
       "title": "Alex Lutz",
@@ -2293,17 +2939,7 @@
       "cinema": "TAP Poitiers",
       "source": "https://www.tap-poitiers.com/spectacle/alex-lutz/",
       "reservation": null,
-      "scraped_at": "2026-06-08T10:11:21.371172"
-    },
-    {
-      "title": "Panique !!",
-      "date": "28 novembre 2027",
-      "release": null,
-      "poster": "https://www.tap-poitiers.com/wp-content/thumbnails/uploads/2026/05/p-29_panique-tt-width-1200-height-630-fill-0-crop-1-bgcolor-000000.jpg",
-      "cinema": "TAP Poitiers",
-      "source": "https://www.tap-poitiers.com/spectacle/__trashed-4/",
-      "reservation": null,
-      "scraped_at": "2026-06-08T10:11:22.262705"
+      "scraped_at": "2026-06-08T15:21:05.184345"
     },
     {
       "title": "Les Noces de Coquelicot",
@@ -2315,176 +2951,7 @@
       "type": "Exposition",
       "location": "Le Confort Moderne",
       "source": "https://www.confort-moderne.fr/fr/agenda/event/Les-Noces-de-Coquelicot/3116",
-      "scraped_at": "2026-06-08T10:11:27.453643"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "VENDREDI 10 OCTOBRE",
-      "date": "2025-10-10T00:00:00Z",
-      "title": "L’Été Summer / Matthieu Guérineau",
-      "subtitle": "Blindtest + dancefloor\nL’Été Summer,\nL’été Se meurt,\nLa rentrée\nAu crépuscule de l’automne.\nUn blindtest comme une vague de chaleur,\nfestive et intemporelle.\nIl est à la présentation ce que le couteau\nest à la purée : Matthieu Guérineau ne sert\nà rien mais est indispensable.\n→ Vendredi 10 octobre / 20h30",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/blind-test--r99uutg90qzw9s1wwqitdj1m8fskfm9evg81sst088.jpg",
-      "ticket": "https://my.weezevent.com/lete-summer",
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "JEUDI 20 NOVEMBRE",
-      "date": "2025-11-20T00:00:00Z",
-      "title": "Mutante / Cie Genetta Genetta",
-      "subtitle": "Théâtre\nC’est l’histoire d’une femme et de son corps. Cette femme, c’est Cassandre. Celle de la mythologie. Celle qui fut frappée par la malédiction d’Apollon. Prophétesse dont les prédictions ne seront jamais crues, prophétesse moquée.\n→ Jeudi 20 novembre / 20h30",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/Mutante-e1753437716813-r99v5zr69u9hdp4yzf27yhuvpnt9eao5vsg75b6k60.jpg",
-      "ticket": "https://my.weezevent.com/mutante-cie-genetta-genetta",
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "SAMEDI 22 NOVEMBRE",
-      "date": "2025-11-22T00:00:00Z",
-      "title": "Queer en vogue #2",
-      "subtitle": "Show & performances + dancefloor\n(Re)venez découvrir le voguing ou approfondir vos connaissances lors de cette deuxième soirée Queer en vogue ! Performances queer, drag et vogue vous attendent. Après ce show flamboyant, retrouvez les artistes sur le dancefloor pour poursuivre cette magnifique soirée et danser toustes ensemble.\n→ Samedi 22 novembre / 20h30",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/queer-en-vogue-e1753438006754-r99vdkcdbsnrtstlfu8y3sqkr3e3yaoos8modh0c4o.jpg",
-      "ticket": "https://my.weezevent.com/queer-en-vogue-2eme-edition",
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "JEUDI 27 NOVEMBRE",
-      "date": "2025-11-27T00:00:00Z",
-      "title": "Mamari / Trop drôle pour mourir",
-      "subtitle": "Stand-up\nAprès avoir fait rire les meilleurs centres hospitaliers, ses groupes de parole et sa psy, Mamari étend sa tournée aux salles de spectacle.\nSa mission ? Briser les tabous en éclats de rire. Votre mission à vous ? Vous asseoir et vous détendre, c’est tout.\n→ Jeudi 27 novembre / 20h30",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/Credit-photo-Linda-Trime-@adlin_mirte-e1753438189462-r99viccu2h63x975v98r7vnwowxvj4p78x0v56vcew.jpg",
-      "ticket": null,
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "DIMANCHE 7 DÉCEMBRE",
-      "date": "2025-12-07T00:00:00Z",
-      "title": "La Bergère des étoiles / Ciels Sonores",
-      "subtitle": "Conte musical pour les 0 – 6 ans\nÀ la faveur de sa première montée dans les hauts pâturages — les estives — un petit mouton connaît des aventures qui vont le faire grandir. Il découvrira la peur et le courage ainsi que la légende de la Bergère des Étoiles.\n→ Dimanche 7 décembre / 11h",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/photo-la-bergere-des-etoiles-e1753438324931-r99vlv91p3y42u1za220h653qe7tklrexwlwuo29y8.jpg",
-      "ticket": null,
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "VENDREDI 12 DÉCEMBRE",
-      "date": "2025-12-12T00:00:00Z",
-      "title": "Fou(s) / Patrick Ingueneau",
-      "subtitle": "Concert\nPatrick Ingueneau créé sur scène un personnage qui est tout à la fois lui-même et le héros de ses textes. Urgence rock’n’lyrique, absurdité rentre-dedans, humour dynamiteur de poésie, il déroule son théâtre de l’absurde laissant couler son flot de musique tel un tsunami bienfaisant.\n→ Vendredi 12 décembre / 20h30",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/Fous-3-e1753438490663-r99vq7a97lxezvs6z5jgke9nhw7cw0wente0lh7ue0.jpg",
-      "ticket": null,
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "MERCREDI 17 DÉCEMBRE",
-      "date": "2025-12-17T00:00:00Z",
-      "title": "Petites Histoires de Grand Courage",
-      "subtitle": "Conte musical à partir de 4 ans\nMême si les combats auxquels se livrent nos héros paraissent démesurés, ils ne sont pas perdus pour autant. Grâce à leur rage de vivre, nos personnages vont trouver le moyen de triompher en activant les leviers de l’imagination et de la solidarité. Une ode joyeuse à la détermination.\n→ Mercredi 17 décembre / 17h30",
-      "description": "Cie de La Trace",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/AFFICHE_PetitesHistoiresDeGrandCourage-e1753439540796-r99whm8sjnghmfykw05qah7n8h2re7qkfidui0kgwo.jpg",
-      "ticket": "https://my.weezevent.com/petites-histoires-de-grand-courage-cie-de-la-trace",
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "VENDREDI 16 JANVIER",
-      "date": "2025-01-16T00:00:00Z",
-      "title": "Le Complexe de l’éolienne",
-      "subtitle": "Théâtre + humour\nÀ travers le spectre du burlesque le plus débridé, Fred Abrachkoff et Denis Bellin mettent en lumière l’inanité de ces thèses alternatives qui envahissent notre quotidien et en font un space opera flamboyant.\n→ Vendredi 16 janvier / 20h30",
-      "description": "Compagnie Ac Pro",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/VISUEL-FRED-ET-DENIS-e1753439621233-r99wjqdpx8duo1kk7kffgno04djw9h36wy7ufchizs.jpg",
-      "ticket": "https://my.weezevent.com/le-complexe-de-leolienne-1",
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "SAMEDI 24 JANVIER",
-      "date": "2025-01-24T00:00:00Z",
-      "title": "Nuit des Chanteuses Seules #9",
-      "subtitle": "Concert\nVoici déjà la 9ème Nuit des Chanteuses Seules ! Et la joie de nous remuer ensemble dans ces aventures inédites, éphémères et spectaculaires, est intacte !Sûres que nos 4 invitées de cette édition nous ferons encore la surprise d’être une jolie surprise.\n→ Samedi 24 janvier / 20h30",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/NDCS©Baptiste-Belisaire-e1753439920280-r99wrjfgop0vpo7gm7vi2v8sl1q1db5dv4siu7bw6o.jpg",
-      "ticket": "https://my.weezevent.com/nuit-des-chanteuses-seules-9eme-edition",
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "DIMANCHE 1ERFÉVRIER",
-      "date": null,
-      "title": "Sieste musicale / Manue Bouriaud",
-      "subtitle": "Musique\nCouchée sur un tapis, allongée dans un transat ou installée confortablement sur une chaise, laissez-vous aller à rêver, à vous inventer votre propre histoire, ou simplement à vous laisser bercer par la musique de Manue Bouriaud et de ses instruments.\n→ Dimanche 1\ner\nfévrier / 15h + 17h",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/2025/07/Manue-sieste-e1753439785795.jpg",
-      "ticket": null,
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "MERCREDI 4 MARS",
-      "date": "2025-03-04T00:00:00Z",
-      "title": "Amours queers face au fascisme",
-      "subtitle": "Lecture + discussion\nLà où le fascisme estime que seules certaines vies sont dignes d’être vécues, la pensée queer et féministe nous enseigne que toutes les vies comptent. En opposant fascisme et amours queers, on met en tension deux forces qui utilisent l’une la haine et l’autre l’amour comme moyens politiques.\n→ Mercredi 4 mars / 20h30",
-      "description": "Constant Spina",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/constanza-spina-r99uuvbxef2gwzz6lrc2iikjf7jav0gvjpj0rcq7vs.jpg",
-      "ticket": "https://my.weezevent.com/lecture-avec-coco-spina",
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "SAMEDI 14 MARS",
-      "date": "2025-03-14T00:00:00Z",
-      "title": "Caba’raie / Collectif Drag’Else",
-      "subtitle": "Cabaret + drag + théâtre\nUn cabaret. Du théâtre. Des artistes en talons bien plus hauts que leurs barrières. Sept drags en tous genres, une maîtresse de cérémonie et un fil rouge aussi trouble que troublant. Entre paillettes et fragilité, humour et tension, le Caba’Raie explore ce qui se joue derrière les regards, derrière les rideaux.\n→ Samedi 14 mars / 20h30",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/elementor/thumbs/visuel-cabaraie-r99uvc90tfpmpzaluyncreau457wpkc1m19rec14rs.jpg",
-      "ticket": "https://my.weezevent.com/le-cabaraie-cabarettheatredrag",
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
-    },
-    {
-      "cinema": "Maison des 3 Quartiers",
-      "etablissement": "Maison des 3 Quartiers",
-      "date_text": "VENDREDI 29 + SAMEDI 30 MAI",
-      "date": "2025-05-30T00:00:00Z",
-      "title": "BalAbambin / Cie Cirkawa",
-      "subtitle": "Bal pour les toustes petites\nUne expérience pour les toustes petites et leurs parents. Un bal descendu de la lune, Suspendu au bout des lèvres, Les pieds dans la terre. Un bal à trois temps : le temps du jeu, du spectateur et de la danse.\n→ Vendredi 29 mai / 9h30 + 10h30 + 17h30\n→ Samedi 30 mai / 10h + 11h",
-      "description": "",
-      "time": null,
-      "image": "https://m3q.centres-sociaux.fr/files/2025/07/20171020-IMG_9705-HD-AH1-682x1024.jpg",
-      "ticket": null,
-      "source": "https://m3q.centres-sociaux.fr/saison-culturelle-2025-26/"
+      "scraped_at": "2026-06-08T15:21:09.446048"
     }
   ]
 }
